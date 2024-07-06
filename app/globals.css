@@ -3,31 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --col-background: 48 83 98;
+  --col-surface: 45 82 97;
+  --col-overlay: 30 56 80;
+  --col-foreground: 234 92 11;
+  --col-subtle: 234 96 12;
+  --col-muted: 234 96 21;
+  --col-primary: 232 54 16;
+  --col-primary-foreground: 234 12 87;
+  --col-secondary: 12 77 68;
+  --col-secondary-foreground: 9 91 98;
+  --col-accent: 30 56 80;
+  --col-accent-foreground: 234 87 4;
+  --col-destructive: 0 100 30;
+  --col-destructive-foreground: 0 37 92;
+  --col-border: 30 56 80;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dark {
+  --col-background: 234 92 11;
+  --col-surface: 234 96 12;
+  --col-overlay: 234 96 21;
+  --col-foreground: 48 96 93;
+  --col-subtle: 45 82 97;
+  --col-muted: 45 8 61;
+  --col-primary: 232 54 16;
+  --col-primary-foreground: 234 12 87;
+  --col-secondary: 12 77 68;
+  --col-secondary-foreground: 9 91 98;
+  --col-accent: 30 56 80;
+  --col-accent-foreground: 38 69 94;
+  --col-destructive: 0 100 30;
+  --col-destructive-foreground: 0 37 92;
+  --col-border: 30 56 80;
 }
