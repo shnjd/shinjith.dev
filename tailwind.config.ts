@@ -8,21 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '9xl': '1400px',
+        '10xl': '1500px',
+      },
       colors: {
         background: 'hsl(var(--col-background) / <alpha-value>)',
         surface: 'hsl(var(--col-surface) / <alpha-value>)',
         overlay: 'hsl(var(--col-overlay) / <alpha-value>)',
-        foreground: 'hsl(var(--col-foreground) / <alpha-value>)',
-        subtle: 'hsl(var(--col-subtle) / <alpha-value>)',
         muted: 'hsl(var(--col-muted) / <alpha-value>)',
-        primary: 'hsl(var(--col-primary) / <alpha-value>)',
-        'primary-foreground': 'hsl(var(--col-primary-foreground) / <alpha-value>)',
-        secondary: 'hsl(var(--col-secondary) / <alpha-value>)',
-        'secondary-foreground': 'hsl(var(--col-secondary-foreground) / <alpha-value>)',
+        subtle: 'hsl(var(--col-subtle) / <alpha-value>)',
+        fg: 'hsl(var(--col-fg) / <alpha-value>)',
         accent: 'hsl(var(--col-accent) / <alpha-value>)',
-        'accent-foreground': 'hsl(var(--col-accent-foreground) / <alpha-value>)',
+        'accent-fg': 'hsl(var(--col-accent-fg) / <alpha-value>)',
+        primary: 'hsl(var(--col-primary) / <alpha-value>)',
+        'primary-fg': 'hsl(var(--col-primary-fg) / <alpha-value>)',
+        secondary: 'hsl(var(--col-secondary) / <alpha-value>)',
+        'secondary-fg': 'hsl(var(--col-secondary-fg) / <alpha-value>)',
         destructive: 'hsl(var(--col-destructive) / <alpha-value>)',
-        'destructive-foreground': 'hsl(var(--col-destructive-foreground) / <alpha-value>)',
+        'destructive-fg': 'hsl(var(--col-destructive-fg) / <alpha-value>)',
         border: 'hsl(var(--col-border) / <alpha-value>)'
       },
       backgroundImage: {

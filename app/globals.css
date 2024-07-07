@@ -2,38 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --col-background: 48 83 98;
-  --col-surface: 45 82 97;
-  --col-overlay: 30 56 80;
-  --col-foreground: 234 92 11;
-  --col-subtle: 234 96 12;
-  --col-muted: 234 96 21;
-  --col-primary: 232 54 16;
-  --col-primary-foreground: 234 12 87;
+  --col-background: 0 0 100;
+  --col-surface: 177 48 86;
+  --col-overlay: 174 47 90;
+  --col-muted: 200 10 33;
+  --col-subtle: 198 17 19;
+  --col-fg: 198 17 12;
+  --col-accent: 175 62 87;
+  --col-accent-fg: 180 10 16;
+  --col-primary: 165 12 20;
+  --col-primary-fg: 180 4 92;
   --col-secondary: 12 77 68;
-  --col-secondary-foreground: 9 91 98;
-  --col-accent: 30 56 80;
-  --col-accent-foreground: 234 87 4;
+  --col-secondary-fg: 15 36 8;
   --col-destructive: 0 100 30;
-  --col-destructive-foreground: 0 37 92;
-  --col-border: 30 56 80;
+  --col-destructive-fg: 0 37 92;
+  --col-border: 175 62 87;
 }
 
+
 .dark {
-  --col-background: 234 92 11;
-  --col-surface: 234 96 12;
-  --col-overlay: 234 96 21;
-  --col-foreground: 48 96 93;
-  --col-subtle: 45 82 97;
-  --col-muted: 45 8 61;
-  --col-primary: 232 54 16;
-  --col-primary-foreground: 234 12 87;
+  --col-background: 212 55 12;
+  --col-surface: 217 37 18;
+  --col-overlay: 217 26 28;
+  --col-muted: 0 0 72;
+  --col-subtle: 0 0 88;
+  --col-fg: 0 0 96;
+  --col-accent: 210 37 37;
+  --col-accent-fg: 0 0 100;
+  --col-primary: 174 42 65;
+  --col-primary-fg: 180 20 6;
   --col-secondary: 12 77 68;
-  --col-secondary-foreground: 9 91 98;
-  --col-accent: 30 56 80;
-  --col-accent-foreground: 38 69 94;
+  --col-secondary-fg: 15 36 8;
   --col-destructive: 0 100 30;
-  --col-destructive-foreground: 0 37 92;
-  --col-border: 30 56 80;
+  --col-destructive-fg: 0 37 92;
+  --col-border: 210 37 37;
+}
+
+.dark .bg-gradient {
+  background: rgb(15, 28, 46);
+  background: linear-gradient(45deg, rgba(15, 28, 46, 1) 0%, rgba(0, 3, 18, 1) 100%);
+}
+
+.bg-gradient {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(208, 235, 234, 1) 100%);
+}
+
+.bg-cgradient {
+  background: rgb(208, 235, 234);
+  background: radial-gradient(circle, rgba(208, 235, 234, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.dark .bg-cgradient {
+  background: rgb(15, 28, 46);
+  background: radial-gradient(circle, rgba(15, 28, 46, 1) 0%, rgba(0, 3, 18, 0) 100%);
 }

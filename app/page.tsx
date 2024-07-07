@@ -1,7 +1,9 @@
+import NavigationMenu from "@/components/home/Navigator";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello next.js!
-    </main>
+    <div className="p-5 text-fg">
+      <NavigationMenu />
+    </div>
   );
 }
