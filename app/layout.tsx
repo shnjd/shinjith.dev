@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import { rubik } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,12 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} relative bg-background min-h-screen text-fg w-full max-w-screen overflow-x-hidden`}>
-        <div className="main-gradient absolute h-full w-full left-0 top-0" />
+      <body
+        className={`${rubik.className} max-w-screen relative min-h-screen w-full overflow-x-hidden bg-background text-base text-fg`}
+      >
+        <div className="main-gradient absolute left-0 top-0 h-full w-full" />
         <Navbar />
-        <main className="relative z-10 container mx-auto">
-          {children}
-        </main>
+        <main className="container relative z-10 mx-auto">{children}</main>
       </body>
     </html>
   );

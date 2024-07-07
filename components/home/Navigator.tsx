@@ -1,23 +1,20 @@
-"use client"
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { toKebabCase } from "@/lib/utils/string";
+import { SectionContext } from "../contexts/SectionContext";
 
 const navs = ["About", "Experience", "Projects", "Services", "Contact"];
 
 const opacityFactor = 0.5 / navs.length;
 
-type Props = {
-  active?: string
-}
-
 type ItemProps = {
   nav: string;
-  active: boolean
-  activeIndex: number
-  index: number
-}
+  active: boolean;
+  activeIndex: number;
+  index: number;
+};
 
 function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
   const path = toKebabCase(nav);
@@ -42,10 +39,11 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
         className="flex items-center gap-2"
       >
         <div
-          className={`transition-all duration-300 h-0.5 bg-subtle rounded-md ${active ? "w-6" : "w-2 group-hover:w-6"
-            }`}
+          className={`h-0.5 rounded-md bg-subtle transition-all duration-300 ${
+            active ? "w-6" : "w-2 group-hover:w-6"
+          }`}
         />
-        <div className="transition-all duration-300 text-sm text-fg dark:text-dark-200">
+        <div className="dark:text-dark-200 text-sm text-fg transition-all duration-300">
           {nav}
         </div>
       </Link>
@@ -53,8 +51,10 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
   );
 }
 
-function NavigationMenu({ active = "about" }: Props) {
+function NavigationMenu() {
   const [haveBg, setHaveBg] = useState(false);
+  const { activeSection: active } = useContext(SectionContext);
+  console.log(active);
 
   useEffect(() => {
     if (window.scrollY > 200) setHaveBg(true);
@@ -70,17 +70,18 @@ function NavigationMenu({ active = "about" }: Props) {
 
   return (
     <nav
-      className={`transition-all duration-500 fixed left-0 sm:left-[calc(50vw-320px)] md:left-[calc(50vw-384px)] lg:left-[calc(50vw-512px)] xl:left-[calc(50vw-640px)] 2xl:left-[calc(50vw-768px)] mx-auto pl-2 pt-4 ml-4 z-[999] ${haveBg ? "top-16" : "top-12"
-        }`}
+      className={`fixed left-0 z-[999] mx-auto ml-4 pl-2 pt-4 transition-all duration-500 sm:left-[calc(50vw-320px)] md:left-[calc(50vw-384px)] lg:left-[calc(50vw-512px)] xl:left-[calc(50vw-640px)] 2xl:left-[calc(50vw-768px)] ${
+        haveBg ? "top-16" : "top-12"
+      }`}
     >
-      <ul className="transition-all hidden lg:block">
+      <ul className="hidden transition-all lg:block">
         <AnimatePresence>
           {navs.map((nav, index) => (
             <NavigationMenuItem
               key={nav}
               nav={nav}
               active={active === nav}
-              activeIndex={navs.indexOf(active)}
+              activeIndex={navs.indexOf(active ?? "")}
               index={index}
             />
           ))}

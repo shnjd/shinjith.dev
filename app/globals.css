@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --col-background: 0 0 100;
   --col-surface: 177 48 86;
@@ -20,7 +19,6 @@
   --col-destructive-fg: 0 37 92;
   --col-border: 175 62 87;
 }
-
 
 .dark {
   --col-background: 212 55 12;
@@ -41,13 +39,80 @@
 }
 
 .main-gradient {
-  background:
-    radial-gradient(circle at top right, #C6DFD1 0%, transparent 100%),
-    radial-gradient(circle at left, #C6DFD1 0%, transparent 100%);
+  background: radial-gradient(circle at top right, #c6dfd1 0%, transparent 100%),
+    radial-gradient(circle at left, #c6dfd1 0%, transparent 100%);
 }
 
 .dark .main-gradient {
-  background:
-    radial-gradient(circle at top right, rgba(0, 3, 18, 0.8) 0%, transparent 100%),
+  background: radial-gradient(
+      circle at top right,
+      rgba(0, 3, 18, 0.8) 0%,
+      transparent 100%
+    ),
     radial-gradient(circle at left, rgba(0, 3, 18, 0.8) 0%, transparent 100%);
+}
+
+.slide-in-top {
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* cursor blink animation */
+.blink {
+  -webkit-animation-name: blink;
+  animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
