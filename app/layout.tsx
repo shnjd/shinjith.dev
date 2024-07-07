@@ -17,8 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-gradient text-fg w-full max-w-screen overflow-x-hidden`}>
-        <div className="h-full absolute z-0 right-0 top-0 bg-cgradient w-[250vw]" />
+      <body className={`${inter.className} relative bg-background min-h-screen text-fg w-full max-w-screen overflow-x-hidden`}>
+        <div className="main-gradient absolute h-full w-full left-0 top-0" />
         <Navbar />
         <main className="relative z-10 container mx-auto">
           {children}
