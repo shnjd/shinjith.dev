@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/common/navbar";
 import { rubik } from "@/lib/fonts";
+import Background from "@/components/common/Background";
+import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +20,10 @@ export default function RootLayout({
       <body
         className={`${rubik.className} max-w-screen relative min-h-screen w-full overflow-x-hidden bg-background text-base text-fg`}
       >
-        <div className="main-gradient absolute left-0 top-0 h-full w-full" />
+        <Background />
         <Navbar />
         <main className="container relative z-10 mx-auto">{children}</main>
+        <Footer />
       </body>
     </html>
   );
