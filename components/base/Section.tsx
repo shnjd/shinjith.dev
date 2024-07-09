@@ -1,15 +1,26 @@
-"use client"
+"use client";
 
-import React, { HTMLAttributes, ReactNode, useContext, useEffect, useRef } from "react"
+import React, {
+  HTMLAttributes,
+  ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+} from "react";
 import { SectionContext, TSection } from "../contexts/SectionContext";
 import { cn } from "@/lib/utils/cn";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
-  name: TSection,
+  name: TSection;
 }
 
-export default function Section({ name, className, children, ...props }: Props) {
+export default function Section({
+  name,
+  className,
+  children,
+  ...props
+}: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { setSection } = useContext(SectionContext);
 
@@ -33,9 +44,13 @@ export default function Section({ name, className, children, ...props }: Props) 
   }, [sectionRef.current]);
 
   return (
-    <section id={name?.toLowerCase()} ref={sectionRef} className={cn("min-h-screen w-full", className)} {...props}>
+    <section
+      id={name?.toLowerCase()}
+      ref={sectionRef}
+      className={cn("min-h-screen w-full", className)}
+      {...props}
+    >
       {children}
     </section>
   );
-
 }

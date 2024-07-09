@@ -1,6 +1,6 @@
 "use client";
 import Link from "@/components/base/Link";
-import NextLink from 'next/link'
+import NextLink from "next/link";
 import ModeSwitch from "./ModeSwitch";
 import { useEffect, useState } from "react";
 import { inconsolata } from "@/lib/fonts";
@@ -26,8 +26,10 @@ const Navbar = () => {
     <nav
       className={`fixed left-0 top-0 z-[999] mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"} ${menu && "p-3"}`}
     >
-      <div className={`container relative z-[999] mx-auto transition-all w-full p-5 ${menu ? "rounded-lg backdrop-blur-lg backdrop-saturate-150" : "bg-[transparent]"}`}>
-        <div className="flex w-full justify-between items-center">
+      <div
+        className={`container relative z-[999] mx-auto w-full p-5 transition-all ${menu ? "rounded-lg backdrop-blur-lg backdrop-saturate-150" : "bg-[transparent]"}`}
+      >
+        <div className="flex w-full items-center justify-between">
           <NextLink
             href="/"
             className={`text-lg text-secondary sm:text-xl md:text-2xl ${inconsolata.className}`}
@@ -35,7 +37,7 @@ const Navbar = () => {
             /shinjith-dev<span className="blink">_</span>
           </NextLink>
 
-          <ul className="items-center gap-3 hidden sm:flex">
+          <ul className="hidden items-center gap-3 sm:flex">
             <li>
               <Link download="resume.pdf" href="https://resume.shinjith.dev">
                 Resume
@@ -52,10 +54,16 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <MenuButton isClosed={!menu} onClick={() => setMenu(prev => !prev)} className="sm:hidden" />
+          <MenuButton
+            isClosed={!menu}
+            onClick={() => setMenu((prev) => !prev)}
+            className="sm:hidden"
+          />
         </div>
 
-        <div className={`pt-4 h-fit w-full sm:hidden transition-all ${menu ? "translate-y-0" : "-translate-y-[200%] hidden"}`}>
+        <div
+          className={`h-fit w-full pt-4 transition-all sm:hidden ${menu ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
+        >
           <ul className="flex flex-col gap-3">
             <li>
               <Link download="resume.pdf" href="https://resume.shinjith.dev">
