@@ -18,5 +18,5 @@ export const oleoScript = Oleo_Script({
   weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-serif",
+  variable: "--font-display",
 });

@@ -8,12 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   name: TSection;
 }
 
-export default function Section({
-  name,
-  className,
-  children,
-  ...props
-}: Props) {
+export default function Section({ name, className, children, ...props }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { setSection } = useContext(SectionContext);
 
@@ -22,6 +17,7 @@ export default function Section({
       if (sectionRef.current) {
         const { top, bottom } = sectionRef.current.getBoundingClientRect();
         if (window.scrollY > window.scrollY + top - 400 && window.scrollY < window.scrollY + bottom - 400) setSection(name);
+        // else setSection(null)
       }
     };
 
@@ -33,12 +29,7 @@ export default function Section({
   }, [sectionRef.current]);
 
   return (
-    <section
-      id={name?.toLowerCase()}
-      ref={sectionRef}
-      className={cn("min-h-screen w-full", className)}
-      {...props}
-    >
+    <section id={name?.toLowerCase()} ref={sectionRef} className={cn("min-h-screen w-full", className)} {...props}>
       {children}
     </section>
   );

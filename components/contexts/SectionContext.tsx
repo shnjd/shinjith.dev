@@ -1,7 +1,7 @@
 "use client";
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
-export type TSection = "About" | "Experience" | "Projects" | "Services" | "Contact" | null;
+export type TSection = "Cover" | "About" | "Experience" | "Projects" | "Services" | "Contact" | null;
 
 interface TSectionContext {
   activeSection: TSection;

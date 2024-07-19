@@ -58,7 +58,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandGithub size={24} className="text-subtle transition-all hover:text-muted" />
+          <IconBrandGithub size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
         </a>
 
         <a
@@ -68,7 +68,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandInstagram size={24} className="text-subtle transition-all hover:text-muted" />
+          <IconBrandInstagram size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
         </a>
 
         <a
@@ -88,7 +88,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandLinkedin size={24} className="text-subtle transition-all hover:text-muted" />
+          <IconBrandLinkedin size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
         </a>
 
         <a
@@ -98,7 +98,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandTwitter size={24} className="text-subtle transition-all hover:text-muted" />
+          <IconBrandTwitter size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
         </a>
       </div>
       <div
