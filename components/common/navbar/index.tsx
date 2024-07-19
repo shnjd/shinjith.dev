@@ -44,21 +44,11 @@ const Navbar = () => {
       className={`fixed left-0 top-0 z-[999] mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "navbar-gradient nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"} ${menu && "p-3"}`}
     >
       <div
-<<<<<<< HEAD
-        className={`container relative z-[999] mx-auto w-full p-5 transition-all ${menu ? "rounded-lg backdrop-blur-lg backdrop-saturate-150" : "bg-[transparent]"}`}
-      >
-        <div className="flex w-full items-center justify-between">
-          <NextLink
-            href="/"
-            className={`text-lg text-secondary sm:text-xl md:text-2xl ${inconsolata.className}`}
-          >
-=======
         ref={navRef}
         className={`container relative z-[999] mx-auto w-full p-5 transition-all ${menu ? "border-boder/40 navbar-gradient rounded-lg border backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
       >
         <div className="flex w-full items-center justify-between">
           <NextLink href="/" className={`text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary ${inconsolata.className}`}>
->>>>>>> dev
             /shinjith-dev<span className="blink">_</span>
           </NextLink>
 
@@ -79,19 +69,6 @@ const Navbar = () => {
             </li>
           </ul>
 
-<<<<<<< HEAD
-          <MenuButton
-            isClosed={!menu}
-            onClick={() => setMenu((prev) => !prev)}
-            className="sm:hidden"
-          />
-        </div>
-
-        <div
-          className={`h-fit w-full pt-4 transition-all sm:hidden ${menu ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
-        >
-          <ul className="flex flex-col gap-3">
-=======
           <MenuButton isClosed={!menu} onClick={() => setMenu((prev) => !prev)} className="sm:hidden" />
         </div>
 
@@ -99,7 +76,6 @@ const Navbar = () => {
           className={`flex h-fit w-full items-end justify-between gap-4 pt-4 transition-all sm:hidden ${menu ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
         >
           <ul className="flex w-full flex-col gap-3">
->>>>>>> dev
             <li>
               <Link
                 download="resume.pdf"

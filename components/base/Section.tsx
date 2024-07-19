@@ -1,16 +1,5 @@
 "use client";
-
-<<<<<<< HEAD
-import React, {
-  HTMLAttributes,
-  ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-} from "react";
-=======
 import React, { HTMLAttributes, ReactNode, useContext, useEffect, useRef } from "react";
->>>>>>> dev
 import { SectionContext, TSection } from "../contexts/SectionContext";
 import { cn } from "@/lib/utils/cn";
 
