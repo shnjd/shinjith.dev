@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import React, {
   HTMLAttributes,
   ReactNode,
@@ -7,6 +8,9 @@ import React, {
   useEffect,
   useRef,
 } from "react";
+=======
+import React, { HTMLAttributes, ReactNode, useContext, useEffect, useRef } from "react";
+>>>>>>> dev
 import { SectionContext, TSection } from "../contexts/SectionContext";
 import { cn } from "@/lib/utils/cn";
 
@@ -28,11 +32,7 @@ export default function Section({
     const onScroll = () => {
       if (sectionRef.current) {
         const { top, bottom } = sectionRef.current.getBoundingClientRect();
-        if (
-          window.scrollY > window.scrollY + top - 400 &&
-          window.scrollY < window.scrollY + bottom - 400
-        )
-          setSection(name);
+        if (window.scrollY > window.scrollY + top - 400 && window.scrollY < window.scrollY + bottom - 400) setSection(name);
       }
     };
 

@@ -17,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${rubik.className} max-w-screen relative min-h-screen w-full overflow-x-hidden bg-background text-base text-fg`}
-      >
+      <body className={`${rubik.className} max-w-screen relative min-h-screen w-full overflow-x-hidden bg-background text-base text-fg`}>
         <Background />
         <Navbar />
         <main className="container relative z-10 mx-auto">{children}</main>
