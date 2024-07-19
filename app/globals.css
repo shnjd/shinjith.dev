@@ -39,19 +39,16 @@
 }
 
 .main-gradient {
-  background:
-    radial-gradient(circle at 0% 100%, hsl(var(--col-primary) / 0.2) 0%, transparent 100%),
-    radial-gradient(circle at 100% 50%, hsl(var(--col-secondary) / 0.2) 0%, transparent 100%),
-    radial-gradient(circle at 0% 0%, hsl(var(--col-primary) / 0.2) 0%, transparent 100%);
+  background: radial-gradient(at 0% 100%, hsl(var(--col-primary) / 0.3) 0%, transparent 100%),
+    radial-gradient(at 100% 50%, hsl(var(--col-secondary) / 0.1) 0%, transparent 100%),
+    radial-gradient(at 0% 0%, hsl(var(--col-primary) / 0.3) 0%, transparent 100%),
+    radial-gradient(at 50% 95%, hsl(var(--col-secondary) / 0.3) 0%, transparent 100%);
 }
 
 .dark .main-gradient {
-  background:
-    radial-gradient(circle at 100% 100%, rgba(0, 3, 18, 0.8) 0%, transparent 100%),
-    radial-gradient(circle at 0% 50%, rgba(0, 3, 18, 0.8) 0%, transparent 100%),
-    radial-gradient(circle at 100% 0%, rgba(0, 3, 18, 0.8) 0%, transparent 100%);
+  background: radial-gradient(at 0% 100%, rgba(0, 3, 18, 0.8) 0%, transparent 100%), radial-gradient(at 100% 50%, rgba(0, 3, 18, 0.8) 0%, transparent 100%),
+    radial-gradient(at 0% 0%, rgba(0, 3, 18, 0.8) 0%, transparent 100%), radial-gradient(at 50% 95%, hsl(var(--col-secondary) / 0.4) 0%, transparent 100%);
 }
-
 
 /*   background: radial-gradient(circle at top right, */
 /*       rgba(0, 3, 18, 0.8) 0%, */
@@ -127,4 +124,42 @@
   to {
     opacity: 0;
   }
+}
+
+.contact-lines {
+  background: linear-gradient(to right, hsl(var(--col-surface) / 0.2) 0%, hsl(var(--col-primary) / 0.2) 100%);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+.social-line {
+  background: linear-gradient(to bottom, hsl(var(--col-muted) / 0.8) 0%, hsl(var(--col-surface) / 0.2) 100%);
+}
+
+.contact-line-1 {
+  animation: moving-lines 4s ease infinite both;
+}
+
+.contact-line-2 {
+  animation: moving-lines 4s ease 3s infinite both;
+}
+
+@keyframes moving-lines {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.navbar-gradient {
+  background: transparent;
+  background: radial-gradient(at 0% 0%, hsl(var(--col-primary) / 0.1) 0%, transparent 100%),
+    radial-gradient(at 100% 100%, hsl(var(--col-secondary) / 0.1) 0%, transparent 100%);
 }

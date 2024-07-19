@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import React, { HTMLAttributes, ReactNode, useContext, useEffect, useRef } from "react"
+import React, { HTMLAttributes, ReactNode, useContext, useEffect, useRef } from "react";
 import { SectionContext, TSection } from "../contexts/SectionContext";
 import { cn } from "@/lib/utils/cn";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
-  name: TSection,
+  name: TSection;
 }
 
 export default function Section({ name, className, children, ...props }: Props) {
@@ -17,11 +17,7 @@ export default function Section({ name, className, children, ...props }: Props) 
     const onScroll = () => {
       if (sectionRef.current) {
         const { top, bottom } = sectionRef.current.getBoundingClientRect();
-        if (
-          window.scrollY > window.scrollY + top - 400 &&
-          window.scrollY < window.scrollY + bottom - 400
-        )
-          setSection(name);
+        if (window.scrollY > window.scrollY + top - 400 && window.scrollY < window.scrollY + bottom - 400) setSection(name);
       }
     };
 
@@ -37,5 +33,4 @@ export default function Section({ name, className, children, ...props }: Props) 
       {children}
     </section>
   );
-
 }

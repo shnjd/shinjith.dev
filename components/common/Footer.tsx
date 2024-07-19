@@ -3,18 +3,24 @@ import Link from "../base/Link";
 export default function Footer() {
   return (
     <footer className="relative z-10">
-      <div className="max-w-9xl mx-auto py-4 gap-4 flex sm:flex-row justify-between items-center w-full flex-col-reverse">
-        <p className="text-muted text-center text-xs sm:text-sm">&copy; 2024, All rights reserved.</p>
+      <div className="container mx-auto flex w-full flex-col-reverse items-center justify-between gap-4 px-5 py-4 sm:flex-row">
+        <p className="text-center text-xs text-muted sm:text-sm">&copy; 2024, All rights reserved.</p>
 
-        <ul className="flex gap-4 text-subtle items-center justify-center text-sm">
+        <ul className="flex items-center justify-center gap-4 text-sm text-subtle">
           <li>
-            <Link className="text-subtle hover:text-muted" href={"https://resume.shinjith.dev?download=true"}>Resume</Link>
+            <Link className="text-subtle hover:text-muted" href={"https://resume.shinjith.dev?download=true"}>
+              Resume
+            </Link>
           </li>
           <li>
-            <Link className="text-subtle hover:text-muted" href={"https://notes.shinjith.dev"}>Notes</Link>
+            <Link className="text-subtle hover:text-muted" href={"https://notes.shinjith.dev"}>
+              Notes
+            </Link>
           </li>
           <li>
-            <Link className="text-subtle hover:text-muted" href={"/projects"}>Projects</Link>
+            <Link className="text-subtle hover:text-muted" href={"/projects"}>
+              Projects
+            </Link>
           </li>
         </ul>
       </div>
