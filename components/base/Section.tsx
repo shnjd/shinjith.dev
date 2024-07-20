@@ -2,13 +2,16 @@
 import React, { HTMLAttributes, ReactNode, useContext, useEffect, useRef } from "react";
 import { SectionContext, TSection } from "../contexts/SectionContext";
 import { cn } from "@/lib/utils/cn";
+import { rubik } from "@/lib/fonts";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   name: TSection;
+  withoutTitle?: boolean;
+  condensed?: boolean;
 }
 
-export default function Section({ name, className, children, ...props }: Props) {
+export default function Section({ name, withoutTitle = false, condensed = false, className, children, ...props }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { setSection } = useContext(SectionContext);
 
@@ -29,7 +32,8 @@ export default function Section({ name, className, children, ...props }: Props) 
   }, [sectionRef.current]);
 
   return (
-    <section id={name?.toLowerCase()} ref={sectionRef} className={cn("min-h-screen w-full", className)} {...props}>
+    <section id={name?.toLowerCase()} ref={sectionRef} className={cn("min-h-screen w-full", condensed ? "py-0" : "py-24", className)} {...props}>
+      {!withoutTitle && <h6 className={`${rubik.className} mb-4 pr-6 text-end text-xl font-bold uppercase tracking-widest text-subtle`}>{name}</h6>}
       {children}
     </section>
   );

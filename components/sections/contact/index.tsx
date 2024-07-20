@@ -31,10 +31,8 @@ export default function Contact() {
     };
   }, []);
 
-  console.log(progress);
-
   return (
-    <Section name="Contact" className="contact-bg relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
+    <Section name="Contact" withoutTitle condensed className="contact-bg relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
       <div
         className={`contact-lines h-0.5 w-full origin-right rounded-full ${progress === 1 && "contact-line-1"}`}
         style={{ transform: `scaleX(${progress})` }}

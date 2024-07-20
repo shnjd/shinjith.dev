@@ -78,7 +78,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Devto />
+          <Devto className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
         </a>
 
         <a

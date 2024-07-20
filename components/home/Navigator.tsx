@@ -33,7 +33,10 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
         onClick={(e) => {
           const hero = document.getElementById(path);
           e.preventDefault(); // Stop Page Reloading
-          if (hero) hero.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (hero) {
+            hero.scrollIntoView({ behavior: "smooth", block: "start" });
+            // window.scrollBy({ top: 100, left: 0, behavior: 'smooth' })
+          }
         }}
         className="flex items-center gap-2"
       >

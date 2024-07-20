@@ -1,6 +1,6 @@
 import SectionContextProvider from "@/components/contexts/SectionContext";
 import NavigationMenu from "@/components/home/Navigator";
-import About from "@/components/sections/About";
+import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Cover from "@/components/sections/Cover";
 import Experience from "@/components/sections/Experience";
