@@ -25,7 +25,13 @@ const Navbar = () => {
 
   useEffect(() => {
     const hideMenu = (e: MouseEvent) => {
-      if (!(navRef.current && e.target && navRef.current.contains(e.target as Node))) {
+      if (
+        !(
+          navRef.current &&
+          e.target &&
+          navRef.current.contains(e.target as Node)
+        )
+      ) {
         setMenu(false);
       }
     };
@@ -48,7 +54,10 @@ const Navbar = () => {
         className={`container relative z-[999] mx-auto w-full p-5 transition-all ${menu ? "border-boder/40 navbar-gradient rounded-lg border backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
       >
         <div className="flex w-full items-center justify-between">
-          <NextLink href="/" className={`text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary ${inconsolata.className}`}>
+          <NextLink
+            href="/"
+            className={`text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary ${inconsolata.className}`}
+          >
             /shinjith-dev<span className="blink">_</span>
           </NextLink>
 
@@ -69,7 +78,11 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <MenuButton isClosed={!menu} onClick={() => setMenu((prev) => !prev)} className="sm:hidden" />
+          <MenuButton
+            isClosed={!menu}
+            onClick={() => setMenu((prev) => !prev)}
+            className="sm:hidden"
+          />
         </div>
 
         <div
@@ -96,7 +109,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href={"/projects"} className="w-full items-start rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg" underline={false}>
+              <Link
+                href={"/projects"}
+                className="w-full items-start rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
+                underline={false}
+              >
                 Projects
               </Link>
             </li>

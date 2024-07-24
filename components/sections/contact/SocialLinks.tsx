@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import { motion, MotionValue } from "framer-motion";
-import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandTwitter } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+} from "@tabler/icons-react";
 import Devto from "@/components/icons/devto";
 import { getEllipseY } from "@/lib/utils/math";
 
@@ -37,10 +42,17 @@ export default function SocialLinks({ scrollProgress }: Props) {
     const yOffset = 100;
     const scaleFactor = 1.2;
 
-    if (scrollProgress === 1) return `translate(${gapX * order - xOffset}px, ${yr - yOffset}px) scale(${scaleFactor})`;
+    if (scrollProgress === 1)
+      return `translate(${gapX * order - xOffset}px, ${yr - yOffset}px) scale(${scaleFactor})`;
 
-    const x = xr - xr * scrollProgress + (order - TOTAL_SOCIAL / 2 - 1) * scrollProgress * gapX;
-    const y = getEllipseY(x, xo, yo, xr, yr) - (TOTAL_SOCIAL - order) * (1 - scrollProgress) * gapY - yOffset;
+    const x =
+      xr -
+      xr * scrollProgress +
+      (order - TOTAL_SOCIAL / 2 - 1) * scrollProgress * gapX;
+    const y =
+      getEllipseY(x, xo, yo, xr, yr) -
+      (TOTAL_SOCIAL - order) * (1 - scrollProgress) * gapY -
+      yOffset;
     const scale = 1 + (scaleFactor - 1) * scrollProgress;
 
     return `translate(${x}px, ${y}px) scale(${scale})`;
@@ -58,7 +70,10 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandGithub size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+          <IconBrandGithub
+            size={24}
+            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+          />
         </a>
 
         <a
@@ -68,7 +83,10 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandInstagram size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+          <IconBrandInstagram
+            size={24}
+            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+          />
         </a>
 
         <a
@@ -88,7 +106,10 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandLinkedin size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+          <IconBrandLinkedin
+            size={24}
+            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+          />
         </a>
 
         <a
@@ -98,11 +119,16 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandTwitter size={24} className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+          <IconBrandTwitter
+            size={24}
+            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+          />
         </a>
       </div>
       <div
-        style={{ transform: `translateX(${scrollProgress != 0 ? getXRadius() : 0}px) scaleY(min(1,${1 - scrollProgress}))` }}
+        style={{
+          transform: `translateX(${scrollProgress != 0 ? getXRadius() : 0}px) scaleY(min(1,${1 - scrollProgress}))`,
+        }}
         className={`h-16 w-0.5 origin-bottom rounded-t-full bg-muted ${scrollProgress != 0 && "social-line"}`}
       />
     </div>

@@ -18,7 +18,8 @@ type ItemProps = {
 
 function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
   const path = toKebabCase(nav);
-  const opacity = activeIndex === index ? 1 : 1 - (index + 1 - activeIndex) * opacityFactor;
+  const opacity =
+    activeIndex === index ? 1 : 1 - (index + 1 - activeIndex) * opacityFactor;
 
   return (
     <motion.li
@@ -40,8 +41,12 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
         }}
         className="flex items-center gap-2"
       >
-        <div className={`h-0.5 rounded-md bg-subtle transition-all duration-300 ${active ? "w-6" : "w-2 group-hover:w-6"}`} />
-        <div className="text-sm text-fg transition-all duration-300 group-hover:text-fg/90">{nav}</div>
+        <div
+          className={`h-0.5 rounded-md bg-subtle transition-all duration-300 ${active ? "w-6" : "w-2 group-hover:w-6"}`}
+        />
+        <div className="text-sm text-fg transition-all duration-300 group-hover:text-fg/90">
+          {nav}
+        </div>
       </Link>
     </motion.li>
   );
@@ -73,7 +78,13 @@ function NavigationMenu() {
       <ul className="hidden transition-all lg:block">
         <AnimatePresence>
           {navs.map((nav, index) => (
-            <NavigationMenuItem key={nav} nav={nav} active={active === nav} activeIndex={navs.indexOf(active ?? "")} index={index} />
+            <NavigationMenuItem
+              key={nav}
+              nav={nav}
+              active={active === nav}
+              activeIndex={navs.indexOf(active ?? "")}
+              index={index}
+            />
           ))}
         </AnimatePresence>
       </ul>

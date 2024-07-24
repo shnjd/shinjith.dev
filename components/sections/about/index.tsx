@@ -9,9 +9,9 @@ export default function About() {
     <Section name="About" subHeading="A Glimpse Into Me">
       <div className="about-image-grad h-full space-y-8 px-40 py-20 text-subtle">
         <div className="flex items-center gap-8">
-          <div className="group overflow-hidden rounded-2xl hover:rounded-3xl shrink-0 transition-all duration-500">
-            <div className="relative p-0.5 bg-surface/45 backdrop-blur-lg backdrop-saturate-200" >
-              <div className="relative h-[400px] w-[320px] shrink-0 overflow-hidden rounded-[14px] group-hover:rounded-[22px] duration-500 transition-all">
+          <div className="group shrink-0 overflow-hidden rounded-2xl transition-all duration-500 hover:rounded-3xl">
+            <div className="relative bg-surface/45 p-0.5 backdrop-blur-lg backdrop-saturate-200">
+              <div className="relative h-[400px] w-[320px] shrink-0 overflow-hidden rounded-[14px] transition-all duration-500 group-hover:rounded-[22px]">
                 <Image
                   alt="Shinjith P R"
                   src={shinjithdev}
@@ -24,16 +24,33 @@ export default function About() {
 
           <p className="flex flex-col gap-4">
             <span>
-              I am a <span className="text-secondary-fg dark:text-secondary">software engineer</span> with over two years of experience designing and developing
-              interactive, accessible software solutions based on cutting-edge technologies and libraries.
+              I am a{" "}
+              <span className="text-secondary-fg dark:text-secondary">
+                software engineer
+              </span>{" "}
+              with over two years of experience designing and developing
+              interactive, accessible software solutions based on cutting-edge
+              technologies and libraries.
             </span>
-            <span>I specialize in designing visually appealing, user-friendly web interfaces, but I also like working on a wide range of different goods.</span>
             <span>
-              <span className="text-secondary-fg dark:text-secondary">Web developer</span> in practice. LBS College of Engineering alumna.
+              I specialize in designing visually appealing, user-friendly web
+              interfaces, but I also like working on a wide range of different
+              goods.
             </span>
-            <span>Intrigued by design, travel, music, strategy, art, philosophy, delicious food, and even conversions pique my interest.</span>
             <span>
-              seeking to be inspired, to put effort on things that make a difference, to envision the improbable, and to be surrounded by beautiful minds.
+              <span className="text-secondary-fg dark:text-secondary">
+                Web developer
+              </span>{" "}
+              in practice. LBS College of Engineering alumna.
+            </span>
+            <span>
+              Intrigued by design, travel, music, strategy, art, philosophy,
+              delicious food, and even conversions pique my interest.
+            </span>
+            <span>
+              seeking to be inspired, to put effort on things that make a
+              difference, to envision the improbable, and to be surrounded by
+              beautiful minds.
             </span>
             <span>
               <span className="font-medium">Say hello</span> on Instagram{" "}
@@ -54,7 +71,8 @@ export default function About() {
               >
                 Pomtick
               </Link>
-              , which is a cross-platform pomodoro productivity timer built with React (NextJS + TypeScript), Tauri, and Turborepo.
+              , which is a cross-platform pomodoro productivity timer built with
+              React (NextJS + TypeScript), Tauri, and Turborepo.
             </span>
           </p>
         </div>
@@ -70,10 +88,12 @@ export default function About() {
           </ul>
         </div>
         <div>
-          <p className="text-secondary-fg py-0.5 border-b border-secondary-fg dark:border-secondary dark:text-secondary w-fit">What else do I know?</p>
+          <p className="w-fit border-b border-secondary-fg py-0.5 text-secondary-fg dark:border-secondary dark:text-secondary">
+            What else do I know?
+          </p>
           <Technologies />
         </div>
-      </div >
-    </Section >
+      </div>
+    </Section>
   );
 }

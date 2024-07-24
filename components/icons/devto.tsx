@@ -4,9 +4,20 @@ interface Props extends HTMLAttributes<SVGElement> {
   size?: number | string;
 }
 
-export default function Devto({ color = "currentColor", size = 24, ...props }: Props) {
+export default function Devto({
+  color = "currentColor",
+  size = 24,
+  ...props
+}: Props) {
   return (
-    <svg role="img" viewBox="0 0 24 24" height={size} width={size} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      height={size}
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <title>dev.to</title>
       <path
         fill={color}
