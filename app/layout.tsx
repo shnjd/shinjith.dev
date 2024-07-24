@@ -24,7 +24,7 @@ export default function RootLayout({
         <ReactLenis root>
           <Background />
           <Navbar />
-          <main className="container relative z-10 mx-auto">{children}</main>
+          <main className="container relative z-10">{children}</main>
           <Footer />
         </ReactLenis>
       </body>

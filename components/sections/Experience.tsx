@@ -1,12 +1,17 @@
 import { IconArrowUpRight, IconUsersPlus } from "@tabler/icons-react";
 import Section from "../base/Section";
 import Link from "next/link";
+import Tag from "../base/Tag";
 
 const techs = ["JavaScript", "TypeScript", "Nextjs", "React", "Tailwind"];
 
 export default function Experience() {
   return (
-    <Section name="Experience" subHeading="Waves of My Work">
+    <Section
+      name="Experience"
+      subHeading="Waves of My Work"
+      className="min-h-[80vh]"
+    >
       <div className="px-40 py-20">
         <div className="my-8 pr-6">
           <div className="contact-lines contact-line-1 h-0.5 rounded-full" />
@@ -30,12 +35,7 @@ export default function Experience() {
 
               <div className="my-4 flex flex-wrap gap-2">
                 {techs.map((t) => (
-                  <div
-                    key={t}
-                    className="rounded-full border border-overlay/45 bg-gradient-to-tr from-background/25 to-secondary/25 px-3 py-1 text-sm text-secondary-fg backdrop-blur-lg backdrop-saturate-150 dark:text-subtle"
-                  >
-                    {t}
-                  </div>
+                  <Tag key={t}>{t}</Tag>
                 ))}
               </div>
             </div>

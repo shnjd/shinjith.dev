@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "id": "pomtick",
+      "name": "Pomtick Pomodoro Timer",
+      "featured": true,
+      "description": [
+        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Turborepo",
+        "Tauri"
+      ],
+      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1692551473/sdev/Screenshot_from_2023-08-20_22-40-26_n2d7mg.png",
+      "live_url": "",
+      "github_url": ""
+    },
+    {
+      "id": "pomick",
+      "name": "Pmotick",
+      "featured": true,
+      "description": [
+        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Turborepo",
+        "Tauri"
+      ],
+      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1691604140/sdev/Screenshot_from_2023-08-09_22-53-17_kmeiss.png",
+      "live_url": "",
+      "github_url": ""
+    },
+    {
+      "id": "pomtic",
+      "name": "Pmotick",
+      "featured": true,
+      "description": [
+        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Turborepo",
+        "Tauri"
+      ],
+      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1719481259/Screenshot_2024-06-14_17-53-21_growwx.png",
+      "live_url": "",
+      "github_url": ""
+    },
+    {
+      "id": "pomick90000",
+      "name": "Pmotickhsjjsjs JJkkkn",
+      "featured": false,
+      "description": [
+        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Turborepo",
+        "Tauri"
+      ],
+      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1691604140/sdev/Screenshot_from_2023-08-09_22-53-17_kmeiss.png",
+      "live_url": "",
+      "github_url": ""
+    },
+    {
+      "id": "pomickuabh",
+      "name": "Pmotick The Ultimate",
+      "featured": false,
+      "description": [
+        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Turborepo",
+        "Tauri"
+      ],
+      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1719481259/Screenshot_2024-06-14_17-53-21_growwx.png",
+      "live_url": "",
+      "github_url": ""
+    },
+    {
+      "id": "pomiaaack",
+      "name": "Asuhuihas Ui",
+      "featured": false,
+      "description": [
+        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Turborepo",
+        "Tauri"
+      ],
+      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1691604140/sdev/Screenshot_from_2023-08-09_22-53-17_kmeiss.png",
+      "live_url": "",
+      "github_url": ""
+    }
+  ]
+}

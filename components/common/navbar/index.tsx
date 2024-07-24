@@ -51,7 +51,7 @@ const Navbar = () => {
     >
       <div
         ref={navRef}
-        className={`container relative z-[999] mx-auto w-full p-5 transition-all ${menu ? "border-boder/40 navbar-gradient rounded-lg border backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
+        className={`container relative z-[999] w-full p-5 transition-all ${menu ? "border-boder/40 navbar-gradient rounded-lg border backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
       >
         <div className="flex w-full items-center justify-between">
           <NextLink
