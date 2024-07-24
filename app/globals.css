@@ -38,6 +38,10 @@
   --col-border: 217 37 18;
 }
 
+body {
+  scroll-behavior: smooth !important;
+}
+
 .main-gradient {
   background: radial-gradient(at 0% 100%, hsl(var(--col-primary) / 0.3) 0%, transparent 100%),
     radial-gradient(at 100% 50%, hsl(var(--col-secondary) / 0.1) 0%, transparent 100%),
@@ -184,12 +188,12 @@
   padding-left: 0;
 }
 
-.about-tech-list > li {
+.about-tech-list>li {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-.about-tech-list > li:before {
+.about-tech-list>li:before {
   content: "→";
   padding-right: 7px;
 }

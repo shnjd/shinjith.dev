@@ -9,9 +9,10 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   name: TSection;
   withoutTitle?: boolean;
   condensed?: boolean;
+  subHeading?: string
 }
 
-export default function Section({ name, withoutTitle = false, condensed = false, className, children, ...props }: Props) {
+export default function Section({ name, withoutTitle = false, condensed = false, subHeading, className, children, ...props }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { setSection } = useContext(SectionContext);
 
@@ -33,7 +34,8 @@ export default function Section({ name, withoutTitle = false, condensed = false,
 
   return (
     <section id={name?.toLowerCase()} ref={sectionRef} className={cn("min-h-screen w-full", condensed ? "py-0" : "py-24", className)} {...props}>
-      {!withoutTitle && <h6 className={`${rubik.className} mb-4 pr-6 text-end text-xl font-bold uppercase tracking-widest text-subtle`}>{name}</h6>}
+      {!withoutTitle && <h4 className={`${rubik.className} ${subHeading ? "mb-1" : "mb-4"} pr-6 text-end text-4xl font-bold uppercase tracking-widest text-subtle`}>{name}</h4>}
+      {subHeading && <p className="text-end pr-7 w-full max-w-80 ml-auto text-muted mb-4">{subHeading}</p>}
       {children}
     </section>
   );

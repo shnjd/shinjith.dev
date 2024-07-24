@@ -5,6 +5,8 @@ import SocialLinks from "./SocialLinks";
 import { useEffect, useRef, useState } from "react";
 import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandTwitter } from "@tabler/icons-react";
 import Devto from "@/components/icons/devto";
+import Link from "@/components/base/Link";
+import NextLink from 'next/link'
 
 export default function Contact() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -44,10 +46,10 @@ export default function Contact() {
       >
         <h3 className="max-w-[500px] text-center text-3xl font-bold text-subtle sm:text-4xl md:text-5xl">Tell me about your next project</h3>
 
-        <button className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-2.5 font-medium text-primary-fg shadow-xl transition-all hover:bg-primary/90 hover:shadow-md sm:text-lg">
+        <NextLink href="mailto:shinjithkanhangad@gmail.com" className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-2.5 font-medium text-primary-fg shadow-xl transition-all hover:bg-primary/90 hover:shadow-md sm:text-lg">
           Get in touch
           <IconMailShare size={20} />
-        </button>
+        </NextLink>
 
         <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-4 sm:hidden">
           <a href="https://github.com/shinjith-dev" target="_blank" rel="noopener noreferrer">

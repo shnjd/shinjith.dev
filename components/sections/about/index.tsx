@@ -6,16 +6,20 @@ import Technologies from "./Technologies";
 
 export default function About() {
   return (
-    <Section name="About">
+    <Section name="About" subHeading="A Glimpse Into Me">
       <div className="about-image-grad h-full space-y-8 px-40 py-20 text-subtle">
         <div className="flex items-center gap-8">
-          <div className="group relative h-[400px] w-[320px] shrink-0 overflow-hidden rounded-[14px] border-l-2 border-t-2 border-surface">
-            <Image
-              alt="Shinjith P R"
-              src={shinjithdev}
-              fill
-              className="saturate-50 transition-all duration-500 ease-out group-hover:scale-105 group-hover:saturate-100"
-            />
+          <div className="group overflow-hidden rounded-2xl hover:rounded-3xl shrink-0 transition-all duration-500">
+            <div className="relative p-0.5 bg-surface/45 backdrop-blur-lg backdrop-saturate-200" >
+              <div className="relative h-[400px] w-[320px] shrink-0 overflow-hidden rounded-[14px] group-hover:rounded-[22px] duration-500 transition-all">
+                <Image
+                  alt="Shinjith P R"
+                  src={shinjithdev}
+                  fill
+                  className="saturate-50 transition-all duration-500 ease-out group-hover:scale-105 group-hover:saturate-100"
+                />
+              </div>
+            </div>
           </div>
 
           <p className="flex flex-col gap-4">
@@ -66,10 +70,10 @@ export default function About() {
           </ul>
         </div>
         <div>
-          <p>What else do I know?</p>
+          <p className="text-secondary-fg py-0.5 border-b border-secondary-fg dark:border-secondary dark:text-secondary w-fit">What else do I know?</p>
           <Technologies />
         </div>
-      </div>
-    </Section>
+      </div >
+    </Section >
   );
 }
