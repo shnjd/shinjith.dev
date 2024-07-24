@@ -22,7 +22,7 @@ export default function About() {
             </div>
           </div>
 
-          <p className="flex flex-col gap-4">
+          <p className="flex grow flex-col gap-4">
             <span>
               I am a{" "}
               <span className="text-secondary-fg dark:text-secondary">
@@ -55,9 +55,9 @@ export default function About() {
             <span>
               <span className="font-medium">Say hello</span> on Instagram{" "}
               <Link
-                href={"https://www.instagram.com/shinjith_"}
-                className="inline text-inherit text-secondary-fg transition-all hover:underline dark:text-secondary dark:hover:text-secondary/80"
-                underline={false}
+                href="https://www.instagram.com/shinjith_"
+                secondary
+                className="text-secondary-fg dark:text-secondary"
               >
                 @shinjith_
               </Link>
@@ -66,8 +66,8 @@ export default function About() {
               I was recently working on a project called{" "}
               <Link
                 href={"https://pomtick.pages.dev"}
-                className="inline text-inherit text-secondary-fg transition-all hover:underline dark:text-secondary dark:hover:text-secondary/80"
-                underline={false}
+                secondary
+                className="text-secondary-fg dark:text-secondary"
               >
                 Pomtick
               </Link>

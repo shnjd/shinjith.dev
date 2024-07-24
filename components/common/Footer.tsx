@@ -3,7 +3,7 @@ import Link from "../base/Link";
 export default function Footer() {
   return (
     <footer className="relative z-10">
-      <div className="container mx-auto flex w-full flex-col-reverse items-center justify-between gap-4 px-5 py-4 sm:flex-row">
+      <div className="container flex w-full flex-col-reverse items-center justify-between gap-4 px-5 py-4 sm:flex-row">
         <p className="text-center text-xs text-muted sm:text-sm">
           &copy; 2024, All rights reserved.
         </p>
