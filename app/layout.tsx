@@ -4,6 +4,7 @@ import Navbar from "@/components/common/navbar";
 import { rubik } from "@/lib/fonts";
 import Background from "@/components/common/Background";
 import Footer from "@/components/common/Footer";
+import { ReactLenis } from "@/lib/lenis";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${rubik.className} max-w-screen relative min-h-screen w-full overflow-x-hidden bg-background text-base text-fg`}
+        className={`${rubik.className} max-w-screen relative h-full min-h-screen w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
       >
-        <Background />
-        <Navbar />
-        <main className="container relative z-10 mx-auto">{children}</main>
-        <Footer />
+        <ReactLenis root>
+          <Background />
+          <Navbar />
+          <main className="container relative z-10 mx-auto">{children}</main>
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );

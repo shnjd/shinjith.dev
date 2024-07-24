@@ -77,7 +77,7 @@ export default function About() {
           </p>
         </div>
         <div>
-          <p>Here are some of the technologies I've lately worked with:</p>
+          <p>Here are some of the technologies I&apos;ve lately worked with:</p>
           <ul className="about-tech-list my-4 grid grid-cols-3 gap-4">
             <li>JavaScript</li>
             <li>TypeScript</li>

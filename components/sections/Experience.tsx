@@ -47,7 +47,7 @@ export default function Experience() {
           <p className="max-w-[800px]">
             I am eager to join an organization where I can develop my skills,
             make significant contributions, and enthusiastically support and
-            advance the organization's vision.
+            advance the organization&apos;s vision.
           </p>
 
           <Link

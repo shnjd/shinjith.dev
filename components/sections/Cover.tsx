@@ -19,7 +19,7 @@ export default function Cover() {
         <p className="text-3xl text-subtle">Web Developer,</p>
         <p className="max-w-[600px] text-sm font-normal text-muted sm:text-base">
           Who specializes in creating pixel-perfect, engaging, and accessible
-          digital experiences. Currently, I'm concentrating on developing
+          digital experiences. Currently, I&apos;m concentrating on developing
           visually appealing, useful web projects and learning new things.
         </p>
       </div>
