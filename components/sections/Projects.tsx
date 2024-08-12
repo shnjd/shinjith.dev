@@ -1,4 +1,5 @@
 import { TProject } from "@/lib/types";
+import { TProject } from "@/lib/types";
 import Section from "../base/Section";
 import Image from "next/image";
 import { projects } from "@/portfolio.json";
