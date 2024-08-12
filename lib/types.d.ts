@@ -1,4 +1,5 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ReactNode } from "react";
 
 export interface TProject {
   id: string;
@@ -9,4 +10,10 @@ export interface TProject {
   image: string | StaticImport;
   live_url: string;
   github_url: string;
+}
+
+export interface Service {
+  icon: ReactNode | string;
+  title: string;
+  description: string;
 }

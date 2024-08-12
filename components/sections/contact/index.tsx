@@ -10,7 +10,6 @@ import {
   IconBrandTwitter,
 } from "@tabler/icons-react";
 import Devto from "@/components/icons/devto";
-import Link from "@/components/base/Link";
 import NextLink from "next/link";
 
 export default function Contact() {

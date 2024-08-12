@@ -1,8 +1,7 @@
 import { TProject } from "@/lib/types";
-import { TProject } from "@/lib/types";
 import Section from "../base/Section";
 import Image from "next/image";
-import { projects } from "@/portfolio.json";
+import porfolio from "@/portfolio.json";
 import Link from "../base/Link";
 import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
 import Tag from "../base/Tag";
@@ -68,7 +67,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="group w-[30%] overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/80 via-surface/50 to-primary/20 p-5 backdrop-blur-lg backdrop-saturate-200">
+    <div className="group w-[31%] overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/80 via-surface/50 to-primary/20 p-5 backdrop-blur-lg backdrop-saturate-200">
       <div className={`mb-4 flex justify-end gap-4`}>
         <Link href={project.github_url} secondary underline={false}>
           <IconBrandGithub size={20} />
@@ -98,6 +97,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   );
 };
 
+const projects = porfolio.projects;
+
 export default function Projects() {
   return (
     <Section name="Projects" subHeading="Imagination in Action">
@@ -118,7 +119,7 @@ export default function Projects() {
           Other noteworthy projects
         </p>
 
-        <div className="project-cards-grad flex flex-wrap justify-between gap-6 py-8">
+        <div className="project-cards-grad flex flex-wrap justify-between py-8 xl:gap-4 2xl:gap-6">
           {projects
             .filter((p) => !p.featured)
             .map((p) => (

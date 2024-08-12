@@ -26,7 +26,7 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
       initial={{ y: -10, x: 40, opacity: 0 }}
       whileInView={{ y: 0, x: 0, opacity: 1 }}
       transition={{ delay: 0.4 + index * 0.1, type: "tween" }}
-      className="group my-1"
+      className="group"
       style={{ opacity }}
     >
       <Link
@@ -42,7 +42,7 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
         className="flex items-center gap-2"
       >
         <div
-          className={`h-0.5 rounded-md bg-subtle transition-all duration-300 ${active ? "w-6" : "w-2 group-hover:w-6"}`}
+          className={`h-0.5 rounded-md bg-subtle transition-all duration-300 ${active ? "w-2.5" : "w-1 group-hover:w-2"}`}
         />
         <div className="text-sm text-fg transition-all duration-300 group-hover:text-fg/90">
           {nav}
@@ -75,7 +75,7 @@ function NavigationMenu() {
         haveBg ? "top-16" : "top-12"
       }`}
     >
-      <ul className="hidden transition-all lg:block">
+      <ul className="hidden space-y-2 transition-all lg:block">
         <AnimatePresence>
           {navs.map((nav, index) => (
             <NavigationMenuItem
