@@ -1,6 +1,5 @@
 import Section from "@/components/base/Section";
 import Image from "next/image";
-import shinjithdev from "@/assets/shinjith-dev.jpg";
 import Link from "@/components/base/Link";
 import Technologies from "./Technologies";
 
@@ -14,7 +13,7 @@ export default function About() {
               <div className="relative h-[400px] w-[320px] shrink-0 overflow-hidden rounded-[14px] transition-all duration-500 group-hover:rounded-[22px]">
                 <Image
                   alt="Shinjith P R"
-                  src={shinjithdev}
+                  src="/shinjith.jpg"
                   fill
                   className="saturate-50 transition-all duration-500 ease-out group-hover:scale-105 group-hover:saturate-100"
                 />
