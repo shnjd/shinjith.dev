@@ -22,21 +22,18 @@ export default function About() {
             </div>
           </div>
 
-          <p className="flex grow flex-col gap-4">
+          <p className="flex grow flex-col gap-6">
             <span>
               I am a{" "}
               <span className="text-secondary-fg dark:text-secondary">
                 software engineer
               </span>{" "}
-              with over two years of experience designing and developing
-              interactive, accessible software solutions based on cutting-edge
-              technologies and libraries.
+              with over two years of experience creating interactive and
+              accessible solutions using modern technologies. While I specialize
+              in designing visually appealing, user-friendly web interfaces, I
+              like working on a variety of projects.
             </span>
-            <span>
-              I specialize in designing visually appealing, user-friendly web
-              interfaces, but I also like working on a wide range of different
-              goods.
-            </span>
+
             <span>
               <span className="text-secondary-fg dark:text-secondary">
                 Web developer
