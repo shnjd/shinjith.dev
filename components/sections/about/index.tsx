@@ -5,7 +5,7 @@ import Technologies from "./Technologies";
 export default function About() {
   return (
     <Section name="About" subHeading="A Glimpse Into Me" className="min-h-fit">
-      <div className="h-full space-y-8 py-4 text-sm text-subtle sm:space-y-10 sm:py-5 md:space-y-12 md:py-6 lg:py-8">
+      <div className="h-full space-y-8 py-4 text-sm text-subtle sm:space-y-10 sm:py-5 sm:text-base md:space-y-12 md:py-6 lg:py-8">
         <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <p className="flex grow flex-col gap-3 md:gap-4">
             <span>
