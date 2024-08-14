@@ -43,7 +43,7 @@ export default function Contact() {
       limitOnXl={false}
       withoutTitle
       condensed
-      className="contact-bg relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px]"
+      className="contact-bg relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]"
     >
       <div
         className={`contact-lines h-0.5 w-full origin-right rounded-full ${progress === 1 && "contact-line-1"}`}
@@ -52,9 +52,9 @@ export default function Contact() {
       <div
         ref={targetRef}
         style={{ transform: `translateY(-${progress * 40}px)` }}
-        className="flex h-full max-h-[60vh] min-h-[400px] w-full flex-col items-center justify-center gap-4 transition-all sm:min-h-[500px] sm:gap-6 md:min-h-[600px] md:gap-8"
+        className="flex h-full max-h-[60vh] min-h-[300px] w-full flex-col items-center justify-center gap-4 transition-all sm:min-h-[400px] sm:gap-6 md:min-h-[500px] md:gap-8 lg:min-h-[600px]"
       >
-        <h3 className="max-w-[500px] text-center text-3xl font-bold text-subtle sm:text-4xl md:text-5xl">
+        <h3 className="max-w-[250px] text-center text-2xl font-bold text-subtle sm:max-w-xs sm:text-3xl md:max-w-sm md:text-4xl lg:max-w-md lg:text-5xl">
           Tell me about your next project
         </h3>
 
@@ -66,7 +66,7 @@ export default function Contact() {
           <IconMailShare size={20} />
         </NextLink>
 
-        <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-4 sm:hidden">
+        <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-4 sm:hidden">
           <a
             href="https://github.com/shinjith-dev"
             target="_blank"
