@@ -60,7 +60,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
 
   return (
     <div
-      className={` ${scrollProgress != 0 ? "absolute -top-[80px] left-0 opacity-90" : "fixed bottom-0 mr-2 opacity-80 sm:right-[calc(50vw-320px)] md:right-[calc(50vw-384px)] lg:right-[calc(50vw-512px)] xl:right-[calc(50vw-640px)] 2xl:right-[calc(50vw-768px)]"} right-0 z-50 hidden flex-col items-center gap-4 sm:flex`}
+      className={` ${scrollProgress != 0 ? "absolute -top-[80px] left-0 opacity-90" : "fixed bottom-0 mr-2 opacity-80 sm:right-[calc(50vw-320px)] md:right-[calc(50vw-384px)] md:mr-3 lg:right-[calc(50vw-512px)] lg:mr-5 xl:right-[calc(50vw-640px)] xl:mr-7 2xl:right-[calc(50vw-768px)] 2xl:mr-9"} right-0 z-50 hidden flex-col items-center gap-4 sm:flex`}
     >
       <div className="relative flex flex-col gap-2.5 text-lg transition-all sm:gap-3 sm:text-xl md:text-2xl">
         <a

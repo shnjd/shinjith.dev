@@ -7,7 +7,7 @@ import Services from "@/components/sections/Services";
 
 export default function Home() {
   return (
-    <div className="h-full w-full px-5 text-fg">
+    <div className="h-full w-full text-fg">
       <Cover />
       <About />
       <Experience />

@@ -59,7 +59,7 @@ export default function Section({
       className={cn(
         "min-h-screen w-full",
         limitOnXl && "mx-auto max-w-screen-xl",
-        condensed ? "py-0" : "s:py-16 py-12 md:py-20 lg:py-24",
+        condensed ? "py-0" : "py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24",
         className,
       )}
       {...props}
