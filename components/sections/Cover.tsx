@@ -26,7 +26,7 @@ export default function Cover() {
         </h2>
       </div>
 
-      <div className="absolute bottom-6 flex flex-col items-center p-3 text-center sm:bottom-8 md:bottom-10 lg:bottom-12 xl:bottom-16">
+      <div className="absolute bottom-16 flex flex-col items-center p-3 text-center">
         <div className="relative mb-3 h-28 w-28 xl:h-40 xl:w-40">
           <Image
             src="/shinjith.jpg"
