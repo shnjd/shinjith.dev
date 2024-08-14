@@ -14,9 +14,9 @@ type ProjectProps = {
 const Project = ({ project, toRight }: ProjectProps) => {
   return (
     <div
-      className={`group flex items-center ${toRight ? "project-grad-right flex-row-reverse text-start" : "project-grad-left flex-row text-end"}`}
+      className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
     >
-      <div className="relative aspect-video w-1/2 shrink-0 basis-1/2 overflow-hidden rounded-md transition-all duration-500 group-hover:rounded-xl">
+      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-all duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
         <Image
           src={project.image}
           alt={project.name}
@@ -25,17 +25,21 @@ const Project = ({ project, toRight }: ProjectProps) => {
         />
       </div>
 
-      <div className={`space-y-3 ${toRight ? "-mr-20" : "-ml-20"}`}>
-        <h4 className="text-2xl font-bold">{project.name}</h4>
+      <div
+        className={`-mt-[10vw] max-w-lg space-y-3 sm:max-w-xl lg:mt-0 lg:max-w-none ${toRight ? "lg:-mr-20" : "lg:-ml-20"}`}
+      >
+        <h4 className="hidden text-lg font-bold sm:text-xl md:text-2xl lg:block">
+          {project.name}
+        </h4>
         <div
-          className={`h-fit space-y-3 rounded-md border border-overlay/75 from-background/80 via-surface/50 to-primary/20 p-5 text-subtle shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-sm ${toRight ? "bg-gradient-to-bl" : "bg-gradient-to-br"}`}
+          className={`h-fit space-y-2 rounded-md border border-overlay/75 from-background/80 via-surface/50 to-primary/20 p-3 text-sm text-subtle shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-sm sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-gradient-to-bl" : "bg-gradient-to-br"}`}
         >
           {project.description.map((pd, index) => (
             <p key={`${project.name}-desc-${index}`}>{pd}</p>
           ))}
 
           <div
-            className={`flex gap-4 ${toRight ? "justify-start" : "justify-end"}`}
+            className={`hidden justify-center gap-4 sm:flex ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
           >
             <Link href={project.github_url} secondary underline={false}>
               <IconBrandGithub size={20} />
@@ -48,13 +52,23 @@ const Project = ({ project, toRight }: ProjectProps) => {
         </div>
 
         <div
-          className={`flex flex-wrap gap-2 ${toRight ? "justify-start" : "justify-end"}`}
+          className={`flex flex-wrap justify-center gap-2 ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
         >
           {project.technologies.map((pt) => (
             <Tag key={pt} className="shadow-sm">
               {pt}
             </Tag>
           ))}
+        </div>
+
+        <div className={`flex justify-center gap-8 sm:hidden`}>
+          <Link href={project.github_url} secondary underline={false}>
+            <IconBrandGithub size={20} />
+          </Link>
+
+          <Link href={project.live_url} secondary underline={false}>
+            <IconExternalLink size={20} />
+          </Link>
         </div>
       </div>
     </div>
@@ -67,7 +81,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="group w-[31%] overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/80 via-surface/50 to-primary/20 p-5 backdrop-blur-lg backdrop-saturate-200">
+    <div className="group overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/80 via-surface/50 to-primary/20 p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
       <div className={`mb-4 flex justify-end gap-4`}>
         <Link href={project.github_url} secondary underline={false}>
           <IconBrandGithub size={20} />
@@ -78,15 +92,17 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </Link>
       </div>
 
-      <h4 className="mb-3 text-2xl font-bold">{project.name}</h4>
+      <h4 className="mb-2 text-lg font-bold sm:mb-3 sm:text-xl md:text-2xl">
+        {project.name}
+      </h4>
 
-      <div className="mb-4 space-y-3 text-muted">
+      <div className="mb-4 space-y-2 text-sm text-muted sm:space-y-3 sm:text-base">
         {project.description.map((pd, index) => (
           <p key={`${project.name}-desc-${index}`}>{pd}</p>
         ))}
       </div>
 
-      <div className={`flex flex-wrap gap-2`}>
+      <div className={`flex flex-wrap gap-1.5 sm:gap-2`}>
         {project.technologies.map((pt) => (
           <Tag key={pt} className="shadow-sm">
             {pt}
@@ -102,12 +118,12 @@ const projects = porfolio.projects;
 export default function Projects() {
   return (
     <Section name="Projects" subHeading="Imagination in Action">
-      <div className="prjects-grad py-8">
-        <p className="w-fit border-b border-secondary-fg py-0.5 text-xl font-medium text-secondary-fg dark:border-secondary dark:text-secondary">
+      <div className="prjects-grad py-4 sm:py-5 md:py-6 lg:py-8">
+        <p className="w-fit border-b border-secondary-fg py-0.5 text-sm font-medium text-secondary-fg sm:text-base md:text-lg lg:text-xl dark:border-secondary dark:text-secondary">
           Some of my best projects
         </p>
 
-        <ul className="mb-28 mt-8 space-y-28">
+        <ul className="mx-auto mb-12 mt-4 space-y-8 sm:mb-14 sm:mt-5 sm:max-w-screen-sm sm:space-y-10 md:mb-16 md:mt-6 md:space-y-12 lg:mb-20 lg:ml-0 lg:mt-8 lg:max-w-none lg:space-y-20 xl:mb-24 xl:space-y-24 2xl:mb-28 2xl:space-y-28">
           {projects
             .filter((p) => p.featured)
             .map((p, index) => (
@@ -115,11 +131,11 @@ export default function Projects() {
             ))}
         </ul>
 
-        <p className="mt-24 w-fit border-b border-secondary-fg py-0.5 text-xl font-medium text-secondary-fg dark:border-secondary dark:text-secondary">
+        <p className="mx-auto w-fit border-b border-secondary-fg py-0.5 text-sm font-medium text-secondary-fg sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none dark:border-secondary dark:text-secondary">
           Other noteworthy projects
         </p>
 
-        <div className="project-cards-grad flex flex-wrap justify-between py-8 xl:gap-4 2xl:gap-6">
+        <div className="project-cards-grad mx-auto mt-4 flex flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-screen-sm sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
           {projects
             .filter((p) => !p.featured)
             .map((p) => (
