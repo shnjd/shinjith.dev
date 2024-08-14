@@ -3,39 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --col-background: 0 0 100;
-  --col-surface: 177 48 86;
-  --col-overlay: 174 47 90;
-  --col-muted: 200 10 33;
-  --col-subtle: 198 17 19;
-  --col-fg: 198 17 12;
-  --col-accent: 175 62 87;
-  --col-accent-fg: 180 10 16;
-  --col-primary: 165 12 20;
-  --col-primary-fg: 180 4 92;
-  --col-secondary: 12 77 68;
-  --col-secondary-fg: 15 36 8;
-  --col-destructive: 0 100 30;
-  --col-destructive-fg: 0 37 92;
-  --col-border: 175 62 87;
+  --col-background: 0 0% 100%;
+  --col-surface: 177 48% 86%;
+  --col-overlay: 174 47% 90%;
+  --col-muted: 200 10% 33%;
+  --col-subtle: 198 17% 19%;
+  --col-fg: 198 17% 12%;
+  --col-accent: 175 62% 87%;
+  --col-accent-fg: 180 10% 16%;
+  --col-primary: 165 12% 20%;
+  --col-primary-fg: 180 4% 92%;
+  --col-secondary: 12 77% 68%;
+  --col-secondary-fg: 15 36% 8%;
+  --col-destructive: 0 100% 30%;
+  --col-destructive-fg: 0 37% 92%;
+  --col-border: 175 62% 87%;
 }
 
 .dark {
-  --col-background: 212 55 12;
-  --col-surface: 217 37 18;
-  --col-overlay: 217 26 28;
-  --col-muted: 0 0 72;
-  --col-subtle: 0 0 88;
-  --col-fg: 0 0 96;
-  --col-accent: 210 37 37;
-  --col-accent-fg: 0 0 100;
-  --col-primary: 174 42 65;
-  --col-primary-fg: 180 20 6;
-  --col-secondary: 12 77 68;
-  --col-secondary-fg: 15 36 8;
-  --col-destructive: 0 100 30;
-  --col-destructive-fg: 0 37 92;
-  --col-border: 217 37 18;
+  --col-background: 212 55% 12%;
+  --col-surface: 217 37% 18%;
+  --col-overlay: 217 26% 28%;
+  --col-muted: 0 0% 72%;
+  --col-subtle: 0 0% 88%;
+  --col-fg: 0 0% 96%;
+  --col-accent: 210 37% 37%;
+  --col-accent-fg: 0 0% 100%;
+  --col-primary: 174 42% 65%;
+  --col-primary-fg: 180 20% 6%;
+  --col-secondary: 12 77% 68%;
+  --col-secondary-fg: 15 36% 8%;
+  --col-destructive: 0 100% 30%;
+  --col-destructive-fg: 0 37% 92%;
+  --col-border: 217 37% 18%;
 }
 
 body {
