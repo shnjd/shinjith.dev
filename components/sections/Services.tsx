@@ -43,7 +43,7 @@ function Card({ card, index = 0 }: CardProps) {
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       transition={{ delay: 0.3 * index * 0.2, type: "tween" }}
       viewport={{ once: true }}
-      className="relative z-10 flex h-[min(85vw,210px)] flex-col justify-end gap-1 rounded-lg border border-border bg-gradient-to-tr from-background/40 via-surface/20 to-primary/5 p-3 pt-8 shadow-sm backdrop-blur-lg backdrop-saturate-200 sm:p-5"
+      className="relative z-10 flex flex-col justify-end gap-1 rounded-lg border border-border bg-gradient-to-tr from-background/40 via-surface/20 to-primary/5 p-3 pt-12 shadow-sm backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
     >
       <div className="mb-2 text-lg text-subtle transition-all sm:text-xl md:text-2xl">
         {card.icon}
@@ -66,7 +66,7 @@ export default function Services() {
       subHeading="Bringing Your Dreams to Life"
       className="min-h-fit w-full"
     >
-      <div className="mx-auto grid max-w-screen-xl grid-cols-2 gap-2 pb-20 pt-8 sm:gap-4 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-2 pb-4 pt-4 sm:gap-4 sm:pb-6 sm:pt-5 md:grid-cols-2 md:pb-6 md:pt-6 lg:grid-cols-4 lg:pb-10 lg:pt-8 xl:pb-16 2xl:pb-20">
         <AnimatePresence>
           {services.map((card, index) => (
             <Card card={card} key={card.title} index={index} />
