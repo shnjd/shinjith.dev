@@ -1,28 +1,13 @@
 import Section from "@/components/base/Section";
-import Image from "next/image";
-import shinjithdev from "@/assets/shinjith-dev.jpg";
 import Link from "@/components/base/Link";
 import Technologies from "./Technologies";
 
 export default function About() {
   return (
-    <Section name="About" subHeading="A Glimpse Into Me">
-      <div className="about-image-grad h-full space-y-8 px-40 py-20 text-subtle">
+    <Section name="About" subHeading="A Glimpse Into Me" className="min-h-fit">
+      <div className="h-full space-y-12 py-8 text-subtle">
         <div className="flex items-center gap-8">
-          <div className="group shrink-0 overflow-hidden rounded-2xl transition-all duration-500 hover:rounded-3xl">
-            <div className="relative bg-surface/45 p-0.5 backdrop-blur-lg backdrop-saturate-200">
-              <div className="relative h-[400px] w-[320px] shrink-0 overflow-hidden rounded-[14px] transition-all duration-500 group-hover:rounded-[22px]">
-                <Image
-                  alt="Shinjith P R"
-                  src={shinjithdev}
-                  fill
-                  className="saturate-50 transition-all duration-500 ease-out group-hover:scale-105 group-hover:saturate-100"
-                />
-              </div>
-            </div>
-          </div>
-
-          <p className="flex grow flex-col gap-6">
+          <p className="flex grow flex-col gap-4">
             <span>
               I am a{" "}
               <span className="text-secondary-fg dark:text-secondary">

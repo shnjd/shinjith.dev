@@ -10,10 +10,10 @@ export default function Experience() {
     <Section
       name="Experience"
       subHeading="Waves of My Work"
-      className="min-h-[80vh]"
+      className="min-h-fit"
     >
-      <div className="px-40 py-20">
-        <div className="my-8 pr-6">
+      <div className="py-8">
+        <div className="my-8">
           <div className="contact-lines contact-line-1 h-0.5 rounded-full" />
           <div className="flex gap-8 py-7">
             <h3 className="shrink-0 text-2xl font-bold uppercase text-subtle">

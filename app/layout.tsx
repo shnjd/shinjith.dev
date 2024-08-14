@@ -5,6 +5,7 @@ import { rubik } from "@/lib/fonts";
 import Background from "@/components/common/Background";
 import Footer from "@/components/common/Footer";
 import { ReactLenis } from "@/lib/lenis";
+import SectionContextProvider from "@/components/contexts/SectionContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,10 +23,12 @@ export default function RootLayout({
         className={`${rubik.className} max-w-screen relative h-full min-h-screen w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
       >
         <ReactLenis root>
-          <Background />
-          <Navbar />
-          <main className="container relative z-10">{children}</main>
-          <Footer />
+          <SectionContextProvider>
+            <Background />
+            <Navbar />
+            <main className="container relative z-10">{children}</main>
+            <Footer />
+          </SectionContextProvider>
         </ReactLenis>
       </body>
     </html>

@@ -1,5 +1,3 @@
-import SectionContextProvider from "@/components/contexts/SectionContext";
-import NavigationMenu from "@/components/home/Navigator";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Cover from "@/components/sections/Cover";
@@ -9,16 +7,13 @@ import Services from "@/components/sections/Services";
 
 export default function Home() {
   return (
-    <SectionContextProvider>
-      <div className="h-full w-full px-5 text-fg">
-        <NavigationMenu />
-        <Cover />
-        <About />
-        <Experience />
-        <Projects />
-        <Services />
-        <Contact />
-      </div>
-    </SectionContextProvider>
+    <div className="h-full w-full px-5 text-fg">
+      <Cover />
+      <About />
+      <Experience />
+      <Projects />
+      <Services />
+      <Contact />
+    </div>
   );
 }
