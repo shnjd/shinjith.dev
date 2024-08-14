@@ -78,7 +78,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </Link>
       </div>
 
-      <h4 className="mb-1 text-2xl font-bold">{project.name}</h4>
+      <h4 className="mb-3 text-2xl font-bold">{project.name}</h4>
 
       <div className="mb-4 space-y-3 text-muted">
         {project.description.map((pd, index) => (
@@ -102,12 +102,12 @@ const projects = porfolio.projects;
 export default function Projects() {
   return (
     <Section name="Projects" subHeading="Imagination in Action">
-      <div className="prjects-grad px-40 py-20">
+      <div className="prjects-grad py-8">
         <p className="w-fit border-b border-secondary-fg py-0.5 text-xl font-medium text-secondary-fg dark:border-secondary dark:text-secondary">
           Some of my best projects
         </p>
 
-        <ul className="my-12 space-y-28">
+        <ul className="mb-28 mt-8 space-y-28">
           {projects
             .filter((p) => p.featured)
             .map((p, index) => (

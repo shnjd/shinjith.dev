@@ -40,6 +40,7 @@ export default function Contact() {
   return (
     <Section
       name="Contact"
+      limitOnXl={false}
       withoutTitle
       condensed
       className="contact-bg relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px]"

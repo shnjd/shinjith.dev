@@ -27,9 +27,10 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
 
   return (
     <motion.li
-      initial={{ y: -10, x: 40, opacity: 0 }}
-      whileInView={{ y: 0, x: 0, opacity: 1 }}
-      transition={{ delay: index * 0.1, type: "tween" }}
+      initial={{ y: -20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      exit={{ y: -20, opacity: 0 }}
+      transition={{ delay: index * 0.05, type: "tween" }}
       className="group"
       style={{ opacity }}
     >
@@ -44,7 +45,7 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
           }
         }}
         alwaysUnderline={active}
-        className="flex items-center gap-2"
+        className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/75 hover:text-accent-fg lg:px-0 lg:hover:bg-transparent lg:hover:text-fg"
       >
         <div className="text-sm text-fg transition-all duration-300 group-hover:text-fg/90">
           {nav}
@@ -96,16 +97,16 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-[999] mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"} ${menu && "p-3"}`}
+      className={`fixed left-0 top-0 z-[999] mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"}`}
     >
       <div
         ref={navRef}
-        className={`container relative z-[999] w-full p-5 transition-all ${menu ? "border-boder/40 navbar-gradient rounded-lg border backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
+        className={`container relative z-[999] w-full p-5 transition-all ${menu ? "navbar-gradient rounded-b-2xl bg-surface/50 backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
       >
         <div
-          className={`flex w-full items-center ${haveBg ? "justify-between" : "justify-end"}`}
+          className={`flex w-full items-center ${haveBg || menu ? "justify-between" : "justify-end"}`}
         >
-          {haveBg && (
+          {(haveBg || menu) && (
             <>
               <NextLink
                 href="/"
@@ -130,7 +131,7 @@ const Navbar = () => {
             </>
           )}
 
-          <ul className="hidden items-center gap-4 sm:flex">
+          <ul className="hidden items-center gap-4 lg:flex">
             <li>
               <Link download="resume.pdf" href="https://resume.shinjith.dev">
                 Resume
@@ -148,45 +149,52 @@ const Navbar = () => {
           <MenuButton
             isClosed={!menu}
             onClick={() => setMenu((prev) => !prev)}
-            className="sm:hidden"
+            className="lg:hidden"
           />
         </div>
 
         <div
-          className={`flex h-fit w-full items-end justify-between gap-4 pt-4 transition-all sm:hidden ${menu ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
+          className={`h-full w-full pt-6 transition-all lg:hidden ${menu ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
         >
-          <ul className="flex w-full flex-col gap-3">
-            <li>
-              <Link
-                download="resume.pdf"
-                href="https://resume.shinjith.dev"
-                className="w-full items-start rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
-                underline={false}
-              >
-                Resume
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"https://notes.shinjith.dev"}
-                className="w-full items-start rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
-                underline={false}
-              >
-                Notes
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/projects"}
-                className="w-full items-start rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
-                underline={false}
-              >
-                Projects
-              </Link>
-            </li>
+          <ul className="grid w-full grid-cols-1 place-items-stretch gap-3 sm:grid-cols-2">
+            <AnimatePresence>
+              {navs.map((nav, index) => (
+                <NavigationMenuItem
+                  key={nav}
+                  nav={nav}
+                  active={active === nav}
+                  activeIndex={navs.indexOf(active ?? "")}
+                  index={index}
+                />
+              ))}
+            </AnimatePresence>
           </ul>
 
-          <ModeSwitch />
+          <hr className="my-4 border-b border-border" />
+
+          <div className="flex w-full items-end gap-2">
+            <ul className="flex w-full flex-col gap-3">
+              <li>
+                <Link
+                  download="resume.pdf"
+                  href="https://resume.shinjith.dev"
+                  className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/50 hover:text-accent-fg"
+                >
+                  Resume
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"https://notes.shinjith.dev"}
+                  className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
+                >
+                  Notes
+                </Link>
+              </li>
+            </ul>
+
+            <ModeSwitch />
+          </div>
         </div>
       </div>
     </header>

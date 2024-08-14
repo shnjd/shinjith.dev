@@ -52,7 +52,7 @@ function Card({ card, index = 0 }: CardProps) {
       <div className="text-sm font-medium text-fg transition-all sm:text-base md:text-lg">
         {card.title}
       </div>
-      <div className="text-xs text-subtle transition-all sm:text-sm">
+      <div className="text-xs text-muted transition-all sm:text-sm">
         {card.description}
       </div>
     </motion.div>
@@ -66,7 +66,7 @@ export default function Services() {
       subHeading="Bringing Your Dreams to Life"
       className="min-h-fit w-full"
     >
-      <div className="mx-auto grid max-w-screen-xl grid-cols-2 gap-2 pb-24 pt-16 sm:gap-4 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-screen-xl grid-cols-2 gap-2 pb-20 pt-8 sm:gap-4 lg:grid-cols-4">
         <AnimatePresence>
           {services.map((card, index) => (
             <Card card={card} key={card.title} index={index} />

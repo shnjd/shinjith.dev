@@ -14,6 +14,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   name: TSection;
   withoutTitle?: boolean;
+  limitOnXl?: boolean;
   condensed?: boolean;
   subHeading?: string;
 }
@@ -22,6 +23,7 @@ export default function Section({
   name,
   withoutTitle = false,
   condensed = false,
+  limitOnXl = true,
   subHeading,
   className,
   children,
@@ -56,6 +58,7 @@ export default function Section({
       ref={sectionRef}
       className={cn(
         "min-h-screen w-full",
+        limitOnXl && "mx-auto max-w-screen-xl",
         condensed ? "py-0" : "py-24",
         className,
       )}
@@ -63,15 +66,13 @@ export default function Section({
     >
       {!withoutTitle && (
         <h4
-          className={`${rubik.className} ${subHeading ? "mb-1" : "mb-4"} pr-6 text-end text-4xl font-bold uppercase tracking-widest text-subtle`}
+          className={`${rubik.className} ${subHeading ? "mb-1" : "mb-4"} text-4xl font-bold uppercase tracking-widest`}
         >
           {name}
         </h4>
       )}
       {subHeading && (
-        <p className="mb-4 ml-auto w-full max-w-80 pr-7 text-end text-muted">
-          {subHeading}
-        </p>
+        <p className="mb-4 w-full max-w-80 text-subtle">{subHeading}</p>
       )}
       {children}
     </section>
