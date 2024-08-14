@@ -59,20 +59,22 @@ export default function Section({
       className={cn(
         "min-h-screen w-full",
         limitOnXl && "mx-auto max-w-screen-xl",
-        condensed ? "py-0" : "py-24",
+        condensed ? "py-0" : "s:py-16 py-12 md:py-20 lg:py-24",
         className,
       )}
       {...props}
     >
       {!withoutTitle && (
         <h4
-          className={`${rubik.className} ${subHeading ? "mb-1" : "mb-4"} text-4xl font-bold uppercase tracking-widest`}
+          className={`${rubik.className} ${subHeading ? "sm:mb-0.5 md:mb-1" : "sm:mb-1 md:mb-2 lg:mb-3 xl:mb-4"} text-lg font-bold uppercase tracking-widest sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl`}
         >
           {name}
         </h4>
       )}
       {subHeading && (
-        <p className="mb-4 w-full max-w-80 text-subtle">{subHeading}</p>
+        <p className="w-full max-w-80 text-sm text-subtle sm:mb-1 sm:text-base md:mb-2 lg:mb-3 xl:mb-4">
+          {subHeading}
+        </p>
       )}
       {children}
     </section>

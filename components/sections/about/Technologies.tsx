@@ -261,7 +261,7 @@ export default function Technologies() {
           key={tech.name}
           aria-label={tech.name}
           title={tech.name}
-          className="group mx-8 flex items-center gap-2 text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+          className="group mx-4 flex items-center gap-1.5 text-sm text-subtle transition-all hover:text-secondary-fg sm:mx-6 md:mx-8 md:gap-2 md:text-base dark:hover:text-secondary"
         >
           {tech.icon} {tech.name}
         </div>

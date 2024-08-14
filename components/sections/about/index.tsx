@@ -5,9 +5,9 @@ import Technologies from "./Technologies";
 export default function About() {
   return (
     <Section name="About" subHeading="A Glimpse Into Me" className="min-h-fit">
-      <div className="h-full space-y-12 py-8 text-subtle">
-        <div className="flex items-center gap-8">
-          <p className="flex grow flex-col gap-4">
+      <div className="h-full space-y-8 py-4 text-sm text-subtle sm:space-y-10 sm:py-5 md:space-y-12 md:py-6 lg:py-8">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+          <p className="flex grow flex-col gap-3 md:gap-4">
             <span>
               I am a{" "}
               <span className="text-secondary-fg dark:text-secondary">
@@ -60,7 +60,7 @@ export default function About() {
         </div>
         <div>
           <p>Here are some of the technologies I&apos;ve lately worked with:</p>
-          <ul className="about-tech-list my-4 grid grid-cols-3 gap-4">
+          <ul className="about-tech-list my-4 grid grid-cols-2 gap-4 md:grid-cols-3">
             <li>JavaScript</li>
             <li>TypeScript</li>
             <li>React</li>
