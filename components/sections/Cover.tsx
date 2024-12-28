@@ -24,7 +24,7 @@ export default function Cover() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "tween" }}
           viewport={{ once: true }}
-          className={`${rubik.className} flex w-full justify-between text-center text-9xl text-[min(16rem,max(15vw,3rem))] font-bold uppercase tracking-wide text-primary/70`}
+          className={`${rubik.className} flex w-full justify-between text-center text-9xl text-[min(16rem,max(15vw,3rem))] font-bold uppercase tracking-wide text-primary/50`}
         >
           {SHINJITH.map((l) => (
             <span key={`shinjith-${l}`}>{l}</span>
@@ -41,7 +41,7 @@ export default function Cover() {
           className="relative mb-3 h-28 w-28 xl:h-40 xl:w-40"
         >
           <Image
-            src="/shinjith.jpg"
+            src="/assets/images/shinjith.jpg"
             fill
             className="rounded-full object-cover object-top"
             alt="shinjith's portrait"

@@ -1,73 +1,60 @@
-"use client";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { projects } from "@/portfolio.json";
-import { TProject } from "@/lib/types";
-import ProjectItem from "@/components/projects/ProjectItem";
+import ProjectList from "@/components/projects/project-list";
+import { Metadata } from "next";
 
-const sort = (a: TProject, b: TProject) =>
-  new Date(a.created_at) < new Date(b.created_at) ? 1 : -1;
+export const metadata: Metadata = {
+  title: "Projects | Shinjith P R",
+  description:
+    "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Nextjs, Tailwind, Tauri, etc...  | Shinjith P R",
+  keywords: [
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Material UI",
+    "Nextjs",
+    "Tailwind",
+    "Tauri",
+  ],
+  openGraph: {
+    url: "https://shinjith.dev",
+    type: "website",
+    title: "Projects | Shinjith P R",
+    description:
+      "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Nextjs, Tailwind, Tauri, etc...  | Shinjith P R",
+
+    //   images: [
+    //       {
+    //         url: "https://dminhvu.com/images/home/thumbnail.png",
+    //         width: 1200,
+    //         height: 630,
+    //         alt: "dminhvu"
+    //       }
+    //     ]
+  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Elastic Stack, Next.js, Python, JavaScript Tutorials | dminhvu",
+  //   description:
+  //     "dminhvu.com - Programming blog for everyone to learn Elastic Stack, Next.js, Python, JavaScript, React, Machine Learning, Data Science, and more.",
+  //   creator: "@dminhvu02",
+  //   site: "@dminhvu02",
+  //   images: [
+  //     {
+  //       url: "https://dminhvu.com/images/home/thumbnail.png",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "dminhvu"
+  //     }
+  //   ]
+  // },
+  alternates: {
+    canonical: "https://shinjith.pages.dev/projects",
+  },
+};
 
 export default function Projects() {
   return (
     <div className="h-[calc(100svh-84px)] w-full text-fg sm:h-[calc(100svh-52px)]">
-      <div className="relative z-10 mx-auto h-full flex-col items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.1, type: "tween" }}
-          viewport={{ once: true }}
-          className="w-full pt-20"
-        >
-          <Link
-            href="/"
-            className="flex items-baseline font-mono text-sm font-semibold leading-none text-secondary-fg transition-all sm:text-base md:text-xl dark:text-secondary"
-          >
-            /shinjith-dev<span className="blink">_</span>
-          </Link>
-        </motion.div>
-
-        <div className="w-full flex-grow py-1">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, type: "tween" }}
-            viewport={{ once: true }}
-            className="text-3xl font-semibold"
-          >
-            Projects Archive
-          </motion.div>
-
-          <table className="mt-10 w-full table-auto border-collapse">
-            <thead className="text-left text-xs text-subtle sm:text-sm">
-              <tr>
-                <th className="py-1 font-medium">Date</th>
-                <th className="py-1 font-medium">Project</th>
-                <th className="hidden py-1 font-medium sm:table-cell">
-                  Built WIth
-                </th>
-                <th className="hidden py-1 font-medium lg:block">Link</th>
-              </tr>
-            </thead>
-            <tbody className="text-left text-sm text-subtle sm:text-base">
-              <AnimatePresence>
-                {projects &&
-                  (projects as TProject[])
-                    .sort(sort)
-                    .map((project, index) => (
-                      <ProjectItem
-                        key={project.id}
-                        project={project}
-                        isLast={index === projects.length - 1}
-                        index={index}
-                      />
-                    ))}
-              </AnimatePresence>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ProjectList />
     </div>
   );
 }
