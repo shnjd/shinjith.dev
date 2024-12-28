@@ -19,9 +19,16 @@ type ItemProps = {
   active: boolean;
   activeIndex: number;
   index: number;
+  close: () => void;
 };
 
-function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
+function NavigationMenuItem({
+  nav,
+  active,
+  activeIndex,
+  index,
+  close,
+}: ItemProps) {
   const path = toKebabCase(nav);
   const opacity =
     activeIndex === index ? 1 : 1 - (index + 1 - activeIndex) * opacityFactor;
@@ -44,6 +51,7 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
             hero.scrollIntoView({ behavior: "smooth", block: "start" });
             // window.scrollBy({ top: 100, left: 0, behavior: 'smooth' })
           }
+          close();
         }}
         alwaysUnderline={active}
         className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/75 hover:text-accent-fg lg:px-0 lg:hover:bg-transparent lg:hover:text-fg"
@@ -126,6 +134,7 @@ const Navbar = () => {
                       active={active === nav}
                       activeIndex={navs.indexOf(active ?? "")}
                       index={index}
+                      close={() => setMenu(false)}
                     />
                   ))}
                 </AnimatePresence>
@@ -174,6 +183,7 @@ const Navbar = () => {
                   active={active === nav}
                   activeIndex={navs.indexOf(active ?? "")}
                   index={index}
+                  close={() => setMenu(false)}
                 />
               ))}
             </AnimatePresence>

@@ -27,7 +27,7 @@ export default function Link({
       {children}
       {(underline || alwaysUnderline) && (
         <span
-          className={`absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full transition-all group-hover:w-full ${secondary ? "bg-secondary-fg dark:bg-secondary" : "bg-muted"} ${alwaysUnderline && "w-full"}`}
+          className={`absolute bottom-0 left-1/2 hidden h-0.5 w-0 -translate-x-1/2 rounded-full transition-all group-hover:w-full sm:block ${secondary ? "bg-secondary-fg dark:bg-secondary" : "bg-muted"} ${alwaysUnderline && "w-full"}`}
         />
       )}
     </NextLink>
