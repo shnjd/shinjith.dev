@@ -1,4 +1,41 @@
 {
+  "experience": [
+    {
+      "role": "Frontend Developer",
+      "company": "Tequerist",
+      "description": [
+        "As a product-based firm, we are constantly working to expand our product services while also addressing user-reported issues.",
+        "I was able to work on older code bases. Furthermore, by scaling service platforms, I was able to improve my knowledge of mobile app development and redux systems."
+      ],
+      "technologies": [
+        "TypeScript",
+        "React",
+        "Redux",
+        "React Native",
+        "Expo",
+        "Tamag UI"
+      ],
+      "from": "September 2024",
+      "to": "Present"
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "TGH Tech",
+      "description": [
+        "I have spent over 1.5 years at TGH Tech as a react developer, where I created and contributed to more than 7-8 customer projects using cutting-edge technologies and libraries.",
+        "It was my first professional work experience, and it helped me lay a solid foundation for my future career. I happened to improve and practice React, TypeScript, and other technologies with great team players."
+      ],
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "Nextjs",
+        "React",
+        "Tailwind"
+      ],
+      "from": "December 2022",
+      "to": "April 2024"
+    }
+  ],
   "projects": [
     {
       "id": "pomtick",

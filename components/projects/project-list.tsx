@@ -4,8 +4,9 @@ import ProjectItem from "@/components/projects/ProjectItem";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { projects } from "@/portfolio.json";
+import portfolio from "@/portfolio.json";
 import { TProject } from "@/lib/types";
+const projects = portfolio.projects;
 
 const sort = (a: TProject, b: TProject) =>
   new Date(a.created_at) < new Date(b.created_at) ? 1 : -1;

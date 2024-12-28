@@ -9,7 +9,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Shinjith P R",
   description:
-    "Shinjith P R | Experienced web developer with expertise in NextJS, React, TypeScript, Redux, React-Native, Expo, and other technologies... | Kerala, India",
+    "Shinjith P R | Experienced web developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
   keywords: [
     "developer",
     "engineer",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Shinjith P R",
     description:
-      "Shinjith P R | Experienced web developer with expertise in NextJS, React, TypeScript, Redux, React-Native, Expo, and other technologies... | Kerala, India",
+      "Shinjith P R | Experienced web developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
     //   images: [
     //       {
     //         url: "https://dminhvu.com/images/home/thumbnail.png",

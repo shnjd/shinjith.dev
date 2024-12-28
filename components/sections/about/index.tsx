@@ -65,8 +65,8 @@ export default function About() {
             <li>TypeScript</li>
             <li>React</li>
             <li>Nextjs</li>
+            <li>React Native (Expo)</li>
             <li>Tauri</li>
-            <li>Turborepo</li>
           </ul>
         </div>
         <div>

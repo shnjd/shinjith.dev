@@ -18,3 +18,12 @@ export interface Service {
   title: string;
   description: string;
 }
+
+export interface IExperience {
+  role: string;
+  company: string;
+  description: string[];
+  technologies: string[];
+  from: string;
+  to: string;
+}
