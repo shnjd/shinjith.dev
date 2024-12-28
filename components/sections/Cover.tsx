@@ -32,13 +32,13 @@ export default function Cover() {
         </motion.h2>
       </div>
 
-      <div className="absolute bottom-6 flex flex-col items-center p-3 text-center sm:bottom-8 md:bottom-10 lg:bottom-12 xl:bottom-16">
+      <div className="absolute bottom-10 flex flex-col items-center p-3 text-center md:bottom-12 xl:bottom-16">
         <motion.div
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          initial={{ opacity: 0, y: 80, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.3, type: "tween" }}
           viewport={{ once: true }}
-          className="relative mb-3 h-28 w-28 xl:h-40 xl:w-40"
+          className="relative mb-3 h-32 w-32 xl:h-40 xl:w-40"
         >
           <Image
             src="/assets/images/shinjith.jpg"
@@ -49,7 +49,7 @@ export default function Cover() {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.5, type: "tween" }}
           viewport={{ once: true }}
@@ -58,7 +58,7 @@ export default function Cover() {
           Web Developer
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.5, type: "tween" }}
           viewport={{ once: true }}
@@ -67,11 +67,11 @@ export default function Cover() {
           Based in Kerala, India
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          initial={{ opacity: 0, y: 40, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.6, type: "tween" }}
           viewport={{ once: true }}
-          className="max-w-lg text-xs font-normal text-muted sm:text-sm md:text-base"
+          className="max-w-lg text-sm font-normal text-muted sm:text-base"
         >
           Who specializes in creating pixel-perfect, engaging, and accessible
           digital experiences. Currently, I&apos;m concentrating on developing
