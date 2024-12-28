@@ -10,6 +10,7 @@ export interface TProject {
   image: string | StaticImport;
   live_url: string;
   github_url: string;
+  created_at: string;
 }
 
 export interface Service {

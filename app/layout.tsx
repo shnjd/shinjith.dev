@@ -18,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${rubik.className} max-w-screen relative h-full min-h-screen w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
+        className={`${rubik.className} max-w-screen relative h-full min-h-svh w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
       >
         <ReactLenis root>
           <SectionContextProvider>

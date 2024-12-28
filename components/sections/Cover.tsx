@@ -1,6 +1,8 @@
+"use client";
 import { rubik } from "@/lib/fonts";
 import Section from "../base/Section";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const SHINJITH = ["S", "h", "i", "n", "j", "i", "t", "h"];
 
@@ -17,36 +19,64 @@ export default function Cover() {
           Hey, I am
         </p>
 
-        <h2
+        <motion.h2
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ type: "tween" }}
+          viewport={{ once: true }}
           className={`${rubik.className} flex w-full justify-between text-center text-9xl text-[min(16rem,max(15vw,3rem))] font-bold uppercase tracking-wide text-primary/70`}
         >
           {SHINJITH.map((l) => (
             <span key={`shinjith-${l}`}>{l}</span>
           ))}
-        </h2>
+        </motion.h2>
       </div>
 
       <div className="absolute bottom-6 flex flex-col items-center p-3 text-center sm:bottom-8 md:bottom-10 lg:bottom-12 xl:bottom-16">
-        <div className="relative mb-3 h-28 w-28 xl:h-40 xl:w-40">
+        <motion.div
+          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.3, type: "tween" }}
+          viewport={{ once: true }}
+          className="relative mb-3 h-28 w-28 xl:h-40 xl:w-40"
+        >
           <Image
             src="/shinjith.jpg"
             fill
             className="rounded-full object-cover object-top"
             alt="shinjith's portrait"
           />
-        </div>
+        </motion.div>
 
-        <p className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl">
+        <motion.p
+          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.5, type: "tween" }}
+          viewport={{ once: true }}
+          className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl"
+        >
           Web Developer
-        </p>
-        <p className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.5, type: "tween" }}
+          viewport={{ once: true }}
+          className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg"
+        >
           Based in Kerala, India
-        </p>
-        <p className="max-w-lg text-xs font-normal text-muted sm:text-sm md:text-base">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.6, type: "tween" }}
+          viewport={{ once: true }}
+          className="max-w-lg text-xs font-normal text-muted sm:text-sm md:text-base"
+        >
           Who specializes in creating pixel-perfect, engaging, and accessible
           digital experiences. Currently, I&apos;m concentrating on developing
           useful web projects and learning new things.
-        </p>
+        </motion.p>
       </div>
     </Section>
   );

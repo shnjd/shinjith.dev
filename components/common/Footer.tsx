@@ -11,7 +11,7 @@ export default function Footer() {
         <ul className="flex items-center justify-center gap-6 text-sm text-subtle">
           <li>
             <Link
-              href={"https://resume.shinjith.dev?download=true"}
+              href={"https://resume.shinjith.dev/?download=true"}
               className="text-subtle"
             >
               Resume

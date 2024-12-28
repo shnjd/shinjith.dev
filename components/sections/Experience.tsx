@@ -62,7 +62,7 @@ export default function Experience() {
           </Link>
 
           <Link
-            href="https://resume.shinjith.dev"
+            href="https://resume.shinjith.dev/?download=true"
             className="inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium text-primary transition-all hover:text-primary/90"
           >
             View resume

@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "pomtick",
-      "name": "Pomtick Pomodoro Timer",
+      "name": "Pomtick",
       "featured": true,
       "description": [
         "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
@@ -16,109 +16,78 @@
         "Turborepo",
         "Tauri"
       ],
-      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1692551473/sdev/Screenshot_from_2023-08-20_22-40-26_n2d7mg.png",
-      "live_url": "",
-      "github_url": ""
+      "image": "/assets/images/project_pomodoro.png",
+      "live_url": "https://pomtick.pages.dev",
+      "github_url": "https://github.com/shinjith-dev/pomtick-web",
+      "created_at": "2024-05-12"
     },
     {
-      "id": "pomick",
-      "name": "Pmotick",
+      "id": "portfolio-v2",
+      "name": "Personal Website v2",
       "featured": true,
       "description": [
-        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
-        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+        "A portfolio website. It offers a visually appealing fancy UI with an awesome loading animation!",
+        "The majority of the scripts are written in vanilla js, with styling done mostly in CSS. Another attracting feature of this website is the page transition effect."
       ],
-      "technologies": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Turborepo",
-        "Tauri"
-      ],
-      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1691604140/sdev/Screenshot_from_2023-08-09_22-53-17_kmeiss.png",
-      "live_url": "",
-      "github_url": ""
+      "technologies": ["React", "Bootstrap", "Sass"],
+      "image": "/assets/images/project_portfolio-v2.png",
+      "live_url": "https://v2.shinjith.dev",
+      "github_url": "https://github.com/shinjith-dev/shinjith.live-v2",
+      "created_at": "2022-08-27"
     },
     {
-      "id": "pomtic",
-      "name": "Pmotick",
+      "id": "movieloft",
+      "name": "Movie Loft",
       "featured": true,
       "description": [
-        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
-        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+        "Movie Loft is a simple to use web-based movie database client. It could be useful when looking for movies and television shows. It also contains detailed information on a film or television show, such as the cast and crew, number of episodes, and so on.",
+        "Notably, it was a beginner-friendly project for learning open APIs and api integeration."
       ],
-      "technologies": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Turborepo",
-        "Tauri"
-      ],
-      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1719481259/Screenshot_2024-06-14_17-53-21_growwx.png",
-      "live_url": "",
-      "github_url": ""
+      "technologies": ["React", "Material UI", "TMDB"],
+      "image": "/assets/images/project_movieloft.png",
+      "live_url": "https://movie-loft.netlify.app",
+      "github_url": "https://github.com/shinjith-dev/movie-loft",
+      "created_at": "2022-10-22"
     },
     {
-      "id": "pomick90000",
-      "name": "Pmotickhsjjsjs JJkkkn",
+      "id": "drumkit",
+      "name": "Drum Kit",
       "featured": false,
       "description": [
-        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
-        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+        "A basic and easy-to-create yet entertaining website that simulates a drum kit.",
+        "Created with vanilla js and some audio clips powered with keybindings"
       ],
-      "technologies": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Turborepo",
-        "Tauri"
-      ],
-      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1691604140/sdev/Screenshot_from_2023-08-09_22-53-17_kmeiss.png",
-      "live_url": "",
-      "github_url": ""
+      "technologies": ["JavaScript", "MDB Kit"],
+      "image": "",
+      "live_url": "https://shinjith-dev.github.io/JavaScript-Drum-Kit",
+      "github_url": "https://github.com/shinjith-dev/JavaScript-Drum-Kit",
+      "created_at": "2022-09-17"
     },
     {
-      "id": "pomickuabh",
-      "name": "Pmotick The Ultimate",
+      "id": "js-calculator",
+      "name": "JS Calculator",
       "featured": false,
       "description": [
-        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
-        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+        "A calculator with a real calculator appearance! Under the hood, it is a basic algorithm powered by vanilla javascript."
       ],
-      "technologies": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Turborepo",
-        "Tauri"
-      ],
-      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1719481259/Screenshot_2024-06-14_17-53-21_growwx.png",
-      "live_url": "",
-      "github_url": ""
+      "technologies": ["JavaScript"],
+      "image": "",
+      "live_url": "https://shinjith-dev.github.io/JS-Calculator",
+      "github_url": "https://github.com/shinjith-dev/JS-Calculator",
+      "created_at": "2022-02-08"
     },
     {
-      "id": "pomiaaack",
-      "name": "Asuhuihas Ui",
+      "id": "react-todo",
+      "name": "React Todo",
       "featured": false,
       "description": [
-        "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
-        "Managed using turborepo, a monorepo manager. It has a web app (Next.js) and a native app (Tauri) for Windows, Linux & MacOs."
+        "Simple React Todo app with a simple design. It can obviously add, list, checkmark, and delete your tasks, but it does so in a simple manner."
       ],
-      "technologies": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Turborepo",
-        "Tauri"
-      ],
-      "image": "https://res.cloudinary.com/dqts6qgre/image/upload/v1691604140/sdev/Screenshot_from_2023-08-09_22-53-17_kmeiss.png",
-      "live_url": "",
-      "github_url": ""
+      "technologies": ["React"],
+      "image": "",
+      "live_url": "https://react-todo.shinjith.dev",
+      "github_url": "https://github.com/shinjith-dev/React-Todo",
+      "created_at": "2022-03-10"
     }
   ]
 }

@@ -8,6 +8,7 @@ import MenuButton from "@/components/base/MenuButton";
 import { toKebabCase } from "@/lib/utils/string";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionContext } from "@/components/contexts/SectionContext";
+import { usePathname } from "next/navigation";
 
 const navs = ["About", "Experience", "Projects", "Services", "Contact"];
 
@@ -60,6 +61,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement | null>(null);
   const { activeSection: active } = useContext(SectionContext);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (window.scrollY > 100) setHaveBg(true);
@@ -131,9 +133,14 @@ const Navbar = () => {
             </>
           )}
 
-          <ul className="hidden items-center gap-4 lg:flex">
+          <ul
+            className={`${pathname === "/" ? "hidden" : "flex"} items-center gap-4 lg:flex`}
+          >
             <li>
-              <Link download="resume.pdf" href="https://resume.shinjith.dev">
+              <Link
+                download="resume.pdf"
+                href="https://resume.shinjith.dev/?download=true"
+              >
                 Resume
               </Link>
             </li>
@@ -146,15 +153,17 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <MenuButton
-            isClosed={!menu}
-            onClick={() => setMenu((prev) => !prev)}
-            className="lg:hidden"
-          />
+          {pathname === "/" && (
+            <MenuButton
+              isClosed={!menu}
+              onClick={() => setMenu((prev) => !prev)}
+              className="lg:hidden"
+            />
+          )}
         </div>
 
         <div
-          className={`h-full w-full pt-6 transition-all lg:hidden ${menu ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
+          className={`h-full w-full pt-6 transition-all lg:hidden ${menu && pathname === "/" ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
         >
           <ul className="grid w-full grid-cols-1 place-items-stretch gap-3 sm:grid-cols-2">
             <AnimatePresence>
@@ -177,7 +186,7 @@ const Navbar = () => {
               <li>
                 <Link
                   download="resume.pdf"
-                  href="https://resume.shinjith.dev"
+                  href="https://resume.shinjith.dev/?download=true"
                   className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/50 hover:text-accent-fg"
                 >
                   Resume
