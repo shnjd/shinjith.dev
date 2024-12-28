@@ -65,13 +65,13 @@ export default function About() {
             <li>TypeScript</li>
             <li>React</li>
             <li>Nextjs</li>
+            <li>React Native (Expo)</li>
             <li>Tauri</li>
-            <li>Turborepo</li>
           </ul>
         </div>
         <div>
           <p className="w-fit border-b border-secondary-fg py-0.5 text-secondary-fg dark:border-secondary dark:text-secondary">
-            What else do I know?
+            What Else Do I Know?
           </p>
           <Technologies />
         </div>

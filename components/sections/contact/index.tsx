@@ -51,8 +51,8 @@ export default function Contact() {
       />
       <div
         ref={targetRef}
-        style={{ transform: `translateY(-${progress * 40}px)` }}
-        className="flex h-full max-h-[60vh] min-h-[300px] w-full flex-col items-center justify-center gap-4 transition-all sm:min-h-[400px] sm:gap-6 md:min-h-[500px] md:gap-8 lg:min-h-[600px]"
+        style={{ transform: `translateY(-${progress * 20}px)` }}
+        className="flex h-full max-h-[60svh] min-h-[300px] w-full flex-col items-center justify-center gap-6 transition-all sm:min-h-[400px] sm:gap-6 md:min-h-[500px] md:gap-8 lg:min-h-[600px]"
       >
         <h3 className="max-w-[250px] text-center text-2xl font-bold text-subtle sm:max-w-xs sm:text-3xl md:max-w-sm md:text-4xl lg:max-w-md lg:text-5xl">
           Tell me about your next project
@@ -66,7 +66,12 @@ export default function Contact() {
           <IconMailShare size={20} />
         </NextLink>
 
-        <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-4 sm:hidden">
+        <div
+          className="relative flex justify-center gap-4 transition-all duration-75 sm:gap-6"
+          style={{
+            transform: `scale(${progress + 0.3 < 1 ? 1 : progress + 0.3})`,
+          }}
+        >
           <a
             href="https://github.com/shinjith-dev"
             target="_blank"
@@ -74,7 +79,7 @@ export default function Contact() {
           >
             <IconBrandGithub
               size={24}
-              className="text-subtle transition-all hover:text-muted"
+              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
             />
           </a>
 
@@ -85,7 +90,7 @@ export default function Contact() {
           >
             <IconBrandInstagram
               size={24}
-              className="text-subtle transition-all hover:text-muted"
+              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
             />
           </a>
 
@@ -94,7 +99,7 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Devto />
+            <Devto className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
           </a>
 
           <a
@@ -104,7 +109,7 @@ export default function Contact() {
           >
             <IconBrandLinkedin
               size={24}
-              className="text-subtle transition-all hover:text-muted"
+              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
             />
           </a>
 
@@ -115,7 +120,7 @@ export default function Contact() {
           >
             <IconBrandTwitter
               size={24}
-              className="text-subtle transition-all hover:text-muted"
+              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
             />
           </a>
         </div>

@@ -10,10 +10,20 @@ export interface TProject {
   image: string | StaticImport;
   live_url: string;
   github_url: string;
+  created_at: string;
 }
 
 export interface Service {
   icon: ReactNode | string;
   title: string;
   description: string;
+}
+
+export interface IExperience {
+  role: string;
+  company: string;
+  description: string[];
+  technologies: string[];
+  from: string;
+  to: string;
 }
