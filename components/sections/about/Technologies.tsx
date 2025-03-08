@@ -6,6 +6,7 @@ import {
   IconBrandReactNative,
   IconBrandTypescript,
   IconBrandYarn,
+  IconBrandRedux,
 } from "@tabler/icons-react";
 import { ReactNode } from "react";
 import Marquee from "react-fast-marquee";
@@ -208,6 +209,12 @@ const technologies: Technology[] = [
         size={20}
         className="text-subtle transition-all group-hover:text-secondary-fg dark:group-hover:text-secondary"
       />
+    ),
+  },
+  {
+    name: "Redux",
+    icon: (
+      <IconBrandRedux className="text-subtle transition-all group-hover:text-secondary-fg dark:group-hover:text-secondary" />
     ),
   },
   {
