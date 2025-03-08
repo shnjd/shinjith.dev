@@ -38,6 +38,26 @@
   ],
   "projects": [
     {
+      "id":"blood-donors",
+      "name": "Blood Donors",
+      "featured":true,
+      "description":[
+        "A mobile app created for a public welfare organization, a group of people who make urgent donations.  This software keeps track of blood donors' records and donation histories, as well as maintaining an up-to-date list monitored by enrolled staff.",
+        "Crafted with powerful Expo + Supabase combo."
+      ],
+"technologies":[
+        "React",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "Postgress",
+        "GluestackUI"
+      ],
+      "image":"/assets/images/project_blood-donors.png",
+      "created_at":"2025-02-23"
+    },
+    {
       "id": "pomtick",
       "name": "Pomtick",
       "featured": true,
@@ -75,7 +95,7 @@
     {
       "id": "movieloft",
       "name": "Movie Loft",
-      "featured": true,
+      "featured": false,
       "description": [
         "Movie Loft is a simple to use web-based movie database client. It could be useful when looking for movies and television shows. It also contains detailed information on a film or television show, such as the cast and crew, number of episodes, and so on.",
         "Notably, it was a beginner-friendly project for learning open APIs and api integeration."

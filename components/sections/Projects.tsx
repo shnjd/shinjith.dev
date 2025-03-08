@@ -46,13 +46,16 @@ const Project = ({ project, toRight }: ProjectProps) => {
           <div
             className={`hidden justify-center gap-4 sm:flex ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
           >
-            <Link href={project.github_url} secondary underline={false}>
-              <IconBrandGithub size={20} />
-            </Link>
-
-            <Link href={project.live_url} secondary underline={false}>
-              <IconExternalLink size={20} />
-            </Link>
+            {project?.github_url && (
+              <Link href={project.github_url} secondary underline={false}>
+                <IconBrandGithub size={20} />
+              </Link>
+            )}
+            {project?.live_url && (
+              <Link href={project.live_url} secondary underline={false}>
+                <IconExternalLink size={20} />
+              </Link>
+            )}
           </div>
         </div>
 
@@ -67,13 +70,17 @@ const Project = ({ project, toRight }: ProjectProps) => {
         </div>
 
         <div className={`flex justify-center gap-8 sm:hidden`}>
-          <Link href={project.github_url} secondary underline={false}>
-            <IconBrandGithub size={20} />
-          </Link>
+          {project?.github_url && (
+            <Link href={project.github_url} secondary underline={false}>
+              <IconBrandGithub size={20} />
+            </Link>
+          )}
 
-          <Link href={project.live_url} secondary underline={false}>
-            <IconExternalLink size={20} />
-          </Link>
+          {project?.live_url && (
+            <Link href={project.live_url} secondary underline={false}>
+              <IconExternalLink size={20} />
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -88,13 +95,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="group flex flex-col overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/60 via-surface/30 to-primary/10 p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
       <div className={`mb-4 flex justify-end gap-4`}>
-        <Link href={project.github_url} secondary underline={false}>
-          <IconBrandGithub size={20} />
-        </Link>
-
-        <Link href={project.live_url} secondary underline={false}>
-          <IconExternalLink size={20} />
-        </Link>
+        {project.github_url && (
+          <Link href={project.github_url} secondary underline={false}>
+            <IconBrandGithub size={20} />
+          </Link>
+        )}
+        {project?.live_url && (
+          <Link href={project.live_url} secondary underline={false}>
+            <IconExternalLink size={20} />
+          </Link>
+        )}
       </div>
 
       <h4 className="mb-2 text-lg font-bold sm:mb-3 sm:text-xl md:text-2xl">

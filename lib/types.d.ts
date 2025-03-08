@@ -8,8 +8,8 @@ export interface TProject {
   description: string[];
   technologies: string[];
   image: string | StaticImport;
-  live_url: string;
-  github_url: string;
+  live_url?: string;
+  github_url?: string;
   created_at: string;
 }
 
