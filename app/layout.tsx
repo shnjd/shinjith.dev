@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "Shinjith P R",
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
   },
   robots: {
     index: true,

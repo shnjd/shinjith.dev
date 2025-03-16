@@ -9,7 +9,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Shinjith P R",
   description:
-    "Shinjith P R | Experienced web developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
+    "Shinjith P R | App Developer, Web Developer, Designer. Experienced developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
   keywords: [
     "developer",
     "engineer",
@@ -23,15 +23,14 @@ export const metadata: Metadata = {
     type: "website",
     title: "Shinjith P R",
     description:
-      "Shinjith P R | Experienced web developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
-    //   images: [
-    //       {
-    //         url: "https://dminhvu.com/images/home/thumbnail.png",
-    //         width: 1200,
-    //         height: 630,
-    //         alt: "dminhvu"
-    //       }
-    //     ]
+      "Shinjith P R | App Developer, Web Developer, Designer. Experienced developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
+    images: [
+      {
+        url: "/assets/images/seo-cover.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   // twitter: {
   //   card: "summary_large_image",
@@ -49,9 +48,9 @@ export const metadata: Metadata = {
   //     }
   //   ]
   // },
-  alternates: {
-    canonical: "https://shinjith.pages.dev",
-  },
+  // alternates: {
+  //   canonical: "https://shinjith.pages.dev",
+  // },
 };
 
 export default function Home() {

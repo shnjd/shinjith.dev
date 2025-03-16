@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shinjith.dev
+
+# Sitemaps
+Sitemap: https://shinjith.dev/sitemap.xml

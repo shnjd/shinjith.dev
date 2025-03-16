@@ -21,14 +21,13 @@ export const metadata: Metadata = {
     description:
       "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Nextjs, Tailwind, Tauri, etc...  | Shinjith P R",
 
-    //   images: [
-    //       {
-    //         url: "https://dminhvu.com/images/home/thumbnail.png",
-    //         width: 1200,
-    //         height: 630,
-    //         alt: "dminhvu"
-    //       }
-    //     ]
+    images: [
+      {
+        url: "/assets/images/seo-cover.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   // twitter: {
   //   card: "summary_large_image",
