@@ -67,7 +67,7 @@ export default function Experience() {
           </p>
 
           <Link
-            href="mailto:shinjithkanhangad@gmail.com"
+            href="mailto:shinjithdev@gmail.com"
             className="mr-5 inline-flex w-fit items-center gap-1.5 rounded-lg bg-primary px-5 py-2 font-medium text-primary-fg shadow-xl transition-all hover:bg-primary/90 hover:shadow-md"
           >
             Hire me <IconUsersPlus size={16} />

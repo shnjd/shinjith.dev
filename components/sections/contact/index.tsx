@@ -59,7 +59,7 @@ export default function Contact() {
         </h3>
 
         <NextLink
-          href="mailto:shinjithkanhangad@gmail.com"
+          href="mailto:shinjithdev@gmail.com"
           className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-2.5 font-medium text-primary-fg shadow-xl transition-all hover:bg-primary/90 hover:shadow-md sm:text-lg"
         >
           Get in touch

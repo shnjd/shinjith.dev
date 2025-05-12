@@ -4,15 +4,16 @@
       "role": "Frontend Developer",
       "company": "Tequerist",
       "description": [
-        "As a product-based firm, we are constantly working to expand our product services while also addressing user-reported issues.",
-        "I was able to work on older code bases. Furthermore, by scaling service platforms, I was able to improve my knowledge of mobile app development and redux systems."
+        "As a product-based firm, here I had the opportunity to enhance and maintain the Temple Click project, adding new features and resolving user issues.",
+        "My primary contribution was developing a cross-platform online booking application using React Native (Expo) and Next.js, all while continuously learning and growing throughout the journey."
       ],
       "technologies": [
-        "TypeScript",
         "React",
-        "Redux",
         "React Native",
         "Expo",
+        "Next.js",
+        "Redux",
+        "TypeScript",
         "Tamag UI"
       ],
       "from": "September 2024",
@@ -28,7 +29,7 @@
       "technologies": [
         "JavaScript",
         "TypeScript",
-        "Nextjs",
+        "Next.js",
         "React",
         "Tailwind"
       ],
@@ -37,6 +38,27 @@
     }
   ],
   "projects": [
+    {
+      "id": "shuffle-glimpse",
+      "name": "Shuffle Glimpse",
+      "featured": true,
+      "description": [
+        "A web app made with the Spotify Web API to provide a glance into your listening habits.  Check out your favorite artists, songs, recently played, and saved songs.",
+        "Coded using modern technologies such as zustand, tanstack react-query, Cloudflare Worker and Next.js. With a modern, clean, Spotify-like UI."
+      ],
+      "technologies": [
+        "Next.js",
+        "Spotify API",
+        "Cloudflare Worker",
+        "TypeScript",
+        "Zustand",
+        "React Query"
+      ],
+      "image": "/assets/images/project_shuffle-glimpse.png",
+      "created_at": "2025-05-07",
+      "live_url": "https://shuffle.shinjith.dev",
+      "github_url": "https://github.com/shinjith-dev/shuffle-glimpse"
+    },
     {
       "id": "blood-donors",
       "name": "Blood Donors",
@@ -81,7 +103,7 @@
     {
       "id": "portfolio-v2",
       "name": "Personal Website v2",
-      "featured": true,
+      "featured": false,
       "description": [
         "A portfolio website. It offers a visually appealing fancy UI with an awesome loading animation!",
         "The majority of the scripts are written in vanilla js, with styling done mostly in CSS. Another attracting feature of this website is the page transition effect."

@@ -4,13 +4,13 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects | Shinjith P R",
   description:
-    "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Nextjs, Tailwind, Tauri, etc...  | Shinjith P R",
+    "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
   keywords: [
     "JavaScript",
     "React",
     "TypeScript",
     "Material UI",
-    "Nextjs",
+    "Next.js",
     "Tailwind",
     "Tauri",
   ],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Projects | Shinjith P R",
     description:
-      "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Nextjs, Tailwind, Tauri, etc...  | Shinjith P R",
+      "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
 
     images: [
       {
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   //     }
   //   ]
   // },
-  alternates: {
-    canonical: "https://shinjith.pages.dev/projects",
-  },
+  // alternates: {
+  //   canonical: "https://shinjith.pages.dev/projects",
+  // },
 };
 
 export default function Projects() {
