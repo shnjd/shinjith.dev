@@ -20,7 +20,7 @@ export default function Loader({ children }: Props) {
           clearInterval(interval);
           return 100;
         }
-        return prev + (100 - prev) * 0.3;
+        return prev + (100 - prev) * 0.5;
       });
     }, 100);
 

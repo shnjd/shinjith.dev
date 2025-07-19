@@ -2,10 +2,18 @@
   "experience": [
     {
       "role": "Frontend Developer",
-      "company": "Tequerist",
+      "company": "Sustainability Economics",
+      "description": [],
+      "technologies": ["TypeScript", "React", "Redux", "Vite"],
+      "from": "June 2025",
+      "to": "Present"
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "Tequerist Technologies",
       "description": [
-        "As a product-based firm, here I had the opportunity to enhance and maintain the Temple Click project, adding new features and resolving user issues.",
-        "My primary contribution was developing a cross-platform online booking application using React Native (Expo) and Next.js, all while continuously learning and growing throughout the journey."
+        "Developed and maintained a cross-platform temple booking app using React Native (Expo) and Next.js, improving reliability and user adoption.",
+        "Led key features like multi-day booking, role-based access, and set up shared logic for an upcoming product from scratch."
       ],
       "technologies": [
         "React",
@@ -17,14 +25,14 @@
         "Tamag UI"
       ],
       "from": "September 2024",
-      "to": "Present"
+      "to": "June 2025"
     },
     {
       "role": "Frontend Developer",
       "company": "TGH Tech",
       "description": [
-        "I have spent over 1.5 years at TGH Tech as a react developer, where I created and contributed to more than 7-8 customer projects using cutting-edge technologies and libraries.",
-        "It was my first professional work experience, and it helped me lay a solid foundation for my future career. I happened to improve and practice React, TypeScript, and other technologies with great team players."
+        "Delivered frontend for 10+ client projects—from startup sites to e-commerce tools—using modern stacks like Next.js, Zustand, and React Query.",
+        "Collaborated across teams for high-performance UIs and mentored interns while contributing to core architecture and reviews."
       ],
       "technologies": [
         "JavaScript",
