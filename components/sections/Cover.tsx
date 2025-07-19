@@ -45,6 +45,7 @@ export default function Cover() {
             fill
             className="rounded-full object-cover object-top"
             alt="shinjith's portrait"
+            priority
           />
         </motion.div>
 
