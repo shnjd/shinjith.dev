@@ -1,6 +1,25 @@
 import ProjectList from "@/components/projects/project-list";
 import { Metadata } from "next";
 
+const breadCrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://shinjith.dev",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Projects",
+      item: "https://shinjith.dev/projects",
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Projects | Shinjith P R",
   description:
@@ -52,8 +71,14 @@ export const metadata: Metadata = {
 
 export default function Projects() {
   return (
-    <div className="h-[calc(100svh-84px)] w-full text-fg sm:h-[calc(100svh-52px)]">
-      <ProjectList />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbLd) }}
+      />
+      <div className="h-[calc(100svh-84px)] w-full text-fg sm:h-[calc(100svh-52px)]">
+        <ProjectList />
+      </div>
+    </>
   );
 }
