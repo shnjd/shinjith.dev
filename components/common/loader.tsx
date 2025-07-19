@@ -27,7 +27,7 @@ export default function Loader({ children }: Props) {
     return () => clearInterval(interval);
   }, []);
 
-  if (progress >= 99.5) return children;
+  if (progress === 0 || progress >= 99.5) return children;
 
   return (
     <div

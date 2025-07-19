@@ -84,7 +84,7 @@
         "Postgress",
         "GluestackUI"
       ],
-      "image": "/assets/images/project_blood-donors.png",
+      "image": "/assets/images/project_blood-donors.jpg",
       "created_at": "2025-02-23"
     },
     {
@@ -103,7 +103,7 @@
         "Turborepo",
         "Tauri"
       ],
-      "image": "/assets/images/project_pomodoro.png",
+      "image": "/assets/images/project_pomodoro.jpg",
       "live_url": "https://pomtick.pages.dev",
       "github_url": "https://github.com/shinjith-dev/pomtick-web",
       "created_at": "2024-05-12"
@@ -117,7 +117,7 @@
         "The majority of the scripts are written in vanilla js, with styling done mostly in CSS. Another attracting feature of this website is the page transition effect."
       ],
       "technologies": ["React", "Bootstrap", "Sass"],
-      "image": "/assets/images/project_portfolio-v2.png",
+      "image": "/assets/images/project_portfolio-v2.jpg",
       "live_url": "https://v2.shinjith.dev",
       "github_url": "https://github.com/shinjith-dev/shinjith.live-v2",
       "created_at": "2022-08-27"
@@ -131,7 +131,7 @@
         "Notably, it was a beginner-friendly project for learning open APIs and api integeration."
       ],
       "technologies": ["React", "Material UI", "TMDB"],
-      "image": "/assets/images/project_movieloft.png",
+      "image": "/assets/images/project_movieloft.jpg",
       "live_url": "https://movie-loft.netlify.app",
       "github_url": "https://github.com/shinjith-dev/movie-loft",
       "created_at": "2022-10-22"

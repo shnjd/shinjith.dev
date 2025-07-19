@@ -110,16 +110,16 @@ export default function RootLayout({
       <body
         className={`${rubik.className} max-w-screen relative h-full min-h-svh w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
       >
-        <Loader>
-          <ReactLenis root>
-            <SectionContextProvider>
-              <Background />
-              <Navbar />
+        <ReactLenis root>
+          <SectionContextProvider>
+            <Background />
+            <Navbar />
+            <Loader>
               <main className="container relative z-10">{children}</main>
               <Footer />
-            </SectionContextProvider>
-          </ReactLenis>
-        </Loader>
+            </Loader>
+          </SectionContextProvider>
+        </ReactLenis>
       </body>
     </html>
   );
