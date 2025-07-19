@@ -48,25 +48,9 @@ export const metadata: Metadata = {
       },
     ],
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "Elastic Stack, Next.js, Python, JavaScript Tutorials | dminhvu",
-  //   description:
-  //     "dminhvu.com - Programming blog for everyone to learn Elastic Stack, Next.js, Python, JavaScript, React, Machine Learning, Data Science, and more.",
-  //   creator: "@dminhvu02",
-  //   site: "@dminhvu02",
-  //   images: [
-  //     {
-  //       url: "https://dminhvu.com/images/home/thumbnail.png",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: "dminhvu"
-  //     }
-  //   ]
-  // },
-  // alternates: {
-  //   canonical: "https://shinjith.pages.dev/projects",
-  // },
+  alternates: {
+    canonical: "https://shinjith.dev/projects",
+  },
 };
 
 export default function Projects() {

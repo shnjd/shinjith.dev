@@ -96,6 +96,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://shinjith.dev",
+  },
 };
 
 export default function Home() {
