@@ -4,7 +4,7 @@ import { rubik } from "@/lib/fonts";
 import Background from "@/components/common/Background";
 import { ReactLenis } from "@/lib/lenis";
 import SectionContextProvider from "@/components/contexts/SectionContext";
-import Loader from "@/components/common/loader";
+// import Loader from "@/components/common/loader";
 
 import type { Viewport, Metadata } from "next";
 import Footer from "@/components/common/Footer";
@@ -114,10 +114,8 @@ export default function RootLayout({
           <SectionContextProvider>
             <Background />
             <Navbar />
-            <Loader>
-              <main className="container relative z-10">{children}</main>
-              <Footer />
-            </Loader>
+            <main className="container relative z-10">{children}</main>
+            <Footer />
           </SectionContextProvider>
         </ReactLenis>
       </body>
