@@ -19,7 +19,7 @@ export default function Cover() {
           Hey, I am
         </p>
 
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "tween" }}
@@ -29,7 +29,7 @@ export default function Cover() {
           {SHINJITH.map((l) => (
             <span key={`shinjith-${l}`}>{l}</span>
           ))}
-        </motion.h2>
+        </motion.h1>
       </div>
 
       <div className="absolute bottom-10 flex flex-col items-center p-3 text-center md:bottom-12 xl:bottom-16">
@@ -49,7 +49,7 @@ export default function Cover() {
           />
         </motion.div>
 
-        <motion.p
+        <motion.h2
           initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.5, type: "tween" }}
@@ -57,8 +57,8 @@ export default function Cover() {
           className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl"
         >
           Web Developer
-        </motion.p>
-        <motion.p
+        </motion.h2>
+        <motion.h3
           initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.5, type: "tween" }}
@@ -66,7 +66,7 @@ export default function Cover() {
           className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg"
         >
           Based in Kerala, India
-        </motion.p>
+        </motion.h3>
         <motion.p
           initial={{ opacity: 0, y: 40, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}

@@ -32,25 +32,20 @@ export const metadata: Metadata = {
       },
     ],
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "Elastic Stack, Next.js, Python, JavaScript Tutorials | dminhvu",
-  //   description:
-  //     "dminhvu.com - Programming blog for everyone to learn Elastic Stack, Next.js, Python, JavaScript, React, Machine Learning, Data Science, and more.",
-  //   creator: "@dminhvu02",
-  //   site: "@dminhvu02",
-  //   images: [
-  //     {
-  //       url: "https://dminhvu.com/images/home/thumbnail.png",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: "dminhvu"
-  //     }
-  //   ]
-  // },
-  // alternates: {
-  //   canonical: "https://shinjith.pages.dev",
-  // },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shinjith P R",
+    description:
+      "Shinjith P R | App Developer, Web Developer, Designer. Experienced developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
+    creator: "@shinjithr",
+    images: [
+      {
+        url: "/assets/images/seo-cover.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function Home() {

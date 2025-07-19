@@ -47,6 +47,7 @@ export default function About() {
             <span>
               Currently working on a project called{" "}
               <Link
+                aria-label="wakalyst"
                 href="https://github.com/shinjith-dev/wakalyst"
                 secondary
                 className="text-secondary-fg dark:text-secondary"

@@ -3,7 +3,7 @@ import Link from "@/components/base/Link";
 import NextLink from "next/link";
 import ModeSwitch from "./ModeSwitch";
 import { useContext, useEffect, useRef, useState } from "react";
-import { inconsolata, rubik } from "@/lib/fonts";
+import { rubik } from "@/lib/fonts";
 import MenuButton from "@/components/base/MenuButton";
 import { toKebabCase } from "@/lib/utils/string";
 import { AnimatePresence, motion } from "framer-motion";
@@ -125,7 +125,7 @@ const Navbar = () => {
                 /shinjith-dev<span className="blink">_</span>
               </NextLink>
 
-              <ul className="hidden gap-6 transition-all lg:flex">
+              <ul className="hidden list-none gap-6 transition-all lg:flex">
                 <AnimatePresence>
                   {navs.map((nav, index) => (
                     <NavigationMenuItem
@@ -174,7 +174,7 @@ const Navbar = () => {
         <div
           className={`h-full w-full pt-6 transition-all lg:hidden ${menu && pathname === "/" ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
         >
-          <ul className="grid w-full grid-cols-1 place-items-stretch gap-3 sm:grid-cols-2">
+          <ul className="grid w-full list-none grid-cols-1 place-items-stretch gap-3 sm:grid-cols-2">
             <AnimatePresence>
               {navs.map((nav, index) => (
                 <NavigationMenuItem

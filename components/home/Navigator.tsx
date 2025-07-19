@@ -31,6 +31,7 @@ function NavigationMenuItem({ nav, active, activeIndex, index }: ItemProps) {
     >
       <Link
         href={`#${path}`}
+        aria-label={nav}
         onClick={(e) => {
           const hero = document.getElementById(path);
           e.preventDefault(); // Stop Page Reloading
@@ -75,7 +76,7 @@ function NavigationMenu() {
         haveBg ? "top-16" : "top-12"
       }`}
     >
-      <ul className="hidden space-y-2 transition-all lg:block">
+      <ul className="hidden list-none space-y-2 transition-all lg:block">
         <AnimatePresence>
           {navs.map((nav, index) => (
             <NavigationMenuItem

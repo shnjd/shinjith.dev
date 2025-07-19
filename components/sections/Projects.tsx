@@ -18,7 +18,7 @@ type ProjectProps = {
 
 const Project = ({ project, toRight }: ProjectProps) => {
   return (
-    <div
+    <li
       className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
     >
       <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-all duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
@@ -33,9 +33,9 @@ const Project = ({ project, toRight }: ProjectProps) => {
       <div
         className={`-mt-[10vw] max-w-lg space-y-3 sm:max-w-xl lg:mt-0 lg:max-w-none ${toRight ? "lg:-mr-20" : "lg:-ml-20"}`}
       >
-        <h4 className="hidden text-lg font-bold sm:text-xl md:text-2xl lg:block">
+        <h3 className="hidden text-lg font-bold sm:text-xl md:text-2xl lg:block">
           {project.name}
-        </h4>
+        </h3>
         <div
           className={`h-fit space-y-2 rounded-md border border-overlay/75 from-background/80 via-surface/50 to-primary/20 p-3 text-sm text-subtle shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-sm sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-gradient-to-bl" : "bg-gradient-to-br"}`}
         >
@@ -47,43 +47,63 @@ const Project = ({ project, toRight }: ProjectProps) => {
             className={`hidden justify-center gap-4 sm:flex ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
           >
             {project?.github_url && (
-              <Link href={project.github_url} secondary underline={false}>
+              <Link
+                aria-label="Github URL"
+                href={project.github_url}
+                secondary
+                underline={false}
+              >
                 <IconBrandGithub size={20} />
               </Link>
             )}
             {project?.live_url && (
-              <Link href={project.live_url} secondary underline={false}>
+              <Link
+                aria-label="Live URL"
+                href={project.live_url}
+                secondary
+                underline={false}
+              >
                 <IconExternalLink size={20} />
               </Link>
             )}
           </div>
         </div>
 
-        <div
-          className={`flex flex-wrap justify-center gap-2 ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
+        <ul
+          className={`flex list-none flex-wrap justify-center gap-2 ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
         >
           {project.technologies.map((pt) => (
             <Tag key={pt} className="shadow-sm">
               {pt}
             </Tag>
           ))}
-        </div>
+        </ul>
 
         <div className={`flex justify-center gap-8 sm:hidden`}>
           {project?.github_url && (
-            <Link href={project.github_url} secondary underline={false}>
+            <Link
+              aria-label="Github URL"
+              href={project.github_url}
+              secondary
+              underline={false}
+            >
               <IconBrandGithub size={20} />
             </Link>
           )}
 
           {project?.live_url && (
-            <Link href={project.live_url} secondary underline={false}>
+            <Link
+              aria-label="Live URL"
+              href={project.live_url}
+              secondary
+              underline={false}
+            >
               <IconExternalLink size={20} />
             </Link>
           )}
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
@@ -93,23 +113,33 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/60 via-surface/30 to-primary/10 p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
+    <li className="group flex flex-col overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/60 via-surface/30 to-primary/10 p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
       <div className={`mb-4 flex justify-end gap-4`}>
         {project.github_url && (
-          <Link href={project.github_url} secondary underline={false}>
+          <Link
+            aria-label="Github URL"
+            href={project.github_url}
+            secondary
+            underline={false}
+          >
             <IconBrandGithub size={20} />
           </Link>
         )}
         {project?.live_url && (
-          <Link href={project.live_url} secondary underline={false}>
+          <Link
+            aria-label="Live URL"
+            href={project.live_url}
+            secondary
+            underline={false}
+          >
             <IconExternalLink size={20} />
           </Link>
         )}
       </div>
 
-      <h4 className="mb-2 text-lg font-bold sm:mb-3 sm:text-xl md:text-2xl">
+      <h3 className="mb-2 text-lg font-bold sm:mb-3 sm:text-xl md:text-2xl">
         {project.name}
-      </h4>
+      </h3>
 
       <div className="mb-4 grow space-y-2 text-sm text-muted sm:space-y-3 sm:text-base">
         {project.description.map((pd, index) => (
@@ -117,14 +147,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         ))}
       </div>
 
-      <div className={`flex flex-wrap gap-1.5 sm:gap-2`}>
+      <ul className="flex list-none flex-wrap gap-1.5 sm:gap-2">
         {project.technologies.map((pt) => (
           <Tag key={pt} className="shadow-sm">
             {pt}
           </Tag>
         ))}
-      </div>
-    </div>
+      </ul>
+    </li>
   );
 };
 
@@ -134,7 +164,7 @@ export default function Projects() {
   return (
     <Section name="Projects" subHeading="Imagination in Action">
       <div className="prjects-grad py-4 sm:py-5">
-        <ul className="mx-auto mb-12 space-y-8 sm:mb-14 sm:max-w-screen-sm sm:space-y-10 md:mb-16 md:space-y-12 lg:mb-20 lg:ml-0 lg:mt-8 lg:max-w-none lg:space-y-20 xl:mb-24 xl:space-y-24 2xl:mb-28 2xl:space-y-28">
+        <ul className="mx-auto mb-12 list-none space-y-8 sm:mb-14 sm:max-w-screen-sm sm:space-y-10 md:mb-16 md:space-y-12 lg:mb-20 lg:ml-0 lg:mt-8 lg:max-w-none lg:space-y-20 xl:mb-24 xl:space-y-24 2xl:mb-28 2xl:space-y-28">
           {projects
             .filter((p) => p.featured)
             .map((p, index) => (
@@ -146,14 +176,14 @@ export default function Projects() {
           Other Noteworthy Projects
         </p>
 
-        <div className="project-cards-grad mx-auto mt-4 flex flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-screen-sm sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
+        <ul className="project-cards-grad mx-auto mt-4 flex list-none flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-screen-sm sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
           {projects
             .filter((p) => !p.featured)
             .slice(0, 3)
             .map((p) => (
               <ProjectCard project={p} key={p.id} />
             ))}
-        </div>
+        </ul>
 
         <div className="flex justify-center py-5">
           <NextLink

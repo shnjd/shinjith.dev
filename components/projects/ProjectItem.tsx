@@ -61,11 +61,11 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
           !isLast ? "border-b" : ""
         }`}
       >
-        <div className="flex flex-wrap gap-1.5">
+        <ul className="flex list-none flex-wrap gap-1.5">
           {project?.technologies.map((tech) => (
             <Tag key={tech}>{tech}</Tag>
           ))}
-        </div>
+        </ul>
       </td>
 
       <td

@@ -18,6 +18,7 @@ const ModeSwitch = () => {
 
   return (
     <button
+      aria-label="theme-switch"
       title={`Switch to ${getNextMode()} mode`}
       onClick={() => change(mode === "light")}
       style={{
