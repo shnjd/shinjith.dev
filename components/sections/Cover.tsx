@@ -22,12 +22,12 @@ export default function Cover() {
         <motion.h1
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "tween" }}
+          transition={{ type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className={`${rubik.className} flex w-full justify-between text-center text-9xl text-[min(16rem,max(15vw,3rem))] font-bold uppercase tracking-wide text-primary/50`}
         >
-          {SHINJITH.map((l) => (
-            <span key={`shinjith-${l}`}>{l}</span>
+          {SHINJITH.map((l, index) => (
+            <span key={`shinjith-${l}-${index}`}>{l}</span>
           ))}
         </motion.h1>
       </div>
@@ -36,13 +36,14 @@ export default function Cover() {
         <motion.div
           initial={{ opacity: 0, y: 80, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.3, type: "tween" }}
+          transition={{ delay: 0.2, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className="relative mb-3 h-32 w-32 xl:h-40 xl:w-40"
         >
           <Image
             src="/assets/images/shinjith.jpg"
-            fill
+            height={160}
+            width={160}
             className="rounded-full object-cover object-top"
             alt="shinjith's portrait"
             priority
@@ -52,7 +53,7 @@ export default function Cover() {
         <motion.h2
           initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.5, type: "tween" }}
+          transition={{ delay: 0.3, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl"
         >
@@ -61,7 +62,7 @@ export default function Cover() {
         <motion.h3
           initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.5, type: "tween" }}
+          transition={{ delay: 0.35, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg"
         >
@@ -70,7 +71,7 @@ export default function Cover() {
         <motion.p
           initial={{ opacity: 0, y: 40, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.6, type: "tween" }}
+          transition={{ delay: 0.45, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className="max-w-lg text-sm font-normal text-muted sm:text-base"
         >

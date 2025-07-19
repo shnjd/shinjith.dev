@@ -73,6 +73,7 @@ export default function Contact() {
           }}
         >
           <a
+            aria-label="Github"
             href="https://github.com/shinjith-dev"
             target="_blank"
             rel="noopener noreferrer"
@@ -84,6 +85,7 @@ export default function Contact() {
           </a>
 
           <a
+            aria-label="Instagram"
             href="https://www.instagram.com/shinjith_"
             target="_blank"
             rel="noopener noreferrer"
@@ -95,6 +97,7 @@ export default function Contact() {
           </a>
 
           <a
+            aria-label="Dev.to"
             href="https://dev.to/shinjithdev"
             target="_blank"
             rel="noopener noreferrer"
@@ -103,6 +106,7 @@ export default function Contact() {
           </a>
 
           <a
+            aria-label="Linkedin"
             href="https://www.linkedin.com/in/shinjithkanhangad"
             target="_blank"
             rel="noopener noreferrer"
@@ -114,6 +118,7 @@ export default function Contact() {
           </a>
 
           <a
+            aria-label="X(Twitter)"
             href="https://twitter.com/ShinjithR"
             target="_blank"
             rel="noopener noreferrer"
