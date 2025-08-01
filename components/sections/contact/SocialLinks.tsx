@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default function SocialLinks({ scrollProgress }: Props) {
-  console.log(0.2 - scrollProgress);
   return (
     <div
       style={{
@@ -24,6 +23,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
     >
       <div className="relative flex flex-col gap-2.5 text-lg transition-all sm:gap-3 sm:text-xl md:text-2xl">
         <a
+          aria-label="Github"
           href="https://github.com/shinjith-dev"
           target="_blank"
           rel="noopener noreferrer"
@@ -42,6 +42,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         </a>
 
         <a
+          aria-label="Dev.to"
           href="https://dev.to/shinjithdev"
           target="_blank"
           rel="noopener noreferrer"
@@ -50,6 +51,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         </a>
 
         <a
+          aria-label="Linkedin"
           href="https://www.linkedin.com/in/shinjithkanhangad"
           target="_blank"
           rel="noopener noreferrer"
@@ -61,6 +63,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         </a>
 
         <a
+          aria-label="X(Twitter)"
           href="https://twitter.com/ShinjithR"
           target="_blank"
           rel="noopener noreferrer"

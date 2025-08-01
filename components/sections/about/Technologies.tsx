@@ -13,7 +13,9 @@ import Marquee from "react-fast-marquee";
 import {
   SiBootstrap,
   SiC,
+  SiCloudflareworkers,
   SiDjango,
+  SiDocker,
   SiElectron,
   SiExpo,
   SiExpress,
@@ -52,7 +54,6 @@ const technologies: Technology[] = [
       />
     ),
   },
-
   {
     name: "C",
     icon: (
@@ -63,9 +64,27 @@ const technologies: Technology[] = [
     ),
   },
   {
+    name: "Workers",
+    icon: (
+      <SiCloudflareworkers
+        size={20}
+        className="text-subtle transition-all group-hover:text-secondary-fg dark:group-hover:text-secondary"
+      />
+    ),
+  },
+  {
     name: "Django",
     icon: (
       <SiDjango
+        size={20}
+        className="text-subtle transition-all group-hover:text-secondary-fg dark:group-hover:text-secondary"
+      />
+    ),
+  },
+  {
+    name: "Docker",
+    icon: (
+      <SiDocker
         size={20}
         className="text-subtle transition-all group-hover:text-secondary-fg dark:group-hover:text-secondary"
       />
@@ -147,7 +166,7 @@ const technologies: Technology[] = [
   },
 
   {
-    name: "Nextjs",
+    name: "Next.js",
     icon: (
       <IconBrandNextjs className="text-subtle transition-all group-hover:text-secondary-fg dark:group-hover:text-secondary" />
     ),

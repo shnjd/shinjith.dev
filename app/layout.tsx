@@ -4,7 +4,7 @@ import { rubik } from "@/lib/fonts";
 import Background from "@/components/common/Background";
 import { ReactLenis } from "@/lib/lenis";
 import SectionContextProvider from "@/components/contexts/SectionContext";
-import Loader from "@/components/common/loader";
+// import Loader from "@/components/common/loader";
 
 import type { Viewport, Metadata } from "next";
 import Footer from "@/components/common/Footer";
@@ -15,12 +15,32 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Shinjith P R",
+  url: "https://shinjith.dev",
+  author: {
+    "@type": "Person",
+    name: "Shinjith P R",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://shinjith.dev"),
   openGraph: {
     siteName: "Shinjith P R",
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
+    description:
+      "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
+    images: [
+      {
+        url: "/assets/images/seo-cover.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -30,25 +50,12 @@ export const metadata: Metadata = {
     "max-video-preview": -1,
     googleBot: "index, follow",
   },
-  // alternates: {
-  //   types: {
-  //     "application/rss+xml": "https://dminhvu.com/rss.xml"
-  //   }
-  // },
   applicationName: "Shinjith P R",
   appleWebApp: {
     title: "Shinjith P R",
     statusBarStyle: "default",
     capable: true,
   },
-  // verification: {
-  //   google: "YOUR_DATA",
-  //   yandex: ["YOUR_DATA"],
-  //   other: {
-  //     "msvalidate.01": ["YOUR_DATA"],
-  //     "facebook-domain-verification": ["YOUR_DATA"]
-  //   }
-  // },
   icons: {
     icon: [
       {
@@ -101,16 +108,18 @@ export default function RootLayout({
       <body
         className={`${rubik.className} max-w-screen relative h-full min-h-svh w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
       >
-        <Loader>
-          <ReactLenis root>
-            <SectionContextProvider>
-              <Background />
-              <Navbar />
-              <main className="container relative z-10">{children}</main>
-              <Footer />
-            </SectionContextProvider>
-          </ReactLenis>
-        </Loader>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+        />
+        <ReactLenis root>
+          <SectionContextProvider>
+            <Background />
+            <Navbar />
+            <main className="container relative z-10">{children}</main>
+            <Footer />
+          </SectionContextProvider>
+        </ReactLenis>
       </body>
     </html>
   );

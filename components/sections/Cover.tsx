@@ -19,60 +19,61 @@ export default function Cover() {
           Hey, I am
         </p>
 
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "tween" }}
+          transition={{ type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className={`${rubik.className} flex w-full justify-between text-center text-9xl text-[min(16rem,max(15vw,3rem))] font-bold uppercase tracking-wide text-primary/50`}
         >
-          {SHINJITH.map((l) => (
-            <span key={`shinjith-${l}`}>{l}</span>
+          {SHINJITH.map((l, index) => (
+            <span key={`shinjith-${l}-${index}`}>{l}</span>
           ))}
-        </motion.h2>
+        </motion.h1>
       </div>
 
-      <div className="absolute bottom-6 flex flex-col items-center p-3 text-center sm:bottom-8 md:bottom-10 lg:bottom-12 xl:bottom-16">
+      <div className="absolute bottom-10 flex flex-col items-center p-3 text-center md:bottom-12 xl:bottom-16">
         <motion.div
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          initial={{ opacity: 0, y: 80, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.3, type: "tween" }}
+          transition={{ delay: 0.2, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
-          className="relative mb-3 h-28 w-28 xl:h-40 xl:w-40"
+          className="relative mb-3 h-32 w-32 xl:h-40 xl:w-40"
         >
           <Image
             src="/assets/images/shinjith.jpg"
-            fill
+            height={160}
+            width={160}
             className="rounded-full object-cover object-top"
             alt="shinjith's portrait"
             priority
           />
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.5, type: "tween" }}
+          transition={{ delay: 0.3, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl"
         >
           Web Developer
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+        </motion.h2>
+        <motion.h3
+          initial={{ opacity: 0, y: 60, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.5, type: "tween" }}
+          transition={{ delay: 0.35, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
           className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg"
         >
           Based in Kerala, India
-        </motion.p>
+        </motion.h3>
         <motion.p
-          initial={{ opacity: 0, y: 100, scale: 1.1 }}
+          initial={{ opacity: 0, y: 40, scale: 1.1 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.6, type: "tween" }}
+          transition={{ delay: 0.45, type: "tween", duration: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-lg text-xs font-normal text-muted sm:text-sm md:text-base"
+          className="max-w-lg text-sm font-normal text-muted sm:text-base"
         >
           Who specializes in creating pixel-perfect, engaging, and accessible
           digital experiences. Currently, I&apos;m concentrating on developing

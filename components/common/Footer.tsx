@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="relative z-10">
       <div className="container flex w-full flex-col-reverse items-center justify-between gap-4 py-4 sm:flex-row">
         <p className="text-center text-xs text-muted sm:text-sm">
-          &copy; 2024, All rights reserved.
+          &copy; {new Date().getFullYear()}, All rights reserved.
         </p>
 
         <ul className="flex items-center justify-center gap-6 text-sm text-subtle">

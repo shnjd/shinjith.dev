@@ -16,12 +16,12 @@
         "Led key features like multi-day booking, role-based access, and set up shared logic for an upcoming product from scratch."
       ],
       "technologies": [
-        "TypeScript",
         "React",
-        "Redux",
         "React Native",
         "Expo",
-        "Nextjs",
+        "Next.js",
+        "Redux",
+        "TypeScript",
         "Tamag UI"
       ],
       "from": "September 2024",
@@ -37,7 +37,7 @@
       "technologies": [
         "JavaScript",
         "TypeScript",
-        "Nextjs",
+        "Next.js",
         "React",
         "Tailwind"
       ],
@@ -46,6 +46,47 @@
     }
   ],
   "projects": [
+    {
+      "id": "shuffle-glimpse",
+      "name": "Shuffle Glimpse",
+      "featured": true,
+      "description": [
+        "A web app made with the Spotify Web API to provide a glance into your listening habits.  Check out your favorite artists, songs, recently played, and saved songs.",
+        "Coded using modern technologies such as zustand, tanstack react-query, Cloudflare Worker and Next.js. With a modern, clean, Spotify-like UI."
+      ],
+      "technologies": [
+        "Next.js",
+        "Spotify API",
+        "Cloudflare Worker",
+        "TypeScript",
+        "Zustand",
+        "React Query"
+      ],
+      "image": "/assets/images/project_shuffle-glimpse.png",
+      "created_at": "2025-05-07",
+      "live_url": "https://shuffle.shinjith.dev",
+      "github_url": "https://github.com/shinjith-dev/shuffle-glimpse"
+    },
+    {
+      "id": "blood-donors",
+      "name": "Blood Donors",
+      "featured": true,
+      "description": [
+        "A mobile app created for a public welfare organization, a group of people who make urgent donations.  This software keeps track of blood donors' records and donation histories, as well as maintaining an up-to-date list monitored by enrolled staff.",
+        "Crafted with powerful Expo + Supabase combo."
+      ],
+      "technologies": [
+        "React",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "Postgress",
+        "GluestackUI"
+      ],
+      "image": "/assets/images/project_blood-donors.jpg",
+      "created_at": "2025-02-23"
+    },
     {
       "id": "pomtick",
       "name": "Pomtick",
@@ -62,7 +103,7 @@
         "Turborepo",
         "Tauri"
       ],
-      "image": "/assets/images/project_pomodoro.png",
+      "image": "/assets/images/project_pomodoro.jpg",
       "live_url": "https://pomtick.pages.dev",
       "github_url": "https://github.com/shinjith-dev/pomtick-web",
       "created_at": "2024-05-12"
@@ -70,13 +111,13 @@
     {
       "id": "portfolio-v2",
       "name": "Personal Website v2",
-      "featured": true,
+      "featured": false,
       "description": [
         "A portfolio website. It offers a visually appealing fancy UI with an awesome loading animation!",
         "The majority of the scripts are written in vanilla js, with styling done mostly in CSS. Another attracting feature of this website is the page transition effect."
       ],
       "technologies": ["React", "Bootstrap", "Sass"],
-      "image": "/assets/images/project_portfolio-v2.png",
+      "image": "/assets/images/project_portfolio-v2.jpg",
       "live_url": "https://v2.shinjith.dev",
       "github_url": "https://github.com/shinjith-dev/shinjith.live-v2",
       "created_at": "2022-08-27"
@@ -84,13 +125,13 @@
     {
       "id": "movieloft",
       "name": "Movie Loft",
-      "featured": true,
+      "featured": false,
       "description": [
         "Movie Loft is a simple to use web-based movie database client. It could be useful when looking for movies and television shows. It also contains detailed information on a film or television show, such as the cast and crew, number of episodes, and so on.",
         "Notably, it was a beginner-friendly project for learning open APIs and api integeration."
       ],
       "technologies": ["React", "Material UI", "TMDB"],
-      "image": "/assets/images/project_movieloft.png",
+      "image": "/assets/images/project_movieloft.jpg",
       "live_url": "https://movie-loft.netlify.app",
       "github_url": "https://github.com/shinjith-dev/movie-loft",
       "created_at": "2022-10-22"

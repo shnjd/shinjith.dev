@@ -13,7 +13,7 @@ export default function About() {
               <span className="text-secondary-fg dark:text-secondary">
                 software engineer
               </span>{" "}
-              with over two years of experience creating interactive and
+              with about three years of experience creating interactive and
               accessible solutions using modern technologies. While I specialize
               in designing visually appealing, user-friendly web interfaces, I
               like working on a variety of projects.
@@ -45,16 +45,17 @@ export default function About() {
               </Link>
             </span>
             <span>
-              I was recently working on a project called{" "}
+              Currently working on a project called{" "}
               <Link
-                href={"https://pomtick.pages.dev"}
+                aria-label="wakalyst"
+                href="https://github.com/shinjith-dev/wakalyst"
                 secondary
                 className="text-secondary-fg dark:text-secondary"
               >
-                Pomtick
+                wakalyst
               </Link>
-              , which is a cross-platform pomodoro productivity timer built with
-              React (NextJS + TypeScript), Tauri, and Turborepo.
+              , an unofficial wakatime client, crafted using React Native
+              (Expo).
             </span>
           </p>
         </div>
@@ -64,7 +65,7 @@ export default function About() {
             <li>JavaScript</li>
             <li>TypeScript</li>
             <li>React</li>
-            <li>Nextjs</li>
+            <li>Next.js</li>
             <li>React Native (Expo)</li>
             <li>Tauri</li>
           </ul>

@@ -27,6 +27,8 @@ export default function Loader({ children }: Props) {
     return () => clearInterval(interval);
   }, []);
 
+  // NOTE: spinner is disabled for better seo
+  return children;
   if (progress >= 99.5) return children;
 
   return (

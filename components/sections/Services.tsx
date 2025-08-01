@@ -49,12 +49,12 @@ function Card({ card, index = 0 }: CardProps) {
         {card.icon}
       </div>
 
-      <div className="text-sm font-medium text-fg transition-all sm:text-base md:text-lg">
+      <h3 className="text-sm font-medium text-fg transition-all sm:text-base md:text-lg">
         {card.title}
-      </div>
-      <div className="text-xs text-muted transition-all sm:text-sm">
+      </h3>
+      <p className="text-xs text-muted transition-all sm:text-sm">
         {card.description}
-      </div>
+      </p>
     </motion.div>
   );
 }

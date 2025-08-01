@@ -13,6 +13,7 @@ export default function MenuButton({
 }: Props) {
   return (
     <button
+      aria-label="Menu"
       className={cn(
         `group flex h-6 max-h-6 w-5 max-w-5 flex-col items-end gap-[5px] overflow-hidden transition-all`,
         className,
