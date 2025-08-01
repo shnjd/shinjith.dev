@@ -2,7 +2,7 @@
 import React from "react";
 import {
   IconBrandGithub,
-  IconBrandInstagram,
+  IconBrandMastodon,
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
@@ -34,12 +34,8 @@ export default function SocialLinks({ scrollProgress }: Props) {
           />
         </a>
 
-        <a
-          href="https://www.instagram.com/shinjith_"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconBrandInstagram
+        <a rel="me" href="https://mastodon.social/@shnjd" target="_blank">
+          <IconBrandMastodon
             size={24}
             className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
           />
