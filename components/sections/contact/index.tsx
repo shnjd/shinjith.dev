@@ -84,7 +84,12 @@ export default function Contact() {
             />
           </a>
 
-          <a href="https://mastodon.social/@shnjd" target="_blank" rel="me">
+          <a
+            href="https://mastodon.social/@shnjd"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Mastodon"
+          >
             <IconBrandMastodon
               size={24}
               className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"

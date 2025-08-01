@@ -34,7 +34,12 @@ export default function SocialLinks({ scrollProgress }: Props) {
           />
         </a>
 
-        <a rel="me" href="https://mastodon.social/@shnjd" target="_blank">
+        <a
+          rel="me noopener noreferrer"
+          aria-label="Mastodon"
+          href="https://mastodon.social/@shnjd"
+          target="_blank"
+        >
           <IconBrandMastodon
             size={24}
             className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
