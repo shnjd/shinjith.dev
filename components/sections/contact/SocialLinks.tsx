@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import {
+  IconBrandBluesky,
   IconBrandGithub,
   IconBrandMastodon,
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
-import Devto from "@/components/icons/devto";
 
 type Props = {
   scrollProgress: number;
@@ -23,15 +23,12 @@ export default function SocialLinks({ scrollProgress }: Props) {
     >
       <div className="relative flex flex-col gap-2.5 text-lg transition-all sm:gap-3 sm:text-xl md:text-2xl">
         <a
-          aria-label="Github"
-          href="https://github.com/shinjith-dev"
+          aria-label="Bluesky"
+          href="https://bsky.app/profile/shinjith.dev"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandGithub
-            size={24}
-            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
-          />
+          <IconBrandBluesky className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
         </a>
 
         <a
@@ -47,12 +44,15 @@ export default function SocialLinks({ scrollProgress }: Props) {
         </a>
 
         <a
-          aria-label="Dev.to"
-          href="https://dev.to/shinjithdev"
+          aria-label="Github"
+          href="https://github.com/shnjd"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Devto className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+          <IconBrandGithub
+            size={24}
+            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+          />
         </a>
 
         <a
@@ -69,7 +69,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
 
         <a
           aria-label="X(Twitter)"
-          href="https://twitter.com/ShinjithR"
+          href="https://twitter.com/shnjd_"
           target="_blank"
           rel="noopener noreferrer"
         >
