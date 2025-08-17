@@ -5,7 +5,7 @@ import SocialLinks from "./SocialLinks";
 import { useEffect, useRef, useState } from "react";
 import {
   IconBrandGithub,
-  IconBrandInstagram,
+  IconBrandMastodon,
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
@@ -81,12 +81,12 @@ export default function Contact() {
           </a>
 
           <a
-            aria-label="Instagram"
-            href="https://www.instagram.com/shinjith_"
+            href="https://mastodon.social/@shnjd"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
+            aria-label="Mastodon"
           >
-            <IconBrandInstagram
+            <IconBrandMastodon
               size={24}
               className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
             />

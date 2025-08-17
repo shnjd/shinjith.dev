@@ -15,6 +15,17 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Shinjith P R",
+  url: "https://shinjith.dev",
+  author: {
+    "@type": "Person",
+    name: "Shinjith P R",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://shinjith.dev"),
   openGraph: {
@@ -22,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     description:
-      "Shinjith P R | App Developer, Web Developer, Designer. Experienced developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
+      "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
     images: [
       {
         url: "/assets/images/seo-cover.png",
@@ -39,25 +50,12 @@ export const metadata: Metadata = {
     "max-video-preview": -1,
     googleBot: "index, follow",
   },
-  // alternates: {
-  //   types: {
-  //     "application/rss+xml": "https://dminhvu.com/rss.xml"
-  //   }
-  // },
   applicationName: "Shinjith P R",
   appleWebApp: {
     title: "Shinjith P R",
     statusBarStyle: "default",
     capable: true,
   },
-  // verification: {
-  //   google: "YOUR_DATA",
-  //   yandex: ["YOUR_DATA"],
-  //   other: {
-  //     "msvalidate.01": ["YOUR_DATA"],
-  //     "facebook-domain-verification": ["YOUR_DATA"]
-  //   }
-  // },
   icons: {
     icon: [
       {
@@ -110,6 +108,10 @@ export default function RootLayout({
       <body
         className={`${rubik.className} max-w-screen relative h-full min-h-svh w-full overflow-y-auto overflow-x-hidden bg-background text-base text-fg`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
+        />
         <ReactLenis root>
           <SectionContextProvider>
             <Background />
