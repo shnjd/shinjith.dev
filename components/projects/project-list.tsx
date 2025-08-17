@@ -1,8 +1,7 @@
 "use client";
 
 import ProjectItem from "@/components/projects/ProjectItem";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import portfolio from "@/portfolio.json";
 import { TProject } from "@/lib/types";

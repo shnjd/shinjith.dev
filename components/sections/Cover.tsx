@@ -2,7 +2,7 @@
 import { rubik } from "@/lib/fonts";
 import Section from "../base/Section";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const SHINJITH = ["S", "h", "i", "n", "j", "i", "t", "h"];
 

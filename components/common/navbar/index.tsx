@@ -6,7 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { rubik } from "@/lib/fonts";
 import MenuButton from "@/components/base/MenuButton";
 import { toKebabCase } from "@/lib/utils/string";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { SectionContext } from "@/components/contexts/SectionContext";
 import { usePathname } from "next/navigation";
 

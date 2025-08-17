@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { toKebabCase } from "@/lib/utils/string";
 import { SectionContext } from "../contexts/SectionContext";

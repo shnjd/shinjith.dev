@@ -1,6 +1,6 @@
 "use client";
 import Section from "../base/Section";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Service } from "@/lib/types";
 import { IconBulb, IconBugOff, IconCode, IconTools } from "@tabler/icons-react";
 

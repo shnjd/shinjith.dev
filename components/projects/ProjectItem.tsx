@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { TProject } from "@/lib/types";
 import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
 import Tag from "../base/Tag";
