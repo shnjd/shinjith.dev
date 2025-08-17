@@ -65,7 +65,7 @@
       "image": "/assets/images/project_shuffle-glimpse.png",
       "created_at": "2025-05-07",
       "live_url": "https://shuffle.shinjith.dev",
-      "github_url": "https://github.com/shinjith-dev/shuffle-glimpse"
+      "github_url": "https://github.com/shnjd/shuffle-glimpse"
     },
     {
       "id": "blood-donors",
@@ -105,7 +105,7 @@
       ],
       "image": "/assets/images/project_pomodoro.jpg",
       "live_url": "https://pomtick.pages.dev",
-      "github_url": "https://github.com/shinjith-dev/pomtick-web",
+      "github_url": "https://github.com/shnjd/pomtick",
       "created_at": "2024-05-12"
     },
     {
@@ -119,7 +119,7 @@
       "technologies": ["React", "Bootstrap", "Sass"],
       "image": "/assets/images/project_portfolio-v2.jpg",
       "live_url": "https://v2.shinjith.dev",
-      "github_url": "https://github.com/shinjith-dev/shinjith.live-v2",
+      "github_url": "https://github.com/shnjd/shinjith.live-v2",
       "created_at": "2022-08-27"
     },
     {
@@ -133,7 +133,7 @@
       "technologies": ["React", "Material UI", "TMDB"],
       "image": "/assets/images/project_movieloft.jpg",
       "live_url": "https://movie-loft.netlify.app",
-      "github_url": "https://github.com/shinjith-dev/movie-loft",
+      "github_url": "https://github.com/shnjd/movie-loft",
       "created_at": "2022-10-22"
     },
     {
@@ -147,7 +147,7 @@
       "technologies": ["JavaScript", "MDB Kit"],
       "image": "",
       "live_url": "https://shinjith-dev.github.io/JavaScript-Drum-Kit",
-      "github_url": "https://github.com/shinjith-dev/JavaScript-Drum-Kit",
+      "github_url": "https://github.com/shnjd/JavaScript-Drum-Kit",
       "created_at": "2022-09-17"
     },
     {
@@ -160,7 +160,7 @@
       "technologies": ["JavaScript"],
       "image": "",
       "live_url": "https://shinjith-dev.github.io/JS-Calculator",
-      "github_url": "https://github.com/shinjith-dev/JS-Calculator",
+      "github_url": "https://github.com/shnjd/JS-Calculator",
       "created_at": "2022-02-08"
     },
     {
@@ -173,7 +173,7 @@
       "technologies": ["React"],
       "image": "",
       "live_url": "https://react-todo.shinjith.dev",
-      "github_url": "https://github.com/shinjith-dev/React-Todo",
+      "github_url": "https://github.com/shnjd/React-Todo",
       "created_at": "2022-03-10"
     }
   ]

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Shinjith P R",
     description:
       "Shinjith P R | App Developer, Web Developer, Designer. Experienced developer with expertise in NextJS, React, TypeScript, Redux, React Native, Expo, and other technologies... | Kerala, India",
-    creator: "@shinjithr",
+    creator: "@shnjd_",
     images: [
       {
         url: "/assets/images/seo-cover.png",

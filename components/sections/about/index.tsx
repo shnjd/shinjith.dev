@@ -48,7 +48,7 @@ export default function About() {
               Currently working on a project called{" "}
               <Link
                 aria-label="wakalyst"
-                href="https://github.com/shinjith-dev/wakalyst"
+                href="https://github.com/shnjd/wakalyst"
                 secondary
                 className="text-secondary-fg dark:text-secondary"
               >

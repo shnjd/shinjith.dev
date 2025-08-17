@@ -1,5 +1,5 @@
 "use client";
-import { IconMailShare } from "@tabler/icons-react";
+import { IconBrandBluesky, IconMailShare } from "@tabler/icons-react";
 import Section from "@/components/base/Section";
 import SocialLinks from "./SocialLinks";
 import { useEffect, useRef, useState } from "react";
@@ -9,7 +9,6 @@ import {
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
-import Devto from "@/components/icons/devto";
 import NextLink from "next/link";
 
 export default function Contact() {
@@ -73,15 +72,12 @@ export default function Contact() {
           }}
         >
           <a
-            aria-label="Github"
-            href="https://github.com/shinjith-dev"
+            aria-label="Bluesky"
+            href="https://bsky.app/profile/shinjith.dev"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IconBrandGithub
-              size={24}
-              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
-            />
+            <IconBrandBluesky className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
           </a>
 
           <a
@@ -97,12 +93,15 @@ export default function Contact() {
           </a>
 
           <a
-            aria-label="Dev.to"
-            href="https://dev.to/shinjithdev"
+            aria-label="Github"
+            href="https://github.com/shnjd"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Devto className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+            <IconBrandGithub
+              size={24}
+              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+            />
           </a>
 
           <a
@@ -119,7 +118,7 @@ export default function Contact() {
 
           <a
             aria-label="X(Twitter)"
-            href="https://twitter.com/ShinjithR"
+            href="https://twitter.com/shnjd_"
             target="_blank"
             rel="noopener noreferrer"
           >

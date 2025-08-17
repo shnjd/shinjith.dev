@@ -122,7 +122,9 @@ const Navbar = () => {
                 href="/"
                 className={`text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary ${rubik.className}`}
               >
-                /shinjith-dev<span className="blink">_</span>
+                <span className="mr-1 text-sm sm:text-base md:text-lg">❯</span>
+                shnjd
+                <span className="blink text-sm sm:text-base md:text-lg">_</span>
               </NextLink>
 
               <ul className="hidden list-none gap-6 transition-all lg:flex">
