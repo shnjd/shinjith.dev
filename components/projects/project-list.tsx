@@ -25,7 +25,9 @@ export default function ProjectList() {
           href="/"
           className="flex items-baseline font-mono text-sm font-semibold leading-none text-secondary transition-all sm:text-base md:text-xl"
         >
-          /shinjith-dev<span className="blink">_</span>
+          <span className="mr-1 text-xs sm:text-sm md:text-base">❯</span>
+          shnjd
+          <span className="blink text-sm sm:text-base md:text-lg">_</span>
         </Link>
       </motion.div>
 
