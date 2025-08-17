@@ -1,13 +1,14 @@
 "use client";
-import { IconBrandBluesky, IconMailShare } from "@tabler/icons-react";
 import Section from "@/components/base/Section";
 import SocialLinks from "./SocialLinks";
 import { useEffect, useRef, useState } from "react";
 import {
   IconBrandGithub,
-  IconBrandMastodon,
   IconBrandLinkedin,
   IconBrandTwitter,
+  IconMailShare,
+  IconBrandBluesky,
+  IconBrandInstagram,
 } from "@tabler/icons-react";
 import NextLink from "next/link";
 
@@ -81,12 +82,12 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://mastodon.social/@shnjd"
+            href="https://www.instagram.com/shinjith_"
             target="_blank"
             rel="me noopener noreferrer"
-            aria-label="Mastodon"
+            aria-label="Instagram"
           >
-            <IconBrandMastodon
+            <IconBrandInstagram
               size={24}
               className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
             />
