@@ -1,6 +1,9 @@
 import Section from "@/components/layouts/Section";
 import Technologies from "./Technologies";
 import Link from "@/components/core/Link";
+import { technologies } from "@/lib/data/technologies";
+import TechnologyItem from "./TechnologyItem";
+import Marquee from "react-fast-marquee";
 
 export default function About() {
   return (
@@ -74,7 +77,12 @@ export default function About() {
           <p className="w-fit border-b border-secondary-fg py-0.5 text-secondary-fg dark:border-secondary dark:text-secondary">
             What Else Do I Know?
           </p>
-          <Technologies />
+
+          <Marquee speed={70} className="my-6 text-lg text-subtle">
+            {technologies.map((tech) => (
+              <TechnologyItem key={tech.name} {...tech} />
+            ))}
+          </Marquee>
         </div>
       </div>
     </Section>

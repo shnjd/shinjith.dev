@@ -3,8 +3,8 @@ import { rubik } from "@/lib/fonts";
 import Image from "next/image";
 import { motion } from "motion/react";
 import Section from "@/components/layouts/Section";
-
-const SHINJITH = ["S", "h", "i", "n", "j", "i", "t", "h"];
+import { displayName } from "@/lib/constants";
+import data from "@/lib/data";
 
 export default function Cover() {
   return (
@@ -26,7 +26,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className={`${rubik.className} flex w-full justify-between text-center text-9xl text-[min(16rem,max(15vw,3rem))] font-bold uppercase tracking-wide text-primary/50`}
         >
-          {SHINJITH.map((l, index) => (
+          {displayName.map((l, index) => (
             <span key={`shinjith-${l}-${index}`}>{l}</span>
           ))}
         </motion.h1>
@@ -57,7 +57,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl"
         >
-          Web Developer
+          {data.about.title}
         </motion.h2>
         <motion.h3
           initial={{ opacity: 0, y: 60, scale: 1.1 }}
@@ -66,7 +66,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg"
         >
-          Based in Kerala, India
+          {data.about.caption}
         </motion.h3>
         <motion.p
           initial={{ opacity: 0, y: 40, scale: 1.1 }}
@@ -75,9 +75,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className="max-w-lg text-sm font-normal text-muted sm:text-base"
         >
-          Who specializes in creating pixel-perfect, engaging, and accessible
-          digital experiences. Currently, I&apos;m concentrating on developing
-          useful web projects and learning new things.
+          {data.about.description}
         </motion.p>
       </div>
     </Section>
