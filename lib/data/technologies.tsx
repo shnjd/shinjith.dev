@@ -60,17 +60,14 @@ export const technologies: Technology[] = [
     name: "Electron",
     icon: SiElectron,
   },
-
   {
     name: "Expo",
     icon: SiExpo,
   },
-
   {
     name: "Express",
     icon: SiExpress,
   },
-
   {
     name: "JavaScript",
     icon: IconBrandJavascript,
@@ -79,7 +76,6 @@ export const technologies: Technology[] = [
     name: "Mantine",
     icon: SiMantine,
   },
-
   {
     name: "Markdown",
     icon: SiMarkdown,
@@ -88,12 +84,10 @@ export const technologies: Technology[] = [
     name: "Material UI",
     icon: SiMui,
   },
-
   {
     name: "Netlify",
     icon: SiNetlify,
   },
-
   {
     name: "Next.js",
     icon: IconBrandNextjs,
@@ -110,12 +104,10 @@ export const technologies: Technology[] = [
     name: "PNPM",
     icon: SiPnpm,
   },
-
   {
     name: "Python",
     icon: SiPython,
   },
-
   {
     name: "React",
     icon: IconBrandReact,
@@ -140,7 +132,6 @@ export const technologies: Technology[] = [
     name: "Tailwind",
     icon: SiTailwindcss,
   },
-
   {
     name: "Tauri",
     icon: SiTauri,
@@ -149,7 +140,6 @@ export const technologies: Technology[] = [
     name: "TypeScript",
     icon: IconBrandTypescript,
   },
-
   {
     name: "Yarn",
     icon: IconBrandYarn,
