@@ -6,9 +6,9 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import { SectionContext, TSection } from "../contexts/SectionContext";
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/utils/cn";
 import { rubik } from "@/lib/fonts";
+import { SectionContext, TSection } from "@/contexts/SectionContext";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;

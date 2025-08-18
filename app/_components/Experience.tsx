@@ -1,10 +1,10 @@
 import { IconArrowUpRight, IconUsersPlus } from "@tabler/icons-react";
-import Section from "../base/Section";
 import Link from "next/link";
-import Tag from "../base/Tag";
 import portfolio from "@/portfolio.json";
 import { IExperience } from "@/lib/types";
 import { Fragment } from "react";
+import Section from "@/components/layouts/Section";
+import Tag from "@/components/core/Tag";
 
 const experiences = portfolio.experience;
 

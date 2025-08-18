@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/utils/cn";
 import NextLink, { LinkProps } from "next/link";
 import { HTMLProps } from "react";
 

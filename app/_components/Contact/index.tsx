@@ -1,5 +1,4 @@
 "use client";
-import Section from "@/components/base/Section";
 import SocialLinks from "./SocialLinks";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -11,6 +10,7 @@ import {
   IconBrandInstagram,
 } from "@tabler/icons-react";
 import NextLink from "next/link";
+import Section from "@/components/layouts/Section";
 
 export default function Contact() {
   const targetRef = useRef<HTMLDivElement>(null);

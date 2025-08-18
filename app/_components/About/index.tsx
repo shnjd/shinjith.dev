@@ -1,6 +1,6 @@
-import Section from "@/components/base/Section";
-import Link from "@/components/base/Link";
+import Section from "@/components/layouts/Section";
 import Technologies from "./Technologies";
+import Link from "@/components/core/Link";
 
 export default function About() {
   return (

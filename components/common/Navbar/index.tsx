@@ -1,14 +1,14 @@
 "use client";
-import Link from "@/components/base/Link";
 import NextLink from "next/link";
 import ModeSwitch from "./ModeSwitch";
 import { useContext, useEffect, useRef, useState } from "react";
 import { rubik } from "@/lib/fonts";
-import MenuButton from "@/components/base/MenuButton";
-import { toKebabCase } from "@/lib/utils/string";
+import { toKebabCase } from "@/utils/string";
 import { AnimatePresence, motion } from "motion/react";
-import { SectionContext } from "@/components/contexts/SectionContext";
+import { SectionContext } from "@/contexts/SectionContext";
 import { usePathname } from "next/navigation";
+import Link from "@/components/core/Link";
+import MenuButton from "./MenuButton";
 
 const navs = ["About", "Experience", "Projects", "Services", "Contact"];
 

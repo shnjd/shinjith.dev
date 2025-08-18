@@ -1,15 +1,15 @@
 import { TProject } from "@/lib/types";
-import Section from "../base/Section";
 import Image from "next/image";
 import porfolio from "@/portfolio.json";
-import Link from "../base/Link";
 import {
   IconExternalLink,
   IconBrandGithub,
   IconArrowRight,
 } from "@tabler/icons-react";
-import Tag from "../base/Tag";
 import NextLink from "next/link";
+import Link from "@/components/core/Link";
+import Tag from "@/components/core/Tag";
+import Section from "@/components/layouts/Section";
 
 type ProjectProps = {
   project: TProject;

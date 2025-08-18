@@ -1,8 +1,8 @@
 "use client";
 import { rubik } from "@/lib/fonts";
-import Section from "../base/Section";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Section from "@/components/layouts/Section";
 
 const SHINJITH = ["S", "h", "i", "n", "j", "i", "t", "h"];
 

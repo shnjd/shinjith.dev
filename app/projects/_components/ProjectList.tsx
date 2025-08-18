@@ -1,10 +1,10 @@
 "use client";
 
-import ProjectItem from "@/components/projects/ProjectItem";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import portfolio from "@/portfolio.json";
 import { TProject } from "@/lib/types";
+import ProjectItem from "./ProjectItem";
 const projects = portfolio.projects;
 
 const sort = (a: TProject, b: TProject) =>

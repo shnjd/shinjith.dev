@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import useDarkMode from "@/components/hooks/useDarkMode";
+import useDarkMode from "@/hooks/useDarkMode";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 
 const ModeSwitch = () => {

@@ -1,10 +1,5 @@
-import About from "@/components/sections/about";
-import Contact from "@/components/sections/contact";
-import Cover from "@/components/sections/Cover";
-import Experience from "@/components/sections/Experience";
-import Projects from "@/components/sections/Projects";
-import Services from "@/components/sections/Services";
-import { Metadata, Viewport } from "next";
+import { Metadata } from "next";
+import LandingPage from "./_components/LandingPage";
 
 const personLd = {
   "@context": "https://schema.org/",
@@ -103,17 +98,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="h-full w-full text-fg">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
-      <Cover />
-      <About />
-      <Experience />
-      <Projects />
-      <Services />
-      <Contact />
-    </div>
+      <LandingPage />
+    </>
   );
 }
