@@ -10,16 +10,16 @@ import { cn } from "@/utils/cn";
 import { rubik } from "@/lib/fonts";
 import { SectionContext, TSection } from "@/contexts/SectionContext";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+type Props = HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode;
   name: TSection;
   withoutTitle?: boolean;
   limitOnXl?: boolean;
   condensed?: boolean;
   subHeading?: string;
-}
+};
 
-export default function Section({
+const Section: React.FC<Props> = ({
   name,
   withoutTitle = false,
   condensed = false,
@@ -28,7 +28,7 @@ export default function Section({
   className,
   children,
   ...props
-}: Props) {
+}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { setSection } = useContext(SectionContext);
 
@@ -79,4 +79,6 @@ export default function Section({
       {children}
     </section>
   );
-}
+};
+
+export default Section;

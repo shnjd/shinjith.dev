@@ -1,7 +1,7 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ReactNode } from "react";
 
-export interface TProject {
+export type TProject = {
   id: string;
   name: string;
   featured: boolean;
@@ -11,19 +11,19 @@ export interface TProject {
   live_url?: string;
   github_url?: string;
   created_at: string;
-}
+};
 
-export interface Service {
+export type Service = {
   icon: ReactNode | string;
   title: string;
   description: string;
-}
+};
 
-export interface IExperience {
+export type IExperience = {
   role: string;
   company: string;
   description: string[];
   technologies: string[];
   from: string;
   to: string;
-}
+};

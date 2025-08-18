@@ -1,16 +1,16 @@
 import { cn } from "@/utils/cn";
-import { ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   isClosed: boolean;
-}
+};
 
-export default function MenuButton({
+const MenuButton: React.FC<Props> = ({
   isClosed,
   children,
   className,
   ...props
-}: Props) {
+}) => {
   return (
     <button
       aria-label="Menu"
@@ -31,4 +31,6 @@ export default function MenuButton({
       />
     </button>
   );
-}
+};
+
+export default MenuButton;

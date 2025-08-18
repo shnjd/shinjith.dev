@@ -10,10 +10,10 @@ export type TSection =
   | "Contact"
   | null;
 
-interface TSectionContext {
+type TSectionContext = {
   activeSection: TSection;
   setSection: (section: TSection) => void;
-}
+};
 
 export const SectionContext = createContext<TSectionContext>({
   activeSection: null,
