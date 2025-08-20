@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import LandingPage from "./_components/LandingPage";
+import { about } from "@/lib/data";
 
 const personLd = {
   "@context": "https://schema.org/",
@@ -7,12 +8,7 @@ const personLd = {
   name: "Shinjith P R",
   url: "https://shinjith.dev",
   image: "https://shinjith.dev/assets/images/shinjith.jpg",
-  sameAs: [
-    "https://x.com/shinjithr",
-    "https://www.instagram.com/shinjith_",
-    "https://www.linkedin.com/in/shinjithkanhangad",
-    "https://github.com/shinjith-dev",
-  ],
+  sameAs: Object.values(about.handles),
   jobTitle: "Web & App Developer",
   worksFor: {
     "@type": "Organization",
@@ -82,7 +78,7 @@ export const metadata: Metadata = {
     title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
     description:
       "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
-    creator: "@shinjithr",
+    creator: "@shnjd_",
     images: [
       {
         url: "/assets/images/seo-cover.png",

@@ -3,8 +3,8 @@ import Link from "@/components/core/Link";
 import { technologies } from "@/lib/data/technologies";
 import TechnologyItem from "./TechnologyItem";
 import Marquee from "react-fast-marquee";
-import data from "@/lib/data";
 import { cn } from "@/utils/cn";
+import { about } from "@/lib/data";
 
 export default function About() {
   return (
@@ -12,7 +12,7 @@ export default function About() {
       <div className="h-full space-y-8 py-4 text-sm text-subtle sm:space-y-10 sm:py-5 sm:text-base md:space-y-12 md:py-6 lg:py-8">
         <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <p className="flex grow flex-col gap-3 md:gap-4">
-            {data.about.about.map((para, paraIdx) => (
+            {about.about.map((para, paraIdx) => (
               <span key={`about-para-${paraIdx}`}>
                 {para.map((phrase, phraseIdx) =>
                   phrase?.href ? (
@@ -50,7 +50,7 @@ export default function About() {
         <div>
           <p>Here are some of the technologies I&apos;ve lately worked with:</p>
           <ul className="about-tech-list my-4 grid grid-cols-2 gap-4 md:grid-cols-3">
-            {data.about.recentTechnologies.map((tech) => (
+            {about.recentTechnologies.map((tech) => (
               <li key={`recent-tech-${tech}`}>{tech}</li>
             ))}
           </ul>

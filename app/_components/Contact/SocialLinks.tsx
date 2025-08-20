@@ -7,6 +7,7 @@ import {
   IconBrandTwitter,
   IconBrandInstagram,
 } from "@tabler/icons-react";
+import { about } from "@/lib/data";
 
 type Props = {
   scrollProgress: number;
@@ -24,7 +25,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
       <div className="relative flex flex-col gap-2.5 text-lg transition-all sm:gap-3 sm:text-xl md:text-2xl">
         <a
           aria-label="Bluesky"
-          href="https://bsky.app/profile/shinjith.dev"
+          href={about.handles.bluesky}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -34,7 +35,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         <a
           rel="me noopener noreferrer"
           aria-label="Instagram"
-          href="https://www.instagram.com/shinjith_"
+          href={about.handles.instagram}
           target="_blank"
         >
           <IconBrandInstagram
@@ -45,7 +46,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
 
         <a
           aria-label="Github"
-          href="https://github.com/shnjd"
+          href={about.handles.github}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -57,7 +58,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
 
         <a
           aria-label="Linkedin"
-          href="https://www.linkedin.com/in/shinjithkanhangad"
+          href={about.handles.linkedin}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -69,7 +70,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
 
         <a
           aria-label="X(Twitter)"
-          href="https://twitter.com/shnjd_"
+          href={about.handles.twitter}
           target="_blank"
           rel="noopener noreferrer"
         >

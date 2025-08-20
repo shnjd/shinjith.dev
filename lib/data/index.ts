@@ -1,7 +1,4 @@
-import aboutJson from "./about.json";
-
-const data = {
-  about: aboutJson as DataAbout,
-};
-
-export default data;
+export * from "./about";
+export * from "./experience";
+export * from "./projects";
+export * from "./services";

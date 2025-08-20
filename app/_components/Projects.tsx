@@ -1,6 +1,4 @@
-import { TProject } from "@/lib/types";
 import Image from "next/image";
-import porfolio from "@/portfolio.json";
 import {
   IconExternalLink,
   IconBrandGithub,
@@ -10,13 +8,14 @@ import NextLink from "next/link";
 import Link from "@/components/core/Link";
 import Tag from "@/components/core/Tag";
 import Section from "@/components/layouts/Section";
+import { projects } from "@/lib/data";
 
 type ProjectProps = {
-  project: TProject;
+  project: DataProject;
   toRight: boolean;
 };
 
-const Project = ({ project, toRight }: ProjectProps) => {
+const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
   return (
     <li
       className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
@@ -108,7 +107,7 @@ const Project = ({ project, toRight }: ProjectProps) => {
 };
 
 type ProjectCardProps = {
-  project: TProject;
+  project: DataProject;
 };
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
@@ -158,8 +157,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   );
 };
 
-const projects = porfolio.projects;
-
 export default function Projects() {
   return (
     <Section name="Projects" subHeading="Imagination in Action">
@@ -168,7 +165,11 @@ export default function Projects() {
           {projects
             .filter((p) => p.featured)
             .map((p, index) => (
-              <Project key={p.id} project={p} toRight={index % 2 === 1} />
+              <ProjectWideCard
+                key={p.id}
+                project={p}
+                toRight={index % 2 === 1}
+              />
             ))}
         </ul>
 

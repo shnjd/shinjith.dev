@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 import NextLink from "next/link";
 import Section from "@/components/layouts/Section";
+import { about } from "@/lib/data";
 
 export default function Contact() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -74,7 +75,7 @@ export default function Contact() {
         >
           <a
             aria-label="Bluesky"
-            href="https://bsky.app/profile/shinjith.dev"
+            href={about.handles.bluesky}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -82,7 +83,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://www.instagram.com/shinjith_"
+            href={about.handles.instagram}
             target="_blank"
             rel="me noopener noreferrer"
             aria-label="Instagram"
@@ -95,7 +96,7 @@ export default function Contact() {
 
           <a
             aria-label="Github"
-            href="https://github.com/shnjd"
+            href={about.handles.github}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -107,7 +108,7 @@ export default function Contact() {
 
           <a
             aria-label="Linkedin"
-            href="https://www.linkedin.com/in/shinjithkanhangad"
+            href={about.handles.linkedin}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -118,8 +119,8 @@ export default function Contact() {
           </a>
 
           <a
-            aria-label="X(Twitter)"
-            href="https://twitter.com/shnjd_"
+            aria-label="X (Twitter)"
+            href={about.handles.twitter}
             target="_blank"
             rel="noopener noreferrer"
           >

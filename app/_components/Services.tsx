@@ -1,42 +1,16 @@
 "use client";
 import { AnimatePresence, motion } from "motion/react";
-import { Service } from "@/lib/types";
-import { IconBulb, IconBugOff, IconCode, IconTools } from "@tabler/icons-react";
 import Section from "@/components/layouts/Section";
-
-const services: Service[] = [
-  {
-    icon: <IconBulb size={32} />,
-    title: "Planning & Analysis",
-    description:
-      "We'll understand your goals, research the market, and create a project plan for your website or app.",
-  },
-  {
-    icon: <IconTools size={32} />,
-    title: "Design & Prototyping",
-    description:
-      "Our designers will create a user-friendly, visually appealing interface with previews for your review.",
-  },
-  {
-    icon: <IconCode size={32} />,
-    title: "Development & Coding",
-    description:
-      "Our developers will build your site using top-notch technologies for functionality & performance.",
-  },
-  {
-    icon: <IconBugOff size={32} />,
-    title: "Testing & Deployment",
-    description:
-      "We ensure your project works flawlessly through rigorous testing and deploy it to the web for users.",
-  },
-];
+import { services } from "@/lib/data";
 
 type CardProps = {
-  card: Service;
+  card: DataService;
   index: number;
 };
 
 function Card({ card, index = 0 }: CardProps) {
+  const Icon = card.icon;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 100, x: 10 }}
@@ -46,7 +20,7 @@ function Card({ card, index = 0 }: CardProps) {
       className="relative z-10 flex flex-col justify-end gap-1 rounded-lg border border-border bg-gradient-to-tr from-background/40 via-surface/20 to-primary/5 p-3 pt-12 shadow-sm backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
     >
       <div className="mb-2 text-lg text-subtle transition-all sm:text-xl md:text-2xl">
-        {card.icon}
+        <Icon size={32} />
       </div>
 
       <h3 className="text-sm font-medium text-fg transition-all sm:text-base md:text-lg">

@@ -31,7 +31,7 @@ import {
   SiTauri,
 } from "@icons-pack/react-simple-icons";
 
-export const technologies: Technology[] = [
+export const technologies: DataTechnology[] = [
   {
     name: "AWS",
     icon: IconBrandAws,

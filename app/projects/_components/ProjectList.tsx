@@ -2,12 +2,10 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import portfolio from "@/portfolio.json";
-import { TProject } from "@/lib/types";
 import ProjectItem from "./ProjectItem";
-const projects = portfolio.projects;
+import { projects } from "@/lib/data";
 
-const sort = (a: TProject, b: TProject) =>
+const sort = (a: DataProject, b: DataProject) =>
   new Date(a.created_at) < new Date(b.created_at) ? 1 : -1;
 
 export default function ProjectList() {
@@ -54,17 +52,14 @@ export default function ProjectList() {
           </thead>
           <tbody className="text-left text-sm text-subtle sm:text-base">
             <AnimatePresence>
-              {projects &&
-                (projects as TProject[])
-                  .sort(sort)
-                  .map((project, index) => (
-                    <ProjectItem
-                      key={project.id}
-                      project={project}
-                      isLast={index === projects.length - 1}
-                      index={index}
-                    />
-                  ))}
+              {(projects as DataProject[]).sort(sort).map((project, index) => (
+                <ProjectItem
+                  key={project.id}
+                  project={project}
+                  isLast={index === projects.length - 1}
+                  index={index}
+                />
+              ))}
             </AnimatePresence>
           </tbody>
         </table>

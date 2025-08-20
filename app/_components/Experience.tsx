@@ -1,14 +1,11 @@
 import { IconArrowUpRight, IconUsersPlus } from "@tabler/icons-react";
 import Link from "next/link";
-import portfolio from "@/portfolio.json";
-import { IExperience } from "@/lib/types";
 import { Fragment } from "react";
 import Section from "@/components/layouts/Section";
 import Tag from "@/components/core/Tag";
+import { experience } from "@/lib/data";
 
-const experiences = portfolio.experience;
-
-const Item = ({ experience }: { experience: IExperience }) => {
+const Item = ({ experience }: { experience: DataExperience }) => {
   return (
     <div className="flex flex-col gap-2 py-7 sm:gap-4 lg:flex-row lg:gap-8">
       <p className="w-[240px] shrink-0 text-sm font-bold uppercase text-muted sm:text-xl md:text-2xl lg:text-subtle">
@@ -51,7 +48,7 @@ export default function Experience() {
         <div className="my-4 sm:my-5 md:my-6 lg:my-8">
           <div className="contact-lines contact-line-1 h-0.5 rounded-full" />
           <ul className="list-none">
-            {experiences.map((e) => (
+            {experience.map((e) => (
               <li key={e.company}>
                 <Item experience={e} />
                 <div className="contact-lines contact-line-2 h-0.5 rounded-full" />

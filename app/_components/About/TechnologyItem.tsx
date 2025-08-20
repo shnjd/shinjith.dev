@@ -1,4 +1,4 @@
-const TechnologyItem: React.FC<Technology> = ({ icon: Icon, name }) => {
+const TechnologyItem: React.FC<DataTechnology> = ({ icon: Icon, name }) => {
   return (
     <div
       aria-label={name}

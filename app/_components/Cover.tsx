@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import Section from "@/components/layouts/Section";
 import { displayName } from "@/lib/constants";
-import data from "@/lib/data";
+import { about } from "@/lib/data";
 
 export default function Cover() {
   return (
@@ -57,7 +57,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className="text-xl font-semibold text-fg sm:text-2xl md:text-3xl"
         >
-          {data.about.title}
+          {about.title}
         </motion.h2>
         <motion.h3
           initial={{ opacity: 0, y: 60, scale: 1.1 }}
@@ -66,7 +66,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className="mb-1.5 text-sm font-medium text-subtle sm:text-base md:text-lg"
         >
-          {data.about.caption}
+          {about.caption}
         </motion.h3>
         <motion.p
           initial={{ opacity: 0, y: 40, scale: 1.1 }}
@@ -75,7 +75,7 @@ export default function Cover() {
           viewport={{ once: true }}
           className="max-w-lg text-sm font-normal text-muted sm:text-base"
         >
-          {data.about.description}
+          {about.description}
         </motion.p>
       </div>
     </Section>
