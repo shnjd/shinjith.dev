@@ -45,11 +45,14 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-fast-marquee": "^1.6.5",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.19.9",
     "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
