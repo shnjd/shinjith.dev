@@ -25,7 +25,7 @@ export const about: DataAbout = {
     [
       {
         value:
-          "  seeking to be inspired, to put effort on things that make a difference, to envision the improbable, and to be surrounded by beautiful minds.",
+          "seeking to be inspired, to put effort on things that make a difference, to envision the improbable, and to be surrounded by beautiful minds.",
       },
     ],
     [

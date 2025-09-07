@@ -7,8 +7,11 @@ import {
   IconBrandTypescript,
   IconBrandYarn,
   IconBrandRedux,
+  IconBrandVite,
+  IconBrandSass,
 } from "@tabler/icons-react";
 import {
+  SiAntdesign,
   SiBootstrap,
   SiC,
   SiCloudflareworkers,
@@ -18,6 +21,7 @@ import {
   SiExpo,
   SiExpress,
   SiMantine,
+  SiMapbox,
   SiMarkdown,
   SiMui,
   SiNetlify,
@@ -32,6 +36,10 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 export const technologies: DataTechnology[] = [
+  {
+    name: "Ant Design",
+    icon: SiAntdesign,
+  },
   {
     name: "AWS",
     icon: IconBrandAws,
@@ -75,6 +83,10 @@ export const technologies: DataTechnology[] = [
   {
     name: "Mantine",
     icon: SiMantine,
+  },
+  {
+    name: "Mapbox",
+    icon: SiMapbox,
   },
   {
     name: "Markdown",
@@ -125,6 +137,10 @@ export const technologies: DataTechnology[] = [
     icon: IconBrandRedux,
   },
   {
+    name: "Sass",
+    icon: IconBrandSass,
+  },
+  {
     name: "Socket IO",
     icon: SiSocketdotio,
   },
@@ -139,6 +155,10 @@ export const technologies: DataTechnology[] = [
   {
     name: "TypeScript",
     icon: IconBrandTypescript,
+  },
+  {
+    name: "Vite",
+    icon: IconBrandVite,
   },
   {
     name: "Yarn",

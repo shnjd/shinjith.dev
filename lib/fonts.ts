@@ -1,4 +1,4 @@
-import { Inconsolata, Oleo_Script, Rubik } from "next/font/google";
+import { Rubik } from "next/font/google";
 
 export const rubik = Rubik({
   weight: ["400", "500", "600", "700"],
