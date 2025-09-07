@@ -1,14 +1,14 @@
-import { HTMLAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 
-interface Props extends HTMLAttributes<SVGElement> {
+type Props = HTMLAttributes<SVGElement> & {
   size?: number | string;
-}
+};
 
-export default function Devto({
+const Devto: React.FC<Props> = ({
   color = "currentColor",
   size = 24,
   ...props
-}: Props) {
+}) => {
   return (
     <svg
       role="img"
@@ -25,4 +25,6 @@ export default function Devto({
       />
     </svg>
   );
-}
+};
+
+export default Devto;

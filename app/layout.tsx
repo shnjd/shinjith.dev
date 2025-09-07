@@ -1,13 +1,12 @@
 import "./globals.css";
-import Navbar from "@/components/common/navbar";
 import { rubik } from "@/lib/fonts";
-import Background from "@/components/common/Background";
 import { ReactLenis } from "@/lib/lenis";
-import SectionContextProvider from "@/components/contexts/SectionContext";
-// import Loader from "@/components/common/loader";
+import SectionContextProvider from "@/contexts/SectionContext";
 
 import type { Viewport, Metadata } from "next";
 import Footer from "@/components/common/Footer";
+import Navbar from "@/components/common/Navbar";
+import Background from "@/components/layouts/Background";
 
 export const viewport: Viewport = {
   width: "device-width",

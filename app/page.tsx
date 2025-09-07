@@ -1,10 +1,6 @@
-import About from "@/components/sections/about";
-import Contact from "@/components/sections/contact";
-import Cover from "@/components/sections/Cover";
-import Experience from "@/components/sections/Experience";
-import Projects from "@/components/sections/Projects";
-import Services from "@/components/sections/Services";
-import { Metadata, Viewport } from "next";
+import { Metadata } from "next";
+import LandingPage from "./_components/LandingPage";
+import { about } from "@/lib/data";
 
 const personLd = {
   "@context": "https://schema.org/",
@@ -12,12 +8,7 @@ const personLd = {
   name: "Shinjith P R",
   url: "https://shinjith.dev",
   image: "https://shinjith.dev/assets/images/shinjith.jpg",
-  sameAs: [
-    "https://x.com/shinjithr",
-    "https://www.instagram.com/shinjith_",
-    "https://www.linkedin.com/in/shinjithkanhangad",
-    "https://github.com/shinjith-dev",
-  ],
+  sameAs: Object.values(about.handles),
   jobTitle: "Web & App Developer",
   worksFor: {
     "@type": "Organization",
@@ -87,7 +78,7 @@ export const metadata: Metadata = {
     title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
     description:
       "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
-    creator: "@shinjithr",
+    creator: "@shnjd_",
     images: [
       {
         url: "/assets/images/seo-cover.png",
@@ -103,17 +94,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="h-full w-full text-fg">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
-      <Cover />
-      <About />
-      <Experience />
-      <Projects />
-      <Services />
-      <Contact />
-    </div>
+      <LandingPage />
+    </>
   );
 }
