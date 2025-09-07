@@ -1,4 +1,4 @@
-import Link from "../base/Link";
+import Link from "../core/Link";
 
 export default function Footer() {
   return (

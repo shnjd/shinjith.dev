@@ -4,6 +4,5 @@ onlyBuiltDependencies:
   - unrs-resolver
   - workerd
 
-  
 packages:
   - .

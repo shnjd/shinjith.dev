@@ -1,5 +1,5 @@
-import ProjectList from "@/components/projects/project-list";
 import { Metadata } from "next";
+import ProjectList from "./_components/ProjectList";
 
 const breadCrumbLd = {
   "@context": "https://schema.org",
