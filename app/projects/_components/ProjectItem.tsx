@@ -1,11 +1,10 @@
 import React from "react";
 import { motion } from "motion/react";
-import { TProject } from "@/lib/types";
 import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
 import Tag from "@/components/core/Tag";
 
 type Props = {
-  project: TProject;
+  project: DataProject;
   isLast: boolean;
   index: number;
 };
