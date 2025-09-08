@@ -4,12 +4,12 @@ export const rubik = Rubik({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-rubik",
 });
 
 export const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-mono",
+  variable: "--font-ibm-plex",
 });

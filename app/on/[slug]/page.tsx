@@ -31,57 +31,46 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const defaultMeta = {
-    title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
-    description:
-      "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
-    keywords: ["shinjith", "shnjd", "shnjd on", "shnjd blogs"],
-    robots: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-      googleBot: "index, follow",
-    },
-    openGraph: {
-      url: "https://shinjith.dev",
-      type: "website",
-      title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
-      description:
-        "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
-      images: [
-        {
-          url: "/assets/images/seo-cover.png",
-          width: 1200,
-          height: 630,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
-      description:
-        "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
-      creator: "@shnjd_",
-      images: [
-        {
-          url: "/assets/images/seo-cover.png",
-          width: 1200,
-          height: 630,
-        },
-      ],
-    },
-  };
-
   const { slug } = await params;
   try {
-    const { default: Post, frontmatter } = await import(`@/blogs/${slug}.mdx`);
+    const { frontmatter } = await import(`@/blogs/${slug}.mdx`);
 
     return {
-      ...defaultMeta,
       title: frontmatter?.title,
-      keywords: [...frontmatter.tags, ...defaultMeta.keywords],
+      description: frontmatter?.description,
+      keywords: [
+        ...frontmatter.tags,
+        "shinjith",
+        "shinjith-dev",
+        "shnjd",
+        "shinjith blogs",
+      ],
+      openGraph: {
+        url: "https://shinjith.dev",
+        type: "article",
+        title: frontmatter?.title,
+        description: frontmatter?.description,
+        images: [
+          {
+            url: "/assets/images/seo-cover.png",
+            width: 1200,
+            height: 630,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: frontmatter?.title,
+        description: frontmatter?.description,
+        creator: "@shnjd_",
+        images: [
+          {
+            url: "/assets/images/seo-cover.png",
+            width: 1200,
+            height: 630,
+          },
+        ],
+      },
     };
   } catch (err) {
     return {};
@@ -95,16 +84,16 @@ export default async function Page({
 }) {
   const { slug } = await params;
   try {
-    const { default: Post, frontmatter } = await import(`@/blogs/${slug}.mdx`);
+    const { default: Blog, frontmatter } = await import(`@/blogs/${slug}.mdx`);
     return (
       <article>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
         />
-        <h1>{frontmatter.title}</h1>
-        <hr />
-        <Post />
+        <h1 className="mb-3 mt-7">{frontmatter.title}</h1>
+        <hr className="my-7 border-t" />
+        <Blog />
       </article>
     );
   } catch {
