@@ -1,30 +1,5 @@
-import { about } from "@/lib/data";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-const personLd = {
-  "@context": "https://schema.org/",
-  "@type": "Person",
-  name: "Shinjith P R",
-  url: "https://shinjith.dev",
-  image: "https://shinjith.dev/assets/images/shinjith.jpg",
-  sameAs: Object.values(about.handles),
-  jobTitle: "Web & App Developer",
-  worksFor: {
-    "@type": "Organization",
-    name: "Sustainability Economics",
-  },
-  knowsAbout: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Redux",
-    "React Native",
-    "Expo",
-    "Frontend Development",
-    "UI/UX",
-  ],
-};
 
 export async function generateMetadata({
   params,
@@ -33,7 +8,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const { frontmatter } = await import(`@/blogs/${slug}.mdx`);
+    const { frontmatter } = await import(`@/notes/${slug}.mdx`);
 
     return {
       title: frontmatter?.title,
@@ -43,7 +18,7 @@ export async function generateMetadata({
         "shinjith",
         "shinjith-dev",
         "shnjd",
-        "shinjith blogs",
+        "shinjith's blogs",
       ],
       openGraph: {
         url: "https://shinjith.dev",
@@ -84,12 +59,48 @@ export default async function Page({
 }) {
   const { slug } = await params;
   try {
-    const { default: Blog, frontmatter } = await import(`@/blogs/${slug}.mdx`);
+    const { default: Blog, frontmatter } = await import(`@/notes/${slug}.mdx`);
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+
+      headline: frontmatter.title,
+      description: frontmatter.description,
+      keywords: frontmatter.tags,
+      image: frontmatter.cover || `https://shinjith.dev/api/og/note/${slug}`,
+
+      url: `https://shinjith.dev/on/${slug}`,
+
+      datePublished: frontmatter.date,
+      dateModified: frontmatter.updatedAt || frontmatter.date,
+
+      author: {
+        "@type": "Person",
+        name: "Shinjith P R",
+        url: "https://shinjith.dev",
+      },
+
+      publisher: {
+        "@type": "Organization",
+        name: "shinjith.dev",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://shinjith.dev/assets/favicons/apple-touch-icon.png",
+        },
+      },
+
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://shinjith.dev/on/${slug}`,
+      },
+    };
+
     return (
       <article>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
         />
         <h1 className="mb-3 mt-7">{frontmatter.title}</h1>
         <hr className="my-7 border-t" />

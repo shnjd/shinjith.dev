@@ -105,7 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} ${ibmPlexMono.variable} max-w-screen relative h-full min-h-svh w-full overflow-y-auto overflow-x-hidden bg-background font-sans text-base text-fg`}
+        className={`${rubik.variable} ${ibmPlexMono.variable} max-w-screen relative h-full min-h-dvh w-full overflow-y-auto overflow-x-hidden bg-background font-sans text-base text-fg`}
       >
         <script
           type="application/ld+json"

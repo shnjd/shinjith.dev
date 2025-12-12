@@ -60,7 +60,7 @@ export default function Projects() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbLd) }}
       />
-      <div className="h-[calc(100svh-84px)] w-full text-fg sm:h-[calc(100svh-52px)]">
+      <div className="h-[calc(100dvh-84px)] w-full text-fg sm:h-[calc(100svh-52px)]">
         <ProjectList />
       </div>
     </>
