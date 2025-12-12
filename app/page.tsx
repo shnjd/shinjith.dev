@@ -50,6 +50,8 @@ export const metadata: Metadata = {
     "web developer India",
     "UI developer",
     "JavaScript developer",
+    "shinjith-dev",
+    "shnjd",
   ],
   robots: {
     index: true,

@@ -57,7 +57,7 @@ const Section: React.FC<Props> = ({
       id={name?.toLowerCase()}
       ref={sectionRef}
       className={cn(
-        "min-h-svh w-full",
+        "min-h-dvh w-full",
         limitOnXl && "mx-auto max-w-screen-xl",
         condensed ? "py-0" : "py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24",
         className,

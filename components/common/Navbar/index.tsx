@@ -2,7 +2,6 @@
 import NextLink from "next/link";
 import ModeSwitch from "./ModeSwitch";
 import { useContext, useEffect, useRef, useState } from "react";
-import { rubik } from "@/lib/fonts";
 import { toKebabCase } from "@/utils/string";
 import { AnimatePresence, motion } from "motion/react";
 import { SectionContext } from "@/contexts/SectionContext";
@@ -120,7 +119,7 @@ const Navbar = () => {
             <>
               <NextLink
                 href="/"
-                className={`text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary ${rubik.className}`}
+                className="text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary"
               >
                 <span className="mr-1 text-sm sm:text-base md:text-lg">❯</span>
                 shnjd

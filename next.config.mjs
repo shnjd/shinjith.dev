@@ -1,12 +1,8 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
+import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   async headers() {
     return [
       {
@@ -20,16 +16,10 @@ const nextConfig = {
       },
     ];
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-  },
 };
 
-export default withBundleAnalyzer(nextConfig);
+const withMDX = createMDX({
+  options: { remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter"] },
+});
+
+export default withMDX(nextConfig);
