@@ -50,7 +50,7 @@ const Section: React.FC<Props> = ({
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, [sectionRef.current]);
+  }, [name, setSection]);
 
   return (
     <section

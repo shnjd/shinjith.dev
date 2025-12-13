@@ -71,8 +71,6 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window.scrollY > 100) setHaveBg(true);
-
     const checkPosition = () => {
       if (window.scrollY > 100) setHaveBg(true);
       else setHaveBg(false);

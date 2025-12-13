@@ -36,7 +36,7 @@ export default function Contact() {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [progress]);
 
   return (
     <Section
