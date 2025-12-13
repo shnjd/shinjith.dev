@@ -69,7 +69,7 @@ export const metadata: Metadata = {
       "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
     images: [
       {
-        url: "/assets/images/seo-cover.png",
+        url: "https://shinjith.dev/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     creator: "@shnjd_",
     images: [
       {
-        url: "/assets/images/seo-cover.png",
+        url: "https://shinjith.dev/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },

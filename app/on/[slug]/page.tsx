@@ -27,7 +27,8 @@ export async function generateMetadata({
         description: frontmatter?.description,
         images: [
           {
-            url: "/assets/images/seo-cover.png",
+            url:
+              frontmatter.cover || `https://shinjith.dev/api/og/note/${slug}`,
             width: 1200,
             height: 630,
           },
@@ -40,7 +41,8 @@ export async function generateMetadata({
         creator: "@shnjd_",
         images: [
           {
-            url: "/assets/images/seo-cover.png",
+            url:
+              frontmatter.cover || `https://shinjith.dev/api/og/note/${slug}`,
             width: 1200,
             height: 630,
           },
