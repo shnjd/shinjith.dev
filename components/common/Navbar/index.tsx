@@ -45,7 +45,7 @@ function NavigationMenuItem({
         href={`#${path}`}
         onClick={(e) => {
           const hero = document.getElementById(path);
-          e.preventDefault(); // Stop Page Reloading
+          e.preventDefault();
           if (hero) {
             hero.scrollIntoView({ behavior: "smooth", block: "start" });
             // window.scrollBy({ top: 100, left: 0, behavior: 'smooth' })
@@ -155,7 +155,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href={"https://notes.shinjith.dev"}>Notes</Link>
+              <Link href="https://shinjith.dev/notes">Notes</Link>
             </li>
 
             <li>
