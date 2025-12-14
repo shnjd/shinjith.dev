@@ -1,2 +1,1 @@
-pnpm commitlint --edit $1
-pnpm next lint 
+npx --no -- commitlint --edit $1

@@ -45,6 +45,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-fast-marquee": "^1.6.5",
+    "remark-code-title": "^0.2.5",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.2.0",
     "tailwind-merge": "^2.6.0"

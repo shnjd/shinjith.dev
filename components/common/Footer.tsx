@@ -18,7 +18,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href={"https://notes.shinjith.dev"} className="text-subtle">
+            <Link href="/notes" className="text-subtle">
               Notes
             </Link>
           </li>

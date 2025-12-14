@@ -153,7 +153,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://shinjith.dev/notes">Notes</Link>
+              <Link href="/notes">Notes</Link>
             </li>
 
             <li>

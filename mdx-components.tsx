@@ -14,7 +14,7 @@ const components: MDXComponents = {
   blockquote: (props) => (
     <blockquote
       {...props}
-      className="border-l-3 my-5 border-border bg-surface pl-3"
+      className="border-l-3 my-5 border-border bg-surface px-4 py-0.5"
     />
   ),
   code: (props) => (
@@ -42,7 +42,7 @@ const components: MDXComponents = {
     <td {...props} className="border border-border px-3 py-2 text-left" />
   ),
   img: ({ src = "", alt = "", ...props }) => (
-    <div className="relative my-5 h-[400px] w-full">
+    <span className="relative block h-[400px] w-full">
       <Image
         src={src}
         alt={alt}
@@ -51,7 +51,7 @@ const components: MDXComponents = {
         className="rounded object-cover object-center"
         {...props}
       />
-    </div>
+    </span>
   ),
   video: (props) => <video {...props} className="my-5 max-w-full rounded" />,
   hr: (props) => <hr {...props} className="my-7 border-t" />,

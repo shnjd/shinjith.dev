@@ -1,0 +1,55 @@
+---
+title: "Git Good: Automating Commit Message Standards with Husky and Commitlint"
+description: "This guide walks you through setting up Husky as a Git hook and configuring Commitlint to validate every commit against the established Conventional Commit rules."
+tags:
+  - "husky"
+  - "commitlint"
+  - "git hooks"
+  - "conventional commits"
+  - "git standards"
+  - "commit message validation"
+  - "enforce commit rules"
+  - "devops practices"
+date: 2025-12-14T09:46:48Z
+---
+
+The most difficult part of agreeing to follow best practices and standards is getting into situations where you just want to get things done and standards aren't a concern anymore.
+
+I'm sure best of us have been in situations where we needed to solve a problem instantly in a magical way; that's when we removed the "Ideal developer" mask and went full [ninja mode](https://javascript.info/ninja-code).
+
+>  *“Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live”*	<span>― John Woods</span>
+
+Another example is while working in a team and everyone just wants the task completed (like if they're not the one to modify it the next day).  What we can do is implement certain rules in our project to ensure that we do not simply ignore the standards.
+
+This is a guide on how to setup **Husky and Commitlint** to enforce the commit message practices. A continuation of my last blog [Git Good: Automating Commit Message Standards with Husky and Commitlint](/on/commitlint).
+<br />
+
+## Husky Setup
+
+[Husky](https://github.com/typicode/husky) is a modern way of implementing [Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks). Or like the readme says: 
+
+> Modern native Git hooks made easy. Husky improves your commits and more 🐶 *woof!* 
+
+Husky is extremely lightweight and fast!  Linting commit messages (enforcing message format) is merely one of its many uses. Husky can be used to *"Automatically lint your commit messages, code, and run tests upon committing or pushing"*.
+
+Install and Initialize Husky using following commands, for other package managers [check here](https://typicode.github.io/husky/get-started.html#install).
+
+```sh title="shell"
+npm install --save-dev husky
+npx husky init
+```
+
+The `hysky init` command will create a file with a default script:  
+ 
+ ```text title=".husky/pre-commit"
+ npm test
+ ```
+ 
+You can safely remove it because we will overwrite it later.
+ <br />
+
+## Install and Configure Commitlint
+
+Commitlint is a tool that exists just to ensure that you write your commit messages properly.
+
+![You won't let me live. You won't let me die.](https://tenor.com/view/superman-justice-league-superman-clark-kent-henry-cavill-snyder-cut-superman-gif-25715018.gif)

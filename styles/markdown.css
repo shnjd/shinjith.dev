@@ -51,7 +51,7 @@
   padding-left: 1em;
   border-left: 4px solid hsl(var(--col-border));
   color: hsl(var(--col-fg));
-  background-color: hsl(var(--col-surface));
+  background-color: hsl(var(--col-surface) / 20%);
 }
 
 .markdown code {
