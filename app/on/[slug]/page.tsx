@@ -1,3 +1,4 @@
+import { formatDateToDisplay } from "@/utils/date";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -104,7 +105,10 @@ export default async function Page({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
         />
-        <h1 className="mb-3 mt-7">{frontmatter.title}</h1>
+        <h1 className="mb-4 mt-7">{frontmatter.title}</h1>
+        <p className="mb-4 text-sm italic !text-subtle">
+          Added on {formatDateToDisplay(new Date(frontmatter.date))}
+        </p>
         <hr className="my-7 border-t" />
         <Blog />
       </article>
