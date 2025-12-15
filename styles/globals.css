@@ -281,3 +281,54 @@ body {
     background-size: 100% 100%;
   }
 }
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}
+
+.prose blockquote span {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.prose figcaption[data-rehype-pretty-code-title] {
+  background-color: hsl(var(--col-surface) / 0.7);
+  color: hsl(var(--col-subtle));
+  width: fit-content;
+  padding: 4px 8px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom: 1px solid hsl(var(--col-surface));
+}
+
+.prose code[data-theme*=" "],
+.prose code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+.dark .prose code[data-theme*=" "],
+.dark .prose code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+.prose code span[data-highlighted-line] {
+  background-color: hsl(var(--col-overlay)) !important;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: hsl(var(--col-muted) / 0.7);
+}

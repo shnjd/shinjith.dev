@@ -14,16 +14,14 @@ const components: MDXComponents = {
   blockquote: (props) => (
     <blockquote
       {...props}
-      className="border-l-3 my-5 border-border bg-surface pl-3"
+      className="border-l-3 my-5 border-overlay bg-surface bg-surface/10 px-4 py-0.5 dark:bg-surface/70"
     />
   ),
-  code: (props) => (
-    <code {...props} className="rounded bg-surface px-1 py-0.5" />
-  ),
+  code: (props) => <code {...props} className="rounded px-1 py-0.5" />,
   pre: ({ children, ...props }) => (
-    <pre {...props} className="my-6 overflow-x-auto rounded px-4 py-3">
+    <pre {...props} className="overflow-x-auto p-0">
       {typeof children === "object" && "props" in (children as any) ? (
-        <code {...(children as any).props} className="bg-transparent p-0" />
+        <code {...(children as any).props} className="bg-transparent p-3" />
       ) : (
         children
       )}
@@ -42,7 +40,7 @@ const components: MDXComponents = {
     <td {...props} className="border border-border px-3 py-2 text-left" />
   ),
   img: ({ src = "", alt = "", ...props }) => (
-    <div className="relative my-5 h-[400px] w-full">
+    <span className="relative block h-[400px] w-full">
       <Image
         src={src}
         alt={alt}
@@ -51,7 +49,7 @@ const components: MDXComponents = {
         className="rounded object-cover object-center"
         {...props}
       />
-    </div>
+    </span>
   ),
   video: (props) => <video {...props} className="my-5 max-w-full rounded" />,
   hr: (props) => <hr {...props} className="my-7 border-t" />,

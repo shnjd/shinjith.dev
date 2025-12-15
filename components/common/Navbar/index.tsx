@@ -71,8 +71,6 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window.scrollY > 100) setHaveBg(true);
-
     const checkPosition = () => {
       if (window.scrollY > 100) setHaveBg(true);
       else setHaveBg(false);
@@ -155,7 +153,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://shinjith.dev/notes">Notes</Link>
+              <Link href="/notes">Notes</Link>
             </li>
 
             <li>
