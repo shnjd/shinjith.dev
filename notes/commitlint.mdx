@@ -13,13 +13,13 @@ tags:
 date: 2025-12-14T09:46:48Z
 ---
 
-The most difficult part of agreeing to follow best practices and standards is getting into situations where you just want to get things done and standards aren't a concern anymore.
+The most difficult part of agreeing to follow best practices and standards is getting into situations where you just want to get things done and standards are no longer a concern.
 
-I'm sure best of us have been in situations where we needed to solve a problem instantly in a magical way; that's when we removed the "Ideal developer" mask and went full [ninja mode](https://javascript.info/ninja-code).
+I'm sure the best of us have been in situations where we needed to solve a problem instantly in a magical way; that's when we removed the "Ideal developer" mask and went full [ninja mode](https://javascript.info/ninja-code).
 
 >  *“Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live”*	<span>― John Woods</span>
 
-Another example is while working in a team and everyone just wants the task completed (like if they're not the one to modify it the next day).  What we can do is implement certain rules in our project to ensure that we do not simply ignore the standards.
+Another example is while working in a team and everyone just wants the task completed (as if they're not the one to modify it the next day).  A better approach is to implement certain rules in our project to ensure that we do not simply ignore the standards.
 
 This is a guide on how to setup **Husky and Commitlint** to enforce the commit message practices. A continuation of my last blog [Git Good: Best Practices for Branch Naming and Commit Messages](/on/git-practices).
 <br />
@@ -39,7 +39,7 @@ npm install --save-dev husky
 npx husky init
 ```
 
-The `hysky init` command will create a file with a default script:  
+The `husky init` command will create a file with a default script:  
  
  ```text title=".husky/pre-commit"
  npm test
@@ -50,17 +50,17 @@ You can safely remove it because we will overwrite it later.
 
 ## Install and Configure Commitlint
 
-Commitlint is a tool that exists just to ensure that you write your commit messages properly. Install @commitlint/cli and [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) as dev dependencies.
+Commitlint is a tool that exists just to ensure that you write your commit messages properly. Install `@commitlint/cli` and [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) as dev dependencies.
 
 ```sh title="shell"
 npm install -D @commitlint/cli @commitlint/config-conventional  
 ```
 
-> We use @commitlint/config-conventional as our base configuration because we developed our best practices with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) as the foundation.
+> We use `@commitlint/config-conventional` as our base configuration because we developed our best practices with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) as the foundation.
 
 ### Configuration
 
-I created a configuration that applied all of the commit message standards outlined in the last blog post.  You can add, update, or remove any ruleset; the **@commitlint/config-conventional** is enough for normal usecase.
+I created a configuration that applied all of the commit message standards outlined in the last blog post.  You can add, update, or remove any ruleset; the `@commitlint/config-conventional` is enough for a normal use case.
 
 ```mjs showLineNumbers {2} title="commitlint.config.mjs"
 const config = {
@@ -82,7 +82,7 @@ const config = {
     'header-max-length': [2, 'always', 50],
     
     // 3. Capitalize the description: Start subject line with a capital letter.
-    // 'sentence-case' capitalizes the first letter of the subject. Mostly useful for generating changelogs.
+    // Imperative Mood. Mostly useful for generating changelogs.
     'subject-case': [2, 'always', 'sentence-case'],
     
     // 4. Avoid trailing period.
@@ -110,17 +110,17 @@ export default config;
  
  Place this config file in your project root.
  
- > It is important that you extend Commitlint with any of your preferred configuration libraries (as seen in line 2 above) in order to perform linting.  As previously mentioned, other options are entirely optional. Refer [this](https://commitlint.js.org/reference/configuration.html) for advanced configuration.
+ > It is important that you `extend` Commitlint with any of your preferred configuration libraries (as seen in line 2 above) in order to perform linting.  As previously mentioned, other options are entirely optional. Refer [this](https://commitlint.js.org/reference/configuration.html) for advanced configuration.
  
  ### Add Hook
  
- Add the following content to the `commit-msg` hook file in the husky folder.
+ Add the following content to the `commit-msg` hook file in the Husky folder.
  
  ```sh title=".husky/commit-msg"
- npx --no -- commitlint --edit $1  
+ npx --no -- commitlint --edit $1  # $1 points to the commit message file that git created.
  ```
  
- That's it. Now the commitlint will **lint** your commit messages based on the added config.
+ That's it. Now the Commitlint will **lint** your commit messages based on the added config.
  
  ### Test Commitlint
  
@@ -146,4 +146,42 @@ For example:
 husky - commit-msg script failed (code 1)  
 ```
 
-All that being said, most of the personal projects we work on do not require such strict standards. Still, I keep this configuration in all new projects to get used to it and build it into a habit.
+All that being said, most of the simple	 projects we work on do not require such strict standards. Still, I keep this configuration in all new projects to develop this into a habit.
+
+> It is worth noting that Commitlint offers some other interesting features, such as the [Prompt](https://commitlint.js.org/reference/prompt.html) option.
+
+## Escape Hatch
+
+Because we are forcing ourselves to follow these standards, there may be times when you just want to get around them. These are the methods to disable the hook, hence the Commitlint.
+
+```sh title="shell"
+HUSKY=0 git ...  # Temporarily for single command
+
+# For `multple` commands  
+export HUSKY=0 # Disables all Git hooks
+git ...
+git ...
+unset HUSKY # Re-enables hooks
+```
+
+For GUI users (same can be used to globally disable Husky):
+
+```sh title="~/.config/husky/init.sh"
+export HUSKY=0 # Husky won't install and won't run hooks on your machine
+```
+
+Husky's guide on [Skipping Git Hooks](https://typicode.github.io/husky/how-to.html#skipping-git-hooks).
+
+## Conclusion
+
+This guide is a follow-up to my [last blog](/on/git-practices), and as I indicated then, enforcing these standards may not be strictly necessary in this era of coding.  This strategy is for those who desire to maintain the best quality in whatever they do.
+
+[Lint-staged](https://github.com/lint-staged/lint-staged) is another tooling library that I would recommend since we used git hooks for this configuration.  Lint-staged, when used with Husky, performs final touch-ups before committing, such as linting, formatting, and so on...  It's really useful for maintaining code quality when working in a team.
+
+Good day!
+
+## References
+
+- [Commitlint](https://commitlint.js.org)
+- [Husky](https://typicode.github.io/husky)
+- [Conventional Commits](https://www.conventionalcommits.org)

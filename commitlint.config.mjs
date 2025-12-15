@@ -11,7 +11,7 @@
     'type-enum': [
       2, 
       'always', 
-      ['feat', 'fix', 'build', 'chore', 'ci', 'style', 'refactor', 'note']
+      ['feat', 'fix', 'build', 'chore', 'ci', 'style', 'refactor', 'content']
     ],
     
     // Subject/Description Rules:
