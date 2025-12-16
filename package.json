@@ -25,8 +25,8 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 Chrome version",
-      "last 1 Firefox version"
+      "last 3 Chrome version",
+      "last 3 Firefox version"
     ]
   },
   "dependencies": {
@@ -35,7 +35,7 @@
     "@mdx-js/react": "^3.1.1",
     "@next/bundle-analyzer": "15.4.6",
     "@next/mdx": "^15.5.2",
-    "@opennextjs/cloudflare": "^1.5.1",
+    "@opennextjs/cloudflare": "^1.14.6",
     "@tabler/icons-react": "^3.34.0",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
@@ -70,7 +70,7 @@
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
-    "wrangler": "^4.25.0"
+    "wrangler": "^4.55.0"
   },
   "resolutions": {
     "@types/react": "19.1.10",
