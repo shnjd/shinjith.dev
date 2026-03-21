@@ -15,20 +15,6 @@
     "upload:opennext": "opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
-  "browserslist": {
-    "production": [
-      "last 2 versions",
-      "> 0.5%",
-      "not dead",
-      "not op_mini all",
-      "not ie 11"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.13.0",
     "@mdx-js/loader": "^3.1.1",
