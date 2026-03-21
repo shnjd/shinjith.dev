@@ -9,13 +9,13 @@ const breadCrumbLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://shinjith.dev",
+      item: "https://shnjd.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Projects",
-      item: "https://shinjith.dev/projects",
+      item: "https://shnjd.com/projects",
     },
   ],
 };
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Tauri",
   ],
   openGraph: {
-    url: "https://shinjith.dev",
+    url: "https://shnjd.com",
     type: "website",
     title: "Projects | Shinjith P R",
     description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://shinjith.dev/projects",
+    canonical: "https://shnjd.com/projects",
   },
 };
 

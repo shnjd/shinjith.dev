@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: ["/", "/api/og/*"],
     },
-    sitemap: ["https://shinjith.dev/sitemap.xml"],
+    sitemap: ["https://shnjd.com/sitemap.xml"],
   };
 }

@@ -6,8 +6,8 @@ const personLd = {
   "@context": "https://schema.org/",
   "@type": "Person",
   name: "Shinjith P R",
-  url: "https://shinjith.dev",
-  image: "https://shinjith.dev/assets/images/shinjith.jpg",
+  url: "https://shnjd.com",
+  image: "https://shnjd.com/assets/images/shinjith.jpg",
   sameAs: Object.values(about.handles),
   jobTitle: "Web & App Developer",
   worksFor: {
@@ -62,14 +62,14 @@ export const metadata: Metadata = {
     googleBot: "index, follow",
   },
   openGraph: {
-    url: "https://shinjith.dev",
+    url: "https://shnjd.com",
     type: "website",
     title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
     description:
       "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
     images: [
       {
-        url: "https://shinjith.dev/assets/images/seo-cover.png",
+        url: "https://shnjd.com/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },
@@ -83,14 +83,14 @@ export const metadata: Metadata = {
     creator: "@shnjd_",
     images: [
       {
-        url: "https://shinjith.dev/assets/images/seo-cover.png",
+        url: "https://shnjd.com/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },
     ],
   },
   alternates: {
-    canonical: "https://shinjith.dev",
+    canonical: "https://shnjd.com",
   },
 };
 

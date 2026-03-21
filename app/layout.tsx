@@ -18,7 +18,7 @@ const websiteLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Shinjith P R",
-  url: "https://shinjith.dev",
+  url: "https://shnjd.com",
   author: {
     "@type": "Person",
     name: "Shinjith P R",
@@ -26,7 +26,7 @@ const websiteLd = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shinjith.dev"),
+  metadataBase: new URL("https://shnjd.com"),
   openGraph: {
     siteName: "Shinjith P R",
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
     images: [
       {
-        url: "https://shinjith.dev/assets/images/seo-cover.png",
+        url: "https://shnjd.com/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },

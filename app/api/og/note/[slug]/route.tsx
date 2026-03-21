@@ -26,42 +26,40 @@ export async function GET(_req: NextRequest, ctx: any) {
     const { frontmatter } = await import(`@/notes/${slug}.mdx`);
 
     return new ImageResponse(
-      (
-        <div
+      <div
+        style={{
+          display: "flex",
+          height: "100%",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          backgroundImage: "linear-gradient(to right, #000000, #2D3436)",
+        }}
+      >
+        <h1
           style={{
-            display: "flex",
-            height: "100%",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            backgroundImage: "linear-gradient(to right, #000000, #2D3436)",
+            padding: 120,
+            fontSize: 60,
+            fontWeight: 600,
+            color: "rgba(255,255,255,0.95)",
           }}
         >
-          <h1
-            style={{
-              padding: 120,
-              fontSize: 60,
-              fontWeight: 600,
-              color: "rgba(255,255,255,0.95)",
-            }}
-          >
-            {frontmatter.title}
-          </h1>
-          <p
-            style={{
-              position: "absolute",
-              top: 8,
-              right: 20,
-              fontSize: 16,
-              fontWeight: 400,
-              color: "rgba(255,255,255,0.75)",
-            }}
-          >
-            https://shinjith.dev
-          </p>
-        </div>
-      ),
+          {frontmatter.title}
+        </h1>
+        <p
+          style={{
+            position: "absolute",
+            top: 8,
+            right: 20,
+            fontSize: 16,
+            fontWeight: 400,
+            color: "rgba(255,255,255,0.75)",
+          }}
+        >
+          https://shnjd.com
+        </p>
+      </div>,
       {
         width: 1200,
         height: 630,
@@ -73,7 +71,7 @@ export async function GET(_req: NextRequest, ctx: any) {
           },
           {
             name: "Outfit",
-            data: await loadGoogleFont("Outfit", "https://shinjith.dev"),
+            data: await loadGoogleFont("Outfit", "https://shnjd.com"),
             style: "normal",
           },
         ],

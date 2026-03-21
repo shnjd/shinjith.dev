@@ -66,14 +66,14 @@ export default function Experience() {
           </p>
 
           <Link
-            href="mailto:me@shinjith.dev"
+            href="mailto:me@shnjd.com"
             className="mr-5 inline-flex w-fit items-center gap-1.5 rounded-lg bg-primary px-5 py-2 font-medium text-primary-fg shadow-xl transition-all hover:bg-primary/90 hover:shadow-md"
           >
             Hire me <IconUsersPlus size={16} />
           </Link>
 
           <Link
-            href="https://resume.shinjith.dev/?download=true"
+            href="https://resume.shnjd.com/?download=true"
             className="inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium text-primary transition-all hover:text-primary/90"
           >
             View resume

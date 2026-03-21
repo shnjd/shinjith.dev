@@ -60,7 +60,7 @@ export const about: DataAbout = {
     "Tauri",
   ],
   handles: {
-    bluesky: "https://bsky.app/profile/shinjith.dev",
+    bluesky: "https://bsky.app/profile/shnjd.com",
     github: "https://github.com/shnjd",
     instagram: "https://www.instagram.com/shinjith_",
     linkedin: "https://www.linkedin.com/in/shinjithkanhangad",

@@ -24,14 +24,13 @@ export async function generateMetadata({
         "shinjith's blogs",
       ],
       openGraph: {
-        url: "https://shinjith.dev",
+        url: "https://shnjd.com",
         type: "article",
         title: frontmatter?.title,
         description: frontmatter?.description,
         images: [
           {
-            url:
-              frontmatter.cover || `https://shinjith.dev/api/og/note/${slug}`,
+            url: frontmatter.cover || `https://shnjd.com/api/og/note/${slug}`,
             width: 1200,
             height: 630,
           },
@@ -44,8 +43,7 @@ export async function generateMetadata({
         creator: "@shnjd_",
         images: [
           {
-            url:
-              frontmatter.cover || `https://shinjith.dev/api/og/note/${slug}`,
+            url: frontmatter.cover || `https://shnjd.com/api/og/note/${slug}`,
             width: 1200,
             height: 630,
           },
@@ -81,9 +79,9 @@ export default async function Page({
       headline: frontmatter.title,
       description: frontmatter.description,
       keywords: frontmatter.tags,
-      image: frontmatter.cover || `https://shinjith.dev/api/og/note/${slug}`,
+      image: frontmatter.cover || `https://shnjd.com/api/og/note/${slug}`,
 
-      url: `https://shinjith.dev/on/${slug}`,
+      url: `https://shnjd.com/on/${slug}`,
 
       datePublished: frontmatter.date,
       dateModified: frontmatter.updatedAt || frontmatter.date,
@@ -91,21 +89,21 @@ export default async function Page({
       author: {
         "@type": "Person",
         name: "Shinjith P R",
-        url: "https://shinjith.dev",
+        url: "https://shnjd.com",
       },
 
       publisher: {
         "@type": "Organization",
-        name: "shinjith.dev",
+        name: "shnjd.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://shinjith.dev/assets/favicons/apple-touch-icon.png",
+          url: "https://shnjd.com/assets/favicons/apple-touch-icon.png",
         },
       },
 
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `https://shinjith.dev/on/${slug}`,
+        "@id": `https://shnjd.com/on/${slug}`,
       },
     };
 

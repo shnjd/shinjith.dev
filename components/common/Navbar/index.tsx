@@ -147,7 +147,7 @@ const Navbar = () => {
             <li>
               <Link
                 download="resume.pdf"
-                href="https://resume.shinjith.dev/?download=true"
+                href="https://resume.shnjd.com/?download=true"
               >
                 Resume
               </Link>
@@ -195,7 +195,7 @@ const Navbar = () => {
               <li>
                 <Link
                   download="resume.pdf"
-                  href="https://resume.shinjith.dev/?download=true"
+                  href="https://resume.shnjd.com/?download=true"
                   className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/50 hover:text-accent-fg"
                 >
                   Resume
@@ -203,7 +203,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href={"https://notes.shinjith.dev"}
+                  href={"https://notes.shnjd.com"}
                   className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
                 >
                   Notes

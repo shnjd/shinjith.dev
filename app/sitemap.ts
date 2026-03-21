@@ -3,13 +3,13 @@ import { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
-      url: "https://shinjith.dev",
+      url: "https://shnjd.com",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://shinjith.dev/projects",
+      url: "https://shnjd.com/projects",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
