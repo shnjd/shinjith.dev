@@ -53,9 +53,9 @@ function NavigationMenuItem({
           close();
         }}
         alwaysUnderline={active}
-        className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/75 hover:text-accent-fg lg:px-0 lg:hover:bg-transparent lg:hover:text-fg"
+        className="hover:bg-accent/75 hover:text-accent-fg lg:hover:text-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5 lg:px-0 lg:hover:bg-transparent"
       >
-        <div className="text-sm text-fg transition-all duration-300 group-hover:text-fg/90">
+        <div className="text-fg group-hover:text-fg/90 text-sm transition-all duration-300">
           {nav}
         </div>
       </Link>
@@ -104,11 +104,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-[999] mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"}`}
+      className={`fixed top-0 left-0 z-999 mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"}`}
     >
       <div
         ref={navRef}
-        className={`container relative z-[999] w-full p-5 transition-all ${menu ? "navbar-gradient rounded-b-2xl bg-surface/50 backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-[transparent]"}`}
+        className={`relative z-999 container w-full p-5 transition-all ${menu ? "navbar-gradient bg-surface/50 rounded-b-2xl backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-transparent"}`}
       >
         <div
           className={`flex w-full items-center ${haveBg || menu ? "justify-between" : "justify-end"}`}
@@ -117,7 +117,7 @@ const Navbar = () => {
             <>
               <NextLink
                 href="/"
-                className="text-lg text-secondary-fg sm:text-xl md:text-2xl dark:text-secondary"
+                className="text-secondary-fg dark:text-secondary text-lg sm:text-xl md:text-2xl"
               >
                 <span className="mr-1 text-sm sm:text-base md:text-lg">❯</span>
                 shnjd
@@ -188,7 +188,7 @@ const Navbar = () => {
             </AnimatePresence>
           </ul>
 
-          <hr className="my-4 border-b border-border" />
+          <hr className="border-border my-4 border-b" />
 
           <div className="flex w-full items-end gap-2">
             <ul className="flex w-full flex-col gap-3">
@@ -196,7 +196,7 @@ const Navbar = () => {
                 <Link
                   download="resume.pdf"
                   href="https://resume.shnjd.com/?download=true"
-                  className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent/50 hover:text-accent-fg"
+                  className="hover:bg-accent/50 hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
                 >
                   Resume
                 </Link>
@@ -204,7 +204,7 @@ const Navbar = () => {
               <li>
                 <Link
                   href={"https://notes.shnjd.com"}
-                  className="flex w-full items-center gap-2 rounded px-3 py-1.5 hover:bg-accent hover:text-accent-fg"
+                  className="hover:bg-accent hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
                 >
                   Notes
                 </Link>

@@ -113,8 +113,8 @@ export default async function Page({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
         />
-        <h1 className="mb-0 mt-7">{frontmatter.title}</h1>
-        <div className="mb-4 flex items-center gap-2 text-sm !text-subtle">
+        <h1 className="mt-7 mb-0">{frontmatter.title}</h1>
+        <div className="text-subtle! mb-4 flex items-center gap-2 text-sm">
           <p>Added on {formatDateToDisplay(new Date(frontmatter.date))}</p>
           <span>·</span>
           <ViewCount slug={slug} initialViews={initialViews} />

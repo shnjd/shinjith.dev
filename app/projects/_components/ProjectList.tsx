@@ -20,7 +20,7 @@ export default function ProjectList() {
       >
         <Link
           href="/"
-          className="flex items-baseline font-mono text-sm font-semibold leading-none text-secondary transition-all sm:text-base md:text-xl"
+          className="text-secondary flex items-baseline font-mono text-sm leading-none font-semibold transition-all sm:text-base md:text-xl"
         >
           <span className="mr-1 text-xs sm:text-sm md:text-base">❯</span>
           shnjd
@@ -28,7 +28,7 @@ export default function ProjectList() {
         </Link>
       </motion.div>
 
-      <div className="w-full flex-grow py-1">
+      <div className="w-full grow py-1">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function ProjectList() {
         </motion.div>
 
         <table className="mt-10 w-full table-auto border-collapse">
-          <thead className="text-left text-xs text-subtle sm:text-sm">
+          <thead className="text-subtle text-left text-xs sm:text-sm">
             <tr>
               <th className="py-1 font-medium">Date</th>
               <th className="py-1 font-medium">Project</th>
@@ -50,7 +50,7 @@ export default function ProjectList() {
               <th className="hidden py-1 font-medium lg:block">Link</th>
             </tr>
           </thead>
-          <tbody className="text-left text-sm text-subtle sm:text-base">
+          <tbody className="text-subtle text-left text-sm sm:text-base">
             <AnimatePresence>
               {(projects as DataProject[]).sort(sort).map((project, index) => (
                 <ProjectItem

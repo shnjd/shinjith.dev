@@ -55,13 +55,13 @@ export default function Contact() {
         style={{ transform: `translateY(-${progress * 20}px)` }}
         className="flex h-full max-h-[60svh] min-h-[300px] w-full flex-col items-center justify-center gap-6 transition-all sm:min-h-[400px] sm:gap-6 md:min-h-[500px] md:gap-8 lg:min-h-[600px]"
       >
-        <h3 className="max-w-[250px] text-center text-2xl font-bold text-subtle sm:max-w-xs sm:text-3xl md:max-w-sm md:text-4xl lg:max-w-md lg:text-5xl">
+        <h3 className="text-subtle max-w-[250px] text-center text-2xl font-bold sm:max-w-xs sm:text-3xl md:max-w-sm md:text-4xl lg:max-w-md lg:text-5xl">
           Tell me about your next project
         </h3>
 
         <NextLink
           href="mailto:me@shnjd.com"
-          className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-2.5 font-medium text-primary-fg shadow-xl transition-all hover:bg-primary/90 hover:shadow-md sm:text-lg"
+          className="bg-primary text-primary-fg hover:bg-primary/90 flex items-center gap-1.5 rounded-lg px-5 py-2.5 font-medium shadow-xl transition-all hover:shadow-md sm:text-lg"
         >
           Get in touch
           <IconMailShare size={20} />
@@ -79,7 +79,7 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IconBrandBluesky className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+            <IconBrandBluesky className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all" />
           </a>
 
           <a
@@ -90,7 +90,7 @@ export default function Contact() {
           >
             <IconBrandInstagram
               size={24}
-              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
             />
           </a>
 
@@ -102,7 +102,7 @@ export default function Contact() {
           >
             <IconBrandGithub
               size={24}
-              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
             />
           </a>
 
@@ -114,7 +114,7 @@ export default function Contact() {
           >
             <IconBrandLinkedin
               size={24}
-              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
             />
           </a>
 
@@ -126,7 +126,7 @@ export default function Contact() {
           >
             <IconBrandTwitter
               size={24}
-              className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
             />
           </a>
         </div>

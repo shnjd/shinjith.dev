@@ -7,7 +7,7 @@ import Services from "./Services";
 
 export default function LandingPage() {
   return (
-    <div className="h-full w-full text-fg">
+    <div className="text-fg h-full w-full">
       <Cover />
       <About />
       <Experience />

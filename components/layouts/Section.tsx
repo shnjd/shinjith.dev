@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import { cn } from "@/utils/cn";
+import { tw } from "@/utils/cn";
 import { rubik } from "@/lib/fonts";
 import { SectionContext, TSection } from "@/contexts/SectionContext";
 
@@ -56,9 +56,9 @@ const Section: React.FC<Props> = ({
     <section
       id={name?.toLowerCase()}
       ref={sectionRef}
-      className={cn(
+      className={tw(
         "min-h-dvh w-full",
-        limitOnXl && "mx-auto max-w-screen-xl",
+        limitOnXl && "mx-auto max-w-(--breakpoint-xl)",
         condensed ? "py-0" : "py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24",
         className,
       )}
@@ -66,13 +66,13 @@ const Section: React.FC<Props> = ({
     >
       {!withoutTitle && (
         <h2
-          className={`${rubik.className} ${subHeading ? "sm:mb-0.5 md:mb-1" : "sm:mb-1 md:mb-2 lg:mb-3 xl:mb-4"} text-lg font-bold uppercase tracking-widest sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl`}
+          className={`${rubik.className} ${subHeading ? "sm:mb-0.5 md:mb-1" : "sm:mb-1 md:mb-2 lg:mb-3 xl:mb-4"} text-lg font-bold tracking-widest uppercase sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl`}
         >
           {name}
         </h2>
       )}
       {subHeading && (
-        <p className="w-full max-w-80 text-sm text-subtle sm:mb-1 sm:text-base md:mb-2 lg:mb-3 xl:mb-4">
+        <p className="text-subtle w-full max-w-80 text-sm sm:mb-1 sm:text-base md:mb-2 lg:mb-3 xl:mb-4">
           {subHeading}
         </p>
       )}

@@ -20,7 +20,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         opacity: scrollProgress > 0 ? 0.4 - scrollProgress : 1,
         transform: `translateY(${scrollProgress > 0 ? `${scrollProgress * 100}px` : 0})`,
       }}
-      className={`fixed bottom-0 right-0 z-50 mr-2 hidden origin-bottom flex-col items-center gap-4 opacity-80 transition-all duration-75 sm:right-[calc(50vw-320px)] sm:flex md:right-[calc(50vw-384px)] md:mr-3 lg:right-[calc(50vw-512px)] lg:mr-5 xl:right-[calc(50vw-640px)] xl:mr-7 2xl:right-[calc(50vw-768px)] 2xl:mr-9`}
+      className={`fixed right-0 bottom-0 z-50 mr-2 hidden origin-bottom flex-col items-center gap-4 opacity-80 transition-all duration-75 sm:right-[calc(50vw-320px)] sm:flex md:right-[calc(50vw-384px)] md:mr-3 lg:right-[calc(50vw-512px)] lg:mr-5 xl:right-[calc(50vw-640px)] xl:mr-7 2xl:right-[calc(50vw-768px)] 2xl:mr-9`}
     >
       <div className="relative flex flex-col gap-2.5 text-lg transition-all sm:gap-3 sm:text-xl md:text-2xl">
         <a
@@ -29,7 +29,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandBluesky className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary" />
+          <IconBrandBluesky className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all" />
         </a>
 
         <a
@@ -40,7 +40,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         >
           <IconBrandInstagram
             size={24}
-            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+            className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
           />
         </a>
 
@@ -52,7 +52,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         >
           <IconBrandGithub
             size={24}
-            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+            className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
           />
         </a>
 
@@ -64,7 +64,7 @@ export default function SocialLinks({ scrollProgress }: Props) {
         >
           <IconBrandLinkedin
             size={24}
-            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+            className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
           />
         </a>
 
@@ -76,11 +76,11 @@ export default function SocialLinks({ scrollProgress }: Props) {
         >
           <IconBrandTwitter
             size={24}
-            className="text-subtle transition-all hover:text-secondary-fg dark:hover:text-secondary"
+            className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
           />
         </a>
       </div>
-      <div className={`h-16 w-0.5 origin-bottom rounded-t-full bg-muted`} />
+      <div className={`bg-muted h-16 w-0.5 origin-bottom rounded-t-full`} />
     </div>
   );
 }

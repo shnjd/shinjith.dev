@@ -4,11 +4,11 @@ export default function Footer() {
   return (
     <footer className="relative z-10">
       <div className="container flex w-full flex-col-reverse items-center justify-between gap-4 py-4 sm:flex-row">
-        <p className="text-center text-xs text-muted sm:text-sm">
+        <p className="text-muted text-center text-xs sm:text-sm">
           &copy; {new Date().getFullYear()}, All rights reserved.
         </p>
 
-        <ul className="flex items-center justify-center gap-6 text-sm text-subtle">
+        <ul className="text-subtle flex items-center justify-center gap-6 text-sm">
           <li>
             <Link
               href={"https://resume.shnjd.com/?download=true"}

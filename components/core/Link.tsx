@@ -1,4 +1,4 @@
-import { cn } from "@/utils/cn";
+import { tw } from "@/utils/cn";
 import NextLink, { LinkProps } from "next/link";
 import { HTMLProps } from "react";
 
@@ -18,7 +18,7 @@ export default function Link({
 }: Props) {
   return (
     <NextLink
-      className={cn(
+      className={tw(
         `text-foreground group relative w-fit py-1 transition-all ${secondary ? "hover:text-secondary-fg dark:hover:text-secondary" : "hover:text-subtle"}`,
         className,
       )}

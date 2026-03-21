@@ -3,13 +3,13 @@ import Link from "@/components/core/Link";
 import { technologies } from "@/lib/data/technologies";
 import TechnologyItem from "./TechnologyItem";
 import Marquee from "react-fast-marquee";
-import { cn } from "@/utils/cn";
+import { tw } from "@/utils/cn";
 import { about } from "@/lib/data";
 
 export default function About() {
   return (
     <Section name="About" subHeading="A Glimpse Into Me" className="min-h-fit">
-      <div className="h-full space-y-8 py-4 text-sm text-subtle sm:space-y-10 sm:py-5 sm:text-base md:space-y-12 md:py-6 lg:py-8">
+      <div className="text-subtle h-full space-y-8 py-4 text-sm sm:space-y-10 sm:py-5 sm:text-base md:space-y-12 md:py-6 lg:py-8">
         <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <p className="flex grow flex-col gap-3 md:gap-4">
             {about.about.map((para, paraIdx) => (
@@ -20,7 +20,7 @@ export default function About() {
                       key={`about-para-${paraIdx}-phrase-${phraseIdx}`}
                       href={phrase.href}
                       secondary
-                      className={cn(
+                      className={tw(
                         !phrase?.noRightMargin && "mr-1",
                         phrase?.highlight &&
                           "text-secondary-fg dark:text-secondary",
@@ -32,7 +32,7 @@ export default function About() {
                   ) : (
                     <span
                       key={`about-para-${paraIdx}-phrase-${phraseIdx}`}
-                      className={cn(
+                      className={tw(
                         !phrase?.noRightMargin && "mr-1",
                         phrase?.highlight &&
                           "text-secondary-fg dark:text-secondary",
@@ -56,11 +56,11 @@ export default function About() {
           </ul>
         </div>
         <div>
-          <p className="w-fit border-b border-secondary-fg py-0.5 text-secondary-fg dark:border-secondary dark:text-secondary">
+          <p className="border-secondary-fg text-secondary-fg dark:border-secondary dark:text-secondary w-fit border-b py-0.5">
             What Else Do I Know?
           </p>
 
-          <Marquee speed={70} className="my-6 text-lg text-subtle">
+          <Marquee speed={70} className="text-subtle my-6 text-lg">
             {technologies.map((tech) => (
               <TechnologyItem key={tech.name} {...tech} />
             ))}
