@@ -39,7 +39,7 @@ export default function ViewCount({
   }, [slug]);
 
   return (
-    <span className="flex gap-1 font-mono text-sm text-subtle">
+    <span className="text-subtle flex gap-1 font-mono text-sm">
       <motion.span>{rounded}</motion.span>
       <span>views</span>
     </span>

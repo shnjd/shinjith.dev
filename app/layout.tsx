@@ -105,7 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} ${ibmPlexMono.variable} max-w-screen relative h-full min-h-dvh w-full overflow-y-auto overflow-x-hidden bg-background font-sans text-base text-fg`}
+        className={`${rubik.variable} ${ibmPlexMono.variable} bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
       >
         <script
           type="application/ld+json"
@@ -115,7 +115,7 @@ export default function RootLayout({
           <SectionContextProvider>
             <Background />
             <Navbar />
-            <main className="container relative z-10">{children}</main>
+            <main className="relative z-10 container">{children}</main>
             <Footer />
           </SectionContextProvider>
         </ReactLenis>
