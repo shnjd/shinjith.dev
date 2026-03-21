@@ -2,10 +2,10 @@ import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
 
 const components: MDXComponents = {
-  h1: (props) => <h1 {...props} className="mb-3 mt-7" />,
-  h2: (props) => <h2 {...props} className="mb-3 mt-7" />,
-  h3: (props) => <h3 {...props} className="mb-1 mt-7" />,
-  h4: (props) => <h4 {...props} className="mb-1 mt-7" />,
+  h1: (props) => <h1 {...props} className="mt-7 mb-3" />,
+  h2: (props) => <h2 {...props} className="mt-7 mb-3" />,
+  h3: (props) => <h3 {...props} className="mt-7 mb-1" />,
+  h4: (props) => <h4 {...props} className="mt-7 mb-1" />,
   p: (props) => <p {...props} className="my-3" />,
   strong: (props) => <strong {...props} className="my-3" />,
   a: (props) => (
@@ -14,10 +14,10 @@ const components: MDXComponents = {
   blockquote: (props) => (
     <blockquote
       {...props}
-      className="border-l-3 my-5 border-overlay bg-surface bg-surface/10 px-4 py-0.5 dark:bg-surface/70"
+      className="border-overlay bg-surface bg-surface/10 dark:bg-surface/70 my-5 border-l-3 px-4 py-0.5"
     />
   ),
-  code: (props) => <code {...props} className="rounded px-1 py-0.5" />,
+  code: (props) => <code {...props} className="rounded-sm px-1 py-0.5" />,
   pre: ({ children, ...props }) => (
     <pre {...props} className="overflow-x-auto p-0">
       {typeof children === "object" && "props" in (children as any) ? (
@@ -34,10 +34,10 @@ const components: MDXComponents = {
     <table {...props} className="my-5 w-full border-collapse" />
   ),
   th: (props) => (
-    <th {...props} className="border border-border px-3 py-2 text-left" />
+    <th {...props} className="border-border border px-3 py-2 text-left" />
   ),
   td: (props) => (
-    <td {...props} className="border border-border px-3 py-2 text-left" />
+    <td {...props} className="border-border border px-3 py-2 text-left" />
   ),
   img: ({ src = "", alt = "", ...props }) => (
     <span className="relative block h-[400px] w-full">
@@ -46,12 +46,12 @@ const components: MDXComponents = {
         alt={alt}
         fill
         sizes="100vw"
-        className="rounded object-cover object-center"
+        className="rounded-sm object-cover object-center"
         {...props}
       />
     </span>
   ),
-  video: (props) => <video {...props} className="my-5 max-w-full rounded" />,
+  video: (props) => <video {...props} className="my-5 max-w-full rounded-sm" />,
   hr: (props) => <hr {...props} className="my-7 border-t" />,
 };
 

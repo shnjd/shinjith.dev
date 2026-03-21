@@ -36,7 +36,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           {project.name}
         </h3>
         <div
-          className={`h-fit space-y-2 rounded-md border border-overlay/75 from-background/80 via-surface/50 to-primary/20 p-3 text-sm text-subtle shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-sm sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-gradient-to-bl" : "bg-gradient-to-br"}`}
+          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
         >
           {project.description.map((pd, index) => (
             <p key={`${project.name}-desc-${index}`}>{pd}</p>
@@ -72,7 +72,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           className={`flex list-none flex-wrap justify-center gap-2 ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
         >
           {project.technologies.map((pt) => (
-            <Tag key={pt} className="shadow-sm">
+            <Tag key={pt} className="shadow-xs">
               {pt}
             </Tag>
           ))}
@@ -112,7 +112,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <li className="group flex flex-col overflow-hidden rounded-md border border-overlay/75 bg-gradient-to-br from-background/60 via-surface/30 to-primary/10 p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
+    <li className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-md border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
       <div className={`mb-4 flex justify-end gap-4`}>
         {project.github_url && (
           <Link
@@ -140,7 +140,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         {project.name}
       </h3>
 
-      <div className="mb-4 grow space-y-2 text-sm text-muted sm:space-y-3 sm:text-base">
+      <div className="text-muted mb-4 grow space-y-2 text-sm sm:space-y-3 sm:text-base">
         {project.description.map((pd, index) => (
           <p key={`${project.name}-desc-${index}`}>{pd}</p>
         ))}
@@ -148,7 +148,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <ul className="flex list-none flex-wrap gap-1.5 sm:gap-2">
         {project.technologies.map((pt) => (
-          <Tag key={pt} className="shadow-sm">
+          <Tag key={pt} className="shadow-xs">
             {pt}
           </Tag>
         ))}
@@ -161,7 +161,7 @@ export default function Projects() {
   return (
     <Section name="Projects" subHeading="Imagination in Action">
       <div className="prjects-grad py-4 sm:py-5">
-        <ul className="mx-auto mb-12 list-none space-y-8 sm:mb-14 sm:max-w-screen-sm sm:space-y-10 md:mb-16 md:space-y-12 lg:mb-20 lg:ml-0 lg:mt-8 lg:max-w-none lg:space-y-20 xl:mb-24 xl:space-y-24 2xl:mb-28 2xl:space-y-28">
+        <ul className="mx-auto mb-12 list-none space-y-8 sm:mb-14 sm:max-w-(--breakpoint-sm) sm:space-y-10 md:mb-16 md:space-y-12 lg:mt-8 lg:mb-20 lg:ml-0 lg:max-w-none lg:space-y-20 xl:mb-24 xl:space-y-24 2xl:mb-28 2xl:space-y-28">
           {projects
             .filter((p) => p.featured)
             .map((p, index) => (
@@ -173,11 +173,11 @@ export default function Projects() {
             ))}
         </ul>
 
-        <p className="mx-auto w-fit border-b border-secondary-fg py-0.5 text-sm font-medium text-secondary-fg sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none dark:border-secondary dark:text-secondary">
+        <p className="border-secondary-fg text-secondary-fg dark:border-secondary dark:text-secondary mx-auto w-fit border-b py-0.5 text-sm font-medium sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none">
           Other Noteworthy Projects
         </p>
 
-        <ul className="project-cards-grad mx-auto mt-4 flex list-none flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-screen-sm sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
+        <ul className="project-cards-grad mx-auto mt-4 flex list-none flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-(--breakpoint-sm) sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
           {projects
             .filter((p) => !p.featured)
             .slice(0, 3)
@@ -189,7 +189,7 @@ export default function Projects() {
         <div className="flex justify-center py-5">
           <NextLink
             href="/projects"
-            className="inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium text-primary transition-all hover:text-primary/90"
+            className="text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-all"
           >
             View projects archive
             <IconArrowRight size={16} />

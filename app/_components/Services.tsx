@@ -17,16 +17,16 @@ function Card({ card, index = 0 }: CardProps) {
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       transition={{ delay: 0.3 * index * 0.2, type: "tween" }}
       viewport={{ once: true }}
-      className="relative z-10 flex flex-col justify-end gap-1 rounded-lg border border-border bg-gradient-to-tr from-background/40 via-surface/20 to-primary/5 p-3 pt-12 shadow-sm backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
+      className="border-border from-background/40 via-surface/20 to-primary/5 relative z-10 flex flex-col justify-end gap-1 rounded-lg border bg-linear-to-tr p-3 pt-12 shadow-xs backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
     >
-      <div className="mb-2 text-lg text-subtle transition-all sm:text-xl md:text-2xl">
+      <div className="text-subtle mb-2 text-lg transition-all sm:text-xl md:text-2xl">
         <Icon size={32} />
       </div>
 
-      <h3 className="text-sm font-medium text-fg transition-all sm:text-base md:text-lg">
+      <h3 className="text-fg text-sm font-medium transition-all sm:text-base md:text-lg">
         {card.title}
       </h3>
-      <p className="text-xs text-muted transition-all sm:text-sm">
+      <p className="text-muted text-xs transition-all sm:text-sm">
         {card.description}
       </p>
     </motion.div>
@@ -40,7 +40,7 @@ export default function Services() {
       subHeading="Bringing Your Dreams to Life"
       className="min-h-fit w-full"
     >
-      <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-2 pb-4 pt-4 sm:gap-4 sm:pb-6 sm:pt-5 md:grid-cols-2 md:pb-6 md:pt-6 lg:grid-cols-4 lg:pb-10 lg:pt-8 xl:pb-16 2xl:pb-20">
+      <div className="mx-auto grid max-w-(--breakpoint-xl) grid-cols-1 gap-2 pt-4 pb-4 sm:gap-4 sm:pt-5 sm:pb-6 md:grid-cols-2 md:pt-6 md:pb-6 lg:grid-cols-4 lg:pt-8 lg:pb-10 xl:pb-16 2xl:pb-20">
         <AnimatePresence>
           {services.map((card, index) => (
             <Card card={card} key={card.title} index={index} />

@@ -17,16 +17,16 @@
   },
   "browserslist": {
     "production": [
-      "last 2 Chrome versions",
-      "last 2 Firefox versions",
-      "last 2 Safari versions",
-      "last 2 Edge versions",
-      "not IE 11",
-      "not op_mini all"
+      "last 2 versions",
+      "> 0.5%",
+      "not dead",
+      "not op_mini all",
+      "not ie 11"
     ],
     "development": [
-      "last 3 Chrome version",
-      "last 3 Firefox version"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
   "dependencies": {
@@ -54,6 +54,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20.19.37",
     "@types/react": "19.2.14",
@@ -63,12 +64,14 @@
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "node-addon-api": "^8.6.0",
+    "node-gyp": "^12.2.0",
     "postcss": "^8.5.8",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.8.1",
     "prettier-eslint": "^16.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^3.4.19",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "wrangler": "^4.76.0"
   },

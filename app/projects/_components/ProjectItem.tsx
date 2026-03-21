@@ -32,7 +32,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
       </td>
 
       <td
-        className={`group hidden items-center gap-2 border-surface py-3 pr-4 align-top font-medium md:table-cell ${
+        className={`group border-surface hidden items-center gap-2 py-3 pr-4 align-top font-medium md:table-cell ${
           !isLast ? "border-b" : ""
         }`}
       >
@@ -40,7 +40,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
       </td>
 
       <td
-        className={`group items-center border-surface py-1 pr-4 align-top font-medium md:hidden ${
+        className={`group border-surface items-center py-1 pr-4 align-top font-medium md:hidden ${
           !isLast ? "border-b" : ""
         }`}
       >
@@ -51,12 +51,12 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
           className="flex gap-2 py-2 transition-all"
         >
           {project.name}
-          <IconArrowUpRight className="-translate-x-[1px] translate-y-[1px] text-fg transition-all group-hover:-translate-y-[2px] group-hover:translate-x-1" />
+          <IconArrowUpRight className="text-fg -translate-x-px translate-y-px transition-all group-hover:translate-x-1 group-hover:-translate-y-[2px]" />
         </a>
       </td>
 
       <td
-        className={`hidden border-surface py-3 pr-4 align-top sm:table-cell ${
+        className={`border-surface hidden py-3 pr-4 align-top sm:table-cell ${
           !isLast ? "border-b" : ""
         }`}
       >
@@ -68,7 +68,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
       </td>
 
       <td
-        className={`hidden border-surface py-1 align-top lg:table-cell ${
+        className={`border-surface hidden py-1 align-top lg:table-cell ${
           !isLast ? "border-b" : ""
         }`}
       >
@@ -82,7 +82,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
             <div className="max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap">
               {project.live_url}
             </div>
-            <IconArrowUpRight className="m-2 -translate-x-[1px] translate-y-[1px] text-subtle transition-all group-hover:translate-x-0 group-hover:translate-y-0" />
+            <IconArrowUpRight className="text-subtle m-2 -translate-x-px translate-y-px transition-all group-hover:translate-x-0 group-hover:translate-y-0" />
           </a>
         ) : (
           project?.github_url && (
