@@ -15,12 +15,12 @@ export async function getAllNotes() {
         slug,
         frontmatter: mod.frontmatter,
       };
-    })
+    }),
   );
 
   return notes.sort(
     (a, b) =>
       new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime()
+      new Date(a.frontmatter.date).getTime(),
   );
 }

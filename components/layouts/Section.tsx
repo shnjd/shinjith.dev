@@ -60,7 +60,7 @@ const Section: React.FC<Props> = ({
         "min-h-dvh w-full",
         limitOnXl && "mx-auto max-w-(--breakpoint-xl)",
         condensed ? "py-0" : "py-12 sm:py-14 md:py-16 lg:py-20 xl:py-24",
-        className
+        className,
       )}
       {...props}
     >

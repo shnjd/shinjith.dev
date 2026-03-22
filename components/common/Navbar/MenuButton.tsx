@@ -11,7 +11,7 @@ const MenuButton: React.FC<Props> = ({ isClosed, className, ...props }) => {
       aria-label="Menu"
       className={tw(
         `group flex h-6 max-h-6 w-5 max-w-5 flex-col items-end gap-1.25 overflow-hidden transition-all`,
-        className
+        className,
       )}
       {...props}
     >

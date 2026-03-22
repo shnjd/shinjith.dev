@@ -24,7 +24,7 @@ export default function About() {
                         !phrase?.noRightMargin && "mr-1",
                         phrase?.highlight &&
                           "text-secondary-fg dark:text-secondary",
-                        phrase?.bold && "font-medium"
+                        phrase?.bold && "font-medium",
                       )}
                     >
                       {phrase.value}
@@ -36,12 +36,12 @@ export default function About() {
                         !phrase?.noRightMargin && "mr-1",
                         phrase?.highlight &&
                           "text-secondary-fg dark:text-secondary",
-                        phrase?.bold && "font-medium"
+                        phrase?.bold && "font-medium",
                       )}
                     >
                       {phrase.value}
                     </span>
-                  )
+                  ),
                 )}
               </span>
             ))}

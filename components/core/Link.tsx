@@ -20,7 +20,7 @@ export default function Link({
     <NextLink
       className={tw(
         `text-foreground group relative w-fit py-1 transition-all ${secondary ? "hover:text-secondary-fg dark:hover:text-secondary" : "hover:text-subtle"}`,
-        className
+        className,
       )}
       {...props}
     >
