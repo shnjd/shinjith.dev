@@ -1,7 +1,7 @@
-import React from "react";
-import { motion } from "motion/react";
-import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
-import Tag from "@/components/core/Tag";
+import React from 'react';
+import { motion } from 'motion/react';
+import { IconArrowUpRight, IconBrandGithub } from '@tabler/icons-react';
+import Tag from '@/components/core/Tag';
 
 type Props = {
   project: DataProject;
@@ -11,21 +11,21 @@ type Props = {
 
 function ProjectItem({ project, isLast = false, index = 0 }: Props) {
   const date = new Date(project.created_at);
-  const dateString = `${String(date.getMonth()).padStart(2, "0")}/${String(
-    date.getFullYear(),
+  const dateString = `${String(date.getMonth()).padStart(2, '0')}/${String(
+    date.getFullYear()
   ).slice(2)}`;
 
   return (
     <motion.tr
       initial={{ opacity: 0, y: 10, x: 100 }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      transition={{ delay: 0.5 + index * 0.05, type: "tween" }}
+      transition={{ delay: 0.5 + index * 0.05, type: 'tween' }}
       viewport={{ once: true }}
     >
       <td
         width={20}
         className={`border-surface py-3 pr-4 align-top ${
-          !isLast ? "border-b" : ""
+          !isLast ? 'border-b' : ''
         }`}
       >
         {dateString}
@@ -33,7 +33,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
 
       <td
         className={`group border-surface hidden items-center gap-2 py-3 pr-4 align-top font-medium md:table-cell ${
-          !isLast ? "border-b" : ""
+          !isLast ? 'border-b' : ''
         }`}
       >
         {project.name}
@@ -41,7 +41,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
 
       <td
         className={`group border-surface items-center py-1 pr-4 align-top font-medium md:hidden ${
-          !isLast ? "border-b" : ""
+          !isLast ? 'border-b' : ''
         }`}
       >
         <a
@@ -57,7 +57,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
 
       <td
         className={`border-surface hidden py-3 pr-4 align-top sm:table-cell ${
-          !isLast ? "border-b" : ""
+          !isLast ? 'border-b' : ''
         }`}
       >
         <ul className="flex list-none flex-wrap gap-1.5">
@@ -69,7 +69,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
 
       <td
         className={`border-surface hidden py-1 align-top lg:table-cell ${
-          !isLast ? "border-b" : ""
+          !isLast ? 'border-b' : ''
         }`}
       >
         {project?.live_url ? (

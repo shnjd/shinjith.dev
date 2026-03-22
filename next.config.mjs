@@ -1,19 +1,19 @@
-import createMDX from "@next/mdx";
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+import createMDX from '@next/mdx';
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
 
 initOpenNextCloudflareForDev();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   async headers() {
     return [
       {
-        source: "/assets/images/:path*",
+        source: '/assets/images/:path*',
         headers: [
           {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -24,16 +24,16 @@ const nextConfig = {
 /** @type {import('rehype-pretty-code').Options} */
 const rehypeOptions = {
   theme: {
-    dark: "catppuccin-mocha",
-    light: "catppuccin-latte",
+    dark: 'catppuccin-mocha',
+    light: 'catppuccin-latte',
   },
   keepBackground: false,
 };
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter"],
-    rehypePlugins: [["rehype-pretty-code", rehypeOptions]],
+    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
+    rehypePlugins: [['rehype-pretty-code', rehypeOptions]],
   },
 });
 

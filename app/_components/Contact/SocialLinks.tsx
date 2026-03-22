@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 import {
   IconBrandBluesky,
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandTwitter,
   IconBrandInstagram,
-} from "@tabler/icons-react";
-import { about } from "@/lib/data";
+} from '@tabler/icons-react';
+import { about } from '@/lib/data';
 
 type Props = {
   scrollProgress: number;

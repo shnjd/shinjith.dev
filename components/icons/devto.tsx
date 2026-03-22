@@ -1,11 +1,11 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes } from 'react';
 
 type Props = HTMLAttributes<SVGElement> & {
   size?: number | string;
 };
 
 const Devto: React.FC<Props> = ({
-  color = "currentColor",
+  color = 'currentColor',
   size = 24,
   ...props
 }) => {

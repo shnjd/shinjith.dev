@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   animate,
@@ -6,23 +6,17 @@ import {
   motion,
   useTransform,
   AnimationPlaybackControlsWithThen,
-} from "motion/react";
-import { useEffect, useState } from "react";
+} from 'motion/react';
+import { useEffect } from 'react';
 
-export default function ViewCount({
-  slug,
-  initialViews,
-}: {
-  slug: string;
-  initialViews: number;
-}) {
+export default function ViewCount({ slug }: { slug: string }) {
   const views = useMotionValue(0);
   const rounded = useTransform(() => Math.round(views.get()));
 
   useEffect(() => {
     let controls: AnimationPlaybackControlsWithThen;
 
-    fetch(`/api/content-views/${slug}`, { method: "POST" })
+    fetch(`/api/content-views/${slug}`, { method: 'POST' })
       .then((res) => res.json())
       .then((data: any) => {
         if (data.views) {
@@ -32,7 +26,7 @@ export default function ViewCount({
           });
         }
       })
-      .catch((err) => console.error("Failed to update views", err));
+      .catch((err) => console.error('Failed to update views', err));
 
     return () => controls?.stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps

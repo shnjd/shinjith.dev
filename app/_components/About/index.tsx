@@ -1,10 +1,10 @@
-import Section from "@/components/layouts/Section";
-import Link from "@/components/core/Link";
-import { technologies } from "@/lib/data/technologies";
-import TechnologyItem from "./TechnologyItem";
-import Marquee from "react-fast-marquee";
-import { tw } from "@/utils/cn";
-import { about } from "@/lib/data";
+import Section from '@/components/layouts/Section';
+import Link from '@/components/core/Link';
+import { technologies } from '@/lib/data/technologies';
+import TechnologyItem from './TechnologyItem';
+import Marquee from 'react-fast-marquee';
+import { tw } from '@/utils/cn';
+import { about } from '@/lib/data';
 
 export default function About() {
   return (
@@ -21,10 +21,10 @@ export default function About() {
                       href={phrase.href}
                       secondary
                       className={tw(
-                        !phrase?.noRightMargin && "mr-1",
+                        !phrase?.noRightMargin && 'mr-1',
                         phrase?.highlight &&
-                          "text-secondary-fg dark:text-secondary",
-                        phrase?.bold && "font-medium",
+                          'text-secondary-fg dark:text-secondary',
+                        phrase?.bold && 'font-medium'
                       )}
                     >
                       {phrase.value}
@@ -33,15 +33,15 @@ export default function About() {
                     <span
                       key={`about-para-${paraIdx}-phrase-${phraseIdx}`}
                       className={tw(
-                        !phrase?.noRightMargin && "mr-1",
+                        !phrase?.noRightMargin && 'mr-1',
                         phrase?.highlight &&
-                          "text-secondary-fg dark:text-secondary",
-                        phrase?.bold && "font-medium",
+                          'text-secondary-fg dark:text-secondary',
+                        phrase?.bold && 'font-medium'
                       )}
                     >
                       {phrase.value}
                     </span>
-                  ),
+                  )
                 )}
               </span>
             ))}

@@ -1,15 +1,15 @@
-"use client";
-import NextLink from "next/link";
-import ModeSwitch from "./ModeSwitch";
-import { useContext, useEffect, useRef, useState } from "react";
-import { toKebabCase } from "@/utils/string";
-import { AnimatePresence, motion } from "motion/react";
-import { SectionContext } from "@/contexts/SectionContext";
-import { usePathname } from "next/navigation";
-import Link from "@/components/core/Link";
-import MenuButton from "./MenuButton";
+'use client';
+import NextLink from 'next/link';
+import ModeSwitch from './ModeSwitch';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { toKebabCase } from '@/utils/string';
+import { AnimatePresence, motion } from 'motion/react';
+import { SectionContext } from '@/contexts/SectionContext';
+import { usePathname } from 'next/navigation';
+import Link from '@/components/core/Link';
+import MenuButton from './MenuButton';
 
-const navs = ["About", "Experience", "Projects", "Services", "Contact"];
+const navs = ['About', 'Experience', 'Projects', 'Services', 'Contact'];
 
 const opacityFactor = 0.5 / navs.length;
 
@@ -37,7 +37,7 @@ function NavigationMenuItem({
       initial={{ y: -20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       exit={{ y: -20, opacity: 0 }}
-      transition={{ delay: index * 0.05, type: "tween" }}
+      transition={{ delay: index * 0.05, type: 'tween' }}
       className="group"
       style={{ opacity }}
     >
@@ -47,7 +47,7 @@ function NavigationMenuItem({
           const hero = document.getElementById(path);
           e.preventDefault();
           if (hero) {
-            hero.scrollIntoView({ behavior: "smooth", block: "start" });
+            hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
             // window.scrollBy({ top: 100, left: 0, behavior: 'smooth' })
           }
           close();
@@ -75,9 +75,9 @@ const Navbar = () => {
       if (window.scrollY > 100) setHaveBg(true);
       else setHaveBg(false);
     };
-    window.addEventListener("scroll", checkPosition);
+    window.addEventListener('scroll', checkPosition);
 
-    return () => window.removeEventListener("scroll", checkPosition);
+    return () => window.removeEventListener('scroll', checkPosition);
   }, []);
 
   useEffect(() => {
@@ -94,24 +94,24 @@ const Navbar = () => {
     };
 
     if (menu) {
-      window.addEventListener("click", hideMenu);
+      window.addEventListener('click', hideMenu);
     } else {
-      window.removeEventListener("click", hideMenu);
+      window.removeEventListener('click', hideMenu);
     }
 
-    () => window.removeEventListener("click", hideMenu);
+    return () => window.removeEventListener('click', hideMenu);
   }, [menu]);
 
   return (
     <header
-      className={`fixed top-0 left-0 z-999 mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? "nav-slide-in backdrop-blur-lg backdrop-saturate-150" : "translate-y-0"}`}
+      className={`fixed top-0 left-0 z-999 mt-0 w-screen text-sm transition-all duration-300 ${haveBg && !menu ? 'nav-slide-in backdrop-blur-lg backdrop-saturate-150' : 'translate-y-0'}`}
     >
       <div
         ref={navRef}
-        className={`relative z-999 container w-full p-5 transition-all ${menu ? "navbar-gradient bg-surface/50 rounded-b-2xl backdrop-blur-lg backdrop-saturate-150" : "border-0 border-transparent bg-transparent"}`}
+        className={`relative z-999 container w-full p-5 transition-all ${menu ? 'navbar-gradient bg-surface/50 rounded-b-2xl backdrop-blur-lg backdrop-saturate-150' : 'border-0 border-transparent bg-transparent'}`}
       >
         <div
-          className={`flex w-full items-center ${haveBg || menu ? "justify-between" : "justify-end"}`}
+          className={`flex w-full items-center ${haveBg || menu ? 'justify-between' : 'justify-end'}`}
         >
           {(haveBg || menu) && (
             <>
@@ -131,7 +131,7 @@ const Navbar = () => {
                       key={nav}
                       nav={nav}
                       active={active === nav}
-                      activeIndex={navs.indexOf(active ?? "")}
+                      activeIndex={navs.indexOf(active ?? '')}
                       index={index}
                       close={() => setMenu(false)}
                     />
@@ -142,7 +142,7 @@ const Navbar = () => {
           )}
 
           <ul
-            className={`${pathname === "/" ? "hidden" : "flex"} items-center gap-4 lg:flex`}
+            className={`${pathname === '/' ? 'hidden' : 'flex'} items-center gap-4 lg:flex`}
           >
             <li>
               <Link
@@ -161,7 +161,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {pathname === "/" && (
+          {pathname === '/' && (
             <MenuButton
               isClosed={!menu}
               onClick={() => setMenu((prev) => !prev)}
@@ -171,7 +171,7 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`h-full w-full pt-6 transition-all lg:hidden ${menu && pathname === "/" ? "translate-y-0" : "hidden -translate-y-[200%]"}`}
+          className={`h-full w-full pt-6 transition-all lg:hidden ${menu && pathname === '/' ? 'translate-y-0' : 'hidden -translate-y-[200%]'}`}
         >
           <ul className="grid w-full list-none grid-cols-1 place-items-stretch gap-3 sm:grid-cols-2">
             <AnimatePresence>
@@ -180,7 +180,7 @@ const Navbar = () => {
                   key={nav}
                   nav={nav}
                   active={active === nav}
-                  activeIndex={navs.indexOf(active ?? "")}
+                  activeIndex={navs.indexOf(active ?? '')}
                   index={index}
                   close={() => setMenu(false)}
                 />
@@ -203,7 +203,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href={"https://notes.shnjd.com"}
+                  href={'https://notes.shnjd.com'}
                   className="hover:bg-accent hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
                 >
                   Notes

@@ -1,14 +1,14 @@
-import Image from "next/image";
+import Image from 'next/image';
 import {
   IconExternalLink,
   IconBrandGithub,
   IconArrowRight,
-} from "@tabler/icons-react";
-import NextLink from "next/link";
-import Link from "@/components/core/Link";
-import Tag from "@/components/core/Tag";
-import Section from "@/components/layouts/Section";
-import { projects } from "@/lib/data";
+} from '@tabler/icons-react';
+import NextLink from 'next/link';
+import Link from '@/components/core/Link';
+import Tag from '@/components/core/Tag';
+import Section from '@/components/layouts/Section';
+import { projects } from '@/lib/data';
 
 type ProjectProps = {
   project: DataProject;
@@ -18,7 +18,7 @@ type ProjectProps = {
 const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
   return (
     <li
-      className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
+      className={`group flex flex-col items-center ${toRight ? 'project-grad-right lg:flex-row-reverse lg:text-start' : 'project-grad-left lg:flex-row lg:text-end'}`}
     >
       <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-all duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
         <Image
@@ -30,20 +30,20 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
       </div>
 
       <div
-        className={`-mt-[10vw] max-w-lg space-y-3 sm:max-w-xl lg:mt-0 lg:max-w-none ${toRight ? "lg:-mr-20" : "lg:-ml-20"}`}
+        className={`-mt-[10vw] max-w-lg space-y-3 sm:max-w-xl lg:mt-0 lg:max-w-none ${toRight ? 'lg:-mr-20' : 'lg:-ml-20'}`}
       >
         <h3 className="hidden text-lg font-bold sm:text-xl md:text-2xl lg:block">
           {project.name}
         </h3>
         <div
-          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
+          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? 'bg-linear-to-bl' : 'bg-linear-to-br'}`}
         >
           {project.description.map((pd, index) => (
             <p key={`${project.name}-desc-${index}`}>{pd}</p>
           ))}
 
           <div
-            className={`hidden justify-center gap-4 sm:flex ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
+            className={`hidden justify-center gap-4 sm:flex ${toRight ? 'lg:justify-start' : 'lg:justify-end'}`}
           >
             {project?.github_url && (
               <Link
@@ -69,7 +69,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
         </div>
 
         <ul
-          className={`flex list-none flex-wrap justify-center gap-2 ${toRight ? "lg:justify-start" : "lg:justify-end"}`}
+          className={`flex list-none flex-wrap justify-center gap-2 ${toRight ? 'lg:justify-start' : 'lg:justify-end'}`}
         >
           {project.technologies.map((pt) => (
             <Tag key={pt} className="shadow-xs">

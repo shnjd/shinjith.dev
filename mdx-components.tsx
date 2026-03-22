@@ -1,5 +1,5 @@
-import type { MDXComponents } from "mdx/types";
-import Image from "next/image";
+import type { MDXComponents } from 'mdx/types';
+import Image from 'next/image';
 
 const components: MDXComponents = {
   h1: (props) => <h1 {...props} className="mt-7 mb-3" />,
@@ -20,7 +20,7 @@ const components: MDXComponents = {
   code: (props) => <code {...props} className="rounded-sm px-1 py-0.5" />,
   pre: ({ children, ...props }) => (
     <pre {...props} className="overflow-x-auto p-0">
-      {typeof children === "object" && "props" in (children as any) ? (
+      {typeof children === 'object' && 'props' in (children as any) ? (
         <code {...(children as any).props} className="bg-transparent p-3" />
       ) : (
         children
@@ -39,7 +39,7 @@ const components: MDXComponents = {
   td: (props) => (
     <td {...props} className="border-border border px-3 py-2 text-left" />
   ),
-  img: ({ src = "", alt = "", ...props }) => (
+  img: ({ src = '', alt = '', ...props }) => (
     <span className="relative block h-[400px] w-full">
       <Image
         src={src}

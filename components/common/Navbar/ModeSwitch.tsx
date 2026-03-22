@@ -1,28 +1,28 @@
-"use client";
-import React from "react";
-import useDarkMode from "@/hooks/useDarkMode";
-import { IconSun, IconMoon } from "@tabler/icons-react";
+'use client';
+import React from 'react';
+import useDarkMode from '@/hooks/useDarkMode';
+import { IconSun, IconMoon } from '@tabler/icons-react';
 
 const ModeSwitch = () => {
   const { change, mode } = useDarkMode();
 
   const getIcon = () => {
-    if (mode === "light") return <IconMoon size={18} className="text-subtle" />;
+    if (mode === 'light') return <IconMoon size={18} className="text-subtle" />;
     return <IconSun size={18} className="text-subtle" />;
   };
 
   const getNextMode = () => {
-    if (mode === "light") return "dark";
-    return "light";
+    if (mode === 'light') return 'dark';
+    return 'light';
   };
 
   return (
     <button
       aria-label="theme-switch"
       title={`Switch to ${getNextMode()} mode`}
-      onClick={() => change(mode === "light")}
+      onClick={() => change(mode === 'light')}
       style={{
-        transform: `rotate(${mode === "dark" ? "-180deg" : "0deg"})`,
+        transform: `rotate(${mode === 'dark' ? '-180deg' : '0deg'})`,
       }}
       className="hover:shadow-spread-xs group rounded-full p-1 transition-all sm:p-2"
     >

@@ -1,13 +1,13 @@
-"use client";
-import { createContext, ReactNode, useState } from "react";
+'use client';
+import { createContext, ReactNode, useState } from 'react';
 
 export type TSection =
-  | "Cover"
-  | "About"
-  | "Experience"
-  | "Projects"
-  | "Services"
-  | "Contact"
+  | 'Cover'
+  | 'About'
+  | 'Experience'
+  | 'Projects'
+  | 'Services'
+  | 'Contact'
   | null;
 
 type TSectionContext = {

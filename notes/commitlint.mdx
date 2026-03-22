@@ -1,15 +1,15 @@
 ---
-title: "Git Good: Automating Commit Message Standards with Husky and Commitlint"
-description: "This guide walks you through setting up Husky as a Git hook and configuring Commitlint to validate every commit against the established Conventional Commit rules."
+title: 'Git Good: Automating Commit Message Standards with Husky and Commitlint'
+description: 'This guide walks you through setting up Husky as a Git hook and configuring Commitlint to validate every commit against the established Conventional Commit rules.'
 tags:
-  - "husky"
-  - "commitlint"
-  - "git hooks"
-  - "conventional commits"
-  - "git standards"
-  - "commit message validation"
-  - "enforce commit rules"
-  - "devops practices"
+  - 'husky'
+  - 'commitlint'
+  - 'git hooks'
+  - 'conventional commits'
+  - 'git standards'
+  - 'commit message validation'
+  - 'enforce commit rules'
+  - 'devops practices'
 date: 2025-12-14T09:46:48Z
 ---
 
@@ -66,44 +66,44 @@ I created a configuration that applied all of the commit message standards outli
 
 ```mjs showLineNumbers {2} title="commitlint.config.mjs"
 const config = {
-  extends: ["@commitlint/config-conventional"],
+  extends: ['@commitlint/config-conventional'],
   rules: {
     // 1. Format: <type>([optional scope]): <description> - enforced by most rules below.
     // Enforce that the type is not empty.
-    "type-empty": [2, "never"],
+    'type-empty': [2, 'never'],
 
     // Enforce specific commit types. Add/remove types based on the project.
-    "type-enum": [
+    'type-enum': [
       2,
-      "always",
-      ["feat", "fix", "build", "chore", "ci", "style", "refactor"],
+      'always',
+      ['feat', 'fix', 'build', 'chore', 'ci', 'style', 'refactor'],
     ],
 
     // Subject/Description Rules:
     // 2. Short and Summarized: Try to fit the subject line inside 50 characters.
-    "header-max-length": [2, "always", 50],
+    'header-max-length': [2, 'always', 50],
 
     // 3. Capitalize the description: Start subject line with a capital letter.
     // Imperative Mood. Mostly useful for generating changelogs.
-    "subject-case": [2, "always", "sentence-case"],
+    'subject-case': [2, 'always', 'sentence-case'],
 
     // 4. Avoid trailing period.
-    "subject-full-stop": [2, "never", "."],
+    'subject-full-stop': [2, 'never', '.'],
 
     // Body Rules:
     // 5. Body is added by leaving a blank line after the subject line.
-    "body-leading-blank": [2, "always"],
+    'body-leading-blank': [2, 'always'],
 
     // 6. Wrap the body at 72 characters.
-    "body-max-line-length": [2, "always", 72],
+    'body-max-line-length': [2, 'always', 72],
 
     // Footer Rules:
     // Ensure a blank line precedes the footer.
-    "footer-leading-blank": [2, "always"],
+    'footer-leading-blank': [2, 'always'],
 
     // Rule for Optional Scope:
     // Enforce that if a scope is used, it is in lower-case.
-    "scope-case": [2, "always", "lower-case"],
+    'scope-case': [2, 'always', 'lower-case'],
   },
 };
 

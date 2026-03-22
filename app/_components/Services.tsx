@@ -1,7 +1,7 @@
-"use client";
-import { AnimatePresence, motion } from "motion/react";
-import Section from "@/components/layouts/Section";
-import { services } from "@/lib/data";
+'use client';
+import { AnimatePresence, motion } from 'motion/react';
+import Section from '@/components/layouts/Section';
+import { services } from '@/lib/data';
 
 type CardProps = {
   card: DataService;
@@ -15,7 +15,7 @@ function Card({ card, index = 0 }: CardProps) {
     <motion.div
       initial={{ opacity: 0, y: 100, x: 10 }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      transition={{ delay: 0.3 * index * 0.2, type: "tween" }}
+      transition={{ delay: 0.3 * index * 0.2, type: 'tween' }}
       viewport={{ once: true }}
       className="border-border from-background/40 via-surface/20 to-primary/5 relative z-10 flex flex-col justify-end gap-1 rounded-lg border bg-linear-to-tr p-3 pt-12 shadow-xs backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
     >

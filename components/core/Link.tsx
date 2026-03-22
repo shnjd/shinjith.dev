@@ -1,6 +1,6 @@
-import { tw } from "@/utils/cn";
-import NextLink, { LinkProps } from "next/link";
-import { HTMLProps } from "react";
+import { tw } from '@/utils/cn';
+import NextLink, { LinkProps } from 'next/link';
+import { HTMLProps } from 'react';
 
 type Props = LinkProps &
   HTMLProps<HTMLAnchorElement> & {
@@ -19,15 +19,15 @@ export default function Link({
   return (
     <NextLink
       className={tw(
-        `text-foreground group relative w-fit py-1 transition-all ${secondary ? "hover:text-secondary-fg dark:hover:text-secondary" : "hover:text-subtle"}`,
-        className,
+        `text-foreground group relative w-fit py-1 transition-all ${secondary ? 'hover:text-secondary-fg dark:hover:text-secondary' : 'hover:text-subtle'}`,
+        className
       )}
       {...props}
     >
       {children}
       {(underline || alwaysUnderline) && (
         <span
-          className={`absolute bottom-0 left-1/2 hidden h-0.5 w-0 -translate-x-1/2 rounded-full transition-all group-hover:w-full sm:block ${secondary ? "bg-secondary-fg dark:bg-secondary" : "bg-muted"} ${alwaysUnderline && "w-full"}`}
+          className={`absolute bottom-0 left-1/2 hidden h-0.5 w-0 -translate-x-1/2 rounded-full transition-all group-hover:w-full sm:block ${secondary ? 'bg-secondary-fg dark:bg-secondary' : 'bg-muted'} ${alwaysUnderline && 'w-full'}`}
         />
       )}
     </NextLink>

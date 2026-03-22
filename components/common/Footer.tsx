@@ -1,4 +1,4 @@
-import Link from "../core/Link";
+import Link from '../core/Link';
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
         <ul className="text-subtle flex items-center justify-center gap-6 text-sm">
           <li>
             <Link
-              href={"https://resume.shnjd.com/?download=true"}
+              href={'https://resume.shnjd.com/?download=true'}
               className="text-subtle"
             >
               Resume
@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link className="text-subtle" href={"/projects"}>
+            <Link className="text-subtle" href={'/projects'}>
               Projects
             </Link>
           </li>

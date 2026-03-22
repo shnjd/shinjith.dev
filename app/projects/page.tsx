@@ -1,55 +1,55 @@
-import { Metadata } from "next";
-import ProjectList from "./_components/ProjectList";
+import { Metadata } from 'next';
+import ProjectList from './_components/ProjectList';
 
 const breadCrumbLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
   itemListElement: [
     {
-      "@type": "ListItem",
+      '@type': 'ListItem',
       position: 1,
-      name: "Home",
-      item: "https://shnjd.com",
+      name: 'Home',
+      item: 'https://shnjd.com',
     },
     {
-      "@type": "ListItem",
+      '@type': 'ListItem',
       position: 2,
-      name: "Projects",
-      item: "https://shnjd.com/projects",
+      name: 'Projects',
+      item: 'https://shnjd.com/projects',
     },
   ],
 };
 
 export const metadata: Metadata = {
-  title: "Projects | Shinjith P R",
+  title: 'Projects | Shinjith P R',
   description:
-    "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
+    'Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R',
   keywords: [
-    "JavaScript",
-    "React",
-    "TypeScript",
-    "Material UI",
-    "Next.js",
-    "Tailwind",
-    "Tauri",
+    'JavaScript',
+    'React',
+    'TypeScript',
+    'Material UI',
+    'Next.js',
+    'Tailwind',
+    'Tauri',
   ],
   openGraph: {
-    url: "https://shnjd.com",
-    type: "website",
-    title: "Projects | Shinjith P R",
+    url: 'https://shnjd.com',
+    type: 'website',
+    title: 'Projects | Shinjith P R',
     description:
-      "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
+      'Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R',
 
     images: [
       {
-        url: "/assets/images/seo-cover.png",
+        url: '/assets/images/seo-cover.png',
         width: 1200,
         height: 630,
       },
     ],
   },
   alternates: {
-    canonical: "https://shnjd.com/projects",
+    canonical: 'https://shnjd.com/projects',
   },
 };
 

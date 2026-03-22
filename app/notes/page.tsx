@@ -1,81 +1,81 @@
-import { about } from "@/lib/data";
-import { formatToDisplay } from "@/lib/date";
-import { getAllNotes } from "@/lib/notes";
-import { Metadata } from "next";
+import { about } from '@/lib/data';
+import { formatToDisplay } from '@/lib/date';
+import { getAllNotes } from '@/lib/notes';
+import { Metadata } from 'next';
 
 const personLd = {
-  "@context": "https://schema.org/",
-  "@type": "Person",
-  name: "Shinjith P R",
-  url: "https://shnjd.com",
-  image: "https://shnjd.com/assets/images/shinjith.jpg",
+  '@context': 'https://schema.org/',
+  '@type': 'Person',
+  name: 'Shinjith P R',
+  url: 'https://shnjd.com',
+  image: 'https://shnjd.com/assets/images/shinjith.jpg',
   sameAs: Object.values(about.handles),
-  jobTitle: "Web & App Developer",
+  jobTitle: 'Web & App Developer',
   worksFor: {
-    "@type": "Organization",
-    name: "Sustainability Economics",
+    '@type': 'Organization',
+    name: 'Sustainability Economics',
   },
   knowsAbout: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Redux",
-    "React Native",
-    "Expo",
-    "Frontend Development",
-    "UI/UX",
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Redux',
+    'React Native',
+    'Expo',
+    'Frontend Development',
+    'UI/UX',
   ],
 };
 
 export const metadata: Metadata = {
   title: "Shinjith's Notes",
   description:
-    "Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
+    'Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.',
   keywords: [
-    "git",
-    "shinjith-dev",
-    "shnjd",
+    'git',
+    'shinjith-dev',
+    'shnjd',
     "shinjith's notes",
     "shinjith's blogs",
   ],
   robots: {
     index: true,
     follow: true,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    googleBot: "index, follow",
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    googleBot: 'index, follow',
   },
   openGraph: {
-    url: "https://shnjd.com",
-    type: "website",
+    url: 'https://shnjd.com',
+    type: 'website',
     title: "Shinjith's Notes",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
+      'Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.',
     images: [
       {
-        url: "https://shnjd.com/assets/images/seo-cover.png",
+        url: 'https://shnjd.com/assets/images/seo-cover.png',
         width: 1200,
         height: 630,
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: "Shinjith's Notes",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
-    creator: "@shnjd_",
+      'Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.',
+    creator: '@shnjd_',
     images: [
       {
-        url: "https://shnjd.com/assets/images/seo-cover.png",
+        url: 'https://shnjd.com/assets/images/seo-cover.png',
         width: 1200,
         height: 630,
       },
     ],
   },
   alternates: {
-    canonical: "https://shnjd.com/notes",
+    canonical: 'https://shnjd.com/notes',
   },
 };
 
@@ -91,7 +91,7 @@ export default async function NotesPage() {
       <div className="prose-a:text-subtle, prose prose-headings:font-sans prose-headings:text-fg prose-h1:text-3xl prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-medium prose-h4:font-semibold prose-p:text-subtle prose-a:font-normal prose-a:text-subtle prose-a:no-underline prose-blockquote:text-subtle prose-strong:text-fg prose-code:font-mono prose-code:text-fg prose-code:before:hidden prose-code:after:hidden prose-pre:bg-surface/70 prose-pre:text-fg prose-hr:border-border prose-lead:text-fg mx-auto min-h-[calc(100dvh-52px)] max-w-4xl py-20">
         <h1>Notes</h1>
         <p>
-          Hello, I&apos;m Shinjith, a software engineer from kerala, India.{" "}
+          Hello, I&apos;m Shinjith, a software engineer from kerala, India.{' '}
           <br />
           This is a small corner where I write notes (very rarely).
           <br />

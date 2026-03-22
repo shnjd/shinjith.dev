@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
-import ProjectItem from "./ProjectItem";
-import { projects } from "@/lib/data";
+import { motion, AnimatePresence } from 'motion/react';
+import Link from 'next/link';
+import ProjectItem from './ProjectItem';
+import { projects } from '@/lib/data';
 
 const sort = (a: DataProject, b: DataProject) =>
   new Date(a.created_at) < new Date(b.created_at) ? 1 : -1;
@@ -14,7 +14,7 @@ export default function ProjectList() {
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.1, type: "tween" }}
+        transition={{ delay: 0.1, type: 'tween' }}
         viewport={{ once: true }}
         className="w-full pt-20"
       >
@@ -32,7 +32,7 @@ export default function ProjectList() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, type: "tween" }}
+          transition={{ delay: 0.3, type: 'tween' }}
           viewport={{ once: true }}
           className="text-3xl font-semibold"
         >
