@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -318,7 +318,7 @@ body {
 }
 
 .about-tech-list > li:before {
-  content: '→';
+  content: "→";
   padding-right: 7px;
 }
 

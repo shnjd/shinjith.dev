@@ -1,5 +1,5 @@
-import { tw } from '@/utils/cn';
-import React, { ButtonHTMLAttributes } from 'react';
+import { tw } from "@/utils/cn";
+import React, { ButtonHTMLAttributes } from "react";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   isClosed: boolean;
@@ -16,13 +16,13 @@ const MenuButton: React.FC<Props> = ({ isClosed, className, ...props }) => {
       {...props}
     >
       <div
-        className={`bg-subtle h-0.5 w-full origin-right rounded-full transition-all ${isClosed ? 'rotate-0' : '-rotate-45'}`}
+        className={`bg-subtle h-0.5 w-full origin-right rounded-full transition-all ${isClosed ? "rotate-0" : "-rotate-45"}`}
       />
       <div
-        className={`bg-subtle h-0.5 w-1/2 rounded-full transition-all duration-300 ${isClosed ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`bg-subtle h-0.5 w-1/2 rounded-full transition-all duration-300 ${isClosed ? "translate-x-0" : "translate-x-full"}`}
       />
       <div
-        className={`bg-subtle h-0.5 w-full origin-right rounded-full transition-all ${isClosed ? 'rotate-0' : 'rotate-45'}`}
+        className={`bg-subtle h-0.5 w-full origin-right rounded-full transition-all ${isClosed ? "rotate-0" : "rotate-45"}`}
       />
     </button>
   );

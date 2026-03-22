@@ -1,6 +1,6 @@
-'use client';
-import SocialLinks from './SocialLinks';
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import SocialLinks from "./SocialLinks";
+import { useEffect, useRef, useState } from "react";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -8,10 +8,10 @@ import {
   IconMailShare,
   IconBrandBluesky,
   IconBrandInstagram,
-} from '@tabler/icons-react';
-import NextLink from 'next/link';
-import Section from '@/components/layouts/Section';
-import { about } from '@/lib/data';
+} from "@tabler/icons-react";
+import NextLink from "next/link";
+import Section from "@/components/layouts/Section";
+import { about } from "@/lib/data";
 
 export default function Contact() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -31,10 +31,10 @@ export default function Contact() {
         else setProgress(p);
       }
     };
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener("scroll", onScroll);
     };
   }, [progress]);
 
@@ -47,7 +47,7 @@ export default function Contact() {
       className="contact-bg relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]"
     >
       <div
-        className={`contact-lines h-0.5 w-full origin-right rounded-full ${progress === 1 && 'contact-line-1'}`}
+        className={`contact-lines h-0.5 w-full origin-right rounded-full ${progress === 1 && "contact-line-1"}`}
         style={{ transform: `scaleX(${progress})` }}
       />
       <div
@@ -132,7 +132,7 @@ export default function Contact() {
         </div>
       </div>
       <div
-        className={`contact-lines h-0.5 w-full origin-left rounded-full ${progress === 1 && 'contact-line-2'}`}
+        className={`contact-lines h-0.5 w-full origin-left rounded-full ${progress === 1 && "contact-line-2"}`}
       />
 
       <SocialLinks scrollProgress={progress} />

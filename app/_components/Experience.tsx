@@ -1,9 +1,9 @@
-import { IconArrowUpRight, IconUsersPlus } from '@tabler/icons-react';
-import Link from 'next/link';
-import { Fragment } from 'react';
-import Section from '@/components/layouts/Section';
-import Tag from '@/components/core/Tag';
-import { experience } from '@/lib/data';
+import { IconArrowUpRight, IconUsersPlus } from "@tabler/icons-react";
+import Link from "next/link";
+import { Fragment } from "react";
+import Section from "@/components/layouts/Section";
+import Tag from "@/components/core/Tag";
+import { experience } from "@/lib/data";
 
 const Item = ({ experience }: { experience: DataExperience }) => {
   return (

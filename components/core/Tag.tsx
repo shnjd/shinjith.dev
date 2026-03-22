@@ -1,5 +1,5 @@
-import { tw } from '@/utils/cn';
-import { HTMLAttributes } from 'react';
+import { tw } from "@/utils/cn";
+import { HTMLAttributes } from "react";
 
 export default function Tag({
   children,
@@ -9,7 +9,7 @@ export default function Tag({
   return (
     <li
       className={tw(
-        'border-overlay/45 from-background/25 to-secondary/25 text-secondary-fg dark:text-subtle rounded-full border bg-linear-to-tr px-3 py-1 text-xs backdrop-blur-lg backdrop-saturate-150 sm:text-sm',
+        "border-overlay/45 from-background/25 to-secondary/25 text-secondary-fg dark:text-subtle rounded-full border bg-linear-to-tr px-3 py-1 text-xs backdrop-blur-lg backdrop-saturate-150 sm:text-sm",
         className
       )}
       {...rest}

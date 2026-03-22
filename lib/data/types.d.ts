@@ -6,7 +6,7 @@ type DataAboutPhrase = {
   noRightMargin?: boolean;
 };
 
-type Socials = 'bluesky' | 'github' | 'instagram' | 'linkedin' | 'twitter';
+type Socials = "bluesky" | "github" | "instagram" | "linkedin" | "twitter";
 
 type DataAbout = {
   title: string;

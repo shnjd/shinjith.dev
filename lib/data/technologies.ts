@@ -9,7 +9,7 @@ import {
   IconBrandRedux,
   IconBrandVite,
   IconBrandSass,
-} from '@tabler/icons-react';
+} from "@tabler/icons-react";
 import {
   SiAntdesign,
   SiBootstrap,
@@ -33,135 +33,135 @@ import {
   SiSocketdotio,
   SiTailwindcss,
   SiTauri,
-} from '@icons-pack/react-simple-icons';
+} from "@icons-pack/react-simple-icons";
 
 export const technologies: DataTechnology[] = [
   {
-    name: 'Ant Design',
+    name: "Ant Design",
     icon: SiAntdesign,
   },
   {
-    name: 'AWS',
+    name: "AWS",
     icon: IconBrandAws,
   },
   {
-    name: 'Bootstrap',
+    name: "Bootstrap",
     icon: SiBootstrap,
   },
   {
-    name: 'C',
+    name: "C",
     icon: SiC,
   },
   {
-    name: 'Workers',
+    name: "Workers",
     icon: SiCloudflareworkers,
   },
   {
-    name: 'Django',
+    name: "Django",
     icon: SiDjango,
   },
   {
-    name: 'Docker',
+    name: "Docker",
     icon: SiDocker,
   },
   {
-    name: 'Electron',
+    name: "Electron",
     icon: SiElectron,
   },
   {
-    name: 'Expo',
+    name: "Expo",
     icon: SiExpo,
   },
   {
-    name: 'Express',
+    name: "Express",
     icon: SiExpress,
   },
   {
-    name: 'JavaScript',
+    name: "JavaScript",
     icon: IconBrandJavascript,
   },
   {
-    name: 'Mantine',
+    name: "Mantine",
     icon: SiMantine,
   },
   {
-    name: 'Mapbox',
+    name: "Mapbox",
     icon: SiMapbox,
   },
   {
-    name: 'Markdown',
+    name: "Markdown",
     icon: SiMarkdown,
   },
   {
-    name: 'Material UI',
+    name: "Material UI",
     icon: SiMui,
   },
   {
-    name: 'Netlify',
+    name: "Netlify",
     icon: SiNetlify,
   },
   {
-    name: 'Next.js',
+    name: "Next.js",
     icon: IconBrandNextjs,
   },
   {
-    name: 'Node',
+    name: "Node",
     icon: SiNodedotjs,
   },
   {
-    name: 'NPM',
+    name: "NPM",
     icon: SiNpm,
   },
   {
-    name: 'PNPM',
+    name: "PNPM",
     icon: SiPnpm,
   },
   {
-    name: 'Python',
+    name: "Python",
     icon: SiPython,
   },
   {
-    name: 'React',
+    name: "React",
     icon: IconBrandReact,
   },
   {
-    name: 'React Native',
+    name: "React Native",
     icon: IconBrandReactNative,
   },
   {
-    name: 'Render',
+    name: "Render",
     icon: SiRender,
   },
   {
-    name: 'Redux',
+    name: "Redux",
     icon: IconBrandRedux,
   },
   {
-    name: 'Sass',
+    name: "Sass",
     icon: IconBrandSass,
   },
   {
-    name: 'Socket IO',
+    name: "Socket IO",
     icon: SiSocketdotio,
   },
   {
-    name: 'Tailwind',
+    name: "Tailwind",
     icon: SiTailwindcss,
   },
   {
-    name: 'Tauri',
+    name: "Tauri",
     icon: SiTauri,
   },
   {
-    name: 'TypeScript',
+    name: "TypeScript",
     icon: IconBrandTypescript,
   },
   {
-    name: 'Vite',
+    name: "Vite",
     icon: IconBrandVite,
   },
   {
-    name: 'Yarn',
+    name: "Yarn",
     icon: IconBrandYarn,
   },
 ];

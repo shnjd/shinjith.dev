@@ -1,1 +1,1 @@
-export const displayName = ['S', 'h', 'i', 'n', 'j', 'i', 't', 'h'];
+export const displayName = ["S", "h", "i", "n", "j", "i", "t", "h"];

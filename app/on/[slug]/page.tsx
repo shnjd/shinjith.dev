@@ -1,7 +1,7 @@
-import { formatDateToDisplay } from '@/utils/date';
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import ViewCount from './_components/ViewCount';
+import { formatDateToDisplay } from "@/utils/date";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import ViewCount from "./_components/ViewCount";
 
 export async function generateMetadata({
   params,
@@ -17,14 +17,14 @@ export async function generateMetadata({
       description: frontmatter?.description,
       keywords: [
         ...frontmatter.tags,
-        'shinjith',
-        'shinjith-dev',
-        'shnjd',
+        "shinjith",
+        "shinjith-dev",
+        "shnjd",
         "shinjith's blogs",
       ],
       openGraph: {
-        url: 'https://shnjd.com',
-        type: 'article',
+        url: "https://shnjd.com",
+        type: "article",
         title: frontmatter?.title,
         description: frontmatter?.description,
         images: [
@@ -36,10 +36,10 @@ export async function generateMetadata({
         ],
       },
       twitter: {
-        card: 'summary_large_image',
+        card: "summary_large_image",
         title: frontmatter?.title,
         description: frontmatter?.description,
-        creator: '@shnjd_',
+        creator: "@shnjd_",
         images: [
           {
             url: frontmatter.cover || `https://shnjd.com/api/og/note/${slug}`,
@@ -65,8 +65,8 @@ export default async function Page({
     const { default: Blog, frontmatter } = await import(`@/notes/${slug}.mdx`);
 
     const blogLd = {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
 
       headline: frontmatter.title,
       description: frontmatter.description,
@@ -79,23 +79,23 @@ export default async function Page({
       dateModified: frontmatter.updatedAt || frontmatter.date,
 
       author: {
-        '@type': 'Person',
-        name: 'Shinjith P R',
-        url: 'https://shnjd.com',
+        "@type": "Person",
+        name: "Shinjith P R",
+        url: "https://shnjd.com",
       },
 
       publisher: {
-        '@type': 'Organization',
-        name: 'shnjd.com',
+        "@type": "Organization",
+        name: "shnjd.com",
         logo: {
-          '@type': 'ImageObject',
-          url: 'https://shnjd.com/assets/favicons/apple-touch-icon.png',
+          "@type": "ImageObject",
+          url: "https://shnjd.com/assets/favicons/apple-touch-icon.png",
         },
       },
 
       mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `https://shnjd.com/on/${slug}`,
+        "@type": "WebPage",
+        "@id": `https://shnjd.com/on/${slug}`,
       },
     };
 
