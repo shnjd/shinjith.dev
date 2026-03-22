@@ -4,16 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "NODE_ENV=production next build",
     "start": "next start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "lint": "next lint",
     "format": "prettier . --write",
     "prepare": "husky",
-    "build:opennext": "opennextjs-cloudflare build",
-    "preview:opennext": "opennextjs-cloudflare preview",
-    "deploy:opennext": "opennextjs-cloudflare deploy",
-    "upload:opennext": "opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "build": "next build"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.13.0",
