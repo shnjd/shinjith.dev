@@ -1,5 +1,4 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["clsx", "twMerge", "tw", "cva"],
-  "trailingComma": "es5"
+  "tailwindFunctions": ["clsx", "twMerge", "tw", "cva"]
 }
