@@ -32,7 +32,7 @@ and limitations under the License.
 ***************************************************************************** */
 
 // noinspection JSUnusedGlobalSymbols
-declare var onmessage: never;
+declare let onmessage: never;
 /**
  * The **`DOMException`** interface represents an abnormal event (called an **exception**) that occurs as a result of calling a method or accessing a property of a web API.
  *

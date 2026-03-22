@@ -7,15 +7,9 @@ import {
   useTransform,
   AnimationPlaybackControlsWithThen,
 } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function ViewCount({
-  slug,
-  initialViews,
-}: {
-  slug: string;
-  initialViews: number;
-}) {
+export default function ViewCount({ slug }: { slug: string }) {
   const views = useMotionValue(0);
   const rounded = useTransform(() => Math.round(views.get()));
 

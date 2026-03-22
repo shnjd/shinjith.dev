@@ -5,17 +5,12 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   isClosed: boolean;
 };
 
-const MenuButton: React.FC<Props> = ({
-  isClosed,
-  children,
-  className,
-  ...props
-}) => {
+const MenuButton: React.FC<Props> = ({ isClosed, className, ...props }) => {
   return (
     <button
       aria-label="Menu"
       className={tw(
-        `group flex h-6 max-h-6 w-5 max-w-5 flex-col items-end gap-[5px] overflow-hidden transition-all`,
+        `group flex h-6 max-h-6 w-5 max-w-5 flex-col items-end gap-1.25 overflow-hidden transition-all`,
         className,
       )}
       {...props}

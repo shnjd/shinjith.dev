@@ -99,7 +99,7 @@ const Navbar = () => {
       window.removeEventListener("click", hideMenu);
     }
 
-    () => window.removeEventListener("click", hideMenu);
+    return () => window.removeEventListener("click", hideMenu);
   }, [menu]);
 
   return (
