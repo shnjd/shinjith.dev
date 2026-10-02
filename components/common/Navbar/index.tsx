@@ -82,13 +82,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const hideMenu = (e: MouseEvent) => {
-      if (
-        !(
-          navRef.current &&
-          e.target &&
-          navRef.current.contains(e.target as Node)
-        )
-      ) {
+      if (!(
+        navRef.current &&
+        e.target &&
+        navRef.current.contains(e.target as Node)
+      )) {
         setMenu(false);
       }
     };
