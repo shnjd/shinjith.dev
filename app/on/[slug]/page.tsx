@@ -61,61 +61,63 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  let note;
   try {
-    const { default: Blog, frontmatter } = await import(`@/notes/${slug}.mdx`);
-
-    const blogLd = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-
-      headline: frontmatter.title,
-      description: frontmatter.description,
-      keywords: frontmatter.tags,
-      image: frontmatter.cover || `https://shnjd.com/api/og/note/${slug}`,
-
-      url: `https://shnjd.com/on/${slug}`,
-
-      datePublished: frontmatter.date,
-      dateModified: frontmatter.updatedAt || frontmatter.date,
-
-      author: {
-        "@type": "Person",
-        name: "Shinjith P R",
-        url: "https://shnjd.com",
-      },
-
-      publisher: {
-        "@type": "Organization",
-        name: "shnjd.com",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://shnjd.com/assets/favicons/apple-touch-icon.png",
-        },
-      },
-
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `https://shnjd.com/on/${slug}`,
-      },
-    };
-
-    return (
-      <article>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
-        />
-        <h1 className="mt-7 mb-0">{frontmatter.title}</h1>
-        <div className="text-subtle! mb-4 flex items-center gap-2 text-sm">
-          <p>Added on {formatDateToDisplay(new Date(frontmatter.date))}</p>
-          <span>·</span>
-          <ViewCount slug={slug} />
-        </div>
-        <hr className="my-7 border-t" />
-        <Blog />
-      </article>
-    );
+    note = await import(`@/notes/${slug}.mdx`);
   } catch {
     notFound();
   }
+  const { default: Blog, frontmatter } = note;
+
+  const blogLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+
+    headline: frontmatter.title,
+    description: frontmatter.description,
+    keywords: frontmatter.tags,
+    image: frontmatter.cover || `https://shnjd.com/api/og/note/${slug}`,
+
+    url: `https://shnjd.com/on/${slug}`,
+
+    datePublished: frontmatter.date,
+    dateModified: frontmatter.updatedAt || frontmatter.date,
+
+    author: {
+      "@type": "Person",
+      name: "Shinjith P R",
+      url: "https://shnjd.com",
+    },
+
+    publisher: {
+      "@type": "Organization",
+      name: "shnjd.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://shnjd.com/assets/favicons/apple-touch-icon.png",
+      },
+    },
+
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://shnjd.com/on/${slug}`,
+    },
+  };
+
+  return (
+    <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
+      />
+      <h1 className="mt-7 mb-0">{frontmatter.title}</h1>
+      <div className="text-subtle! mb-4 flex items-center gap-2 text-sm">
+        <p>Added on {formatDateToDisplay(new Date(frontmatter.date))}</p>
+        <span>·</span>
+        <ViewCount slug={slug} />
+      </div>
+      <hr className="my-7 border-t" />
+      <Blog />
+    </article>
+  );
 }

@@ -2,13 +2,7 @@
 import { createContext, ReactNode, useState } from "react";
 
 export type TSection =
-  | "Cover"
-  | "About"
-  | "Experience"
-  | "Projects"
-  | "Services"
-  | "Contact"
-  | null;
+  "Cover" | "About" | "Experience" | "Projects" | "Services" | "Contact" | null;
 
 type TSectionContext = {
   activeSection: TSection;

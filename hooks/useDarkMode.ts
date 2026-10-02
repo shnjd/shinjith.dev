@@ -28,9 +28,12 @@ const useDarkMode = () => {
   };
 
   useEffect(() => {
+    // Sync with localStorage (external system), unavailable during SSR
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (localStorage.theme === "dark") setDark();
     else if (localStorage.theme === "light") setLight();
     else setSystem();
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
   const change = (isDark: boolean) => {
