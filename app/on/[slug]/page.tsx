@@ -2,7 +2,6 @@ import { formatDateToDisplay } from "@/utils/date";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ViewCount from "./_components/ViewCount";
-import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export async function generateMetadata({
   params,
@@ -51,6 +50,7 @@ export async function generateMetadata({
       },
     };
   } catch (err) {
+    console.error(err);
     return {};
   }
 }
@@ -63,14 +63,6 @@ export default async function Page({
   const { slug } = await params;
   try {
     const { default: Blog, frontmatter } = await import(`@/notes/${slug}.mdx`);
-
-    const CONTENT_VIEWS = getCloudflareContext().env.CONTENT_VIEWS;
-    let initialViews = 0;
-
-    if (CONTENT_VIEWS) {
-      const val = await CONTENT_VIEWS.get(slug);
-      initialViews = val ? parseInt(val) : 0;
-    }
 
     const blogLd = {
       "@context": "https://schema.org",
@@ -117,7 +109,7 @@ export default async function Page({
         <div className="text-subtle! mb-4 flex items-center gap-2 text-sm">
           <p>Added on {formatDateToDisplay(new Date(frontmatter.date))}</p>
           <span>·</span>
-          <ViewCount slug={slug} initialViews={initialViews} />
+          <ViewCount slug={slug} />
         </div>
         <hr className="my-7 border-t" />
         <Blog />

@@ -377,14 +377,14 @@ body {
   border-bottom: 1px solid hsl(var(--col-surface));
 }
 
-.prose code[data-theme*=" "],
-.prose code[data-theme*=" "] span {
+.prose code[data-theme],
+.prose code[data-theme] span {
   color: var(--shiki-light);
   background-color: var(--shiki-light-bg);
 }
 
-.dark .prose code[data-theme*=" "],
-.dark .prose code[data-theme*=" "] span {
+.dark .prose code[data-theme],
+.dark .prose code[data-theme] span {
   color: var(--shiki-dark);
   background-color: var(--shiki-dark-bg);
 }
