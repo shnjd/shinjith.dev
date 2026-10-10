@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
+import CopyButton from "@/components/common/CopyButton";
 import { slugify, textContent } from "@/utils/string";
 
 // Anchor ids so headings can be linked to and listed in a table of contents.
@@ -24,13 +25,16 @@ const components: MDXComponents = {
   ),
   code: (props) => <code {...props} className="rounded-sm px-1 py-0.5" />,
   pre: ({ children, ...props }) => (
-    <pre {...props} className="overflow-x-auto p-0">
-      {typeof children === "object" && "props" in (children as any) ? (
-        <code {...(children as any).props} className="bg-transparent p-3" />
-      ) : (
-        children
-      )}
-    </pre>
+    <div className="group relative">
+      <pre {...props} className="overflow-x-auto p-0">
+        {typeof children === "object" && "props" in (children as any) ? (
+          <code {...(children as any).props} className="bg-transparent p-3" />
+        ) : (
+          children
+        )}
+      </pre>
+      <CopyButton className="absolute top-2 right-2 opacity-70 group-hover:opacity-100 focus-visible:opacity-100" />
+    </div>
   ),
   ul: (props) => <ul {...props} className="my-3 list-disc pl-5" />,
   ol: (props) => <ol {...props} className="my-3 list-decimal pl-5" />,
