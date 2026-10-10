@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { IconArrowUp } from "@tabler/icons-react";
 import { tw } from "@/utils/cn";
 
 type Heading = { id: string; text: string; level: number };
@@ -71,9 +72,10 @@ export default function WikiToc({
       <button
         type="button"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="text-muted hover:text-fg transition-colors"
+        className="text-muted hover:text-fg flex items-center gap-1.5 transition-colors"
       >
-        Scroll to top ↑
+        Scroll to top
+        <IconArrowUp size={14} aria-hidden />
       </button>
     </nav>
   );
