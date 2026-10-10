@@ -197,7 +197,7 @@ export default function Terminal({ onClose }: { onClose: () => void }) {
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.97, y: 8 }}
         transition={transition.base}
-        className="bg-background/90 dark:bg-surface/85 relative z-10 h-[min(78dvh,60lh)] w-full max-w-5xl overflow-hidden rounded-2xl font-mono text-base leading-relaxed shadow-2xl backdrop-blur-xl backdrop-saturate-150 sm:text-[13px]"
+        className="bg-background/90 dark:bg-surface/85 relative z-10 h-[70dvh] w-full max-w-5xl overflow-hidden rounded-2xl font-mono text-base leading-relaxed shadow-2xl backdrop-blur-xl backdrop-saturate-150 sm:aspect-16/10 sm:h-auto sm:max-h-[80dvh] sm:text-[13px]"
       >
         <div
           data-lenis-prevent
