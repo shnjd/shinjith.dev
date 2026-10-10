@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import BackLink from "@/components/common/BackLink";
 import Listing, { ListingItem } from "@/components/layouts/Listing";
 import { formatToDisplay } from "@/lib/date";
 import { getWikiTree, WikiNode } from "@/app/(wiki)/_lib/wiki";
@@ -59,7 +58,6 @@ export default async function WikiIndexPage() {
 
   return (
     <Listing>
-      <BackLink className="not-prose mb-2" />
       <h1>Wiki</h1>
       <p>
         Short reference notes I keep while learning, mostly on networks, the web
