@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { ibmPlexMono, rubik } from "@/lib/fonts";
-import SectionContextProvider from "@/contexts/SectionContext";
 
 import type { Viewport, Metadata } from "next";
 import Footer from "@/components/common/Footer";
@@ -112,12 +111,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
         <MotionProvider>
-          <SectionContextProvider>
-            <Background />
-            <Navbar />
-            <main className="relative z-10 container">{children}</main>
-            <Footer />
-          </SectionContextProvider>
+          <Background />
+          <Navbar />
+          <main className="relative z-10 container">{children}</main>
+          <Footer />
         </MotionProvider>
       </body>
     </html>
