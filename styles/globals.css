@@ -199,14 +199,27 @@ body {
   }
 }
 
+/*
+  Gradient lines drift by translating an oversized gradient layer, which
+  stays on the compositor instead of repainting background-position.
+*/
 .contact-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-lines::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 400%;
   background: linear-gradient(
     to right,
     hsl(var(--col-surface) / 0.2) 0%,
     hsl(var(--col-primary) / 0.2) 100%
   );
-  background-size: 400% 400%;
-  background-attachment: fixed;
+  will-change: transform;
 }
 
 .social-line {
@@ -217,12 +230,12 @@ body {
   );
 }
 
-.contact-line-1 {
-  animation: moving-lines 4s ease infinite both;
+.contact-line-1::before {
+  animation: moving-lines 8s ease-in-out infinite both;
 }
 
-.contact-line-2 {
-  animation: moving-lines 4s ease 3s infinite both;
+.contact-line-2::before {
+  animation: moving-lines 8s ease-in-out 3s infinite both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -231,24 +244,21 @@ body {
   }
 
   .blink,
-  .contact-line-1,
-  .contact-line-2,
+  .contact-line-1::before,
+  .contact-line-2::before,
   .rfm-marquee {
     animation: none !important;
   }
 }
 
 @keyframes moving-lines {
-  0% {
-    background-position: 0% 0%;
+  0%,
+  100% {
+    transform: translateX(0);
   }
 
   50% {
-    background-position: 100% 100%;
-  }
-
-  100% {
-    background-position: 0% 0%;
+    transform: translateX(-75%);
   }
 }
 
