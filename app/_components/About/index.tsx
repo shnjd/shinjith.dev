@@ -61,7 +61,7 @@ export default function About() {
             What Else Do I Know?
           </p>
 
-          <Marquee speed={70} className="text-subtle my-6 text-lg">
+          <Marquee speed={70} pauseOnHover className="text-subtle my-6 text-lg">
             {technologies.map((tech) => (
               <TechnologyItem key={tech.name} {...tech} />
             ))}
