@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { cache } from "react";
 import { MetadataRoute } from "next";
+import { loadWikiFile } from "./load";
 
 const WIKI_DIR = path.join(process.cwd(), "app", "(wiki)", "_content");
 
@@ -29,7 +30,20 @@ function contentPath(slug: string[]) {
 }
 
 export async function getWikiPage(slug: string[]) {
-  return import(`../_content/${contentPath(slug)}.mdx`);
+  return loadWikiFile(contentPath(slug));
+}
+
+/** Every content file's path under _content, without the extension. */
+export function getWikiFiles(dir: string[] = []): string[] {
+  return fs
+    .readdirSync(path.join(WIKI_DIR, ...dir), { withFileTypes: true })
+    .flatMap((e) =>
+      e.isDirectory()
+        ? getWikiFiles([...dir, e.name])
+        : e.name.endsWith(".mdx")
+          ? [[...dir, e.name.replace(/\.mdx$/, "")].join("/")]
+          : [],
+    );
 }
 
 async function getFrontmatter(slug: string[]): Promise<WikiFrontmatter> {
