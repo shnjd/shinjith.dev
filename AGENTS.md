@@ -13,7 +13,13 @@ Package manager is pnpm (version pinned via `packageManager`).
 - `pnpm cf-typegen` — regenerate `cloudflare-env.d.ts` after changing bindings in `wrangler.jsonc`.
 - There is no test suite.
 
-CI (`.github/workflows/ci.yml`) on PRs runs eslint, tsc, the OpenNext build, and uploads a preview version aliased `pr-<number>`. Pushes to main deploy (`deploy.yml`).
+CI (`.github/workflows/ci.yml`) on PRs into `dev` or `main` runs eslint, `prettier --check`, tsc, the OpenNext build, and uploads a preview version aliased `pr-<number>`. Pushes to `dev` upload a version aliased `dev` (`deploy-dev.yml`); pushes to `main` deploy production (`deploy.yml`).
+
+## Branches
+
+- `dev` is the integration branch; `main` is production. Both are protected: changes land only through PRs with the `Lint, typecheck & build` check passing.
+- Branch features and fixes off `dev` and open the PR against `dev`.
+- To release, open a PR from `dev` into `main` (merge commit, not squash, so `dev` and `main` stay in sync).
 
 ## Commits
 
@@ -21,7 +27,7 @@ Husky hooks enforce Conventional Commits via commitlint (`commit-msg`) and run l
 
 Changes limited to a sub-app use the sub-app name as scope, e.g. `feat(notes): …`. Changes to shared/root code take no sub-app scope; split commits that touch both.
 
-Do not include Claude session links (`claude.ai/code/session_…`) in commit messages, PR descriptions or comments.
+Do not include Claude session or project links (`claude.ai/code/…`) in commit messages, PR descriptions, comments or anything else recorded in the repo or on GitHub.
 
 ## Architecture
 
