@@ -42,6 +42,8 @@ const config = {
     // Scope Rules (optional scope is implied by the blog's format):
 
     // Enforce that if a scope is used, it is in lower-case (e.g., feat(parser):).
+    // Changes limited to a sub-app (app/(<sub-app>)/) use the sub-app
+    // name as scope, e.g. feat(notes): ... - see README.md.
     "scope-case": [2, "always", "lower-case"],
   },
 };
