@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { toKebabCase } from "@/utils/string";
 import {
   AnimatePresence,
+  LayoutGroup,
   motion,
   useReducedMotion,
   Variants,
@@ -81,7 +82,6 @@ function NavigationMenuItem({
           }
           close();
         }}
-        alwaysUnderline={active}
         className="hover:bg-accent/75 hover:text-accent-fg lg:hover:text-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5 lg:px-0 lg:hover:bg-transparent"
       >
         <div
@@ -90,6 +90,13 @@ function NavigationMenuItem({
         >
           {nav}
         </div>
+        {active && (
+          <motion.span
+            layoutId="nav-indicator"
+            transition={transition.base}
+            className="bg-muted absolute bottom-0 left-0 hidden h-0.5 w-full rounded-full sm:block"
+          />
+        )}
       </Link>
     </motion.li>
   );
@@ -174,19 +181,21 @@ const Navbar = () => {
           </div>
 
           <ul className="hidden list-none gap-6 lg:flex">
-            <AnimatePresence>
-              {showBrand &&
-                navs.map((nav, index) => (
-                  <NavigationMenuItem
-                    key={nav}
-                    nav={nav}
-                    active={active === nav}
-                    activeIndex={navs.indexOf(active ?? "")}
-                    index={index}
-                    close={() => setMenu(false)}
-                  />
-                ))}
-            </AnimatePresence>
+            <LayoutGroup id="desktop-nav">
+              <AnimatePresence>
+                {showBrand &&
+                  navs.map((nav, index) => (
+                    <NavigationMenuItem
+                      key={nav}
+                      nav={nav}
+                      active={active === nav}
+                      activeIndex={navs.indexOf(active ?? "")}
+                      index={index}
+                      close={() => setMenu(false)}
+                    />
+                  ))}
+              </AnimatePresence>
+            </LayoutGroup>
           </ul>
 
           <ul
@@ -230,16 +239,18 @@ const Navbar = () => {
             >
               <div className="pt-6">
                 <ul className="grid w-full list-none grid-cols-1 place-items-stretch gap-3 sm:grid-cols-2">
-                  {navs.map((nav, index) => (
-                    <NavigationMenuItem
-                      key={nav}
-                      nav={nav}
-                      active={active === nav}
-                      activeIndex={navs.indexOf(active ?? "")}
-                      index={index}
-                      close={() => setMenu(false)}
-                    />
-                  ))}
+                  <LayoutGroup id="mobile-nav">
+                    {navs.map((nav, index) => (
+                      <NavigationMenuItem
+                        key={nav}
+                        nav={nav}
+                        active={active === nav}
+                        activeIndex={navs.indexOf(active ?? "")}
+                        index={index}
+                        close={() => setMenu(false)}
+                      />
+                    ))}
+                  </LayoutGroup>
                 </ul>
 
                 <hr className="border-border my-4 border-b" />
