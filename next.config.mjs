@@ -1,7 +1,11 @@
 import createMDX from "@next/mdx";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
-initOpenNextCloudflareForDev();
+// Only needed for `next dev`; in build it would open a remote proxy session
+// (the KV binding is remote) and require Cloudflare credentials.
+if (process.env.NODE_ENV === "development") {
+  initOpenNextCloudflareForDev();
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
