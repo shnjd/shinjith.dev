@@ -1,6 +1,7 @@
+import BackLink from "@/components/common/BackLink";
 import { about } from "@/lib/data";
 import { formatToDisplay } from "@/lib/date";
-import { getAllNotes } from "@/lib/notes";
+import { getAllNotes } from "@/app/(notes)/_lib/notes";
 import { Metadata } from "next";
 
 const personLd = {
@@ -88,7 +89,8 @@ export default async function NotesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
-      <div className="prose-a:text-subtle, prose prose-headings:font-sans prose-headings:text-fg prose-h1:text-3xl prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-medium prose-h4:font-semibold prose-p:text-subtle prose-a:font-normal prose-a:text-subtle prose-a:no-underline prose-blockquote:text-subtle prose-strong:text-fg prose-code:font-mono prose-code:text-fg prose-code:before:hidden prose-code:after:hidden prose-pre:bg-surface/70 prose-pre:text-fg prose-hr:border-border prose-lead:text-fg mx-auto min-h-[calc(100dvh-52px)] max-w-4xl py-20">
+      <div className="prose-a:text-subtle, prose prose-headings:font-sans prose-headings:text-fg prose-h1:text-3xl prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-medium prose-h4:font-semibold prose-p:text-subtle prose-a:font-normal prose-a:text-subtle prose-a:no-underline prose-blockquote:text-subtle prose-strong:text-fg prose-code:font-mono prose-code:text-fg prose-code:before:hidden prose-code:after:hidden prose-pre:bg-surface/70 prose-pre:text-fg prose-hr:border-border prose-lead:text-fg mx-auto min-h-[calc(100dvh-52px)] max-w-5xl py-20">
+        <BackLink className="not-prose mb-2" />
         <h1>Notes</h1>
         <p>
           Hello, I&apos;m Shinjith, a software engineer from kerala, India.{" "}

@@ -1,3 +1,4 @@
+import { getNote } from "@/app/(notes)/_lib/notes";
 import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
@@ -23,7 +24,7 @@ export async function GET(_req: NextRequest, ctx: any) {
   const { slug } = await ctx.params;
 
   try {
-    const { frontmatter } = await import(`@/notes/${slug}.mdx`);
+    const { frontmatter } = await getNote(slug);
 
     return new ImageResponse(
       <div
