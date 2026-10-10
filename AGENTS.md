@@ -19,6 +19,8 @@ CI (`.github/workflows/ci.yml`) on PRs runs eslint, tsc, the OpenNext build, and
 
 Husky hooks enforce Conventional Commits via commitlint (`commit-msg`) and run lint-staged (eslint + prettier) on commit. Use types like `fix:`, `chore:`, `ci:`, `feat:`.
 
+Do not include Claude session links (`claude.ai/code/session_…`) in commit messages, PR descriptions or comments.
+
 ## Architecture
 
 - **Landing page** (`app/page.tsx` → `app/_components/*`) is assembled from sections; content comes from typed data modules in `lib/data/*` (about, experience, projects, services, technologies; types in `types.d.ts`). Edit content there, not in the components. `contexts/SectionContext.tsx` and `lib/lenis.ts` (smooth scrolling) support section navigation.
