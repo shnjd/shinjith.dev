@@ -73,12 +73,14 @@ export default function Terminal({ onClose }: { onClose: () => void }) {
 
   // Lock the page behind while open.
   useEffect(() => {
+    // Lock through body: its overflow carries over to the viewport, so the
+    // scroll position is kept (hiding html's overflow would reset it).
     lenis?.stop();
-    const { documentElement: html } = document;
-    const overflow = html.style.overflow;
-    html.style.overflow = "hidden";
+    const { body } = document;
+    const overflow = body.style.overflow;
+    body.style.overflow = "hidden";
     return () => {
-      html.style.overflow = overflow;
+      body.style.overflow = overflow;
       lenis?.start();
     };
   }, [lenis]);

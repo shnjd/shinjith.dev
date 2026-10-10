@@ -32,7 +32,8 @@ const Navbar = () => {
   const [menu, setMenu] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement | null>(null);
   const { open: openTerminal } = useTerminal();
-  const isHome = usePathname() === "/";
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   // Pinned on inner pages; on home it shows once the page is scrolled.
   const showBrand = !isHome || haveBg || menu;
 
@@ -42,9 +43,14 @@ const Navbar = () => {
       else setHaveBg(false);
     };
     window.addEventListener("scroll", checkPosition, { passive: true });
+    // Re-check after navigation or a scroll restore that fired no event.
+    const frame = requestAnimationFrame(checkPosition);
 
-    return () => window.removeEventListener("scroll", checkPosition);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", checkPosition);
+      cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     const hideMenu = (e: MouseEvent) => {
