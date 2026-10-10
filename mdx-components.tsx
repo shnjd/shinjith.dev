@@ -46,12 +46,14 @@ const components: MDXComponents = {
         alt={alt}
         fill
         sizes="100vw"
-        className="rounded-sm object-cover object-center"
+        className="rounded-2xl object-cover object-center"
         {...props}
       />
     </span>
   ),
-  video: (props) => <video {...props} className="my-5 max-w-full rounded-sm" />,
+  video: (props) => (
+    <video {...props} className="my-5 max-w-full rounded-2xl" />
+  ),
   hr: (props) => <hr {...props} className="my-7 border-t" />,
 };
 

@@ -22,7 +22,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
     <RevealItem
       className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
     >
-      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-[border-radius] duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
+      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl lg:w-1/2 lg:basis-1/2">
         <Image
           src={project.image}
           alt={project.name}
@@ -38,7 +38,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           {project.name}
         </h3>
         <div
-          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-shadow duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
+          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-2xl border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-shadow duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
         >
           {project.description.map((pd, index) => (
             <p key={`${project.name}-desc-${index}`}>{pd}</p>
@@ -117,7 +117,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <RevealItem
       delay={stagger(index)}
-      className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-md border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-sm sm:p-4 md:p-5 xl:w-[31%]"
+      className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-2xl border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-sm sm:p-4 md:p-5 xl:w-[31%]"
     >
       <div className={`mb-4 flex justify-end gap-4`}>
         {project.github_url && (
@@ -197,7 +197,7 @@ export default function Projects() {
         <div className="flex justify-center py-5">
           <NextLink
             href="/projects"
-            className="group text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-[color,scale] active:scale-[0.97]"
+            className="group text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-2xl py-2 font-medium transition-[color,scale] active:scale-[0.97]"
           >
             View projects archive
             <IconArrowRight

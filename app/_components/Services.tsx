@@ -15,7 +15,7 @@ function Card({ card, index = 0 }: CardProps) {
   return (
     <motion.div
       {...reveal({ delay: stagger(index), y: 16 })}
-      className="border-border from-background/40 via-surface/20 to-primary/5 relative z-10 flex flex-col justify-end gap-1 rounded-lg border bg-linear-to-tr p-3 pt-12 shadow-xs backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
+      className="border-border from-background/40 via-surface/20 to-primary/5 relative z-10 flex flex-col justify-end gap-1 rounded-2xl border bg-linear-to-tr p-3 pt-12 shadow-xs backdrop-blur-lg backdrop-saturate-200 sm:p-5 sm:pt-14 md:pt-16 lg:pt-20"
     >
       <div className="text-subtle mb-2 text-lg sm:text-xl md:text-2xl">
         <Icon size={32} />
