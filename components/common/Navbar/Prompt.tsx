@@ -60,18 +60,15 @@ export default function Prompt({ onOpen, className }: Props) {
       <button
         type="button"
         onClick={onOpen}
-        title="Open terminal ( ` )"
+        title="Open terminal"
         aria-label="Open terminal"
-        className="group flex cursor-text items-baseline pr-3 text-left"
+        className="flex cursor-text items-baseline pr-3 text-left"
       >
         <span className="text-secondary-fg dark:text-secondary mr-2 ml-1">
           ❯
         </span>
         <span className="text-fg/80 whitespace-pre">{typed}</span>
         <span className="blink text-fg/80">_</span>
-        <kbd className="border-border text-muted ml-3 hidden self-center rounded border px-1.5 font-mono text-xs leading-5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 lg:inline">
-          `
-        </kbd>
       </button>
     </nav>
   );
