@@ -1,11 +1,16 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
+import { slugify, textContent } from "@/utils/string";
+
+// Anchor ids so headings can be linked to and listed in a table of contents.
+const headingId = ({ children }: { children?: React.ReactNode }) =>
+  slugify(textContent(children));
 
 const components: MDXComponents = {
   h1: (props) => <h1 {...props} className="mt-7 mb-3" />,
-  h2: (props) => <h2 {...props} className="mt-7 mb-3" />,
-  h3: (props) => <h3 {...props} className="mt-7 mb-1" />,
-  h4: (props) => <h4 {...props} className="mt-7 mb-1" />,
+  h2: (props) => <h2 id={headingId(props)} {...props} className="mt-7 mb-3" />,
+  h3: (props) => <h3 id={headingId(props)} {...props} className="mt-7 mb-1" />,
+  h4: (props) => <h4 id={headingId(props)} {...props} className="mt-7 mb-1" />,
   p: (props) => <p {...props} className="my-3" />,
   strong: (props) => <strong {...props} className="my-3" />,
   a: (props) => (
