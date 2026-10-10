@@ -5,7 +5,7 @@ import WikiToc from "@/app/(wiki)/_components/WikiToc";
 
 const CONTENT_ID = "wiki-content";
 const aside =
-  "sticky top-20 max-h-[calc(100dvh-6rem)] w-60 shrink-0 self-start overflow-y-auto";
+  "sticky top-20 max-h-[calc(100dvh-6rem)] w-56 shrink-0 self-start overflow-y-auto";
 
 export default async function WikiPageLayout({
   children,
@@ -15,7 +15,7 @@ export default async function WikiPageLayout({
   const tree = await getWikiTree();
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-52px)] w-full max-w-360 gap-8 py-20">
+    <div className="mx-auto flex min-h-[calc(100dvh-52px)] w-full max-w-7xl gap-6 py-20">
       <WikiSidebar tree={tree} className={`${aside} hidden lg:block`} />
       <div className="flex min-w-0 flex-1 justify-center">
         <div className="w-full max-w-3xl min-w-0">
@@ -30,7 +30,10 @@ export default async function WikiPageLayout({
           </Prose>
         </div>
       </div>
-      <WikiToc contentId={CONTENT_ID} className={`${aside} hidden xl:block`} />
+      {/* Always reserve the TOC column so the content stays centered. */}
+      <div className={`${aside} hidden xl:block`}>
+        <WikiToc contentId={CONTENT_ID} />
+      </div>
     </div>
   );
 }
