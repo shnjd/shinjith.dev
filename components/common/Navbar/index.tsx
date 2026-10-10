@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import ModeSwitch from "./ModeSwitch";
 import { useContext, useEffect, useRef, useState } from "react";
 import { toKebabCase } from "@/utils/string";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { SectionContext } from "@/contexts/SectionContext";
 import { usePathname } from "next/navigation";
 import Link from "@/components/core/Link";
@@ -29,6 +29,7 @@ function NavigationMenuItem({
   close,
 }: ItemProps) {
   const path = toKebabCase(nav);
+  const reduceMotion = useReducedMotion();
   const opacity =
     activeIndex === index ? 1 : 1 - (index + 1 - activeIndex) * opacityFactor;
 
@@ -47,7 +48,10 @@ function NavigationMenuItem({
           const hero = document.getElementById(path);
           e.preventDefault();
           if (hero) {
-            hero.scrollIntoView({ behavior: "smooth", block: "start" });
+            hero.scrollIntoView({
+              behavior: reduceMotion ? "auto" : "smooth",
+              block: "start",
+            });
             // window.scrollBy({ top: 100, left: 0, behavior: 'smooth' })
           }
           close();

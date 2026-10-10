@@ -261,6 +261,19 @@ body {
   animation: moving-lines 4s ease 3s infinite both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto !important;
+  }
+
+  .blink,
+  .contact-line-1,
+  .contact-line-2,
+  .rfm-marquee {
+    animation: none !important;
+  }
+}
+
 @keyframes moving-lines {
   0% {
     background-position: 0% 0%;

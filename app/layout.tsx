@@ -1,12 +1,12 @@
 import "@/styles/globals.css";
 import { ibmPlexMono, rubik } from "@/lib/fonts";
-import { ReactLenis } from "@/lib/lenis";
 import SectionContextProvider from "@/contexts/SectionContext";
 
 import type { Viewport, Metadata } from "next";
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import Background from "@/components/layouts/Background";
+import MotionProvider from "@/components/layouts/MotionProvider";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -111,14 +111,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
-        <ReactLenis root>
+        <MotionProvider>
           <SectionContextProvider>
             <Background />
             <Navbar />
             <main className="relative z-10 container">{children}</main>
             <Footer />
           </SectionContextProvider>
-        </ReactLenis>
+        </MotionProvider>
       </body>
     </html>
   );
