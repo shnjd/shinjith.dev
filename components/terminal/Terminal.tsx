@@ -207,7 +207,9 @@ export default function Terminal({ onClose }: { onClose: () => void }) {
               {cwd !== undefined && (
                 <div className="flex">
                   <PromptLabel cwd={cwd} />
-                  <span className="break-all whitespace-pre-wrap">{input}</span>
+                  <span className="wrap-anywhere whitespace-pre-wrap">
+                    {input}
+                  </span>
                 </div>
               )}
               {output}
