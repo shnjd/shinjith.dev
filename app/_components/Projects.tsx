@@ -9,6 +9,8 @@ import Link from "@/components/core/Link";
 import Tag from "@/components/core/Tag";
 import Section from "@/components/layouts/Section";
 import { projects } from "@/lib/data";
+import { stagger } from "@/lib/motion";
+import { Reveal, RevealItem } from "@/components/core/Reveal";
 
 type ProjectProps = {
   project: DataProject;
@@ -17,7 +19,7 @@ type ProjectProps = {
 
 const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
   return (
-    <li
+    <RevealItem
       className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
     >
       <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-all duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
@@ -102,17 +104,21 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           )}
         </div>
       </div>
-    </li>
+    </RevealItem>
   );
 };
 
 type ProjectCardProps = {
   project: DataProject;
+  index: number;
 };
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
-    <li className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-md border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
+    <RevealItem
+      delay={stagger(index)}
+      className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-md border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-sm sm:p-4 md:p-5 xl:w-[31%]"
+    >
       <div className={`mb-4 flex justify-end gap-4`}>
         {project.github_url && (
           <Link
@@ -153,7 +159,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </Tag>
         ))}
       </ul>
-    </li>
+    </RevealItem>
   );
 };
 
@@ -173,16 +179,18 @@ export default function Projects() {
             ))}
         </ul>
 
-        <p className="border-secondary-fg text-secondary-fg dark:border-secondary dark:text-secondary mx-auto w-fit border-b py-0.5 text-sm font-medium sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none">
-          Other Noteworthy Projects
-        </p>
+        <Reveal>
+          <p className="border-secondary-fg text-secondary-fg dark:border-secondary dark:text-secondary mx-auto w-fit border-b py-0.5 text-sm font-medium sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none">
+            Other Noteworthy Projects
+          </p>
+        </Reveal>
 
         <ul className="project-cards-grad mx-auto mt-4 flex list-none flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-(--breakpoint-sm) sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
           {projects
             .filter((p) => !p.featured)
             .slice(0, 3)
-            .map((p) => (
-              <ProjectCard project={p} key={p.id} />
+            .map((p, index) => (
+              <ProjectCard project={p} key={p.id} index={index} />
             ))}
         </ul>
 

@@ -6,7 +6,9 @@ import React, {
   useEffect,
   useRef,
 } from "react";
+import { motion } from "motion/react";
 import { tw } from "@/utils/cn";
+import { reveal } from "@/lib/motion";
 import { rubik } from "@/lib/fonts";
 import { SectionContext, TSection } from "@/contexts/SectionContext";
 
@@ -61,16 +63,20 @@ const Section: React.FC<Props> = ({
       {...props}
     >
       {!withoutTitle && (
-        <h2
+        <motion.h2
+          {...reveal()}
           className={`${rubik.className} ${subHeading ? "sm:mb-0.5 md:mb-1" : "sm:mb-1 md:mb-2 lg:mb-3 xl:mb-4"} text-lg font-bold tracking-widest uppercase sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl`}
         >
           {name}
-        </h2>
+        </motion.h2>
       )}
       {subHeading && (
-        <p className="text-subtle w-full max-w-80 text-sm sm:mb-1 sm:text-base md:mb-2 lg:mb-3 xl:mb-4">
+        <motion.p
+          {...reveal({ delay: 0.06 })}
+          className="text-subtle w-full max-w-80 text-sm sm:mb-1 sm:text-base md:mb-2 lg:mb-3 xl:mb-4"
+        >
           {subHeading}
-        </p>
+        </motion.p>
       )}
       {children}
     </section>

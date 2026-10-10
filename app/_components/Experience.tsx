@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import Section from "@/components/layouts/Section";
 import Tag from "@/components/core/Tag";
 import { experience } from "@/lib/data";
+import { Reveal, RevealItem } from "@/components/core/Reveal";
 
 const Item = ({ experience }: { experience: DataExperience }) => {
   return (
@@ -49,16 +50,16 @@ export default function Experience() {
           <div className="contact-lines contact-line-1 h-0.5 rounded-full" />
           <ul className="list-none">
             {experience.map((e) => (
-              <li key={e.company}>
+              <RevealItem key={e.company}>
                 <Item experience={e} />
                 <div className="contact-lines contact-line-2 h-0.5 rounded-full" />
-              </li>
+              </RevealItem>
             ))}
           </ul>
           <div className="contact-lines contact-line-2 h-0.5 rounded-full" />
         </div>
 
-        <div className="mt-6 space-y-4 sm:mt-8">
+        <Reveal className="mt-6 space-y-4 sm:mt-8">
           <p className="text-subtle max-w-[800px] text-sm sm:text-base">
             I am eager to join an organization where I can develop my skills,
             make significant contributions, and enthusiastically support and
@@ -79,7 +80,7 @@ export default function Experience() {
             View resume
             <IconArrowUpRight size={16} />
           </Link>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );
