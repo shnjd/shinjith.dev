@@ -1,6 +1,11 @@
 import Prose from "@/components/layouts/Prose";
 import { getWikiTree } from "@/app/(wiki)/_lib/wiki";
 import WikiSidebar from "@/app/(wiki)/_components/WikiSidebar";
+import WikiToc from "@/app/(wiki)/_components/WikiToc";
+
+const CONTENT_ID = "wiki-content";
+const aside =
+  "sticky top-20 max-h-[calc(100dvh-6rem)] w-60 shrink-0 self-start overflow-y-auto";
 
 export default async function WikiPageLayout({
   children,
@@ -10,12 +15,22 @@ export default async function WikiPageLayout({
   const tree = await getWikiTree();
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-52px)] max-w-6xl flex-col gap-12 py-20 lg:flex-row">
-      <Prose className="max-w-none min-w-0 flex-1">{children}</Prose>
-      <WikiSidebar
-        tree={tree}
-        className="shrink-0 self-start lg:sticky lg:top-20 lg:order-first lg:max-h-[calc(100dvh-7rem)] lg:w-60 lg:overflow-y-auto"
-      />
+    <div className="mx-auto flex min-h-[calc(100dvh-52px)] w-full max-w-360 gap-8 py-20">
+      <WikiSidebar tree={tree} className={`${aside} hidden lg:block`} />
+      <div className="flex min-w-0 flex-1 justify-center">
+        <div className="w-full max-w-3xl min-w-0">
+          <details className="border-border mb-6 rounded-md border text-sm lg:hidden">
+            <summary className="text-fg cursor-pointer px-3 py-2 font-medium">
+              Wiki menu
+            </summary>
+            <WikiSidebar tree={tree} className="px-2 pb-3" />
+          </details>
+          <Prose id={CONTENT_ID} className="max-w-none">
+            {children}
+          </Prose>
+        </div>
+      </div>
+      <WikiToc contentId={CONTENT_ID} className={`${aside} hidden xl:block`} />
     </div>
   );
 }
