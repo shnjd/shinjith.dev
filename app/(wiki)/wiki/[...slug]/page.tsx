@@ -6,7 +6,7 @@ import {
   getWikiPage,
 } from "@/app/(wiki)/_lib/wiki";
 import Breadcrumbs from "@/app/(wiki)/_components/Breadcrumbs";
-import WikiList from "@/app/(wiki)/_components/WikiList";
+import WikiTree from "@/app/(wiki)/_components/WikiTree";
 import { formatDateToDisplay } from "@/utils/date";
 
 type Props = { params: Promise<{ slug: string[] }> };
@@ -69,7 +69,7 @@ export default async function WikiPage({ params }: Props) {
       {node.children.length > 0 && (
         <>
           <h2>Pages</h2>
-          <WikiList nodes={node.children} />
+          <WikiTree tree={node.children} root={`${slug.join("/")}/`} />
         </>
       )}
     </article>
