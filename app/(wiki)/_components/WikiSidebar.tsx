@@ -7,9 +7,9 @@ import { IconChevronRight } from "@tabler/icons-react";
 import type { WikiNode } from "@/app/(wiki)/_lib/wiki";
 import { tw } from "@/utils/cn";
 
-const itemClass = (active: boolean) =>
+const rowClass = (active: boolean) =>
   tw(
-    "block flex-1 rounded-md px-2 py-1.5 transition-colors",
+    "flex items-center rounded-md transition-colors",
     active
       ? "bg-accent/60 text-accent-fg font-medium"
       : "text-subtle hover:bg-accent/30 hover:text-fg",
@@ -23,7 +23,10 @@ function Item({ node, pathname }: { node: WikiNode; pathname: string }) {
   if (!node.children.length) {
     return (
       <li>
-        <Link href={node.href} className={itemClass(active)}>
+        <Link
+          href={node.href}
+          className={tw(rowClass(active), "block px-2 py-1.5")}
+        >
           {node.frontmatter.title}
         </Link>
       </li>
@@ -32,8 +35,8 @@ function Item({ node, pathname }: { node: WikiNode; pathname: string }) {
 
   return (
     <li>
-      <div className="flex items-center gap-1">
-        <Link href={node.href} className={itemClass(active)}>
+      <div className={rowClass(active)}>
+        <Link href={node.href} className="flex-1 py-1.5 pl-2">
           {node.frontmatter.title}
         </Link>
         <button
@@ -41,7 +44,7 @@ function Item({ node, pathname }: { node: WikiNode; pathname: string }) {
           aria-label={`${open ? "Collapse" : "Expand"} ${node.frontmatter.title}`}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="text-muted hover:bg-accent/30 hover:text-fg rounded-md p-1.5 transition-colors"
+          className="text-muted hover:text-fg px-2 py-1.5 transition-colors"
         >
           <IconChevronRight
             size={14}
