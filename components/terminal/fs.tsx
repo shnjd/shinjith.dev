@@ -1,8 +1,10 @@
+/// <reference types="mdx" />
 import { ComponentType } from "react";
 import type { TerminalManifest } from "@/app/api/terminal/route";
 import { loadNote } from "@/app/(notes)/_lib/load";
 import { loadWikiFile } from "@/app/(wiki)/_lib/load";
 import { split } from "@/lib/terminal/path";
+import { projectDoc, projects } from "./projects";
 
 /** What `cat` renders. */
 export type Doc = {
@@ -85,6 +87,14 @@ export function loadFs() {
     })
     .then(({ notes, wiki }) => {
       const root = dir();
+      // The landing page as markdown, written from lib/data.
+      add(root, "home.md", () =>
+        import("@/app/_content/home.mdx").then((mod) =>
+          fromMdx(mod as MdxModule),
+        ),
+      );
+      for (const project of projects)
+        add(root, `projects/${project.id}.md`, async () => projectDoc(project));
       root.children.set("notes", dir());
       root.children.set("wiki", dir());
       for (const slug of notes)

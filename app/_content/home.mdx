@@ -1,0 +1,85 @@
+---
+title: Shinjith P R
+description: Web Developer, based in Kerala, India.
+---
+
+import { about, experience, projects, services } from "@/lib/data";
+
+export const Phrases = ({ phrases }) => (
+  <p>
+    {phrases.map((p, i) => (
+      <span key={i}>
+        {p.href ? (
+          <a href={p.href}>{p.value}</a>
+        ) : p.bold ? (
+          <strong>{p.value}</strong>
+        ) : (
+          p.value
+        )}
+        {!p.noRightMargin && i < phrases.length - 1 && " "}
+      </span>
+    ))}
+  </p>
+);
+
+{about.description}
+
+## About
+
+{about.about.map((phrases, i) => <Phrases key={i} phrases={phrases} />)}
+
+Technologies I've been working with recently:
+
+<ul>
+  {about.recentTechnologies.map((t) => (
+    <li key={t}>{t}</li>
+  ))}
+</ul>
+
+## Experience
+
+{experience.map((job) => (
+
+  <section key={job.company + job.from}>
+    <h3>{job.role} · {job.company}</h3>
+    <p>{job.from} – {job.to}</p>
+    {job.description.length > 0 && (
+      <ul>{job.description.map((d) => <li key={d}>{d}</li>)}</ul>
+    )}
+    <p>Built with {job.technologies.join(", ")}</p>
+  </section>
+))}
+
+## Projects
+
+Featured below; every project is a file in `~/projects`.
+
+<ul>
+  {projects
+    .filter((p) => p.featured)
+    .map((p) => (
+      <li key={p.id}>
+        <strong>{p.name}</strong>: {p.description[0]}
+      </li>
+    ))}
+</ul>
+
+## Services
+
+{services.map((s) => (
+
+  <section key={s.title}>
+    <h3>{s.title}</h3>
+    <p>{s.description}</p>
+  </section>
+))}
+
+## Contact
+
+<ul>
+  {Object.entries(about.handles).map(([name, url]) => (
+    <li key={name}>
+      <a href={url}>{name}</a>
+    </li>
+  ))}
+</ul>
