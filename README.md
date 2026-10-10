@@ -52,6 +52,7 @@ Current sub-apps:
 | Sub-app | Folder         | Routes                                      |
 | ------- | -------------- | ------------------------------------------- |
 | `notes` | `app/(notes)/` | `/notes`, `/on/:slug`, `/api/og/note/:slug` |
+| `wiki`  | `app/(wiki)/`  | `/wiki`, `/wiki/:category/.../:page`        |
 
 More will be added. To add one, create `app/(<name>)/`, keep its
 exclusive code inside it, add a row to the table above, and use
