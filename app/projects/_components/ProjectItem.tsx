@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { IconArrowUpRight, IconBrandGithub } from "@tabler/icons-react";
 import Tag from "@/components/core/Tag";
+import { reveal, stagger } from "@/lib/motion";
 
 type Props = {
   project: DataProject;
@@ -16,12 +17,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
   ).slice(2)}`;
 
   return (
-    <motion.tr
-      initial={{ opacity: 0, y: 10, x: 100 }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
-      transition={{ delay: 0.5 + index * 0.05, type: "tween" }}
-      viewport={{ once: true }}
-    >
+    <motion.tr {...reveal({ delay: 0.16 + stagger(index, 0.04, 6) })}>
       <td
         width={20}
         className={`border-surface py-3 pr-4 align-top ${
@@ -48,10 +44,10 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
           href={project?.live_url || project?.github_url}
           target="_blank"
           rel="noreferrer"
-          className="flex gap-2 py-2 transition-all"
+          className="flex gap-2 py-2"
         >
           {project.name}
-          <IconArrowUpRight className="text-fg -translate-x-px translate-y-px transition-all group-hover:translate-x-1 group-hover:-translate-y-[2px]" />
+          <IconArrowUpRight className="text-fg -translate-x-px translate-y-px transition-transform group-hover:translate-x-1 group-hover:-translate-y-[2px]" />
         </a>
       </td>
 
@@ -77,12 +73,12 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
             href={project?.live_url}
             target="_blank"
             rel="noreferrer"
-            className="group flex flex-nowrap items-center text-sm transition-all"
+            className="group flex flex-nowrap items-center text-sm"
           >
             <div className="max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap">
               {project.live_url}
             </div>
-            <IconArrowUpRight className="text-subtle m-2 -translate-x-px translate-y-px transition-all group-hover:translate-x-0 group-hover:translate-y-0" />
+            <IconArrowUpRight className="text-subtle m-2 -translate-x-px translate-y-px transition-transform group-hover:translate-x-0 group-hover:translate-y-0" />
           </a>
         ) : (
           project?.github_url && (
@@ -90,7 +86,7 @@ function ProjectItem({ project, isLast = false, index = 0 }: Props) {
               href={project?.github_url}
               target="_blank"
               rel="noreferrer"
-              className="group flex flex-nowrap items-center text-sm transition-all"
+              className="group flex flex-nowrap items-center text-sm"
             >
               <div className="max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap">
                 {project.github_url}
