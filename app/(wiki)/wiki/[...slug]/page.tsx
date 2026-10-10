@@ -5,7 +5,6 @@ import {
   getWikiNode,
   getWikiPage,
 } from "@/app/(wiki)/_lib/wiki";
-import Breadcrumbs from "@/app/(wiki)/_components/Breadcrumbs";
 import WikiList from "@/app/(wiki)/_components/WikiList";
 import { formatDateToDisplay } from "@/utils/date";
 
@@ -58,8 +57,7 @@ export default async function WikiPage({ params }: Props) {
 
   return (
     <article>
-      <Breadcrumbs slug={slug} />
-      <h1 className="mt-5 mb-0">{title}</h1>
+      <h1 className="mt-0 mb-0">{title}</h1>
       <p className="text-subtle! mt-2 mb-0 text-sm">
         Added on {formatDateToDisplay(new Date(created))}
         {updated && <> · Updated on {formatDateToDisplay(new Date(updated))}</>}

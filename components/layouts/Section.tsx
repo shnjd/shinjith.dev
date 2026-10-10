@@ -1,20 +1,13 @@
 "use client";
-import React, {
-  HTMLAttributes,
-  ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-} from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import { motion } from "motion/react";
 import { tw } from "@/utils/cn";
 import { reveal } from "@/lib/motion";
 import { rubik } from "@/lib/fonts";
-import { SectionContext, TSection } from "@/contexts/SectionContext";
 
 type Props = HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode;
-  name: TSection;
+  name: string;
   withoutTitle?: boolean;
   limitOnXl?: boolean;
   condensed?: boolean;
@@ -31,29 +24,9 @@ const Section: React.FC<Props> = ({
   children,
   ...props
 }) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { setSection } = useContext(SectionContext);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    // Mark the section active while it crosses a line 40% down the viewport
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setSection(name);
-      },
-      { rootMargin: "-40% 0px -59% 0px" },
-    );
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, [name, setSection]);
-
   return (
     <section
-      id={name?.toLowerCase()}
-      ref={sectionRef}
+      id={name.toLowerCase()}
       className={tw(
         "min-h-dvh w-full",
         limitOnXl && "mx-auto max-w-(--breakpoint-xl)",

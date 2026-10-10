@@ -1,14 +1,13 @@
 import fs from "fs";
 import path from "path";
 import { MetadataRoute } from "next";
+import { loadNote } from "./load";
 
 const NOTES_DIR = path.join(process.cwd(), "app", "(notes)", "_content");
 
-export async function getNote(slug: string) {
-  return import(`../_content/${slug}.mdx`);
-}
+export const getNote = loadNote;
 
-function getNoteSlugs() {
+export function getNoteSlugs() {
   return fs
     .readdirSync(NOTES_DIR)
     .filter((f) => f.endsWith(".mdx"))

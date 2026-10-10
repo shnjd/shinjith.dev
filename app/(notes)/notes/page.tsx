@@ -1,4 +1,3 @@
-import BackLink from "@/components/common/BackLink";
 import Listing, { ListingItem } from "@/components/layouts/Listing";
 import { about } from "@/lib/data";
 import { formatToDisplay } from "@/lib/date";
@@ -91,7 +90,6 @@ export default async function NotesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
       <Listing>
-        <BackLink className="not-prose mb-2" />
         <h1>Notes</h1>
         <p>
           Hello, I&apos;m Shinjith, a software engineer from kerala, India.{" "}

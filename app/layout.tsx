@@ -1,12 +1,12 @@
 import "@/styles/globals.css";
 import { ibmPlexMono, rubik } from "@/lib/fonts";
-import SectionContextProvider from "@/contexts/SectionContext";
 
 import type { Viewport, Metadata } from "next";
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import Background from "@/components/layouts/Background";
 import MotionProvider from "@/components/layouts/MotionProvider";
+import TerminalProvider from "@/contexts/TerminalContext";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -103,21 +103,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${rubik.variable} ${ibmPlexMono.variable}`}>
       <body
-        className={`${rubik.variable} ${ibmPlexMono.variable} bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
+        className={`bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
         <MotionProvider>
-          <SectionContextProvider>
+          <TerminalProvider>
             <Background />
             <Navbar />
             <main className="relative z-10 container">{children}</main>
             <Footer />
-          </SectionContextProvider>
+          </TerminalProvider>
         </MotionProvider>
       </body>
     </html>
