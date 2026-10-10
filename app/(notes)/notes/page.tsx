@@ -1,6 +1,6 @@
 import { about } from "@/lib/data";
 import { formatToDisplay } from "@/lib/date";
-import { getAllNotes } from "@/lib/notes";
+import { getAllNotes } from "@/app/(notes)/_lib/notes";
 import { Metadata } from "next";
 
 const personLd = {

@@ -1,3 +1,4 @@
+import { getNote } from "@/app/(notes)/_lib/notes";
 import { formatDateToDisplay } from "@/utils/date";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -10,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const { frontmatter } = await import(`@/notes/${slug}.mdx`);
+    const { frontmatter } = await getNote(slug);
 
     return {
       title: frontmatter?.title,
@@ -63,7 +64,7 @@ export default async function Page({
   const { slug } = await params;
   let note;
   try {
-    note = await import(`@/notes/${slug}.mdx`);
+    note = await getNote(slug);
   } catch {
     notFound();
   }
