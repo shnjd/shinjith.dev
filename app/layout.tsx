@@ -6,6 +6,7 @@ import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import Background from "@/components/layouts/Background";
 import MotionProvider from "@/components/layouts/MotionProvider";
+import TerminalProvider from "@/contexts/TerminalContext";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -111,10 +112,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
         <MotionProvider>
-          <Background />
-          <Navbar />
-          <main className="relative z-10 container">{children}</main>
-          <Footer />
+          <TerminalProvider>
+            <Background />
+            <Navbar />
+            <main className="relative z-10 container">{children}</main>
+            <Footer />
+          </TerminalProvider>
         </MotionProvider>
       </body>
     </html>

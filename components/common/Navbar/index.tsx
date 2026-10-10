@@ -8,6 +8,7 @@ import { transition } from "@/lib/motion";
 import { tw } from "@/utils/cn";
 import MenuButton from "./MenuButton";
 import Prompt from "./Prompt";
+import { useTerminal } from "@/contexts/TerminalContext";
 
 const links = [
   {
@@ -30,6 +31,7 @@ const Navbar = () => {
   const [haveBg, setHaveBg] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement | null>(null);
+  const { open: openTerminal } = useTerminal();
   const isHome = usePathname() === "/";
   // Pinned on inner pages; on home it shows once the page is scrolled.
   const showBrand = !isHome || haveBg || menu;
@@ -87,7 +89,7 @@ const Navbar = () => {
             <AnimatePresence>
               {showBrand && (
                 <motion.div key="brand" {...fade}>
-                  <Prompt />
+                  <Prompt onOpen={openTerminal} />
                 </motion.div>
               )}
             </AnimatePresence>
