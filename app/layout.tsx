@@ -102,9 +102,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${rubik.variable} ${ibmPlexMono.variable}`}>
       <body
-        className={`${rubik.variable} ${ibmPlexMono.variable} bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
+        className={`bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
       >
         <script
           type="application/ld+json"
