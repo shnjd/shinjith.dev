@@ -22,12 +22,12 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
     <RevealItem
       className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
     >
-      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-all duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
+      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-[border-radius] duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
         <Image
           src={project.image}
           alt={project.name}
           fill
-          className="origin-top object-cover object-top saturate-50 transition-all duration-500 ease-out group-hover:scale-105 group-hover:saturate-100"
+          className="origin-top object-cover object-top saturate-50 transition-[scale,filter] duration-500 group-hover:scale-105 group-hover:saturate-100"
         />
       </div>
 
@@ -38,7 +38,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           {project.name}
         </h3>
         <div
-          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
+          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-shadow duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
         >
           {project.description.map((pd, index) => (
             <p key={`${project.name}-desc-${index}`}>{pd}</p>
