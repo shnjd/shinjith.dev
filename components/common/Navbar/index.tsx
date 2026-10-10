@@ -1,12 +1,13 @@
 "use client";
-import NextLink from "next/link";
 import ModeSwitch from "./ModeSwitch";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { usePathname } from "next/navigation";
 import Link from "@/components/core/Link";
 import { transition } from "@/lib/motion";
 import { tw } from "@/utils/cn";
 import MenuButton from "./MenuButton";
+import Prompt from "./Prompt";
 
 const links = [
   {
@@ -29,7 +30,9 @@ const Navbar = () => {
   const [haveBg, setHaveBg] = useState<boolean>(false);
   const [menu, setMenu] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement | null>(null);
-  const showBrand = haveBg || menu;
+  const isHome = usePathname() === "/";
+  // Pinned on inner pages; on home it shows once the page is scrolled.
+  const showBrand = !isHome || haveBg || menu;
 
   useEffect(() => {
     const checkPosition = () => {
@@ -80,22 +83,11 @@ const Navbar = () => {
         )}
       >
         <div className="flex w-full items-center justify-between gap-4">
-          <div>
+          <div className="min-w-0">
             <AnimatePresence>
               {showBrand && (
                 <motion.div key="brand" {...fade}>
-                  <NextLink
-                    href="/"
-                    className="text-secondary-fg dark:text-secondary text-lg sm:text-xl md:text-2xl"
-                  >
-                    <span className="mr-1 text-sm sm:text-base md:text-lg">
-                      ❯
-                    </span>
-                    shnjd
-                    <span className="blink text-sm sm:text-base md:text-lg">
-                      _
-                    </span>
-                  </NextLink>
+                  <Prompt />
                 </motion.div>
               )}
             </AnimatePresence>

@@ -1,0 +1,78 @@
+"use client";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+import { Fragment } from "react";
+import useTypewriter from "@/hooks/useTypewriter";
+import { join, split, toHref, toVirtual } from "@/lib/terminal/path";
+import { tw } from "@/utils/cn";
+
+const PLACES = ["notes", "wiki", "projects"];
+
+// Commands worth trying from here; `cd` targets use ~ off the root so they
+// stay valid wherever the prompt is.
+function suggestions(path: string) {
+  const [place] = split(path);
+  return [
+    ...PLACES.filter((p) => p !== place).map((p) =>
+      place ? `cd ~/${p}` : `cd ${p}`,
+    ),
+    "ls",
+  ];
+}
+
+type Props = {
+  onOpen?: () => void;
+  className?: string;
+};
+
+/** The brand as a shell prompt: `shnjd/<page path>❯ <command>`. */
+export default function Prompt({ onOpen, className }: Props) {
+  const path = toVirtual(usePathname());
+  const segments = split(path);
+  const typed = useTypewriter(suggestions(path));
+
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className={tw(
+        "flex flex-wrap items-baseline font-mono text-sm leading-snug sm:text-base md:text-lg",
+        className,
+      )}
+    >
+      <NextLink
+        href="/"
+        className="text-secondary-fg dark:text-secondary font-semibold"
+      >
+        shnjd
+      </NextLink>
+      {segments.map((segment, i) => (
+        <Fragment key={i}>
+          <span className="text-muted">/</span>
+          <NextLink
+            href={toHref(join(segments.slice(0, i + 1)))}
+            aria-current={i === segments.length - 1 ? "page" : undefined}
+            className="text-subtle hover:text-fg break-all transition-colors"
+          >
+            {segment}
+          </NextLink>
+        </Fragment>
+      ))}
+      <button
+        type="button"
+        onClick={onOpen}
+        title="Open terminal ( ` )"
+        aria-label="Open terminal"
+        className="group flex cursor-text items-baseline pr-3 text-left"
+      >
+        <span className="text-secondary-fg dark:text-secondary mr-2 ml-1">
+          ❯
+        </span>
+        <span className="text-fg/80 whitespace-pre">{typed}</span>
+        <span className="blink text-fg/80">_</span>
+        <kbd className="border-border text-muted ml-3 hidden self-center rounded border px-1.5 font-mono text-xs leading-5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 lg:inline">
+          `
+        </kbd>
+      </button>
+    </nav>
+  );
+}
