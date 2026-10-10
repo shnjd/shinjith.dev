@@ -3,7 +3,6 @@ import BackLink from "@/components/common/BackLink";
 import Listing, { ListingItem } from "@/components/layouts/Listing";
 import { formatToDisplay } from "@/lib/date";
 import { getWikiTree, WikiNode } from "@/app/(wiki)/_lib/wiki";
-import WikiTree from "@/app/(wiki)/_components/WikiTree";
 
 const description =
   "Shinjith's personal wiki: short reference notes on computer networks, web, security and system administration.";
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-const RECENT_COUNT = 5;
+const RECENT_COUNT = 10;
 
 const modifiedAt = (node: WikiNode) =>
   new Date(node.frontmatter.updated || node.frontmatter.created);
@@ -82,8 +81,6 @@ export default async function WikiIndexPage() {
           />
         ))}
       </ul>
-      <h3>All pages</h3>
-      <WikiTree tree={tree} />
     </Listing>
   );
 }
