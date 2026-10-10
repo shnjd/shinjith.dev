@@ -15,7 +15,7 @@ export default async function WikiPageLayout({
   const tree = await getWikiTree();
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-52px)] w-full gap-8 py-20">
+    <div className="mx-auto flex min-h-[calc(100dvh-52px)] w-full gap-8 pt-32 pb-20">
       <WikiSidebar tree={tree} className={`${aside} hidden lg:block`} />
       <div className="flex min-w-0 flex-1 justify-center">
         <div className="w-full max-w-4xl min-w-0">

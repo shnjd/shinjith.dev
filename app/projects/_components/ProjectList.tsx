@@ -10,8 +10,8 @@ const sort = (a: DataProject, b: DataProject) =>
 
 export default function ProjectList() {
   return (
-    <div className="relative z-10 mx-auto h-full flex-col items-center justify-center">
-      <div className="w-full grow pt-20 pb-1">
+    <div className="relative z-10 mx-auto h-full max-w-7xl flex-col items-center justify-center">
+      <div className="w-full grow pt-32 pb-1">
         <motion.div
           {...reveal({ delay: 0.08 })}
           className="text-3xl font-semibold"
