@@ -35,7 +35,7 @@ export default function Prompt({ onOpen, className }: Props) {
     <nav
       aria-label="Breadcrumb"
       className={tw(
-        "flex flex-wrap items-baseline font-mono text-sm leading-snug sm:text-base md:text-lg",
+        "flex flex-wrap items-baseline font-mono text-xs leading-snug sm:text-sm md:text-base",
         className,
       )}
     >
@@ -67,8 +67,8 @@ export default function Prompt({ onOpen, className }: Props) {
         <span className="text-secondary-fg dark:text-secondary mr-2 ml-1">
           ❯
         </span>
-        <span className="text-fg/80 whitespace-pre">{typed}</span>
-        <span className="blink text-fg/80">_</span>
+        <span className="text-muted/70 whitespace-pre">{typed}</span>
+        <span className="blink text-muted/70">_</span>
       </button>
     </nav>
   );
