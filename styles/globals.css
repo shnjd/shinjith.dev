@@ -56,6 +56,7 @@
   --color-destructive: hsl(var(--col-destructive));
   --color-destructive-fg: hsl(var(--col-destructive-fg));
   --color-border: hsl(var(--col-border));
+  --color-link: hsl(var(--col-link));
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-conic: conic-gradient(
@@ -105,6 +106,7 @@
   --col-destructive: 0 100% 30%;
   --col-destructive-fg: 0 37% 92%;
   --col-border: 175 62% 87%;
+  --col-link: 208 55% 28%;
 }
 
 .dark {
@@ -123,6 +125,7 @@
   --col-destructive: 0 100% 30%;
   --col-destructive-fg: 0 37% 92%;
   --col-border: 217 37% 18%;
+  --col-link: 207 60% 72%;
 }
 
 body {
