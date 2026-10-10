@@ -33,23 +33,19 @@ const Section: React.FC<Props> = ({
   const { setSection } = useContext(SectionContext);
 
   useEffect(() => {
-    const onScroll = () => {
-      if (sectionRef.current) {
-        const { top, bottom } = sectionRef.current.getBoundingClientRect();
-        if (
-          window.scrollY > window.scrollY + top - 400 &&
-          window.scrollY < window.scrollY + bottom - 400
-        )
-          setSection(name);
-        // else setSection(null)
-      }
-    };
+    const section = sectionRef.current;
+    if (!section) return;
 
-    window.addEventListener("scroll", onScroll);
+    // Mark the section active while it crosses a line 40% down the viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setSection(name);
+      },
+      { rootMargin: "-40% 0px -59% 0px" },
+    );
+    observer.observe(section);
 
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => observer.disconnect();
   }, [name, setSection]);
 
   return (
