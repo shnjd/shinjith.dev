@@ -68,17 +68,20 @@ export default function Experience() {
 
           <Link
             href="mailto:me@shnjd.com"
-            className="bg-primary text-primary-fg hover:bg-primary/90 mr-5 inline-flex w-fit items-center gap-1.5 rounded-lg px-5 py-2 font-medium shadow-xl transition-all hover:shadow-md"
+            className="bg-primary text-primary-fg hover:bg-primary/90 mr-5 inline-flex w-fit items-center gap-1.5 rounded-lg px-5 py-2 font-medium shadow-xl transition-[background-color,box-shadow,scale] hover:shadow-md active:scale-[0.97]"
           >
             Hire me <IconUsersPlus size={16} />
           </Link>
 
           <Link
             href="https://resume.shnjd.com/?download=true"
-            className="text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-all"
+            className="group text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-[color,scale] active:scale-[0.97]"
           >
             View resume
-            <IconArrowUpRight size={16} />
+            <IconArrowUpRight
+              size={16}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </Link>
         </Reveal>
       </div>

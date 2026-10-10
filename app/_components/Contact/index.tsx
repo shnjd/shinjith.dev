@@ -46,10 +46,13 @@ export default function Contact() {
 
         <NextLink
           href="mailto:me@shnjd.com"
-          className="bg-primary text-primary-fg hover:bg-primary/90 flex items-center gap-1.5 rounded-lg px-5 py-2.5 font-medium shadow-xl transition-all hover:shadow-md sm:text-lg"
+          className="group bg-primary text-primary-fg hover:bg-primary/90 flex items-center gap-1.5 rounded-lg px-5 py-2.5 font-medium shadow-xl transition-[background-color,box-shadow,scale] hover:shadow-md active:scale-[0.97] sm:text-lg"
         >
           Get in touch
-          <IconMailShare size={20} />
+          <IconMailShare
+            size={20}
+            className="transition-transform group-hover:translate-x-0.5"
+          />
         </NextLink>
 
         <motion.div

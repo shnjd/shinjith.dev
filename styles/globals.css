@@ -73,6 +73,13 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  :where(a, button):focus-visible {
+    outline: 2px solid hsl(var(--col-primary));
+    outline-offset: 2px;
+  }
+}
+
+@layer base {
   *,
   ::after,
   ::before,

@@ -197,10 +197,13 @@ export default function Projects() {
         <div className="flex justify-center py-5">
           <NextLink
             href="/projects"
-            className="text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-all"
+            className="group text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-[color,scale] active:scale-[0.97]"
           >
             View projects archive
-            <IconArrowRight size={16} />
+            <IconArrowRight
+              size={16}
+              className="transition-transform group-hover:translate-x-0.5"
+            />
           </NextLink>
         </div>
       </div>
