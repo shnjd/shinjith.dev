@@ -212,6 +212,9 @@ const Navbar = () => {
             <li>
               <Link href="/notes">Notes</Link>
             </li>
+            <li>
+              <Link href="/wiki">Wiki</Link>
+            </li>
 
             <li>
               <ModeSwitch />
@@ -272,6 +275,14 @@ const Navbar = () => {
                         className="hover:bg-accent hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
                       >
                         Notes
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/wiki"
+                        className="hover:bg-accent hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
+                      >
+                        Wiki
                       </Link>
                     </li>
                   </ul>
