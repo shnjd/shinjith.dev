@@ -9,6 +9,8 @@ import Link from "@/components/core/Link";
 import Tag from "@/components/core/Tag";
 import Section from "@/components/layouts/Section";
 import { projects } from "@/lib/data";
+import { stagger } from "@/lib/motion";
+import { Reveal, RevealItem } from "@/components/core/Reveal";
 
 type ProjectProps = {
   project: DataProject;
@@ -17,15 +19,15 @@ type ProjectProps = {
 
 const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
   return (
-    <li
+    <RevealItem
       className={`group flex flex-col items-center ${toRight ? "project-grad-right lg:flex-row-reverse lg:text-start" : "project-grad-left lg:flex-row lg:text-end"}`}
     >
-      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t transition-all duration-500 group-hover:rounded-t-lg lg:w-1/2 lg:basis-1/2 lg:rounded-md lg:group-hover:rounded-xl">
+      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-2xl lg:w-1/2 lg:basis-1/2">
         <Image
           src={project.image}
           alt={project.name}
           fill
-          className="origin-top object-cover object-top saturate-50 transition-all duration-500 ease-out group-hover:scale-105 group-hover:saturate-100"
+          className="origin-top object-cover object-top saturate-50 transition-[scale,filter] duration-500 group-hover:scale-105 group-hover:saturate-100"
         />
       </div>
 
@@ -36,7 +38,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           {project.name}
         </h3>
         <div
-          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-md border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-all duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
+          className={`border-overlay/75 from-background/80 via-surface/50 to-primary/20 text-subtle h-fit space-y-2 rounded-2xl border p-3 text-sm shadow-lg backdrop-blur-lg backdrop-saturate-200 transition-shadow duration-500 group-hover:shadow-xs sm:space-y-3 sm:p-4 sm:text-base md:p-5 ${toRight ? "bg-linear-to-bl" : "bg-linear-to-br"}`}
         >
           {project.description.map((pd, index) => (
             <p key={`${project.name}-desc-${index}`}>{pd}</p>
@@ -102,17 +104,21 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           )}
         </div>
       </div>
-    </li>
+    </RevealItem>
   );
 };
 
 type ProjectCardProps = {
   project: DataProject;
+  index: number;
 };
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
-    <li className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-md border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 sm:p-4 md:p-5 xl:w-[31%]">
+    <RevealItem
+      delay={stagger(index)}
+      className="group border-overlay/75 from-background/60 via-surface/30 to-primary/10 flex flex-col overflow-hidden rounded-2xl border bg-linear-to-br p-3 backdrop-blur-lg backdrop-saturate-200 transition-[translate,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-sm sm:p-4 md:p-5 xl:w-[31%]"
+    >
       <div className={`mb-4 flex justify-end gap-4`}>
         {project.github_url && (
           <Link
@@ -153,7 +159,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </Tag>
         ))}
       </ul>
-    </li>
+    </RevealItem>
   );
 };
 
@@ -173,26 +179,31 @@ export default function Projects() {
             ))}
         </ul>
 
-        <p className="border-secondary-fg text-secondary-fg dark:border-secondary dark:text-secondary mx-auto w-fit border-b py-0.5 text-sm font-medium sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none">
-          Other Noteworthy Projects
-        </p>
+        <Reveal>
+          <p className="border-secondary-fg text-secondary-fg dark:border-secondary dark:text-secondary mx-auto w-fit border-b py-0.5 text-sm font-medium sm:max-w-sm sm:text-base md:text-lg lg:text-xl xl:max-w-none">
+            Other Noteworthy Projects
+          </p>
+        </Reveal>
 
         <ul className="project-cards-grad mx-auto mt-4 flex list-none flex-col flex-wrap justify-between gap-4 sm:mt-5 sm:max-w-(--breakpoint-sm) sm:gap-5 md:mt-6 md:gap-6 lg:mt-8 xl:max-w-none xl:flex-row xl:gap-4 2xl:gap-6">
           {projects
             .filter((p) => !p.featured)
             .slice(0, 3)
-            .map((p) => (
-              <ProjectCard project={p} key={p.id} />
+            .map((p, index) => (
+              <ProjectCard project={p} key={p.id} index={index} />
             ))}
         </ul>
 
         <div className="flex justify-center py-5">
           <NextLink
             href="/projects"
-            className="text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-all"
+            className="group text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-2xl py-2 font-medium transition-[color,scale] active:scale-[0.97]"
           >
             View projects archive
-            <IconArrowRight size={16} />
+            <IconArrowRight
+              size={16}
+              className="transition-transform group-hover:translate-x-0.5"
+            />
           </NextLink>
         </div>
       </div>

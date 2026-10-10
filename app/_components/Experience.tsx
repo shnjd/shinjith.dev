@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import Section from "@/components/layouts/Section";
 import Tag from "@/components/core/Tag";
 import { experience } from "@/lib/data";
+import { Reveal, RevealItem } from "@/components/core/Reveal";
 
 const Item = ({ experience }: { experience: DataExperience }) => {
   return (
@@ -49,16 +50,16 @@ export default function Experience() {
           <div className="contact-lines contact-line-1 h-0.5 rounded-full" />
           <ul className="list-none">
             {experience.map((e) => (
-              <li key={e.company}>
+              <RevealItem key={e.company}>
                 <Item experience={e} />
                 <div className="contact-lines contact-line-2 h-0.5 rounded-full" />
-              </li>
+              </RevealItem>
             ))}
           </ul>
           <div className="contact-lines contact-line-2 h-0.5 rounded-full" />
         </div>
 
-        <div className="mt-6 space-y-4 sm:mt-8">
+        <Reveal className="mt-6 space-y-4 sm:mt-8">
           <p className="text-subtle max-w-[800px] text-sm sm:text-base">
             I am eager to join an organization where I can develop my skills,
             make significant contributions, and enthusiastically support and
@@ -67,19 +68,22 @@ export default function Experience() {
 
           <Link
             href="mailto:me@shnjd.com"
-            className="bg-primary text-primary-fg hover:bg-primary/90 mr-5 inline-flex w-fit items-center gap-1.5 rounded-lg px-5 py-2 font-medium shadow-xl transition-all hover:shadow-md"
+            className="bg-primary text-primary-fg hover:bg-primary/90 mr-5 inline-flex w-fit items-center gap-1.5 rounded-2xl px-5 py-2 font-medium shadow-xl transition-[background-color,box-shadow,scale] hover:shadow-md active:scale-[0.97]"
           >
             Hire me <IconUsersPlus size={16} />
           </Link>
 
           <Link
             href="https://resume.shnjd.com/?download=true"
-            className="text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-lg py-2 font-medium transition-all"
+            className="group text-primary hover:text-primary/90 inline-flex w-fit items-center gap-1 rounded-2xl py-2 font-medium transition-[color,scale] active:scale-[0.97]"
           >
             View resume
-            <IconArrowUpRight size={16} />
+            <IconArrowUpRight
+              size={16}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </Link>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

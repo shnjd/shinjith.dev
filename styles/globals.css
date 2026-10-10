@@ -29,6 +29,11 @@
 
   --rotate-40: 40deg;
 
+  /* Motion tokens, mirrored in lib/motion.ts */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+
   --font-sans:
     var(--font-rubik), ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -67,6 +72,13 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+@layer base {
+  :where(a, button):focus-visible {
+    outline: 2px solid hsl(var(--col-primary));
+    outline-offset: 2px;
+  }
+}
+
 @layer base {
   *,
   ::after,
@@ -162,42 +174,6 @@ body {
 
 /* } */
 
-@media (width >= theme(--breakpoint-sm)) {
-  .nav-slide-in {
-    -webkit-animation: slide-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
-    animation: slide-in-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-}
-
-@-webkit-keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-1000px);
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 /* cursor blink animation */
 .blink {
   -webkit-animation-name: blink;
@@ -230,14 +206,27 @@ body {
   }
 }
 
+/*
+  Gradient lines drift by translating an oversized gradient layer, which
+  stays on the compositor instead of repainting background-position.
+*/
 .contact-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-lines::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 400%;
   background: linear-gradient(
     to right,
     hsl(var(--col-surface) / 0.2) 0%,
     hsl(var(--col-primary) / 0.2) 100%
   );
-  background-size: 400% 400%;
-  background-attachment: fixed;
+  will-change: transform;
 }
 
 .social-line {
@@ -248,25 +237,35 @@ body {
   );
 }
 
-.contact-line-1 {
-  animation: moving-lines 4s ease infinite both;
+.contact-line-1::before {
+  animation: moving-lines 8s ease-in-out infinite both;
 }
 
-.contact-line-2 {
-  animation: moving-lines 4s ease 3s infinite both;
+.contact-line-2::before {
+  animation: moving-lines 8s ease-in-out 3s infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto !important;
+  }
+
+  .blink,
+  .contact-line-1::before,
+  .contact-line-2::before,
+  .rfm-marquee {
+    animation: none !important;
+  }
 }
 
 @keyframes moving-lines {
-  0% {
-    background-position: 0% 0%;
+  0%,
+  100% {
+    transform: translateX(0);
   }
 
   50% {
-    background-position: 100% 100%;
-  }
-
-  100% {
-    background-position: 0% 0%;
+    transform: translateX(-75%);
   }
 }
 

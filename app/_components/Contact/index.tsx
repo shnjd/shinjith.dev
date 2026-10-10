@@ -1,6 +1,7 @@
 "use client";
 import SocialLinks from "./SocialLinks";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -15,28 +16,12 @@ import { about } from "@/lib/data";
 
 export default function Contact() {
   const targetRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState<number>(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (targetRef.current) {
-        const { top, bottom } = targetRef.current.getBoundingClientRect();
-        const t = top - 400;
-        const h = bottom - top - 200;
-        const p = (h - t) / h;
-        if (t > h && progress != 0) {
-          setProgress(0);
-        } else if (p < 0) setProgress(0);
-        else if (p > 1) setProgress(1);
-        else setProgress(p);
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [progress]);
+  const { scrollYProgress: progress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "start 0.45"],
+  });
+  const lift = useTransform(progress, [0, 1], [0, -20]);
+  const socialScale = useTransform(progress, [0.7, 1], [1, 1.3]);
 
   return (
     <Section
@@ -46,14 +31,14 @@ export default function Contact() {
       condensed
       className="contact-bg relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]"
     >
-      <div
-        className={`contact-lines h-0.5 w-full origin-right rounded-full ${progress === 1 && "contact-line-1"}`}
-        style={{ transform: `scaleX(${progress})` }}
+      <motion.div
+        className="contact-lines contact-line-1 h-0.5 w-full origin-right rounded-full"
+        style={{ scaleX: progress }}
       />
-      <div
+      <motion.div
         ref={targetRef}
-        style={{ transform: `translateY(-${progress * 20}px)` }}
-        className="flex h-full max-h-[60svh] min-h-[300px] w-full flex-col items-center justify-center gap-6 transition-all sm:min-h-[400px] sm:gap-6 md:min-h-[500px] md:gap-8 lg:min-h-[600px]"
+        style={{ y: lift }}
+        className="flex h-full max-h-[60svh] min-h-[300px] w-full flex-col items-center justify-center gap-6 sm:min-h-[400px] sm:gap-6 md:min-h-[500px] md:gap-8 lg:min-h-[600px]"
       >
         <h3 className="text-subtle max-w-[250px] text-center text-2xl font-bold sm:max-w-xs sm:text-3xl md:max-w-sm md:text-4xl lg:max-w-md lg:text-5xl">
           Tell me about your next project
@@ -61,17 +46,18 @@ export default function Contact() {
 
         <NextLink
           href="mailto:me@shnjd.com"
-          className="bg-primary text-primary-fg hover:bg-primary/90 flex items-center gap-1.5 rounded-lg px-5 py-2.5 font-medium shadow-xl transition-all hover:shadow-md sm:text-lg"
+          className="group bg-primary text-primary-fg hover:bg-primary/90 flex items-center gap-1.5 rounded-2xl px-5 py-2.5 font-medium shadow-xl transition-[background-color,box-shadow,scale] hover:shadow-md active:scale-[0.97] sm:text-lg"
         >
           Get in touch
-          <IconMailShare size={20} />
+          <IconMailShare
+            size={20}
+            className="transition-transform group-hover:translate-x-0.5"
+          />
         </NextLink>
 
-        <div
-          className="relative flex justify-center gap-4 transition-all duration-75 sm:gap-6"
-          style={{
-            transform: `scale(${progress + 0.3 < 1 ? 1 : progress + 0.3})`,
-          }}
+        <motion.div
+          className="relative flex justify-center gap-4 sm:gap-6"
+          style={{ scale: socialScale }}
         >
           <a
             aria-label="Bluesky"
@@ -79,7 +65,7 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IconBrandBluesky className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all" />
+            <IconBrandBluesky className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-colors" />
           </a>
 
           <a
@@ -90,7 +76,7 @@ export default function Contact() {
           >
             <IconBrandInstagram
               size={24}
-              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-colors"
             />
           </a>
 
@@ -102,7 +88,7 @@ export default function Contact() {
           >
             <IconBrandGithub
               size={24}
-              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-colors"
             />
           </a>
 
@@ -114,7 +100,7 @@ export default function Contact() {
           >
             <IconBrandLinkedin
               size={24}
-              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-colors"
             />
           </a>
 
@@ -126,14 +112,12 @@ export default function Contact() {
           >
             <IconBrandTwitter
               size={24}
-              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-all"
+              className="text-subtle hover:text-secondary-fg dark:hover:text-secondary transition-colors"
             />
           </a>
-        </div>
-      </div>
-      <div
-        className={`contact-lines h-0.5 w-full origin-left rounded-full ${progress === 1 && "contact-line-2"}`}
-      />
+        </motion.div>
+      </motion.div>
+      <div className="contact-lines contact-line-2 h-0.5 w-full origin-left rounded-full" />
 
       <SocialLinks scrollProgress={progress} />
     </Section>
