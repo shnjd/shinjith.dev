@@ -3,6 +3,7 @@ import { formatDateToDisplay } from "@/utils/date";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ViewCount from "./_components/ViewCount";
+import { author, breadcrumbLd, openGraphBase } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -27,6 +28,7 @@ export async function generateMetadata({
         canonical: `https://shnjd.com/on/${slug}`,
       },
       openGraph: {
+        ...openGraphBase,
         url: `https://shnjd.com/on/${slug}`,
         type: "article",
         title: frontmatter?.title,
@@ -87,11 +89,7 @@ export default async function Page({
     datePublished: frontmatter.date,
     dateModified: frontmatter.updatedAt || frontmatter.date,
 
-    author: {
-      "@type": "Person",
-      name: "Shinjith P R",
-      url: "https://shnjd.com",
-    },
+    author,
 
     publisher: {
       "@type": "Organization",
@@ -113,6 +111,17 @@ export default async function Page({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([
+              { name: "Notes", path: "/notes" },
+              { name: frontmatter.title, path: `/on/${slug}` },
+            ]),
+          ),
+        }}
       />
       <h1 className="mt-7 mb-0">{frontmatter.title}</h1>
       <div className="text-subtle! mb-4 flex items-center gap-2 text-sm">

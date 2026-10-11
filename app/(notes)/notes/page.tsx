@@ -3,6 +3,7 @@ import { about } from "@/lib/data";
 import { formatToDisplay } from "@/lib/date";
 import { getAllNotes } from "@/app/(notes)/_lib/notes";
 import { Metadata } from "next";
+import { breadcrumbLd, openGraphBase } from "@/lib/seo";
 
 const personLd = {
   "@context": "https://schema.org/",
@@ -40,6 +41,7 @@ export const metadata: Metadata = {
     "shinjith's blogs",
   ],
   openGraph: {
+    ...openGraphBase,
     url: "https://shnjd.com/notes",
     type: "website",
     title: "Shinjith's Notes",
@@ -80,6 +82,14 @@ export default async function NotesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([{ name: "Notes", path: "/notes" }]),
+          ),
+        }}
       />
       <Listing>
         <h1>Notes</h1>
