@@ -118,6 +118,12 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Shinjith's Notes"
+          href="/notes/feed.xml"
+        />
         {/* Entrance animations start hidden; without JS, show everything. */}
         <noscript>
           <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
