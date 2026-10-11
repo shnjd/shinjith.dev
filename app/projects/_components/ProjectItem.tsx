@@ -12,7 +12,7 @@ type Props = {
 
 function ProjectItem({ project, isLast = false, index = 0 }: Props) {
   const date = new Date(project.created_at);
-  const dateString = `${String(date.getMonth()).padStart(2, "0")}/${String(
+  const dateString = `${String(date.getMonth() + 1).padStart(2, "0")}/${String(
     date.getFullYear(),
   ).slice(2)}`;
 
