@@ -7,6 +7,7 @@ declare namespace Cloudflare {
   interface Env {
     CONTENT_VIEWS: KVNamespace;
     NEXT_INC_CACHE_R2_BUCKET: R2Bucket;
+    IMAGES: ImagesBinding;
     WORKER_SELF_REFERENCE: Service<
       typeof import("./.open-next/worker").default
     >;
