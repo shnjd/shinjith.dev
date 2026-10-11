@@ -23,8 +23,11 @@ export async function generateMetadata({
         "shnjd",
         "shinjith's blogs",
       ],
+      alternates: {
+        canonical: `https://shnjd.com/on/${slug}`,
+      },
       openGraph: {
-        url: "https://shnjd.com",
+        url: `https://shnjd.com/on/${slug}`,
         type: "article",
         title: frontmatter?.title,
         description: frontmatter?.description,
@@ -95,7 +98,7 @@ export default async function Page({
       name: "shnjd.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://shnjd.com/assets/favicons/apple-touch-icon.png",
+        url: "https://shnjd.com/assets/favicon/apple-touch-icon.png",
       },
     },
 

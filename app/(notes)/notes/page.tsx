@@ -39,16 +39,8 @@ export const metadata: Metadata = {
     "shinjith's notes",
     "shinjith's blogs",
   ],
-  robots: {
-    index: true,
-    follow: true,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    googleBot: "index, follow",
-  },
   openGraph: {
-    url: "https://shnjd.com",
+    url: "https://shnjd.com/notes",
     type: "website",
     title: "Shinjith's Notes",
     description:
