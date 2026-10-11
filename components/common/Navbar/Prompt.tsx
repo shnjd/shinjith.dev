@@ -35,13 +35,13 @@ export default function Prompt({ onOpen, className }: Props) {
     <nav
       aria-label="Breadcrumb"
       className={tw(
-        "flex flex-wrap items-baseline font-mono text-xs leading-snug sm:text-sm md:text-base",
+        "flex flex-wrap items-baseline font-mono text-xs leading-6 sm:text-sm sm:leading-snug md:text-base",
         className,
       )}
     >
       <NextLink
         href="/"
-        className="text-secondary-fg dark:text-secondary font-semibold"
+        className="text-secondary-fg dark:text-secondary py-1 font-semibold"
       >
         shnjd
       </NextLink>
@@ -51,7 +51,7 @@ export default function Prompt({ onOpen, className }: Props) {
           <NextLink
             href={toHref(join(segments.slice(0, i + 1)))}
             aria-current={i === segments.length - 1 ? "page" : undefined}
-            className="text-subtle hover:text-fg break-all transition-colors"
+            className="text-subtle hover:text-fg py-1 break-all transition-colors"
           >
             {segment}
           </NextLink>
@@ -62,7 +62,7 @@ export default function Prompt({ onOpen, className }: Props) {
         onClick={onOpen}
         title="Open terminal"
         aria-label="Open terminal"
-        className="flex cursor-text items-baseline pr-3 text-left"
+        className="-my-1 flex cursor-text items-baseline py-1 pr-3 text-left"
       >
         <span className="text-secondary-fg dark:text-secondary mr-2 ml-1">
           ❯
