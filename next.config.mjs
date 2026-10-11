@@ -1,5 +1,6 @@
 import createMDX from "@next/mdx";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+import { darkCodeTheme, lightCodeTheme } from "./lib/code-themes.mjs";
 
 // Only needed for `next dev`; in build it would open a remote proxy session
 // (the KV binding is remote) and require Cloudflare credentials.
@@ -45,8 +46,8 @@ const nextConfig = {
 /** @type {import('rehype-pretty-code').Options} */
 const rehypeOptions = {
   theme: {
-    dark: "catppuccin-mocha",
-    light: "catppuccin-latte",
+    dark: darkCodeTheme,
+    light: lightCodeTheme,
   },
   keepBackground: false,
 };
