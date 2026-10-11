@@ -63,7 +63,7 @@ export default async function WikiIndexPage() {
         Short reference notes I keep while learning, mostly on networks, the web
         and security.
       </p>
-      <h3>Recent</h3>
+      <h2>Recent</h2>
       <ul>
         {recent.map(({ node, section }) => (
           <ListingItem
