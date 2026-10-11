@@ -43,7 +43,11 @@ const components: MDXComponents = {
     <table {...props} className="my-5 w-full border-collapse" />
   ),
   th: (props) => (
-    <th {...props} className="border-border border px-3 py-2 text-left" />
+    <th
+      scope="col"
+      {...props}
+      className="border-border border px-3 py-2 text-left"
+    />
   ),
   td: (props) => (
     <td {...props} className="border-border border px-3 py-2 text-left" />
