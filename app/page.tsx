@@ -53,14 +53,6 @@ export const metadata: Metadata = {
     "shinjith-dev",
     "shnjd",
   ],
-  robots: {
-    index: true,
-    follow: true,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    googleBot: "index, follow",
-  },
   openGraph: {
     url: "https://shnjd.com",
     type: "website",

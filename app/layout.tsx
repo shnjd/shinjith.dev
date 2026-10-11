@@ -41,14 +41,8 @@ export const metadata: Metadata = {
       },
     ],
   },
-  robots: {
-    index: true,
-    follow: true,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    googleBot: "index, follow",
-  },
+  // Indexing is the default; only widen image previews in results.
+  robots: { "max-image-preview": "large" },
   applicationName: "Shinjith P R",
   appleWebApp: {
     title: "Shinjith P R",
