@@ -7,17 +7,34 @@ if (process.env.NODE_ENV === "development") {
   initOpenNextCloudflareForDev();
 }
 
+// Mirrored in public/_headers, which covers files served as static assets.
+const securityHeaders = [
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains",
+  },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
+  { key: "X-Frame-Options", value: "DENY" },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  poweredByHeader: false,
   async headers() {
     return [
       {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+      {
+        // Not fingerprinted, so a replaced image must not stay cached for a year.
         source: "/assets/images/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
           },
         ],
       },
