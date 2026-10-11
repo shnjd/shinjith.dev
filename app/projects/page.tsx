@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ProjectList from "./_components/ProjectList";
+import { openGraphBase } from "@/lib/seo";
 
 const breadCrumbLd = {
   "@context": "https://schema.org",
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
     "Tauri",
   ],
   openGraph: {
+    ...openGraphBase,
     url: "https://shnjd.com/projects",
     type: "website",
     title: "Projects | Shinjith P R",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/assets/images/seo-cover.png",
+        url: "https://shnjd.com/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },
