@@ -58,8 +58,13 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     capable: true,
   },
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
       {
         url: "/assets/favicon/favicon.ico",
         type: "image/x-icon",
