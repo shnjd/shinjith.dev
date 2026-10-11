@@ -92,7 +92,7 @@ export default async function NotesPage() {
           <br />
           Good day!
         </p>
-        <h3>Recent</h3>
+        <h2>Recent</h2>
         <ul>
           {notes.map((b) => (
             <ListingItem
