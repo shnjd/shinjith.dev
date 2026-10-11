@@ -7,6 +7,7 @@ import {
 } from "@/app/(wiki)/_lib/wiki";
 import WikiList from "@/app/(wiki)/_components/WikiList";
 import { formatDateToDisplay } from "@/utils/date";
+import { author, breadcrumbLd, openGraphBase, SITE_URL } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string[] }> };
 
@@ -35,7 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${title} · Wiki`,
     description,
     keywords: [title, "wiki", "shinjith", "shnjd", "shinjith's wiki"],
-    openGraph: { url, type: "article", title, description, images },
+    openGraph: {
+      ...openGraphBase,
+      url,
+      type: "article",
+      title,
+      description,
+      images,
+    },
     twitter: {
       card: "summary_large_image",
       title,
@@ -53,10 +61,45 @@ export default async function WikiPage({ params }: Props) {
   if (!node) notFound();
 
   const { default: Content } = await getWikiPage(slug);
-  const { title, created, updated } = node.frontmatter;
+  const { title, description, created, updated } = node.frontmatter;
+  const url = `${SITE_URL}${node.href}`;
+
+  // Each ancestor folder is a page of its own, so the trail links to it.
+  const ancestors = await Promise.all(
+    slug.slice(0, -1).map((_, i) => getWikiNode(slug.slice(0, i + 1))),
+  );
+  const trail = [
+    { name: "Wiki", path: "/wiki" },
+    ...[...ancestors, node].flatMap((n) =>
+      n ? [{ name: n.frontmatter.title, path: n.href }] : [],
+    ),
+  ];
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: title,
+    description,
+    url,
+    mainEntityOfPage: url,
+    datePublished: created,
+    dateModified: updated || created,
+    author,
+    image: `${SITE_URL}/assets/images/seo-cover.png`,
+  };
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbLd(trail)),
+        }}
+      />
       <h1 className="mt-0 mb-0">{title}</h1>
       <p className="text-subtle! mt-2 mb-0 text-sm">
         Added on {formatDateToDisplay(new Date(created))}

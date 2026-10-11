@@ -20,6 +20,9 @@
       "bucket_name": "shinjith-dev-cache",
     },
   ],
+  "images": {
+    "binding": "IMAGES",
+  },
   "kv_namespaces": [
     {
       "binding": "CONTENT_VIEWS",

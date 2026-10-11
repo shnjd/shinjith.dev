@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Listing, { ListingItem } from "@/components/layouts/Listing";
 import { formatToDisplay } from "@/lib/date";
 import { getWikiTree, WikiNode } from "@/app/(wiki)/_lib/wiki";
+import { breadcrumbLd, openGraphBase } from "@/lib/seo";
 
 const description =
   "Shinjith's personal wiki: short reference notes on computer networks, web, security and system administration.";
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   description,
   keywords: ["wiki", "networking", "web security", "shinjith", "shnjd"],
   openGraph: {
+    ...openGraphBase,
     url: "https://shnjd.com/wiki",
     type: "website",
     title: "Shinjith's Wiki",
@@ -58,12 +60,20 @@ export default async function WikiIndexPage() {
 
   return (
     <Listing>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([{ name: "Wiki", path: "/wiki" }]),
+          ),
+        }}
+      />
       <h1>Wiki</h1>
       <p>
         Short reference notes I keep while learning, mostly on networks, the web
         and security.
       </p>
-      <h3>Recent</h3>
+      <h2>Recent</h2>
       <ul>
         {recent.map(({ node, section }) => (
           <ListingItem

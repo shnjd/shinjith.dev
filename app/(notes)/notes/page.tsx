@@ -3,6 +3,7 @@ import { about } from "@/lib/data";
 import { formatToDisplay } from "@/lib/date";
 import { getAllNotes } from "@/app/(notes)/_lib/notes";
 import { Metadata } from "next";
+import { breadcrumbLd, openGraphBase } from "@/lib/seo";
 
 const personLd = {
   "@context": "https://schema.org/",
@@ -39,16 +40,9 @@ export const metadata: Metadata = {
     "shinjith's notes",
     "shinjith's blogs",
   ],
-  robots: {
-    index: true,
-    follow: true,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    googleBot: "index, follow",
-  },
   openGraph: {
-    url: "https://shnjd.com",
+    ...openGraphBase,
+    url: "https://shnjd.com/notes",
     type: "website",
     title: "Shinjith's Notes",
     description:
@@ -89,6 +83,14 @@ export default async function NotesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([{ name: "Notes", path: "/notes" }]),
+          ),
+        }}
+      />
       <Listing>
         <h1>Notes</h1>
         <p>
@@ -100,7 +102,7 @@ export default async function NotesPage() {
           <br />
           Good day!
         </p>
-        <h3>Recent</h3>
+        <h2>Recent</h2>
         <ul>
           {notes.map((b) => (
             <ListingItem

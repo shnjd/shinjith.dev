@@ -1,5 +1,6 @@
 ---
 title: TCP
+description: "How TCP gives reliable, ordered delivery: the three-way handshake, closing a connection, and its trade-offs against UDP."
 created: 2026-04-05
 order: 12
 ---
@@ -28,7 +29,7 @@ TCP packets contain various **headers** that are added from encapsulation. Let's
 | Data                   | This header is where the data, i.e. bytes of a file that is being transmitted, is stored.                                                                                                                                                           |
 | Flag                   | This header determines how the packet should be handled by either device during the handshake process. Specific flags will determine specific behaviours.                                                                                           |
 
-### Three-way handshake
+## Three-way handshake
 
 The term given for the process used to establish a connection between two devices. The Three-way handshake communicates using a few special messages:
 
@@ -47,7 +48,7 @@ Any sent data is given a random number sequence and is reconstructed using this 
 2. SYN/ACK - Server: Here's my Initial Sequence Number (ISN) to SYNchronise with (5,000), and I ACKnowledge your initial number sequence (0)
 3. ACK - Client: I ACKnowledge your Initial Sequence Number (ISN) of (5,000), here is some data that is my `ISN+1 (0 + 1)`
 
-### TCP Closing a Connection
+## TCP Closing a Connection
 
 First, TCP will close a connection once a device has determined that the other device has successfully received all of the data. Because TCP reserves system resources on a device, it is best practice to close TCP connections as soon as possible.
 

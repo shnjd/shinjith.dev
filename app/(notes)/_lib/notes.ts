@@ -33,10 +33,19 @@ export async function getAllNotes() {
   );
 }
 
-export function getNotesSitemap(baseUrl: string): MetadataRoute.Sitemap {
-  return getNoteSlugs().map((slug) => ({
+// lastmod comes from frontmatter, not file mtimes, which change on every
+// checkout and would make every build look like an update.
+export const noteModifiedAt = (frontmatter: {
+  date: string;
+  updatedAt?: string;
+}) => new Date(frontmatter.updatedAt || frontmatter.date);
+
+export async function getNotesSitemap(
+  baseUrl: string,
+): Promise<MetadataRoute.Sitemap> {
+  return (await getAllNotes()).map(({ slug, frontmatter }) => ({
     url: `${baseUrl}/on/${slug}`,
-    lastModified: fs.statSync(path.join(NOTES_DIR, `${slug}.mdx`)).mtime,
+    lastModified: noteModifiedAt(frontmatter),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
