@@ -118,6 +118,10 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Entrance animations start hidden; without JS, show everything. */}
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body
         className={`bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
