@@ -23,7 +23,7 @@ const breadCrumbLd = {
 export const metadata: Metadata = {
   title: "Projects | Shinjith P R",
   description:
-    "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
+    "Projects Shinjith P R has built, listed by date: web and desktop apps made with React, Next.js, TypeScript, Tailwind, Material UI and Tauri.",
   keywords: [
     "JavaScript",
     "React",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Projects | Shinjith P R",
     description:
-      "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
+      "Projects Shinjith P R has built, listed by date: web and desktop apps made with React, Next.js, TypeScript, Tailwind, Material UI and Tauri.",
 
     images: [
       {
