@@ -49,7 +49,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
           >
             {project?.github_url && (
               <Link
-                aria-label="Github URL"
+                aria-label={`${project.name} source on GitHub`}
                 href={project.github_url}
                 secondary
                 underline={false}
@@ -59,7 +59,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
             )}
             {project?.live_url && (
               <Link
-                aria-label="Live URL"
+                aria-label={`${project.name} live site`}
                 href={project.live_url}
                 secondary
                 underline={false}
@@ -83,7 +83,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
         <div className={`flex justify-center gap-8 sm:hidden`}>
           {project?.github_url && (
             <Link
-              aria-label="Github URL"
+              aria-label={`${project.name} source on GitHub`}
               href={project.github_url}
               secondary
               underline={false}
@@ -94,7 +94,7 @@ const ProjectWideCard = ({ project, toRight }: ProjectProps) => {
 
           {project?.live_url && (
             <Link
-              aria-label="Live URL"
+              aria-label={`${project.name} live site`}
               href={project.live_url}
               secondary
               underline={false}
@@ -122,7 +122,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <div className={`mb-4 flex justify-end gap-4`}>
         {project.github_url && (
           <Link
-            aria-label="Github URL"
+            aria-label={`${project.name} source on GitHub`}
             href={project.github_url}
             secondary
             underline={false}
@@ -132,7 +132,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         )}
         {project?.live_url && (
           <Link
-            aria-label="Live URL"
+            aria-label={`${project.name} live site`}
             href={project.live_url}
             secondary
             underline={false}
