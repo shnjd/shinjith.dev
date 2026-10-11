@@ -101,19 +101,23 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          <ul className="hidden items-center gap-4 lg:flex">
-            {links.map(({ label, ...props }) => (
-              <li key={label}>
-                <Link {...props}>{label}</Link>
+          <nav aria-label="Main" className="hidden lg:block">
+            <ul className="flex items-center gap-4">
+              {links.map(({ label, ...props }) => (
+                <li key={label}>
+                  <Link {...props}>{label}</Link>
+                </li>
+              ))}
+              <li>
+                <ModeSwitch />
               </li>
-            ))}
-            <li>
-              <ModeSwitch />
-            </li>
-          </ul>
+            </ul>
+          </nav>
 
           <MenuButton
             isClosed={!menu}
+            aria-expanded={menu}
+            aria-controls="mobile-menu"
             onClick={() => setMenu((prev) => !prev)}
             className="shrink-0 lg:hidden"
           />
@@ -123,6 +127,7 @@ const Navbar = () => {
           {menu && (
             <motion.div
               key="menu"
+              id="mobile-menu"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -130,20 +135,22 @@ const Navbar = () => {
               className="w-full overflow-hidden lg:hidden"
             >
               <div className="flex w-full items-end gap-2 pt-6">
-                <ul className="flex w-full flex-col gap-3">
-                  {links.map(({ label, ...props }) => (
-                    <li key={label}>
-                      <Link
-                        {...props}
-                        underline={false}
-                        onClick={() => setMenu(false)}
-                        className="hover:bg-accent/75 hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <nav aria-label="Main" className="w-full">
+                  <ul className="flex w-full flex-col gap-3">
+                    {links.map(({ label, ...props }) => (
+                      <li key={label}>
+                        <Link
+                          {...props}
+                          underline={false}
+                          onClick={() => setMenu(false)}
+                          className="hover:bg-accent/75 hover:text-accent-fg flex w-full items-center gap-2 rounded-sm px-3 py-1.5"
+                        >
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
 
                 <ModeSwitch />
               </div>

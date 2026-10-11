@@ -20,7 +20,7 @@ const ModeSwitch = () => {
 
   return (
     <motion.button
-      aria-label="theme-switch"
+      aria-label={`Switch to ${getNextMode()} mode`}
       title={`Switch to ${getNextMode()} mode`}
       onClick={() => change(mode === "light")}
       whileTap={{ scale: 0.9 }}

@@ -111,11 +111,23 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
+        <a
+          href="#main"
+          className="bg-surface text-fg sr-only z-1000 rounded focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:px-3 focus:py-2"
+        >
+          Skip to content
+        </a>
         <MotionProvider>
           <TerminalProvider>
             <Background />
             <Navbar />
-            <main className="relative z-10 container">{children}</main>
+            <main
+              id="main"
+              tabIndex={-1}
+              className="relative z-10 container outline-none"
+            >
+              {children}
+            </main>
             <Footer />
           </TerminalProvider>
         </MotionProvider>
