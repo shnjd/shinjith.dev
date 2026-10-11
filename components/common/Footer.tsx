@@ -35,6 +35,11 @@ export default function Footer() {
               Projects
             </Link>
           </li>
+          <li>
+            <Link className="text-subtle" href="/wiki">
+              Wiki
+            </Link>
+          </li>
         </ul>
       </div>
     </footer>
