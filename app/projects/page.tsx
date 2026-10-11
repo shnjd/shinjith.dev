@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Tauri",
   ],
   openGraph: {
-    url: "https://shnjd.com",
+    url: "https://shnjd.com/projects",
     type: "website",
     title: "Projects | Shinjith P R",
     description:

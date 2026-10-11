@@ -12,22 +12,31 @@ export default function ProjectList() {
   return (
     <div className="relative z-10 mx-auto h-full max-w-7xl flex-col items-center justify-center">
       <div className="w-full grow pt-32 pb-1">
-        <motion.div
+        <motion.h1
           {...reveal({ delay: 0.08 })}
           className="text-3xl font-semibold"
         >
           Projects Archive
-        </motion.div>
+        </motion.h1>
 
         <table className="mt-10 w-full table-auto border-collapse">
+          <caption className="sr-only">
+            Projects by date, with the stack and links for each
+          </caption>
           <thead className="text-subtle text-left text-xs sm:text-sm">
             <tr>
-              <th className="py-1 font-medium">Date</th>
-              <th className="py-1 font-medium">Project</th>
-              <th className="hidden py-1 font-medium sm:table-cell">
-                Built WIth
+              <th scope="col" className="py-1 font-medium">
+                Date
               </th>
-              <th className="hidden py-1 font-medium lg:block">Link</th>
+              <th scope="col" className="py-1 font-medium">
+                Project
+              </th>
+              <th scope="col" className="hidden py-1 font-medium sm:table-cell">
+                Built With
+              </th>
+              <th scope="col" className="hidden py-1 font-medium lg:table-cell">
+                Link
+              </th>
             </tr>
           </thead>
           <tbody className="text-subtle text-left text-sm sm:text-base">
