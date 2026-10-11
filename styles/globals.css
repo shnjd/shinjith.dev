@@ -91,6 +91,7 @@
 }
 
 :root {
+  color-scheme: light;
   --col-background: 0 0% 100%;
   --col-surface: 177 48% 86%;
   --col-overlay: 174 47% 90%;
@@ -110,6 +111,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --col-background: 212 55% 12%;
   --col-surface: 217 37% 18%;
   --col-overlay: 217 26% 28%;

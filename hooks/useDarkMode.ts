@@ -1,4 +1,19 @@
 import { useEffect, useState } from "react";
+import { THEME_COLORS } from "@/lib/constants";
+
+// The un-media'd theme-color tag the layout's head script adds wins over the
+// OS-based ones, so it has to follow the toggle.
+const syncThemeColor = (mode: "light" | "dark") => {
+  let meta = document.querySelector<HTMLMetaElement>(
+    'meta[name="theme-color"]:not([media])',
+  );
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.name = "theme-color";
+    document.head.insertBefore(meta, document.head.firstChild);
+  }
+  meta.content = THEME_COLORS[mode];
+};
 
 const useDarkMode = () => {
   const [mode, setMode] = useState<"light" | "dark" | null>(null);
@@ -7,10 +22,12 @@ const useDarkMode = () => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
+      syncThemeColor("dark");
       setMode("dark");
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
+      syncThemeColor("light");
       setMode("light");
     }
   };
@@ -18,12 +35,14 @@ const useDarkMode = () => {
   const setDark = () => {
     document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
+    syncThemeColor("dark");
     setMode("dark");
   };
 
   const setLight = () => {
     document.documentElement.classList.remove("dark");
     localStorage.setItem("theme", "light");
+    syncThemeColor("light");
     setMode("light");
   };
 

@@ -7,12 +7,21 @@ import Navbar from "@/components/common/Navbar";
 import Background from "@/components/layouts/Background";
 import MotionProvider from "@/components/layouts/MotionProvider";
 import TerminalProvider from "@/contexts/TerminalContext";
+import { THEME_COLORS } from "@/lib/constants";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: THEME_COLORS.light },
+    { media: "(prefers-color-scheme: dark)", color: THEME_COLORS.dark },
+  ],
 };
+
+// Runs before first paint so a saved or system dark theme never flashes light,
+// and pins theme-color to the chosen theme (the media tags follow the OS only).
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);var m=document.createElement("meta");m.name="theme-color";m.content=d?"${THEME_COLORS.dark}":"${THEME_COLORS.light}";document.head.prepend(m)}catch(e){}})()`;
 
 const websiteLd = {
   "@context": "https://schema.org",
@@ -97,7 +106,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${rubik.variable} ${ibmPlexMono.variable}`}>
+    <html
+      lang="en"
+      className={`${rubik.variable} ${ibmPlexMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={`bg-background text-fg relative h-full min-h-dvh w-full max-w-screen overflow-x-hidden overflow-y-auto font-sans text-base`}
       >
