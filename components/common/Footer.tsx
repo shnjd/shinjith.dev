@@ -6,14 +6,6 @@ export default function Footer() {
       <div className="container flex w-full flex-col-reverse items-center justify-between gap-4 py-4 sm:flex-row">
         <p className="text-muted text-center text-xs sm:text-sm">
           &copy; {new Date().getFullYear()}, All rights reserved.
-          <span className="hidden lg:inline">
-            {" "}
-            · press{" "}
-            <kbd className="border-border rounded border px-1.5 font-mono">
-              `
-            </kbd>{" "}
-            to open the terminal
-          </span>
         </p>
 
         <ul className="text-subtle flex items-center justify-center gap-6 text-sm">
