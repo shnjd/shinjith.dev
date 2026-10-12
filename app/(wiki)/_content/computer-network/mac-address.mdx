@@ -1,0 +1,10 @@
+---
+title: MAC Address
+description: "What a MAC address is, how network interfaces get one at the factory, and how MAC spoofing lets a device pretend to be another."
+created: 2026-04-05
+order: 2
+---
+
+Devices on a network will all have a physical network interface, which is a microchip board found on the device's motherboard. This network interface is assigned a unique address at the factory it was built at, called a MAC (Media Access Control ) address. The MAC address is a **twelve-character hexadecimal number** split into two's and separated by a colon. These colons are considered separators. For example, a4:c3:f0:85:ac:2d. _The first six characters represent the company that made the network interface, and the last six is a unique number_.
+
+An interesting thing with MAC addresses is that they can be faked or "spoofed". This spoofing occurs when a networked device pretends to identify as another using its MAC address. When this occurs, it can often break poorly implemented security designs that assume that devices talking on a network are trustworthy.

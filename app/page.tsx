@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import LandingPage from "./_components/LandingPage";
 import { about } from "@/lib/data";
+import { openGraphBase } from "@/lib/seo";
 
 const personLd = {
   "@context": "https://schema.org/",
@@ -53,15 +54,8 @@ export const metadata: Metadata = {
     "shinjith-dev",
     "shnjd",
   ],
-  robots: {
-    index: true,
-    follow: true,
-    "max-image-preview": "large",
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    googleBot: "index, follow",
-  },
   openGraph: {
+    ...openGraphBase,
     url: "https://shnjd.com",
     type: "website",
     title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",

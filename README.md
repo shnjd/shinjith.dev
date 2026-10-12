@@ -16,7 +16,8 @@ inheritance:
 - Anything that **belongs exclusively to a sub-app lives inside its
   folder**, never at the root. Root code shouldn't depend on a sub-app's
   internals. The one exception is root-level aggregators like
-  `app/sitemap.ts`, which call a helper the sub-app exports for this.
+  `app/sitemap.ts` and the terminal's listing, which call a helper the
+  sub-app exports for this.
 - If a sub-app's code becomes useful elsewhere, move it to the root
   first, then share it.
 
@@ -52,6 +53,7 @@ Current sub-apps:
 | Sub-app | Folder         | Routes                                      |
 | ------- | -------------- | ------------------------------------------- |
 | `notes` | `app/(notes)/` | `/notes`, `/on/:slug`, `/api/og/note/:slug` |
+| `wiki`  | `app/(wiki)/`  | `/wiki`, `/wiki/:category/.../:page`        |
 
 More will be added. To add one, create `app/(<name>)/`, keep its
 exclusive code inside it, add a row to the table above, and use

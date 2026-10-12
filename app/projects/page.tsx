@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ProjectList from "./_components/ProjectList";
+import { openGraphBase } from "@/lib/seo";
 
 const breadCrumbLd = {
   "@context": "https://schema.org",
@@ -23,7 +24,7 @@ const breadCrumbLd = {
 export const metadata: Metadata = {
   title: "Projects | Shinjith P R",
   description:
-    "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
+    "Projects Shinjith P R has built, listed by date: web and desktop apps made with React, Next.js, TypeScript, Tailwind, Material UI and Tauri.",
   keywords: [
     "JavaScript",
     "React",
@@ -34,15 +35,16 @@ export const metadata: Metadata = {
     "Tauri",
   ],
   openGraph: {
-    url: "https://shnjd.com",
+    ...openGraphBase,
+    url: "https://shnjd.com/projects",
     type: "website",
     title: "Projects | Shinjith P R",
     description:
-      "Archive of Projects made using using technologies like JavaScript, React, TypeScript, Material UI, Next.js, Tailwind, Tauri, etc...  | Shinjith P R",
+      "Projects Shinjith P R has built, listed by date: web and desktop apps made with React, Next.js, TypeScript, Tailwind, Material UI and Tauri.",
 
     images: [
       {
-        url: "/assets/images/seo-cover.png",
+        url: "https://shnjd.com/assets/images/seo-cover.png",
         width: 1200,
         height: 630,
       },
@@ -60,7 +62,7 @@ export default function Projects() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbLd) }}
       />
-      <div className="text-fg h-[calc(100dvh-84px)] w-full sm:h-[calc(100svh-52px)]">
+      <div className="text-fg min-h-[calc(100dvh-84px)] w-full sm:min-h-[calc(100svh-52px)]">
         <ProjectList />
       </div>
     </>

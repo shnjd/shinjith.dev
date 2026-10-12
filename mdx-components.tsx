@@ -1,11 +1,17 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
+import CopyButton from "@/components/common/CopyButton";
+import { slugify, textContent } from "@/utils/string";
+
+// Anchor ids so headings can be linked to and listed in a table of contents.
+const headingId = ({ children }: { children?: React.ReactNode }) =>
+  slugify(textContent(children));
 
 const components: MDXComponents = {
   h1: (props) => <h1 {...props} className="mt-7 mb-3" />,
-  h2: (props) => <h2 {...props} className="mt-7 mb-3" />,
-  h3: (props) => <h3 {...props} className="mt-7 mb-1" />,
-  h4: (props) => <h4 {...props} className="mt-7 mb-1" />,
+  h2: (props) => <h2 id={headingId(props)} {...props} className="mt-7 mb-3" />,
+  h3: (props) => <h3 id={headingId(props)} {...props} className="mt-7 mb-1" />,
+  h4: (props) => <h4 id={headingId(props)} {...props} className="mt-7 mb-1" />,
   p: (props) => <p {...props} className="my-3" />,
   strong: (props) => <strong {...props} className="my-3" />,
   a: (props) => (
@@ -19,13 +25,16 @@ const components: MDXComponents = {
   ),
   code: (props) => <code {...props} className="rounded-sm px-1 py-0.5" />,
   pre: ({ children, ...props }) => (
-    <pre {...props} className="overflow-x-auto p-0">
-      {typeof children === "object" && "props" in (children as any) ? (
-        <code {...(children as any).props} className="bg-transparent p-3" />
-      ) : (
-        children
-      )}
-    </pre>
+    <div className="group relative">
+      <pre {...props} className="overflow-x-auto p-0">
+        {typeof children === "object" && "props" in (children as any) ? (
+          <code {...(children as any).props} className="bg-transparent p-3" />
+        ) : (
+          children
+        )}
+      </pre>
+      <CopyButton className="absolute top-2 right-2 opacity-70 group-hover:opacity-100 focus-visible:opacity-100" />
+    </div>
   ),
   ul: (props) => <ul {...props} className="my-3 list-disc pl-5" />,
   ol: (props) => <ol {...props} className="my-3 list-decimal pl-5" />,
@@ -34,7 +43,11 @@ const components: MDXComponents = {
     <table {...props} className="my-5 w-full border-collapse" />
   ),
   th: (props) => (
-    <th {...props} className="border-border border px-3 py-2 text-left" />
+    <th
+      scope="col"
+      {...props}
+      className="border-border border px-3 py-2 text-left"
+    />
   ),
   td: (props) => (
     <td {...props} className="border-border border px-3 py-2 text-left" />
