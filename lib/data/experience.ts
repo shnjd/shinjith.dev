@@ -3,12 +3,8 @@ export const experience: DataExperience[] = [
     role: "Frontend Developer",
     company: "Sustainability Economics",
     description: [
-      "Built complex map features with React Map GL (Mapbox) and Turf.js.",
-      "Designed a scalable design system from scratch using Sass tokens, reusable components, and Radix UI primitives adopted across multiple products.",
-      "Led implementation of a central authentication system, and guided adoption across projects.",
-      "Established testing standards and authored tests using Vitest (unit) and Cypress (E2E).",
-      "Developed custom charts using Visx, D3, and React Chart.js 2, and improved core chart components.",
-      "Built advanced interactive components, including 3D charts with react-three-fiber (Three.js) and custom flow diagrams using React Flow.",
+      "Built a design system from scratch with Sass tokens and Radix UI, adopted across products, and led a central authentication system and testing standards (Vitest, Cypress).",
+      "Developed data-heavy interfaces: Mapbox and Turf.js maps, custom charts with Visx and D3, 3D charts with react-three-fiber, and flow diagrams with React Flow.",
     ],
     technologies: [
       "TypeScript",
