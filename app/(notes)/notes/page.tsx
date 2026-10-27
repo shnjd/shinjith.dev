@@ -15,7 +15,7 @@ const personLd = {
   jobTitle: "Web & App Developer",
   worksFor: {
     "@type": "Organization",
-    name: "Sustainability Economics",
+    name: "Hexad Infosoft",
   },
   knowsAbout: [
     "React",
