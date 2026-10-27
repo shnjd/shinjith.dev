@@ -12,7 +12,7 @@ const personLd = {
   url: "https://shnjd.com",
   image: "https://shnjd.com/assets/images/shinjith.jpg",
   sameAs: Object.values(about.handles),
-  jobTitle: "Web & App Developer",
+  jobTitle: "Software Engineer",
   worksFor: {
     "@type": "Organization",
     name: "Hexad Infosoft",
@@ -21,10 +21,11 @@ const personLd = {
     "React",
     "Next.js",
     "TypeScript",
-    "Redux",
     "React Native",
-    "Expo",
-    "Frontend Development",
+    "Python",
+    "Frappe",
+    "Docker",
+    "Full Stack Development",
     "UI/UX",
   ],
 };
@@ -32,7 +33,7 @@ const personLd = {
 export const metadata: Metadata = {
   title: "Shinjith's Notes",
   description:
-    "Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
+    "Shinjith P R – Software Engineer in Bengaluru, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
   keywords: [
     "git",
     "shinjith-dev",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Shinjith's Notes",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
+      "Shinjith P R – Software Engineer in Bengaluru, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
     images: [
       {
         url: "https://shnjd.com/assets/images/seo-cover.png",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shinjith's Notes",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
+      "Shinjith P R – Software Engineer in Bengaluru, India. This is a small corner where I write notes (very rarely). Here you can discover notes on various topics, mostly tech related.",
     creator: "@shnjd_",
     images: [
       {
@@ -94,8 +95,8 @@ export default async function NotesPage() {
       <Listing>
         <h1>Notes</h1>
         <p>
-          Hello, I&apos;m Shinjith, a software engineer from kerala, India.{" "}
-          <br />
+          Hello, I&apos;m Shinjith, a software engineer based in Bengaluru,
+          India. <br />
           This is a small corner where I write notes (very rarely). Here you can
           discover notes on various topics, mostly tech related.
           <br />
