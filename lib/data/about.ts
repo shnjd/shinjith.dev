@@ -1,8 +1,8 @@
 export const about: DataAbout = {
-  title: "Web Developer",
-  caption: "Based in Kerala, India",
+  title: "Software Engineer",
+  caption: "Based in Bengaluru, India",
   description:
-    "Who specializes in creating pixel-perfect, engaging, and accessible digital experiences. Currently, I'm concentrating on developing useful web projects and learning new things.",
+    "Who builds products end to end, from polished, accessible interfaces to the backends and infrastructure behind them. Currently building ERP and automation products at Hexad Infosoft.",
   about: [
     [
       { value: "I am a" },
@@ -56,8 +56,9 @@ export const about: DataAbout = {
     "TypeScript",
     "React",
     "Next.js",
-    "React Native (Expo)",
-    "Tauri",
+    "Python",
+    "Frappe",
+    "Docker",
   ],
   handles: {
     bluesky: "https://bsky.app/profile/shnjd.com",

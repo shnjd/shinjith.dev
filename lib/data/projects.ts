@@ -58,6 +58,7 @@ export const projects: DataProject[] = [
       "GluestackUI",
     ],
     image: "/assets/images/project_blood-donors.jpg",
+    github_url: "https://github.com/shnjd/blood-donors",
     created_at: "2025-02-23",
   },
   {

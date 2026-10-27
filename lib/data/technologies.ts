@@ -15,24 +15,36 @@ import {
   SiBootstrap,
   SiC,
   SiCloudflareworkers,
+  SiCypress,
+  SiD3,
   SiDjango,
   SiDocker,
   SiElectron,
+  SiErpnext,
   SiExpo,
   SiExpress,
+  SiFrappe,
   SiMantine,
   SiMapbox,
   SiMarkdown,
   SiMui,
   SiNetlify,
+  SiNginx,
   SiNodedotjs,
   SiNpm,
+  SiOdoo,
+  SiPayloadcms,
   SiPnpm,
   SiPython,
+  SiRadixui,
+  SiRedis,
   SiRender,
+  SiSentry,
   SiSocketdotio,
   SiTailwindcss,
   SiTauri,
+  SiThreedotjs,
+  SiVitest,
 } from "@icons-pack/react-simple-icons";
 
 export const technologies: DataTechnology[] = [
@@ -57,6 +69,14 @@ export const technologies: DataTechnology[] = [
     icon: SiCloudflareworkers,
   },
   {
+    name: "Cypress",
+    icon: SiCypress,
+  },
+  {
+    name: "D3",
+    icon: SiD3,
+  },
+  {
     name: "Django",
     icon: SiDjango,
   },
@@ -69,12 +89,20 @@ export const technologies: DataTechnology[] = [
     icon: SiElectron,
   },
   {
+    name: "ERPNext",
+    icon: SiErpnext,
+  },
+  {
     name: "Expo",
     icon: SiExpo,
   },
   {
     name: "Express",
     icon: SiExpress,
+  },
+  {
+    name: "Frappe",
+    icon: SiFrappe,
   },
   {
     name: "JavaScript",
@@ -105,12 +133,24 @@ export const technologies: DataTechnology[] = [
     icon: IconBrandNextjs,
   },
   {
+    name: "Nginx",
+    icon: SiNginx,
+  },
+  {
     name: "Node",
     icon: SiNodedotjs,
   },
   {
     name: "NPM",
     icon: SiNpm,
+  },
+  {
+    name: "Odoo",
+    icon: SiOdoo,
+  },
+  {
+    name: "Payload CMS",
+    icon: SiPayloadcms,
   },
   {
     name: "PNPM",
@@ -121,12 +161,20 @@ export const technologies: DataTechnology[] = [
     icon: SiPython,
   },
   {
+    name: "Radix UI",
+    icon: SiRadixui,
+  },
+  {
     name: "React",
     icon: IconBrandReact,
   },
   {
     name: "React Native",
     icon: IconBrandReactNative,
+  },
+  {
+    name: "Redis",
+    icon: SiRedis,
   },
   {
     name: "Render",
@@ -141,6 +189,10 @@ export const technologies: DataTechnology[] = [
     icon: IconBrandSass,
   },
   {
+    name: "Sentry",
+    icon: SiSentry,
+  },
+  {
     name: "Socket IO",
     icon: SiSocketdotio,
   },
@@ -153,12 +205,20 @@ export const technologies: DataTechnology[] = [
     icon: SiTauri,
   },
   {
+    name: "Three.js",
+    icon: SiThreedotjs,
+  },
+  {
     name: "TypeScript",
     icon: IconBrandTypescript,
   },
   {
     name: "Vite",
     icon: IconBrandVite,
+  },
+  {
+    name: "Vitest",
+    icon: SiVitest,
   },
   {
     name: "Yarn",

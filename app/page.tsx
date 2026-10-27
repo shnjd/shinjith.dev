@@ -10,27 +10,28 @@ const personLd = {
   url: "https://shnjd.com",
   image: "https://shnjd.com/assets/images/shinjith.jpg",
   sameAs: Object.values(about.handles),
-  jobTitle: "Web & App Developer",
+  jobTitle: "Software Engineer",
   worksFor: {
     "@type": "Organization",
-    name: "Sustainability Economics",
+    name: "Hexad Infosoft",
   },
   knowsAbout: [
     "React",
     "Next.js",
     "TypeScript",
-    "Redux",
     "React Native",
-    "Expo",
-    "Frontend Development",
+    "Python",
+    "Frappe",
+    "Docker",
+    "Full Stack Development",
     "UI/UX",
   ],
 };
 
 export const metadata: Metadata = {
-  title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
+  title: "Shinjith P R | Software Engineer – React, Next.js, TypeScript",
   description:
-    "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
+    "Shinjith P R – Software Engineer in Bengaluru, India, building web, mobile and ERP products end to end with React, Next.js, TypeScript, Python and Frappe.",
   keywords: [
     "web developer",
     "app developer",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     "front end developer",
     "full stack web developer",
     "freelance web developer",
-    "freelance developer Kerala",
+    "software engineer Bengaluru",
     "web development services",
     "mobile app development",
     "developer portfolio",
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
     ...openGraphBase,
     url: "https://shnjd.com",
     type: "website",
-    title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
+    title: "Shinjith P R | Software Engineer – React, Next.js, TypeScript",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
+      "Shinjith P R – Software Engineer in Bengaluru, India, building web, mobile and ERP products end to end with React, Next.js, TypeScript, Python and Frappe.",
     images: [
       {
         url: "https://shnjd.com/assets/images/seo-cover.png",
@@ -71,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shinjith P R | Web & App Developer – React, Next.js, TypeScript",
+    title: "Shinjith P R | Software Engineer – React, Next.js, TypeScript",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
+      "Shinjith P R – Software Engineer in Bengaluru, India, building web, mobile and ERP products end to end with React, Next.js, TypeScript, Python and Frappe.",
     creator: "@shnjd_",
     images: [
       {
