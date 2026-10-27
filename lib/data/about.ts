@@ -56,8 +56,9 @@ export const about: DataAbout = {
     "TypeScript",
     "React",
     "Next.js",
-    "React Native (Expo)",
-    "Tauri",
+    "Python",
+    "Frappe",
+    "Docker",
   ],
   handles: {
     bluesky: "https://bsky.app/profile/shnjd.com",
