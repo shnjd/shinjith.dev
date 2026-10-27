@@ -3,8 +3,8 @@ export const experience: DataExperience[] = [
     role: "Software Engineer",
     company: "Hexad Infosoft",
     description: [
-      "Own full-cycle product development: built a property management ERP's React frontend, analytics and AI document extraction, then moved it from Odoo to Frappe/ERPNext in six weeks.",
-      "Rebuilt company infrastructure on Docker Swarm with failover and off-site backups, and shipped Next.js and Payload CMS websites with a RAG-backed chatbot.",
+      "Own full-cycle development of a property management ERP serving 5 companies: React frontend, analytics and AI document extraction, then an Odoo to Frappe/ERPNext migration of 6+ months of work in six weeks.",
+      "Moved company infrastructure to Docker Swarm for near-zero-downtime deploys that survive a machine failure, and shipped Next.js and Payload CMS websites with a RAG-backed chatbot.",
     ],
     technologies: [
       "TypeScript",
@@ -12,9 +12,9 @@ export const experience: DataExperience[] = [
       "Next.js",
       "Python",
       "Frappe",
+      "ERPNext",
       "Odoo",
       "Payload CMS",
-      "LangChain",
       "Redis",
       "Docker",
     ],

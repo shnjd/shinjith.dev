@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     description:
-      "Shinjith P R – Web & App Developer from Kerala, India. Expert in React, Next.js, TypeScript, Redux, React Native, and Expo. Designer & full-stack builder.",
+      "Shinjith P R – Software Engineer in Bengaluru, India, building web, mobile and ERP products end to end with React, Next.js, TypeScript, Python and Frappe.",
     images: [
       {
         url: "https://shnjd.com/assets/images/seo-cover.png",

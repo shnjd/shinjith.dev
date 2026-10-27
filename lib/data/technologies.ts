@@ -24,7 +24,6 @@ import {
   SiExpo,
   SiExpress,
   SiFrappe,
-  SiLangchain,
   SiMantine,
   SiMapbox,
   SiMarkdown,
@@ -108,10 +107,6 @@ export const technologies: DataTechnology[] = [
   {
     name: "JavaScript",
     icon: IconBrandJavascript,
-  },
-  {
-    name: "LangChain",
-    icon: SiLangchain,
   },
   {
     name: "Mantine",
